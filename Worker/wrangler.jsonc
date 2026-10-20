@@ -12,6 +12,8 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-08-15",
   "workers_dev": true,
+  // One public address per Worker: no per-version preview URLs.
+  "preview_urls": false,
   "logpush": false,
   "observability": { "enabled": false },
   "durable_objects": {
@@ -26,9 +28,11 @@
   "vars": {
     "APPLE_APP_IDS": "YYM4Z6MU8F.com.tsubuzaki.Wooosh",
     "PLAY_PACKAGE_NAME": "com.tsubuzaki.WoooshGo",
-    // Release signing-certificate SHA-256, base64url. Fill in from Play Console
-    // (App integrity → App signing key certificate) before deploying.
-    "PLAY_CERT_SHA256": ""
+    // SHA-256 of the Play App Signing certificates, base64url: the deployment
+    // certificate and its hybrid classical counterpart (Play Console → App
+    // integrity → App signing). Public values; the post-quantum certificate is
+    // not reported in Play Integrity verdicts.
+    "PLAY_CERT_SHA256": "vl01sMQQcCldoEy_Fgwlf0yYhGIGMqM8jIGZZBPhCbY,wQs31EJ5mrqxW6ihDGN0kAcAc8USKs-PYb4eQdCFY3A"
   },
   "env": {
     // Accepts development App Attest keys and non-Play builds, and relays
@@ -37,6 +41,7 @@
     "dev": {
       "name": "wooosh-rendezvous-dev",
       "workers_dev": true,
+      "preview_urls": false,
       "logpush": false,
       "observability": { "enabled": false },
       "durable_objects": {
