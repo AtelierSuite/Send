@@ -98,6 +98,14 @@ public sealed class NativeWoooshCore : IWoooshCore
         // declaration order, so it must come from the generator.
         throw NotWired();
 
+    public void SetMetered(bool metered)
+    {
+        RequireHandle();
+        UniffiCall.Rust((ref RustCallStatus status) =>
+            NativeMethods.uniffi_wooosh_core_fn_method_woooshcore_set_metered(
+                _handle, (sbyte)(metered ? 1 : 0), ref status));
+    }
+
     public string? FingerprintPhraseFor(byte[] publicKey) =>
         UniffiSerialization.LiftString(
             UniffiCall.Rust((ref RustCallStatus status) =>

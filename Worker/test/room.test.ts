@@ -100,10 +100,10 @@ describe("rendezvous room", () => {
     await pub.next("peer");
     await red.next("peer");
 
-    pub.send({ t: "cand", c: [{ kind: "host", a: "192.0.2.1:5000" }], ufrag: "AAAAAAAAAAA", mac: "mac-a" });
-    red.send({ t: "cand", c: [{ kind: "srflx", a: "198.51.100.2:6000" }], ufrag: "BBBBBBBBBBB", mac: "mac-b" });
-    expect(await red.next("cand")).toMatchObject({ c: [{ a: "192.0.2.1:5000" }], mac: "mac-a" });
-    expect(await pub.next("cand")).toMatchObject({ c: [{ a: "198.51.100.2:6000" }], mac: "mac-b" });
+    pub.send({ t: "cand", c: [{ kind: "host", a: "192.0.2.1:5000" }], ufrag: "AAAAAAAAAAA", m: false, mac: "mac-a" });
+    red.send({ t: "cand", c: [{ kind: "srflx", a: "198.51.100.2:6000" }], ufrag: "BBBBBBBBBBB", m: true, mac: "mac-b" });
+    expect(await red.next("cand")).toMatchObject({ c: [{ a: "192.0.2.1:5000" }], m: false, mac: "mac-a" });
+    expect(await pub.next("cand")).toMatchObject({ c: [{ a: "198.51.100.2:6000" }], m: true, mac: "mac-b" });
     await pub.next("go");
     await red.next("go");
 

@@ -298,7 +298,7 @@ All of these reuse the exact same pairing trust model and transfer protocol. Onl
 
 ### 9.1 Primary: Wooosh Rendezvous (internet P2P through a Cloudflare Worker)
 
-Wooosh runs one piece of infrastructure: **Wooosh Rendezvous**, a Cloudflare Worker with one Durable Object per "room". It introduces two devices and then gets out of the way. Each device learns its public address from a STUN server, the two swap address candidates through the room, and both hole punch so that QUIC runs **directly** between them. Only when punching fails does the room forward traffic itself, and then only for files up to 1 GiB (§9.1.2). Wire format and every normative rule are in PROTOCOL.md §9.
+Wooosh runs one piece of infrastructure: **Wooosh Rendezvous**, a Cloudflare Worker with one Durable Object per "room". It introduces two devices and then gets out of the way. Each device learns its public address from a STUN server, the two swap address candidates through the room, and both hole punch so that QUIC runs **directly** between them. Only when punching fails does the room forward traffic itself, and then only for files up to 1 GiB, or 10 MB when either device is on mobile data (§9.1.2). Wire format and every normative rule are in PROTOCOL.md §9.
 
 Why a Worker and not iroh, which this replaces:
 
@@ -350,6 +350,7 @@ The rendezvous is contacted **lazily**: on the first ticket operation, a Bluetoo
 | Core error | Meaning | Copy direction |
 |---|---|---|
 | `RelayFileTooLarge` | No direct path; a file is over 1 GiB | The networks can't connect directly, so files over 1 GB can't be sent this way |
+| `RelayMeteredFileTooLarge` | No direct path, a device is on mobile data, and a file is over 10 MB | One device is on mobile data, so files over 10 MB need Wi-Fi |
 | `RelayUnavailable` | No direct path, and this device is not verified for relaying (§9.2) | These networks can't connect directly |
 | `RendezvousQuota` | This device's daily allowance is used up | Try again tomorrow |
 | `RendezvousUnavailable` | The service is down or over Cloudflare's daily limit | Try again later |
@@ -370,7 +371,7 @@ Both devices must have Wooosh open. Reaching a closed app would mean push notifi
 
 #### 9.1.2 Relay fallback
 
-`run_send` waits up to 15 s for a direct path. If one appears there is no limit. If none does, the session is relayed through the room and a **per-file cap of 1 GiB** applies, checked before the OFFER on both sides (PROTOCOL.md §9.6). Unverified clients are never relayed.
+`run_send` waits up to 15 s for a direct path. If one appears there is no limit. If none does, the session is relayed through the room and a **per-file cap of 1 GiB** applies, checked before the OFFER on both sides (PROTOCOL.md §9.6). If either device is on mobile data, as its OS reports it, the cap is **10 MB**: mobile carrier NAT is where punching fails most, so this keeps the shared relay quota for small files and keeps large relayed transfers off people's data plans. Each device tells the other in its MAC'd candidates. Unverified clients are never relayed.
 
 Relaying is QUIC datagrams batched into WebSocket frames, forwarded by the Durable Object. It is slower than a direct path and is bounded by the shared daily quota, which is why the cap exists. The batching rule in PROTOCOL.md §9.6 is what makes a relayed gigabyte cost hundreds of quota units rather than tens of thousands.
 

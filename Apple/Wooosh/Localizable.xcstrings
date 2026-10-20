@@ -6791,6 +6791,96 @@
         }
       }
     },
+    "error_relay_metered_file_too_large": {
+      "comment": "Transfer refused: relayed route, a device on mobile data, and a file over the smaller limit. %1$@/%1$s is a size like \"10 MB\".",
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh konnte die beiden Geräte nicht direkt verbinden, und eines davon nutzt mobile Daten. In diesem Fall müssen Dateien kleiner als %1$@ sein. Versuche es erneut über WLAN."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh could not connect the two devices directly, and one of them is on mobile data. In that case, files must be under %1$@. Try again on Wi-Fi."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh no pudo conectar los dos dispositivos directamente y uno de ellos usa datos móviles. En ese caso, los archivos deben ser menores de %1$@. Inténtalo de nuevo con Wi-Fi."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh n'a pas pu connecter les deux appareils directement, et l'un d'eux utilise les données mobiles. Dans ce cas, les fichiers doivent faire moins de %1$@. Réessayez en Wi-Fi."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh non è riuscito a collegare i due dispositivi direttamente e uno dei due usa i dati mobili. In questo caso i file devono essere sotto %1$@. Riprova con il Wi-Fi."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh は 2 台のデバイスを直接つなげられませんでした。また、一方がモバイルデータ通信を使用しています。この場合、ファイルは %1$@ 未満である必要があります。Wi-Fi でもう一度お試しください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh가 두 기기를 직접 연결하지 못했으며, 한 기기가 모바일 데이터를 사용 중입니다. 이 경우 파일이 %1$@ 미만이어야 합니다. Wi-Fi에서 다시 시도하세요."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh kon de twee apparaten niet rechtstreeks verbinden en een van beide gebruikt mobiele data. In dat geval moeten bestanden kleiner zijn dan %1$@. Probeer het opnieuw via wifi."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh nie mógł połączyć obu urządzeń bezpośrednio, a jedno z nich korzysta z danych komórkowych. W takim przypadku pliki muszą być mniejsze niż %1$@. Spróbuj ponownie przez Wi-Fi."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Wooosh não conseguiu conectar os dois dispositivos diretamente, e um deles está usando dados móveis. Nesse caso, os arquivos precisam ter menos de %1$@. Tente de novo pelo Wi-Fi."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh не смог соединить устройства напрямую, а одно из них использует мобильный интернет. В этом случае файлы должны быть меньше %1$@. Попробуйте снова через Wi-Fi."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh kunde inte koppla ihop enheterna direkt, och en av dem använder mobildata. Då måste filer vara mindre än %1$@. Försök igen via wifi."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh 无法让两台设备直连，且其中一台正在使用移动数据。此时文件必须小于 %1$@。请连接 Wi-Fi 后重试。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh 無法讓兩台裝置直連，且其中一台正在使用行動數據。此時檔案必須小於 %1$@。請連上 Wi-Fi 後再試一次。"
+          }
+        }
+      }
+    },
     "error_relay_unavailable": {
       "localizations": {
         "de": {

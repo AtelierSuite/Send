@@ -27,6 +27,10 @@ struct Cli {
     /// Skip STUN: offer local addresses only.
     #[arg(long, global = true)]
     no_stun: bool,
+    /// Treat this network as mobile data: relayed files are capped at 10 MB
+    /// instead of 1 GiB (PROTOCOL.md §9.6). A CLI cannot ask the OS reliably.
+    #[arg(long, global = true)]
+    metered: bool,
     #[command(subcommand)]
     cmd: Cmd,
 }
@@ -102,6 +106,7 @@ enum Cmd {
 struct NetCfg {
     rendezvous: Option<String>,
     stun: Option<String>,
+    metered: bool,
 }
 
 struct Listener {
@@ -142,6 +147,7 @@ fn start_core(
         key_store,
         Arc::new(Listener { tx }),
     )?;
+    core.set_metered(net.metered)?;
     Ok((core, rx))
 }
 
@@ -154,6 +160,7 @@ fn main() -> Result<()> {
     let relays = NetCfg {
         rendezvous: cli.rendezvous.clone(),
         stun: cli.no_stun.then(String::new),
+        metered: cli.metered,
     };
 
     match cli.cmd {

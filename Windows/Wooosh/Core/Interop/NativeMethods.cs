@@ -50,6 +50,10 @@ internal static partial class NativeMethods
         IntPtr ptr, RustBuffer mode, ref RustCallStatus status);
 
     [LibraryImport(Library)]
+    public static partial void uniffi_wooosh_core_fn_method_woooshcore_set_metered(
+        IntPtr ptr, sbyte metered, ref RustCallStatus status);
+
+    [LibraryImport(Library)]
     public static partial RustBuffer uniffi_wooosh_core_fn_method_woooshcore_device_id(IntPtr ptr, ref RustCallStatus status);
 
     [LibraryImport(Library)]

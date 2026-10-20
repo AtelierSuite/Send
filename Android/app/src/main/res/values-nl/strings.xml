@@ -258,6 +258,7 @@
     <string name="other_device_connecting_body">Verbinden via internet duurt langer dan op een lokaal netwerk.</string>
     <string name="other_device_scan_prompt">Scan de code van het andere apparaat</string>
     <string name="error_relay_file_too_large">Wooosh kon de twee apparaten niet rechtstreeks verbinden. Via een indirecte verbinding moeten bestanden kleiner zijn dan %1$s. Probeer het opnieuw of gebruik een netwerk dat een directe verbinding toelaat.</string>
+    <string name="error_relay_metered_file_too_large">Wooosh kon de twee apparaten niet rechtstreeks verbinden en een van beide gebruikt mobiele data. In dat geval moeten bestanden kleiner zijn dan %1$s. Probeer het opnieuw via wifi.</string>
     <string name="other_device_send">Versturen</string>
     <string name="other_device_receive">Ontvangen</string>
     <string name="internet_send_title">Via internet versturen</string>

@@ -258,6 +258,7 @@
     <string name="other_device_connecting_body">Att ansluta via internet tar längre tid än i ett lokalt nätverk.</string>
     <string name="other_device_scan_prompt">Skanna koden från den andra enheten</string>
     <string name="error_relay_file_too_large">Wooosh kunde inte koppla ihop enheterna direkt. Över en indirekt anslutning måste filer vara mindre än %1$s. Försök igen eller använd ett nätverk som tillåter en direkt anslutning.</string>
+    <string name="error_relay_metered_file_too_large">Wooosh kunde inte koppla ihop enheterna direkt, och en av dem använder mobildata. Då måste filer vara mindre än %1$s. Försök igen via wifi.</string>
     <string name="other_device_send">Skicka</string>
     <string name="other_device_receive">Ta emot</string>
     <string name="internet_send_title">Skicka via internet</string>

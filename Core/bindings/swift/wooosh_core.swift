@@ -1512,6 +1512,13 @@ public protocol WoooshCoreProtocol: AnyObject, Sendable {
     func setAttestor(attestor: Attestor) throws 
     
     /**
+     * Whether the OS reports this device's network as mobile data (metered
+     * or expensive). Call on start and whenever it changes: it lowers the
+     * relayed file cap for both sides (PROTOCOL.md §9.6).
+     */
+    func setMetered(metered: Bool) throws 
+    
+    /**
      * Choose the rendezvous service (DESIGN.md §9.1): `None` = this build's
      * default, `Some("")` = internet sharing off, `Some(url)` = a
      * self-deployed Worker. Invalidates any outstanding ticket. A malformed
@@ -1813,6 +1820,18 @@ open func send(peerId: String, files: [String])throws  -> String  {
 open func setAttestor(attestor: Attestor)throws   {try rustCallWithError(FfiConverterTypeWoooshError_lift) {
     uniffi_wooosh_core_fn_method_woooshcore_set_attestor(self.uniffiClonePointer(),
         FfiConverterTypeAttestor_lower(attestor),$0
+    )
+}
+}
+    
+    /**
+     * Whether the OS reports this device's network as mobile data (metered
+     * or expensive). Call on start and whenever it changes: it lowers the
+     * relayed file cap for both sides (PROTOCOL.md §9.6).
+     */
+open func setMetered(metered: Bool)throws   {try rustCallWithError(FfiConverterTypeWoooshError_lift) {
+    uniffi_wooosh_core_fn_method_woooshcore_set_metered(self.uniffiClonePointer(),
+        FfiConverterBool.lower(metered),$0
     )
 }
 }
@@ -3430,6 +3449,12 @@ public enum WoooshError: Swift.Error {
     case RelayFileTooLarge(message: String)
     
     /**
+     * As `RelayFileTooLarge`, with the smaller cap that applies when either
+     * device is on mobile data. Shells should say so.
+     */
+    case RelayMeteredFileTooLarge(message: String)
+    
+    /**
      * No direct path, and this device is not verified for relaying (PROTOCOL.md §9.6).
      */
     case RelayUnavailable(message: String)
@@ -3534,19 +3559,23 @@ public struct FfiConverterTypeWoooshError: FfiConverterRustBuffer {
             message: try FfiConverterString.read(from: &buf)
         )
         
-        case 18: return .RelayUnavailable(
+        case 18: return .RelayMeteredFileTooLarge(
             message: try FfiConverterString.read(from: &buf)
         )
         
-        case 19: return .RendezvousQuota(
+        case 19: return .RelayUnavailable(
             message: try FfiConverterString.read(from: &buf)
         )
         
-        case 20: return .RendezvousUnavailable(
+        case 20: return .RendezvousQuota(
             message: try FfiConverterString.read(from: &buf)
         )
         
-        case 21: return .RendezvousRetry(
+        case 21: return .RendezvousUnavailable(
+            message: try FfiConverterString.read(from: &buf)
+        )
+        
+        case 22: return .RendezvousRetry(
             message: try FfiConverterString.read(from: &buf)
         )
         
@@ -3595,14 +3624,16 @@ public struct FfiConverterTypeWoooshError: FfiConverterRustBuffer {
             writeInt(&buf, Int32(16))
         case .RelayFileTooLarge(_ /* message is ignored*/):
             writeInt(&buf, Int32(17))
-        case .RelayUnavailable(_ /* message is ignored*/):
+        case .RelayMeteredFileTooLarge(_ /* message is ignored*/):
             writeInt(&buf, Int32(18))
-        case .RendezvousQuota(_ /* message is ignored*/):
+        case .RelayUnavailable(_ /* message is ignored*/):
             writeInt(&buf, Int32(19))
-        case .RendezvousUnavailable(_ /* message is ignored*/):
+        case .RendezvousQuota(_ /* message is ignored*/):
             writeInt(&buf, Int32(20))
-        case .RendezvousRetry(_ /* message is ignored*/):
+        case .RendezvousUnavailable(_ /* message is ignored*/):
             writeInt(&buf, Int32(21))
+        case .RendezvousRetry(_ /* message is ignored*/):
+            writeInt(&buf, Int32(22))
 
         
         }
@@ -3959,6 +3990,16 @@ public func relayMaxFileBytes() -> UInt64  {
     )
 })
 }
+/**
+ * Largest single file over a relayed connection when either device is on
+ * mobile data (PROTOCOL.md §9.6).
+ */
+public func relayMeteredMaxFileBytes() -> UInt64  {
+    return try!  FfiConverterUInt64.lift(try! rustCall() {
+    uniffi_wooosh_core_fn_func_relay_metered_max_file_bytes($0
+    )
+})
+}
 
 private enum InitializationResult {
     case ok
@@ -3988,6 +4029,9 @@ private let initializationResult: InitializationResult = {
         return InitializationResult.apiChecksumMismatch
     }
     if (uniffi_wooosh_core_checksum_func_relay_max_file_bytes() != 39646) {
+        return InitializationResult.apiChecksumMismatch
+    }
+    if (uniffi_wooosh_core_checksum_func_relay_metered_max_file_bytes() != 27197) {
         return InitializationResult.apiChecksumMismatch
     }
     if (uniffi_wooosh_core_checksum_method_attestor_kind() != 17076) {
@@ -4066,6 +4110,9 @@ private let initializationResult: InitializationResult = {
         return InitializationResult.apiChecksumMismatch
     }
     if (uniffi_wooosh_core_checksum_method_woooshcore_set_attestor() != 23144) {
+        return InitializationResult.apiChecksumMismatch
+    }
+    if (uniffi_wooosh_core_checksum_method_woooshcore_set_metered() != 6437) {
         return InitializationResult.apiChecksumMismatch
     }
     if (uniffi_wooosh_core_checksum_method_woooshcore_set_rendezvous_url() != 4376) {

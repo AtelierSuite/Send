@@ -246,6 +246,7 @@
     <string name="other_device_connecting_body">인터넷 연결은 로컬 네트워크보다 오래 걸립니다.</string>
     <string name="other_device_scan_prompt">상대 기기의 코드를 스캔하세요</string>
     <string name="error_relay_file_too_large">Wooosh가 두 기기를 직접 연결하지 못했습니다. 간접 연결에서는 파일이 %1$s 미만이어야 합니다. 다시 시도하거나 직접 연결이 가능한 네트워크를 사용하세요.</string>
+    <string name="error_relay_metered_file_too_large">Wooosh가 두 기기를 직접 연결하지 못했으며, 한 기기가 모바일 데이터를 사용 중입니다. 이 경우 파일이 %1$s 미만이어야 합니다. Wi-Fi에서 다시 시도하세요.</string>
     <string name="other_device_send">보내기</string>
     <string name="other_device_receive">받기</string>
     <string name="internet_send_title">인터넷으로 보내기</string>

@@ -246,6 +246,7 @@
     <string name="other_device_connecting_body">インターネット経由の接続は、ローカルネットワークより時間がかかります。</string>
     <string name="other_device_scan_prompt">相手のデバイスのコードをスキャン</string>
     <string name="error_relay_file_too_large">Wooosh は 2 台のデバイスを直接つなげられませんでした。間接的な接続では、ファイルは %1$s 未満である必要があります。もう一度試すか、直接接続できるネットワークをお使いください。</string>
+    <string name="error_relay_metered_file_too_large">Wooosh は 2 台のデバイスを直接つなげられませんでした。また、一方がモバイルデータ通信を使用しています。この場合、ファイルは %1$s 未満である必要があります。Wi-Fi でもう一度お試しください。</string>
     <string name="other_device_send">送信</string>
     <string name="other_device_receive">受信</string>
     <string name="internet_send_title">インターネットで送信</string>

@@ -888,6 +888,10 @@ internal open class UniffiVTableCallbackInterfaceKeyStore(
 
 
 
+
+
+
+
 // For large crates we prevent `MethodTooLargeException` (see #2340)
 // N.B. the name of the extension is very misleading, since it is 
 // rather `InterfaceTooLargeException`, caused by too many methods 
@@ -912,6 +916,8 @@ fun uniffi_wooosh_core_checksum_func_parse_internet_ticket(
 fun uniffi_wooosh_core_checksum_func_parse_pairing_qr(
 ): Short
 fun uniffi_wooosh_core_checksum_func_relay_max_file_bytes(
+): Short
+fun uniffi_wooosh_core_checksum_func_relay_metered_max_file_bytes(
 ): Short
 fun uniffi_wooosh_core_checksum_method_attestor_kind(
 ): Short
@@ -964,6 +970,8 @@ fun uniffi_wooosh_core_checksum_method_woooshcore_revoke_peer(
 fun uniffi_wooosh_core_checksum_method_woooshcore_send(
 ): Short
 fun uniffi_wooosh_core_checksum_method_woooshcore_set_attestor(
+): Short
+fun uniffi_wooosh_core_checksum_method_woooshcore_set_metered(
 ): Short
 fun uniffi_wooosh_core_checksum_method_woooshcore_set_rendezvous_url(
 ): Short
@@ -1113,6 +1121,8 @@ fun uniffi_wooosh_core_fn_method_woooshcore_send(`ptr`: Pointer,`peerId`: RustBu
 ): RustBuffer.ByValue
 fun uniffi_wooosh_core_fn_method_woooshcore_set_attestor(`ptr`: Pointer,`attestor`: Pointer,uniffi_out_err: UniffiRustCallStatus, 
 ): Unit
+fun uniffi_wooosh_core_fn_method_woooshcore_set_metered(`ptr`: Pointer,`metered`: Byte,uniffi_out_err: UniffiRustCallStatus, 
+): Unit
 fun uniffi_wooosh_core_fn_method_woooshcore_set_rendezvous_url(`ptr`: Pointer,`url`: RustBuffer.ByValue,uniffi_out_err: UniffiRustCallStatus, 
 ): Unit
 fun uniffi_wooosh_core_fn_method_woooshcore_set_visibility(`ptr`: Pointer,`mode`: RustBuffer.ByValue,uniffi_out_err: UniffiRustCallStatus, 
@@ -1132,6 +1142,8 @@ fun uniffi_wooosh_core_fn_func_parse_internet_ticket(`ticket`: RustBuffer.ByValu
 fun uniffi_wooosh_core_fn_func_parse_pairing_qr(`payload`: RustBuffer.ByValue,uniffi_out_err: UniffiRustCallStatus, 
 ): RustBuffer.ByValue
 fun uniffi_wooosh_core_fn_func_relay_max_file_bytes(uniffi_out_err: UniffiRustCallStatus, 
+): Long
+fun uniffi_wooosh_core_fn_func_relay_metered_max_file_bytes(uniffi_out_err: UniffiRustCallStatus, 
 ): Long
 fun ffi_wooosh_core_rustbuffer_alloc(`size`: Long,uniffi_out_err: UniffiRustCallStatus, 
 ): RustBuffer.ByValue
@@ -1274,6 +1286,9 @@ private fun uniffiCheckApiChecksums(lib: IntegrityCheckingUniffiLib) {
     if (lib.uniffi_wooosh_core_checksum_func_relay_max_file_bytes() != 39646.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
+    if (lib.uniffi_wooosh_core_checksum_func_relay_metered_max_file_bytes() != 27197.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
     if (lib.uniffi_wooosh_core_checksum_method_attestor_kind() != 17076.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
@@ -1350,6 +1365,9 @@ private fun uniffiCheckApiChecksums(lib: IntegrityCheckingUniffiLib) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_wooosh_core_checksum_method_woooshcore_set_attestor() != 23144.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_wooosh_core_checksum_method_woooshcore_set_metered() != 6437.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_wooosh_core_checksum_method_woooshcore_set_rendezvous_url() != 4376.toShort()) {
@@ -3148,6 +3166,13 @@ public interface WoooshCoreInterface {
     fun `setAttestor`(`attestor`: Attestor)
     
     /**
+     * Whether the OS reports this device's network as mobile data (metered
+     * or expensive). Call on start and whenever it changes: it lowers the
+     * relayed file cap for both sides (PROTOCOL.md §9.6).
+     */
+    fun `setMetered`(`metered`: kotlin.Boolean)
+    
+    /**
      * Choose the rendezvous service (DESIGN.md §9.1): `None` = this build's
      * default, `Some("")` = internet sharing off, `Some(url)` = a
      * self-deployed Worker. Invalidates any outstanding ticket. A malformed
@@ -3571,6 +3596,23 @@ open class WoooshCore: Disposable, AutoCloseable, WoooshCoreInterface
     uniffiRustCallWithError(WoooshException) { _status ->
     UniffiLib.INSTANCE.uniffi_wooosh_core_fn_method_woooshcore_set_attestor(
         it, FfiConverterTypeAttestor.lower(`attestor`),_status)
+}
+    }
+    
+    
+
+    
+    /**
+     * Whether the OS reports this device's network as mobile data (metered
+     * or expensive). Call on start and whenever it changes: it lowers the
+     * relayed file cap for both sides (PROTOCOL.md §9.6).
+     */
+    @Throws(WoooshException::class)override fun `setMetered`(`metered`: kotlin.Boolean)
+        = 
+    callWithPointer {
+    uniffiRustCallWithError(WoooshException) { _status ->
+    UniffiLib.INSTANCE.uniffi_wooosh_core_fn_method_woooshcore_set_metered(
+        it, FfiConverterBoolean.lower(`metered`),_status)
 }
     }
     
@@ -4751,6 +4793,12 @@ sealed class WoooshException(message: String): kotlin.Exception(message) {
         class RelayFileTooLarge(message: String) : WoooshException(message)
         
     /**
+     * As `RelayFileTooLarge`, with the smaller cap that applies when either
+     * device is on mobile data. Shells should say so.
+     */
+        class RelayMeteredFileTooLarge(message: String) : WoooshException(message)
+        
+    /**
      * No direct path, and this device is not verified for relaying (PROTOCOL.md §9.6).
      */
         class RelayUnavailable(message: String) : WoooshException(message)
@@ -4801,10 +4849,11 @@ public object FfiConverterTypeWoooshError : FfiConverterRustBuffer<WoooshExcepti
             15 -> WoooshException.Protocol(FfiConverterString.read(buf))
             16 -> WoooshException.InvalidArgument(FfiConverterString.read(buf))
             17 -> WoooshException.RelayFileTooLarge(FfiConverterString.read(buf))
-            18 -> WoooshException.RelayUnavailable(FfiConverterString.read(buf))
-            19 -> WoooshException.RendezvousQuota(FfiConverterString.read(buf))
-            20 -> WoooshException.RendezvousUnavailable(FfiConverterString.read(buf))
-            21 -> WoooshException.RendezvousRetry(FfiConverterString.read(buf))
+            18 -> WoooshException.RelayMeteredFileTooLarge(FfiConverterString.read(buf))
+            19 -> WoooshException.RelayUnavailable(FfiConverterString.read(buf))
+            20 -> WoooshException.RendezvousQuota(FfiConverterString.read(buf))
+            21 -> WoooshException.RendezvousUnavailable(FfiConverterString.read(buf))
+            22 -> WoooshException.RendezvousRetry(FfiConverterString.read(buf))
             else -> throw RuntimeException("invalid error enum value, something is very wrong!!")
         }
         
@@ -4884,20 +4933,24 @@ public object FfiConverterTypeWoooshError : FfiConverterRustBuffer<WoooshExcepti
                 buf.putInt(17)
                 Unit
             }
-            is WoooshException.RelayUnavailable -> {
+            is WoooshException.RelayMeteredFileTooLarge -> {
                 buf.putInt(18)
                 Unit
             }
-            is WoooshException.RendezvousQuota -> {
+            is WoooshException.RelayUnavailable -> {
                 buf.putInt(19)
                 Unit
             }
-            is WoooshException.RendezvousUnavailable -> {
+            is WoooshException.RendezvousQuota -> {
                 buf.putInt(20)
                 Unit
             }
-            is WoooshException.RendezvousRetry -> {
+            is WoooshException.RendezvousUnavailable -> {
                 buf.putInt(21)
+                Unit
+            }
+            is WoooshException.RendezvousRetry -> {
+                buf.putInt(22)
                 Unit
             }
         }.let { /* this makes the `when` an expression, which ensures it is exhaustive */ }
@@ -5297,6 +5350,19 @@ public object FfiConverterSequenceTypeTrustedPeer: FfiConverterRustBuffer<List<T
             return FfiConverterULong.lift(
     uniffiRustCall() { _status ->
     UniffiLib.INSTANCE.uniffi_wooosh_core_fn_func_relay_max_file_bytes(
+        _status)
+}
+    )
+    }
+    
+
+        /**
+         * Largest single file over a relayed connection when either device is on
+         * mobile data (PROTOCOL.md §9.6).
+         */ fun `relayMeteredMaxFileBytes`(): kotlin.ULong {
+            return FfiConverterULong.lift(
+    uniffiRustCall() { _status ->
+    UniffiLib.INSTANCE.uniffi_wooosh_core_fn_func_relay_metered_max_file_bytes(
         _status)
 }
     )

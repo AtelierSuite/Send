@@ -6,7 +6,7 @@ Last updated: 2026-10-05. Specs: [DESIGN.md](DESIGN.md), [PROTOCOL.md](PROTOCOL.
 
 | Component | Builds | Runtime verified | Notes |
 |---|---|---|---|
-| `Core/` (Rust) | ✅ | ✅ 37/37 unit, 22/22 integration (+1 `#[ignore]`d, passing against the Worker under `cf dev`) | QUIC + pairing + transfers + resume; internet path through Wooosh Rendezvous with in-house hole punching and a capped relay (PROTOCOL.md §9). iroh removed |
+| `Core/` (Rust) | ✅ | ✅ 37/37 unit, 23/23 integration (+1 `#[ignore]`d, passing against the Worker under `cf dev`) | QUIC + pairing + transfers + resume; internet path through Wooosh Rendezvous with in-house hole punching and a capped relay (PROTOCOL.md §9). iroh removed |
 | `Apple/` macOS | ✅ | ✅ transfers to iOS and to Android, both directions with the CLI | unsandboxed run only; internet transfer never run across networks |
 | `Apple/` iOS | ✅ | ✅ on device: transfers, Photos routing, camera QR scanning; launches clean in the iOS 26.5 Simulator and discovers a real peer | share extension with a real App Group unverified; internet transfer never run across networks |
 | `Android/` | ✅ | ✅ physical Pixel 7a: discovery, send and receive, pairing, revoke, KEY_CHANGED, QR scanning | internet transfer never run at all, on any network |
@@ -62,11 +62,11 @@ Identity is unified: one Ed25519 keypair per install, held by the core, stored t
 
 **Migration: iroh → Wooosh Rendezvous (2026-10-05)**
 
-Decisions: the project runs one server, the Worker; Windows and the CLI attest with a TPM 2.0 rather than a hardware ID string, which would be forgeable; relayed files are capped at 1 GiB; the Apple minimum is OS 27 so every Mac has App Attest; iOS and Android ship on their stores, desktop outside them.
+Decisions: the project runs one server, the Worker; Windows and the CLI attest with a TPM 2.0 rather than a hardware ID string, which would be forgeable; relayed files are capped at 1 GiB, or 10 MB when either device is on mobile data as its OS reports it; the Apple minimum is OS 27 so every Mac has App Attest; iOS and Android ship on their stores, desktop outside them.
 
 Done and verified locally:
 - **Worker** (`Worker/`): rooms, admission on the room socket, App Attest, Play Integrity, TPM credential activation, per-device and per-network quotas, relay forwarding, no storage and no logs. `npm test`: 22 tests in the Workers runtime. The TPM MakeCredential output matches an independent implementation (tpm2-pytss's algorithm on pyca/cryptography) byte for byte; App Attest is tested against a locally minted chain in Apple's format, not a real device's attestation.
-- **Core**: iroh is gone, outright rather than behind a feature flag. Internet sessions are plain quinn connections over a path-selecting socket (`rendezvous/pathsock.rs`); STUN, MAC'd candidate exchange and probes, relay batching, admission caching, and `wooosh-net:2` tickets that no longer carry IP addresses. Integration tests cover direct and relayed transfers, the 1 GiB cap, refused relaying for Unverified clients, and withdrawn or reused codes failing immediately. The `#[ignore]`d test passed against the real Worker under `cf dev`: 8 MiB hash-verified, direct and fully relayed.
+- **Core**: iroh is gone, outright rather than behind a feature flag. Internet sessions are plain quinn connections over a path-selecting socket (`rendezvous/pathsock.rs`); STUN, MAC'd candidate exchange and probes, relay batching, admission caching, and `wooosh-net:2` tickets that no longer carry IP addresses. Integration tests cover direct and relayed transfers, the 1 GiB cap, the 10 MB cap when the peer is on mobile data, refused relaying for Unverified clients, and withdrawn or reused codes failing immediately. The `#[ignore]`d test passed against the real Worker under `cf dev`: 8 MiB hash-verified, direct and fully relayed.
 - **Shells**: Apple installs an App Attest attestor and Android a Play Integrity attestor; Settings shows Internet Connections with Wooosh, My Own, and Off (the old iroh setting migrates only "Off"); new errors have copy in all 14 locales. Builds: macOS, iOS device, iOS Simulator, Android debug.
 
 Not done:

@@ -124,6 +124,13 @@ pub fn relay_max_file_bytes() -> u64 {
     crate::engine::RELAY_MAX_FILE_BYTES
 }
 
+/// Largest single file over a relayed connection when either device is on
+/// mobile data (PROTOCOL.md §9.6).
+#[uniffi::export]
+pub fn relay_metered_max_file_bytes() -> u64 {
+    crate::engine::RELAY_METERED_MAX_FILE_BYTES
+}
+
 /// Parse a `wooosh-net:2?...` ticket without redeeming it.
 #[uniffi::export]
 pub fn parse_internet_ticket(ticket: String) -> Result<TicketInfo, WoooshError> {
@@ -566,6 +573,13 @@ impl WoooshCore {
     /// URL errors without disturbing the current setting.
     pub fn set_rendezvous_url(&self, url: Option<String>) -> Result<(), WoooshError> {
         self.with_engine(|_, e| e.set_rendezvous_url(url))?
+    }
+
+    /// Whether the OS reports this device's network as mobile data (metered
+    /// or expensive). Call on start and whenever it changes: it lowers the
+    /// relayed file cap for both sides (PROTOCOL.md §9.6).
+    pub fn set_metered(&self, metered: bool) -> Result<(), WoooshError> {
+        self.with_engine(|_, e| e.set_metered(metered))
     }
 
     /// Install the platform's attestation (PROTOCOL.md §9.2). Without one,

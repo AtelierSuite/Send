@@ -246,6 +246,7 @@
     <string name="other_device_connecting_body">透過網際網路連線比在本地網路中更慢。</string>
     <string name="other_device_scan_prompt">掃描對方裝置上的代碼</string>
     <string name="error_relay_file_too_large">Wooosh 無法讓兩台裝置直連。透過間接連線時，檔案必須小於 %1$s。請重試，或改用允許直連的網路。</string>
+    <string name="error_relay_metered_file_too_large">Wooosh 無法讓兩台裝置直連，且其中一台正在使用行動數據。此時檔案必須小於 %1$s。請連上 Wi-Fi 後再試一次。</string>
     <string name="other_device_send">傳送</string>
     <string name="other_device_receive">接收</string>
     <string name="internet_send_title">透過網際網路傳送</string>

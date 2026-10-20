@@ -246,6 +246,7 @@
     <string name="other_device_connecting_body">通过互联网连接比在本地网络中更慢。</string>
     <string name="other_device_scan_prompt">扫描对方设备上的代码</string>
     <string name="error_relay_file_too_large">Wooosh 无法让两台设备直连。通过间接连接时，文件必须小于 %1$s。请重试，或改用允许直连的网络。</string>
+    <string name="error_relay_metered_file_too_large">Wooosh 无法让两台设备直连，且其中一台正在使用移动数据。此时文件必须小于 %1$s。请连接 Wi-Fi 后重试。</string>
     <string name="other_device_send">发送</string>
     <string name="other_device_receive">接收</string>
     <string name="internet_send_title">通过互联网发送</string>

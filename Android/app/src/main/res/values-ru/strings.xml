@@ -282,6 +282,7 @@
     <string name="other_device_connecting_body">Подключение через интернет занимает больше времени, чем в локальной сети.</string>
     <string name="other_device_scan_prompt">Отсканируйте код другого устройства</string>
     <string name="error_relay_file_too_large">Wooosh не смог соединить устройства напрямую. При непрямом соединении файлы должны быть меньше %1$s. Попробуйте снова или используйте сеть, допускающую прямое соединение.</string>
+    <string name="error_relay_metered_file_too_large">Wooosh не смог соединить устройства напрямую, а одно из них использует мобильный интернет. В этом случае файлы должны быть меньше %1$s. Попробуйте снова через Wi-Fi.</string>
     <string name="other_device_send">Отправить</string>
     <string name="other_device_receive">Получить</string>
     <string name="internet_send_title">Отправить через интернет</string>

@@ -315,7 +315,7 @@ New in v2:
 
 ```
 peer   {}                                              // rendezvous → both, once both are admitted
-cand   { c: [{ kind: "host"|"srflx"|"mapped", a: "ip:port" }], ufrag, mac }  // forwarded untouched
+cand   { c: [{ kind: "host"|"srflx"|"mapped", a: "ip:port" }], ufrag, m, mac }  // forwarded untouched
 go     {}                                              // rendezvous → both, once both sent cand: start punching
 path   { direct: true }                                // client → rendezvous, informational
 bye    {}                                              // either side: close the room
@@ -339,7 +339,7 @@ Relay frames (§9.6) are **binary** frames, `0x05` followed by `[u16 len][datagr
 Each client runs **one UDP socket** for the session. QUIC, STUN, and punch probes share it, demultiplexed by first byte (RFC 9443: `0x00–0x03` STUN, `0x40–0x7F`/`0xC0–0xFF` QUIC; probes use STUN Binding with a Wooosh attribute).
 
 1. **Gather.** `host`: every interface address, with link-local omitted and loopback last (it is how two sessions on one machine meet; a peer elsewhere can never validate it). `srflx`: STUN Binding to the STUN server (`stun.cloudflare.com:3478` by default) from the session socket, over each address family it resolves to. `mapped`: a UPnP-IGD / NAT-PMP / PCP mapping where the router allows one; specified but **not implemented** (n0's standalone `portmapper` crate is the candidate). Gathering is capped at 2 s.
-2. **Exchange.** `cand` to the room, with `ufrag` 8 random bytes (hex) and `mac = BLAKE3-keyed(k_room, "wooosh cand\0" ‖ ufrag ‖ ("\n" ‖ kind ‖ "|" ‖ addr)*)[0..16]`, hex. `k_room = BLAKE3-derive-key("wooosh room v2", tok)` for tickets, `rk` from BLE INFO for `peer` rooms. The rendezvous cannot compute `k_room`, so it cannot inject candidates the other client will accept. A bad `mac` is dropped.
+2. **Exchange.** `cand` to the room, with `ufrag` 8 random bytes (hex), `m` true when the sender is on mobile data (§9.6), and `mac = BLAKE3-keyed(k_room, "wooosh cand\0" ‖ ufrag ‖ ("\0m1" if m else "\0m0") ‖ ("\n" ‖ kind ‖ "|" ‖ addr)*)[0..16]`, hex. `k_room = BLAKE3-derive-key("wooosh room v2", tok)` for tickets, `rk` from BLE INFO for `peer` rooms. The rendezvous cannot compute `k_room`, so it cannot inject candidates the other client will accept. A bad `mac` is dropped.
 3. **Punch.** On `go`, both sides send probes to every candidate of the other, every 100 ms, for the 5 s punch window and then the 15 s upgrade window, and answer probes they receive. A probe is a STUN Binding request whose `0xC057` attribute is `BLAKE3-keyed(k_room, "wooosh probe req" ‖ txid)[0..16]`; the answer is a Binding success carrying `XOR-MAPPED-ADDRESS` and `BLAKE3-keyed(k_room, "wooosh probe resp" ‖ txid)[0..16]`. The first candidate whose probe is answered correctly is the **direct path**.
 4. **Connect.** After the punch window the redeemer (for `peer` and `pair` rooms, the side with the lower `ufrag`) dials QUIC over the **path-selecting socket** (below), relayed if no direct path was found.
 
@@ -351,7 +351,12 @@ Hole punching does not always succeed. Endpoint-dependent mapping on both sides 
 
 When no direct path forms, datagrams travel inside `RELAY` frames over the room's WebSocket. The Durable Object forwards each frame to the other occupant and does nothing else with it.
 
-**On a relayed connection no single file may exceed `RELAY_MAX_FILE_BYTES` (1 GiB).** A direct path has no limit.
+**On a relayed connection no single file may exceed `RELAY_MAX_FILE_BYTES` (1 GiB), or `RELAY_METERED_MAX_FILE_BYTES` (10 MB, 10 000 000 bytes) when either device is on mobile data.** A direct path has no limit.
+
+**Mobile data** is what the OS reports, never inferred from IP addresses or NAT behaviour: `NWPath.isExpensive` on Apple platforms (cellular, and a Mac on a phone's hotspot), the absence of `NET_CAPABILITY_NOT_METERED` on Android, and a `NetworkCostType` other than `Unrestricted` on Windows. The CLI takes `--metered`. Shells report changes to the core as they happen (`set_metered`).
+
+- Each side applies the smaller cap if **it** is on mobile data now, or if the **peer** said so in its `cand` (§9.5). The peer's flag is fixed at session setup and covered by the candidate MAC, so the rendezvous cannot clear it. A peer that moves onto mobile data later still enforces the cap itself, as a receiver, by declining.
+- Failure under the smaller cap is reported as `RELAY_METERED_FILE_TOO_LARGE`, so shells can name mobile data as the reason.
 
 - An implementation MUST wait for a direct path before applying the cap: **15 s** from the send request.
 - The sender MUST check **before the OFFER** (§5), on metadata only, so an oversized file fails without a wasted hash pass.

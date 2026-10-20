@@ -143,7 +143,7 @@ export class Room extends DurableObject<Env> {
         const o = this.other(ws);
         if (!o || att(o).state !== "admitted") return;
         // Forwarded untouched: the MAC is the receiver's to check (§9.5).
-        send(o, { t: "cand", c: m.c, ufrag: m.ufrag, mac: m.mac });
+        send(o, { t: "cand", c: m.c, ufrag: m.ufrag, m: m.m, mac: m.mac });
         if (att(o).candSent) {
           send(ws, { t: "go" });
           send(o, { t: "go" });

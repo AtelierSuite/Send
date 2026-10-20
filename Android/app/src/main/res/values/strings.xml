@@ -456,6 +456,7 @@
     <string name="other_device_connecting_body">Connecting over the internet takes longer than on a local network.</string>
     <string name="other_device_scan_prompt">Scan the code from the other device</string>
     <string name="error_relay_file_too_large">Wooosh could not connect the two devices directly. Over an indirect connection, files must be under %1$s. Try again, or use a network that allows a direct connection.</string>
+    <string name="error_relay_metered_file_too_large">Wooosh could not connect the two devices directly, and one of them is on mobile data. In that case, files must be under %1$s. Try again on Wi-Fi.</string>
     <string name="other_device_send">Send</string>
     <string name="other_device_receive">Receive</string>
     <string name="internet_send_title">Send Over Internet</string>

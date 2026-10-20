@@ -542,6 +542,11 @@ RustBuffer uniffi_wooosh_core_fn_method_woooshcore_send(void*_Nonnull ptr, RustB
 void uniffi_wooosh_core_fn_method_woooshcore_set_attestor(void*_Nonnull ptr, void*_Nonnull attestor, RustCallStatus *_Nonnull out_status
 );
 #endif
+#ifndef UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_FN_METHOD_WOOOSHCORE_SET_METERED
+#define UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_FN_METHOD_WOOOSHCORE_SET_METERED
+void uniffi_wooosh_core_fn_method_woooshcore_set_metered(void*_Nonnull ptr, int8_t metered, RustCallStatus *_Nonnull out_status
+);
+#endif
 #ifndef UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_FN_METHOD_WOOOSHCORE_SET_RENDEZVOUS_URL
 #define UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_FN_METHOD_WOOOSHCORE_SET_RENDEZVOUS_URL
 void uniffi_wooosh_core_fn_method_woooshcore_set_rendezvous_url(void*_Nonnull ptr, RustBuffer url, RustCallStatus *_Nonnull out_status
@@ -590,6 +595,12 @@ RustBuffer uniffi_wooosh_core_fn_func_parse_pairing_qr(RustBuffer payload, RustC
 #ifndef UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_FN_FUNC_RELAY_MAX_FILE_BYTES
 #define UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_FN_FUNC_RELAY_MAX_FILE_BYTES
 uint64_t uniffi_wooosh_core_fn_func_relay_max_file_bytes(RustCallStatus *_Nonnull out_status
+    
+);
+#endif
+#ifndef UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_FN_FUNC_RELAY_METERED_MAX_FILE_BYTES
+#define UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_FN_FUNC_RELAY_METERED_MAX_FILE_BYTES
+uint64_t uniffi_wooosh_core_fn_func_relay_metered_max_file_bytes(RustCallStatus *_Nonnull out_status
     
 );
 #endif
@@ -903,6 +914,12 @@ uint16_t uniffi_wooosh_core_checksum_func_relay_max_file_bytes(void
     
 );
 #endif
+#ifndef UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_CHECKSUM_FUNC_RELAY_METERED_MAX_FILE_BYTES
+#define UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_CHECKSUM_FUNC_RELAY_METERED_MAX_FILE_BYTES
+uint16_t uniffi_wooosh_core_checksum_func_relay_metered_max_file_bytes(void
+    
+);
+#endif
 #ifndef UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_CHECKSUM_METHOD_ATTESTOR_KIND
 #define UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_CHECKSUM_METHOD_ATTESTOR_KIND
 uint16_t uniffi_wooosh_core_checksum_method_attestor_kind(void
@@ -1056,6 +1073,12 @@ uint16_t uniffi_wooosh_core_checksum_method_woooshcore_send(void
 #ifndef UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_CHECKSUM_METHOD_WOOOSHCORE_SET_ATTESTOR
 #define UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_CHECKSUM_METHOD_WOOOSHCORE_SET_ATTESTOR
 uint16_t uniffi_wooosh_core_checksum_method_woooshcore_set_attestor(void
+    
+);
+#endif
+#ifndef UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_CHECKSUM_METHOD_WOOOSHCORE_SET_METERED
+#define UNIFFI_FFIDEF_UNIFFI_WOOOSH_CORE_CHECKSUM_METHOD_WOOOSHCORE_SET_METERED
+uint16_t uniffi_wooosh_core_checksum_method_woooshcore_set_metered(void
     
 );
 #endif

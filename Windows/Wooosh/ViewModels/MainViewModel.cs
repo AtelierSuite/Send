@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using Microsoft.UI.Dispatching;
+using Windows.Networking.Connectivity;
 using Wooosh.Core;
 using Wooosh.Discovery;
 using Wooosh.Localization;
@@ -94,6 +95,8 @@ public sealed partial class MainViewModel : ObservableObject, IAsyncDisposable
             DeviceId = _core.DeviceId;
             FingerprintPhrase = _core.FingerprintPhrase;
             StartupError = null;
+            UpdateMetered(null);
+            NetworkInformation.NetworkStatusChanged += UpdateMetered;
         }
         catch (CoreException e)
         {
@@ -179,6 +182,21 @@ public sealed partial class MainViewModel : ObservableObject, IAsyncDisposable
         }
     }
 
+    /// <summary>Raised on a background thread; the core call is non-blocking.</summary>
+    private void UpdateMetered(object? sender)
+    {
+        var cost = NetworkInformation.GetInternetConnectionProfile()?.GetConnectionCost();
+        var metered = cost is not null && cost.NetworkCostType != NetworkCostType.Unrestricted;
+        try
+        {
+            _core.SetMetered(metered);
+        }
+        catch (CoreException)
+        {
+            // Not started: the next start reads the current state.
+        }
+    }
+
     private TransferViewModel? Find(TransferId id) =>
         Transfers.FirstOrDefault(transfer => transfer.Id.Equals(id));
 
@@ -204,6 +222,7 @@ public sealed partial class MainViewModel : ObservableObject, IAsyncDisposable
     public async ValueTask DisposeAsync()
     {
         _core.EventReceived -= OnCoreEvent;
+        NetworkInformation.NetworkStatusChanged -= UpdateMetered;
         foreach (var hold in _wakeHolds.Values)
         {
             hold.Dispose();

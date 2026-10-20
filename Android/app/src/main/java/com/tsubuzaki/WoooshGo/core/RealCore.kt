@@ -1,6 +1,9 @@
 package com.tsubuzaki.WoooshGo.core
 
 import android.content.Context
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkCapabilities
 import android.net.Uri
 import android.os.SystemClock
 import android.provider.OpenableColumns
@@ -61,6 +64,16 @@ class RealCore(
 
     @Volatile
     private var started = false
+
+    private val connectivity = appContext.getSystemService(ConnectivityManager::class.java)
+
+    /** Mobile data lowers the relayed file cap for both devices (PROTOCOL.md §9.6). */
+    private val meteredCallback = object : ConnectivityManager.NetworkCallback() {
+        override fun onCapabilitiesChanged(network: Network, caps: NetworkCapabilities) {
+            val metered = !caps.hasCapability(NetworkCapabilities.NET_CAPABILITY_NOT_METERED)
+            runCatching { ffi.setMetered(metered) }
+        }
+    }
 
     override fun start(config: CoreConfig) {
         if (started) return
@@ -126,11 +139,13 @@ class RealCore(
             throw CoreException("Timed out starting the Wooosh core")
         }
         failure?.let { throw CoreException(userMessage(it), it) }
+        connectivity.registerDefaultNetworkCallback(meteredCallback)
     }
 
     override fun stop() {
         if (!started) return
         started = false
+        runCatching { connectivity.unregisterNetworkCallback(meteredCallback) }
         runCatching { ffi.stop() }.onFailure { Log.w(TAG, "core stop failed", it) }
     }
 
@@ -610,12 +625,16 @@ class RealCore(
         }
     )
 
-    private fun userMessage(error: Throwable): String =
-        appContext.getString(messageRes(error))
+    private fun userMessage(error: Throwable): String = when (error) {
+        is WoooshException.RelayFileTooLarge -> relayLimitMessage(appContext, metered = false)
+        is WoooshException.RelayMeteredFileTooLarge -> relayLimitMessage(appContext, metered = true)
+        else -> appContext.getString(messageRes(error))
+    }
 
     /** The core's exception detail strings are untranslatable and log-shaped, never copy. */
     private fun messageRes(error: Throwable): Int = when (error) {
         is WoooshException.RelayFileTooLarge -> R.string.error_relay_file_too_large
+        is WoooshException.RelayMeteredFileTooLarge -> R.string.error_relay_metered_file_too_large
         is WoooshException.RelayUnavailable -> R.string.error_relay_unavailable
         is WoooshException.RendezvousQuota -> R.string.error_internet_quota
         is WoooshException.RendezvousUnavailable, is WoooshException.RendezvousRetry ->
