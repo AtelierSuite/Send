@@ -5,6 +5,16 @@
   "groups" : [
     {
       "blend-mode" : "normal",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "specular" : true,
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      },
+      "blur-material" : 0.5,
       "layers" : [
         {
           "fill-specializations" : [
@@ -66,8 +76,30 @@
                 ]
               }
             }
+          ],
+          "fill-specializations" : [
+            {
+              "appearance" : "dark",
+              "value" : {
+                "solid" : "srgb:1.00000,1.00000,1.00000,1.00000"
+              }
+            }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "blend-mode" : "normal",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "specular" : true,
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      },
+      "layers" : [
         {
           "glass" : true,
           "hidden" : false,
@@ -218,16 +250,7 @@
             }
           ]
         }
-      ],
-      "shadow" : {
-        "kind" : "neutral",
-        "opacity" : 0.5
-      },
-      "specular" : true,
-      "translucency" : {
-        "enabled" : true,
-        "value" : 0.5
-      }
+      ]
     }
   ],
   "supported-platforms" : {
