@@ -738,7 +738,7 @@
     <comment>Status while the code is being minted.</comment>
   </data>
   <data name="InternetServiceNote" xml:space="preserve">
-    <value>Een code ophalen maakt contact met de server van Send, zodat de twee apparaten elkaar vinden. Die bewaart niets over ze, en bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is.</value>
+    <value>Een code ophalen maakt contact met de server van Send, zodat de twee apparaten elkaar vinden. Die ziet nooit bestandsnamen of -inhoud, en bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is.</value>
     <comment>Explains what getting an internet code contacts.</comment>
   </data>
   <data name="ErrorTicketFailed" xml:space="preserve">

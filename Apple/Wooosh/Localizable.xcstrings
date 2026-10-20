@@ -9540,85 +9540,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Beim Abrufen eines Codes kontaktiert Send seinen Server, damit sich die beiden Geräte finden. Er speichert nichts über sie, und Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht."
+            "value": "Beim Abrufen eines Codes kontaktiert Send seinen Server, damit sich die beiden Geräte finden. Er sieht nie Dateinamen oder -inhalte, und Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Getting a code contacts the Send server so the two devices can find each other. It keeps no record of them, and files travel directly between the devices whenever a direct route exists."
+            "value": "Getting a code contacts the Send server so the two devices can find each other. It never sees file names or contents, and files travel directly between the devices whenever a direct route exists."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Obtener un código contacta con el servidor de Send para que los dos dispositivos se encuentren. No guarda ningún registro de ellos, y los archivos viajan directamente entre los dispositivos siempre que haya una ruta directa."
+            "value": "Obtener un código contacta con el servidor de Send para que los dos dispositivos se encuentren. Nunca ve nombres ni contenido de archivos, y estos viajan directamente entre los dispositivos siempre que haya una ruta directa."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Obtenir un code contacte le serveur Send pour que les deux appareils se trouvent. Il ne conserve aucune trace d'eux, et les fichiers passent directement d'un appareil à l'autre dès qu'une route directe existe."
+            "value": "Obtenir un code contacte le serveur Send pour que les deux appareils se trouvent. Il ne voit jamais le nom ni le contenu des fichiers, et ceux-ci passent directement d'un appareil à l'autre dès qu'une route directe existe."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ottenere un codice contatta il server di Send perché i due dispositivi si trovino. Non ne conserva alcuna traccia, e i file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto."
+            "value": "Ottenere un codice contatta il server di Send perché i due dispositivi si trovino. Non vede mai nomi né contenuti dei file, e i file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "コードを取得すると、2 台のデバイスが互いを見つけられるよう Send のサーバーに接続します。サーバーは記録を残さず、直接の経路があればファイルはデバイス間で直接送られます。"
+            "value": "コードを取得すると、2 台のデバイスが互いを見つけられるよう Send のサーバーに接続します。サーバーがファイル名や内容を見ることはなく、直接の経路があればファイルはデバイス間で直接送られます。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "코드를 받으면 두 기기가 서로를 찾을 수 있도록 Send 서버에 연결합니다. 서버는 기록을 남기지 않으며, 직접 연결할 수 있으면 파일은 기기 간에 직접 전송됩니다."
+            "value": "코드를 받으면 두 기기가 서로를 찾을 수 있도록 Send 서버에 연결합니다. 서버는 파일 이름이나 내용을 볼 수 없으며, 직접 연결할 수 있으면 파일은 기기 간에 직접 전송됩니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Een code ophalen maakt contact met de server van Send, zodat de twee apparaten elkaar vinden. Die bewaart niets over ze, en bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is."
+            "value": "Een code ophalen maakt contact met de server van Send, zodat de twee apparaten elkaar vinden. Die ziet nooit bestandsnamen of -inhoud, en bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pobranie kodu łączy się z serwerem Send, aby oba urządzenia mogły się odnaleźć. Serwer nie przechowuje o nich żadnych danych, a pliki są przesyłane bezpośrednio, gdy tylko istnieje bezpośrednia trasa."
+            "value": "Pobranie kodu łączy się z serwerem Send, aby oba urządzenia mogły się odnaleźć. Serwer nigdy nie widzi nazw ani zawartości plików, a pliki są przesyłane bezpośrednio, gdy tylko istnieje bezpośrednia trasa."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Obter um código contata o servidor do Send para que os dois dispositivos se encontrem. Ele não guarda nenhum registro deles, e os arquivos vão direto de um dispositivo para o outro sempre que houver uma rota direta."
+            "value": "Obter um código contata o servidor do Send para que os dois dispositivos se encontrem. Ele nunca vê nomes nem conteúdo de arquivos, e os arquivos vão direto de um dispositivo para o outro sempre que houver uma rota direta."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Чтобы устройства нашли друг друга, при получении кода Send обращается к своему серверу. Он ничего о них не хранит, а файлы передаются напрямую, когда есть прямой маршрут."
+            "value": "Чтобы устройства нашли друг друга, при получении кода Send обращается к своему серверу. Он никогда не видит имена и содержимое файлов, а файлы передаются напрямую, когда есть прямой маршрут."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "När du hämtar en kod kontaktar Send sin server så att enheterna hittar varandra. Den sparar inget om dem, och filer skickas direkt mellan enheterna när det finns en direkt väg."
+            "value": "När du hämtar en kod kontaktar Send sin server så att enheterna hittar varandra. Den ser aldrig filnamn eller innehåll, och filer skickas direkt mellan enheterna när det finns en direkt väg."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "获取代码时会联系 Send 服务器，让两台设备找到彼此。服务器不会保留任何记录，只要存在直接路径，文件就会在设备之间直接传输。"
+            "value": "获取代码时会联系 Send 服务器，让两台设备找到彼此。服务器看不到文件名或文件内容，只要存在直接路径，文件就会在设备之间直接传输。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "取得代碼時會聯絡 Send 伺服器，讓兩台裝置找到彼此。伺服器不會保留任何紀錄，只要有直接路徑，檔案就會在裝置之間直接傳輸。"
+            "value": "取得代碼時會聯絡 Send 伺服器，讓兩台裝置找到彼此。伺服器看不到檔名或檔案內容，只要有直接路徑，檔案就會在裝置之間直接傳輸。"
           }
         }
       }
@@ -17186,85 +17186,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send bringt die beiden Geräte über einen eigenen Server zusammen, der nichts über sie speichert. Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht."
+            "value": "Send bringt die beiden Geräte über einen eigenen Server zusammen, der nie Dateinamen oder -inhalte sieht. Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send introduces the two devices through its own server, which keeps no record of them. Files travel directly between the devices whenever a direct route exists."
+            "value": "Send introduces the two devices through its own server, which never sees file names or contents. Files travel directly between the devices whenever a direct route exists."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send pone en contacto los dos dispositivos con su propio servidor, que no guarda ningún registro de ellos. Los archivos viajan directamente entre los dispositivos siempre que haya una ruta directa."
+            "value": "Send pone en contacto los dos dispositivos con su propio servidor, que nunca ve nombres ni contenido de archivos. Los archivos viajan directamente entre los dispositivos siempre que haya una ruta directa."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send met les deux appareils en relation grâce à son propre serveur, qui ne conserve aucune trace d'eux. Les fichiers passent directement d'un appareil à l'autre dès qu'une route directe existe."
+            "value": "Send met les deux appareils en relation grâce à son propre serveur, qui ne voit jamais le nom ni le contenu des fichiers. Les fichiers passent directement d'un appareil à l'autre dès qu'une route directe existe."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send mette in contatto i due dispositivi tramite il proprio server, che non ne conserva alcuna traccia. I file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto."
+            "value": "Send mette in contatto i due dispositivi tramite il proprio server, che non vede mai nomi né contenuti dei file. I file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send は独自のサーバーで 2 台のデバイスを引き合わせます。サーバーはデバイスの記録を残しません。直接の経路があれば、ファイルはデバイス間で直接送られます。"
+            "value": "Send は独自のサーバーで 2 台のデバイスを引き合わせます。サーバーがファイル名や内容を見ることはありません。直接の経路があれば、ファイルはデバイス間で直接送られます。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send는 자체 서버로 두 기기를 연결해 줍니다. 서버는 기기에 대한 기록을 남기지 않습니다. 직접 연결할 수 있으면 파일은 기기 간에 직접 전송됩니다."
+            "value": "Send는 자체 서버로 두 기기를 연결해 줍니다. 서버는 파일 이름이나 내용을 볼 수 없습니다. 직접 연결할 수 있으면 파일은 기기 간에 직접 전송됩니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send brengt de twee apparaten samen via een eigen server, die niets over ze bewaart. Bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is."
+            "value": "Send brengt de twee apparaten samen via een eigen server, die nooit bestandsnamen of -inhoud ziet. Bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send łączy oba urządzenia przez własny serwer, który nie przechowuje o nich żadnych danych. Pliki są przesyłane bezpośrednio między urządzeniami, gdy tylko istnieje bezpośrednia trasa."
+            "value": "Send łączy oba urządzenia przez własny serwer, który nigdy nie widzi nazw ani zawartości plików. Pliki są przesyłane bezpośrednio między urządzeniami, gdy tylko istnieje bezpośrednia trasa."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Send apresenta os dois dispositivos por meio do próprio servidor, que não guarda nenhum registro deles. Os arquivos vão direto de um dispositivo para o outro sempre que houver uma rota direta."
+            "value": "O Send apresenta os dois dispositivos por meio do próprio servidor, que nunca vê nomes nem conteúdo de arquivos. Os arquivos vão direto de um dispositivo para o outro sempre que houver uma rota direta."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send связывает два устройства через собственный сервер, который ничего о них не хранит. Файлы передаются напрямую между устройствами, когда есть прямой маршрут."
+            "value": "Send связывает два устройства через собственный сервер, который никогда не видит имена и содержимое файлов. Файлы передаются напрямую между устройствами, когда есть прямой маршрут."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send för samman de två enheterna via en egen server som inte sparar något om dem. Filer skickas direkt mellan enheterna när det finns en direkt väg."
+            "value": "Send för samman de två enheterna via en egen server som aldrig ser filnamn eller innehåll. Filer skickas direkt mellan enheterna när det finns en direkt väg."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send 通过自己的服务器为两台设备牵线，服务器不会保留任何记录。只要存在直接路径，文件就会在设备之间直接传输。"
+            "value": "Send 通过自己的服务器为两台设备牵线，服务器看不到文件名或文件内容。只要存在直接路径，文件就会在设备之间直接传输。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Send 透過自己的伺服器為兩台裝置牽線，伺服器不會保留任何紀錄。只要有直接路徑，檔案就會在裝置之間直接傳輸。"
+            "value": "Send 透過自己的伺服器為兩台裝置牽線，伺服器看不到檔名或檔案內容。只要有直接路徑，檔案就會在裝置之間直接傳輸。"
           }
         }
       }

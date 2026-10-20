@@ -738,7 +738,7 @@
     <comment>Status while the code is being minted.</comment>
   </data>
   <data name="InternetServiceNote" xml:space="preserve">
-    <value>Ottenere un codice contatta il server di Send perché i due dispositivi si trovino. Non ne conserva alcuna traccia, e i file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto.</value>
+    <value>Ottenere un codice contatta il server di Send perché i due dispositivi si trovino. Non vede mai nomi né contenuti dei file, e i file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto.</value>
     <comment>Explains what getting an internet code contacts.</comment>
   </data>
   <data name="ErrorTicketFailed" xml:space="preserve">

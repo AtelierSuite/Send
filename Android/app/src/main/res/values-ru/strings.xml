@@ -259,7 +259,7 @@
     <string name="pairing_scan_accepts">Здесь подходят и коды сопряжения, и интернет-коды.</string>
     <string name="pairing_code_detected">Код распознан</string>
     <string name="internet_intro_body">Send может подключаться и через интернет, к устройству вне этой сети. Получите код и передайте его устройству, которое будет отправлять файлы.</string>
-    <string name="internet_service_note">Чтобы устройства нашли друг друга, при получении кода Send обращается к своему серверу. Он ничего о них не хранит, а файлы передаются напрямую, когда есть прямой маршрут.</string>
+    <string name="internet_service_note">Чтобы устройства нашли друг друга, при получении кода Send обращается к своему серверу. Он никогда не видит имена и содержимое файлов, а файлы передаются напрямую, когда есть прямой маршрут.</string>
     <string name="internet_preparing">Готовим код. Это займёт несколько секунд.</string>
     <string name="internet_ready_body">Отсканируйте этот код устройством, которое будет отправлять файлы, или скопируйте его и передайте по надёжному каналу.</string>
     <string name="internet_expiry">Код действует один раз и истекает через две минуты.</string>
@@ -270,7 +270,7 @@
     <string name="settings_internet_wooosh">Send</string>
     <string name="settings_internet_custom">Свой</string>
     <string name="settings_internet_server_url">Адрес сервера</string>
-    <string name="settings_internet_wooosh_footer">Send связывает два устройства через собственный сервер, который ничего о них не хранит. Файлы передаются напрямую между устройствами, когда есть прямой маршрут.</string>
+    <string name="settings_internet_wooosh_footer">Send связывает два устройства через собственный сервер, который никогда не видит имена и содержимое файлов. Файлы передаются напрямую между устройствами, когда есть прямой маршрут.</string>
     <string name="settings_internet_custom_footer">Send использует указанный сервер. Другое устройство должно использовать тот же сервер.</string>
     <string name="error_internet_server_invalid">Этот адрес сервера недействителен. Send сохранил прежнюю настройку.</string>
     <string name="settings_internet_off">Выключено</string>

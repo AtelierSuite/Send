@@ -247,7 +247,7 @@
     <string name="pairing_scan_accepts">Les codes d\'association et les codes Internet fonctionnent tous les deux ici.</string>
     <string name="pairing_code_detected">Code détecté</string>
     <string name="internet_intro_body">Send peut aussi se connecter par Internet, pour un appareil qui n\'est pas sur ce réseau. Obtenez un code, puis donnez-le à l\'appareil qui enverra les fichiers.</string>
-    <string name="internet_service_note">Obtenir un code contacte le serveur Send pour que les deux appareils se trouvent. Il ne conserve aucune trace d\'eux, et les fichiers passent directement d\'un appareil à l\'autre dès qu\'une route directe existe.</string>
+    <string name="internet_service_note">Obtenir un code contacte le serveur Send pour que les deux appareils se trouvent. Il ne voit jamais le nom ni le contenu des fichiers, et ceux-ci passent directement d\'un appareil à l\'autre dès qu\'une route directe existe.</string>
     <string name="internet_preparing">Préparation d\'un code. Cela prend quelques secondes.</string>
     <string name="internet_ready_body">Scannez ce code avec l\'appareil qui enverra les fichiers, ou copiez-le et envoyez-le par un canal de confiance.</string>
     <string name="internet_expiry">Ce code fonctionne une seule fois et expire après deux minutes.</string>
@@ -258,7 +258,7 @@
     <string name="settings_internet_wooosh">Send</string>
     <string name="settings_internet_custom">Le mien</string>
     <string name="settings_internet_server_url">Adresse du serveur</string>
-    <string name="settings_internet_wooosh_footer">Send met les deux appareils en relation grâce à son propre serveur, qui ne conserve aucune trace d\'eux. Les fichiers passent directement d\'un appareil à l\'autre dès qu\'une route directe existe.</string>
+    <string name="settings_internet_wooosh_footer">Send met les deux appareils en relation grâce à son propre serveur, qui ne voit jamais le nom ni le contenu des fichiers. Les fichiers passent directement d\'un appareil à l\'autre dès qu\'une route directe existe.</string>
     <string name="settings_internet_custom_footer">Send utilise le serveur que vous indiquez. L\'autre appareil doit utiliser le même serveur.</string>
     <string name="error_internet_server_invalid">Cette adresse de serveur n\'est pas valide. Send a conservé le réglage précédent.</string>
     <string name="settings_internet_off">Désactivé</string>

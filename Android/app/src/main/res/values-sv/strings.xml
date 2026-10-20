@@ -235,7 +235,7 @@
     <string name="pairing_scan_accepts">Både kopplingskoder och internetkoder fungerar här.</string>
     <string name="pairing_code_detected">Kod hittad</string>
     <string name="internet_intro_body">Send kan även ansluta via internet, till en enhet som inte finns i det här nätverket. Hämta en kod och ge den till enheten som ska skicka filerna.</string>
-    <string name="internet_service_note">När du hämtar en kod kontaktar Send sin server så att enheterna hittar varandra. Den sparar inget om dem, och filer skickas direkt mellan enheterna när det finns en direkt väg.</string>
+    <string name="internet_service_note">När du hämtar en kod kontaktar Send sin server så att enheterna hittar varandra. Den ser aldrig filnamn eller innehåll, och filer skickas direkt mellan enheterna när det finns en direkt väg.</string>
     <string name="internet_preparing">Förbereder en kod. Det tar några sekunder.</string>
     <string name="internet_ready_body">Skanna den här koden med enheten som ska skicka filerna, eller kopiera den och skicka den via en kanal du litar på.</string>
     <string name="internet_expiry">Den här koden fungerar en gång och upphör efter två minuter.</string>
@@ -246,7 +246,7 @@
     <string name="settings_internet_wooosh">Send</string>
     <string name="settings_internet_custom">Egen</string>
     <string name="settings_internet_server_url">Serveradress</string>
-    <string name="settings_internet_wooosh_footer">Send för samman de två enheterna via en egen server som inte sparar något om dem. Filer skickas direkt mellan enheterna när det finns en direkt väg.</string>
+    <string name="settings_internet_wooosh_footer">Send för samman de två enheterna via en egen server som aldrig ser filnamn eller innehåll. Filer skickas direkt mellan enheterna när det finns en direkt väg.</string>
     <string name="settings_internet_custom_footer">Send använder servern du anger. Den andra enheten måste använda samma server.</string>
     <string name="error_internet_server_invalid">Den serveradressen är ogiltig. Send behöll den tidigare inställningen.</string>
     <string name="settings_internet_off">Av</string>

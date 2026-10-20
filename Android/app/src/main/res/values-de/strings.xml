@@ -235,7 +235,7 @@
     <string name="pairing_scan_accepts">Hier funktionieren sowohl Kopplungscodes als auch Internetcodes.</string>
     <string name="pairing_code_detected">Code erkannt</string>
     <string name="internet_intro_body">Send kann sich auch über das Internet verbinden, für ein Gerät außerhalb dieses Netzwerks. Hole einen Code und gib ihn dem Gerät, das die Dateien sendet.</string>
-    <string name="internet_service_note">Beim Abrufen eines Codes kontaktiert Send seinen Server, damit sich die beiden Geräte finden. Er speichert nichts über sie, und Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht.</string>
+    <string name="internet_service_note">Beim Abrufen eines Codes kontaktiert Send seinen Server, damit sich die beiden Geräte finden. Er sieht nie Dateinamen oder -inhalte, und Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht.</string>
     <string name="internet_preparing">Ein Code wird vorbereitet. Das dauert ein paar Sekunden.</string>
     <string name="internet_ready_body">Scanne diesen Code mit dem Gerät, das die Dateien sendet, oder kopiere ihn und sende ihn über einen Weg, dem du vertraust.</string>
     <string name="internet_expiry">Dieser Code funktioniert einmal und läuft nach zwei Minuten ab.</string>
@@ -246,7 +246,7 @@
     <string name="settings_internet_wooosh">Send</string>
     <string name="settings_internet_custom">Eigenes</string>
     <string name="settings_internet_server_url">Serveradresse</string>
-    <string name="settings_internet_wooosh_footer">Send bringt die beiden Geräte über einen eigenen Server zusammen, der nichts über sie speichert. Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht.</string>
+    <string name="settings_internet_wooosh_footer">Send bringt die beiden Geräte über einen eigenen Server zusammen, der nie Dateinamen oder -inhalte sieht. Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht.</string>
     <string name="settings_internet_custom_footer">Send nutzt den eingetragenen Server. Das andere Gerät muss denselben Server nutzen.</string>
     <string name="error_internet_server_invalid">Diese Serveradresse ist ungültig. Send hat die vorherige Einstellung behalten.</string>
     <string name="settings_internet_off">Aus</string>

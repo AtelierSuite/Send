@@ -235,7 +235,7 @@
     <string name="pairing_scan_accepts">Zowel koppelcodes als internetcodes werken hier.</string>
     <string name="pairing_code_detected">Code herkend</string>
     <string name="internet_intro_body">Send kan ook via internet verbinden, voor een apparaat dat niet op dit netwerk zit. Vraag een code aan en geef die aan het apparaat dat de bestanden verstuurt.</string>
-    <string name="internet_service_note">Een code ophalen maakt contact met de server van Send, zodat de twee apparaten elkaar vinden. Die bewaart niets over ze, en bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is.</string>
+    <string name="internet_service_note">Een code ophalen maakt contact met de server van Send, zodat de twee apparaten elkaar vinden. Die ziet nooit bestandsnamen of -inhoud, en bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is.</string>
     <string name="internet_preparing">Een code wordt klaargemaakt. Dit duurt een paar seconden.</string>
     <string name="internet_ready_body">Scan deze code met het apparaat dat de bestanden verstuurt, of kopieer hem en stuur hem via een kanaal dat je vertrouwt.</string>
     <string name="internet_expiry">Deze code werkt één keer en verloopt na twee minuten.</string>
@@ -246,7 +246,7 @@
     <string name="settings_internet_wooosh">Send</string>
     <string name="settings_internet_custom">Eigen</string>
     <string name="settings_internet_server_url">Serveradres</string>
-    <string name="settings_internet_wooosh_footer">Send brengt de twee apparaten samen via een eigen server, die niets over ze bewaart. Bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is.</string>
+    <string name="settings_internet_wooosh_footer">Send brengt de twee apparaten samen via een eigen server, die nooit bestandsnamen of -inhoud ziet. Bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is.</string>
     <string name="settings_internet_custom_footer">Send gebruikt de server die je invult. Het andere apparaat moet dezelfde server gebruiken.</string>
     <string name="error_internet_server_invalid">Dat serveradres is ongeldig. Send heeft de vorige instelling behouden.</string>
     <string name="settings_internet_off">Uit</string>

@@ -738,7 +738,7 @@
     <comment>Status while the code is being minted.</comment>
   </data>
   <data name="InternetServiceNote" xml:space="preserve">
-    <value>Beim Abrufen eines Codes kontaktiert Send seinen Server, damit sich die beiden Geräte finden. Er speichert nichts über sie, und Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht.</value>
+    <value>Beim Abrufen eines Codes kontaktiert Send seinen Server, damit sich die beiden Geräte finden. Er sieht nie Dateinamen oder -inhalte, und Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht.</value>
     <comment>Explains what getting an internet code contacts.</comment>
   </data>
   <data name="ErrorTicketFailed" xml:space="preserve">

@@ -433,7 +433,7 @@
     <string name="pairing_scan_accepts">Pairing codes and internet codes both work here.</string>
     <string name="pairing_code_detected">Code Detected</string>
     <string name="internet_intro_body">Send can also connect over the internet, for a device that is not on this network. Get a code, then give it to the device that will send the files.</string>
-    <string name="internet_service_note">Getting a code contacts the Send server so the two devices can find each other. It keeps no record of them, and files travel directly between the devices whenever a direct route exists.</string>
+    <string name="internet_service_note">Getting a code contacts the Send server so the two devices can find each other. It never sees file names or contents, and files travel directly between the devices whenever a direct route exists.</string>
     <string name="internet_preparing">Getting a code ready. This takes a few seconds.</string>
     <string name="internet_ready_body">Scan this code with the device that will send the files, or copy it and send it over a channel you trust.</string>
     <string name="internet_expiry">This code works once and expires after two minutes.</string>
@@ -444,7 +444,7 @@
     <string name="settings_internet_wooosh">Send</string>
     <string name="settings_internet_custom">My Own</string>
     <string name="settings_internet_server_url">Server Address</string>
-    <string name="settings_internet_wooosh_footer">Send introduces the two devices through its own server, which keeps no record of them. Files travel directly between the devices whenever a direct route exists.</string>
+    <string name="settings_internet_wooosh_footer">Send introduces the two devices through its own server, which never sees file names or contents. Files travel directly between the devices whenever a direct route exists.</string>
     <string name="settings_internet_custom_footer">Send uses the server you enter. The other device must use the same server.</string>
     <string name="error_internet_server_invalid">That server address is not valid. Send kept the previous setting.</string>
     <string name="settings_internet_off">Off</string>

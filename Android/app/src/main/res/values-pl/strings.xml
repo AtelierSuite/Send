@@ -259,7 +259,7 @@
     <string name="pairing_scan_accepts">Działają tu zarówno kody parowania, jak i kody internetowe.</string>
     <string name="pairing_code_detected">Wykryto kod</string>
     <string name="internet_intro_body">Send może połączyć się także przez internet, z urządzeniem spoza tej sieci. Pobierz kod i przekaż go urządzeniu, które wyśle pliki.</string>
-    <string name="internet_service_note">Pobranie kodu łączy się z serwerem Send, aby oba urządzenia mogły się odnaleźć. Serwer nie przechowuje o nich żadnych danych, a pliki są przesyłane bezpośrednio, gdy tylko istnieje bezpośrednia trasa.</string>
+    <string name="internet_service_note">Pobranie kodu łączy się z serwerem Send, aby oba urządzenia mogły się odnaleźć. Serwer nigdy nie widzi nazw ani zawartości plików, a pliki są przesyłane bezpośrednio, gdy tylko istnieje bezpośrednia trasa.</string>
     <string name="internet_preparing">Przygotowywanie kodu. Zajmie to kilka sekund.</string>
     <string name="internet_ready_body">Zeskanuj ten kod urządzeniem, które wyśle pliki, albo skopiuj go i prześlij zaufanym kanałem.</string>
     <string name="internet_expiry">Ten kod działa raz i wygasa po dwóch minutach.</string>
@@ -270,7 +270,7 @@
     <string name="settings_internet_wooosh">Send</string>
     <string name="settings_internet_custom">Własny</string>
     <string name="settings_internet_server_url">Adres serwera</string>
-    <string name="settings_internet_wooosh_footer">Send łączy oba urządzenia przez własny serwer, który nie przechowuje o nich żadnych danych. Pliki są przesyłane bezpośrednio między urządzeniami, gdy tylko istnieje bezpośrednia trasa.</string>
+    <string name="settings_internet_wooosh_footer">Send łączy oba urządzenia przez własny serwer, który nigdy nie widzi nazw ani zawartości plików. Pliki są przesyłane bezpośrednio między urządzeniami, gdy tylko istnieje bezpośrednia trasa.</string>
     <string name="settings_internet_custom_footer">Send korzysta z podanego serwera. Drugie urządzenie musi używać tego samego serwera.</string>
     <string name="error_internet_server_invalid">Ten adres serwera jest nieprawidłowy. Send zachował poprzednie ustawienie.</string>
     <string name="settings_internet_off">Wyłączone</string>

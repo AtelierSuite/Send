@@ -226,7 +226,7 @@ Everything above describes packets on a LAN. §9 defines the second path they ca
 
 The rendezvous is a matchmaker. It is never a party to the Send handshake, so a compromised or hostile rendezvous can deny service but cannot read, forge, or redirect a session to anyone other than the pinned key (§9.10).
 
-**Storage rule (normative).** The rendezvous MUST NOT write to Durable Object storage, KV, D1, R2, or any log sink. All state (rooms, quota counters) lives in Durable Object memory and dies with the object. Workers Logs and Logpush are disabled. Cloudflare's own edge request metadata is outside the project's control and is disclosed as such in DESIGN.md §9.5.
+**Storage rule (normative).** The rendezvous MUST NOT write to Durable Object storage, KV, D1, or R2, and MUST NOT log payloads, candidates, tokens, or keys. All state (rooms, quota counters) lives in Durable Object memory and dies with the object. Workers Logs (observability) is enabled for operating the service, so Cloudflare keeps per-request invocation logs (time, URL path including the room id, status, request metadata) under its retention policy; Logpush is disabled. Both are disclosed in DESIGN.md §9.5.
 
 ### 9.2 Admission (device attestation)
 
@@ -410,7 +410,7 @@ The room is opaque to the rendezvous, which cannot recover either key from it. I
 
 ### 9.10 Threat notes specific to the rendezvous
 
-- The rendezvous sees: client IP addresses, room ids, message timing and sizes, admission tier, and (in the room) the address candidates of both clients. It does not see identity keys, tokens, display names, file names, or file data.
+- The rendezvous sees: client IP addresses, room ids, message timing and sizes, admission tier, and (in the room) the address candidates of both clients. It does not see identity keys, tokens, display names, file names, or file data. Request-level metadata (time, room id, status) is retained in Cloudflare Workers Logs.
 - A hostile rendezvous can **drop** or **delay**. It cannot inject candidates (MAC'd with a key it lacks), redeem a ticket (it never sees `tok`), or impersonate a peer (TLS pins `nid`). The worst case is denial of service, never a downgrade.
 - Relayed bytes are QUIC ciphertext. The §9.6 cap bounds what a relay ever carries; anything larger only crosses a direct path.
 - Attestation is not anonymity-neutral: App Attest, Play Integrity, and TPM evidence identify a device to Apple, Google, or a TPM vendor's certificate chain respectively during admission. The Worker reduces that to a daily-rotating quota key and keeps nothing.

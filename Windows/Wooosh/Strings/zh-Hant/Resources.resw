@@ -718,7 +718,7 @@
     <comment>Status while the code is being minted.</comment>
   </data>
   <data name="InternetServiceNote" xml:space="preserve">
-    <value>取得代碼時會聯絡 Send 伺服器，讓兩台裝置找到彼此。伺服器不會保留任何紀錄，只要有直接路徑，檔案就會在裝置之間直接傳輸。</value>
+    <value>取得代碼時會聯絡 Send 伺服器，讓兩台裝置找到彼此。伺服器看不到檔名或檔案內容，只要有直接路徑，檔案就會在裝置之間直接傳輸。</value>
     <comment>Explains what getting an internet code contacts.</comment>
   </data>
   <data name="ErrorTicketFailed" xml:space="preserve">

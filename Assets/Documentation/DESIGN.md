@@ -1,6 +1,6 @@
 # Send — System Design
 
-AirDrop-style file sharing for Android, iOS, macOS, and Windows. Minimal UI, native on every platform, end-to-end encrypted, no accounts. The only server is a stateless rendezvous Worker on Cloudflare that introduces devices across networks and stores nothing (§9).
+AirDrop-style file sharing for Android, iOS, macOS, and Windows. Minimal UI, native on every platform, end-to-end encrypted, no accounts. The only server is a stateless rendezvous Worker on Cloudflare that introduces devices across networks and stores no data of its own (§9).
 
 Companion document: [PROTOCOL.md](PROTOCOL.md) — wire protocol, discovery format, and the key-sharing/pairing cryptography.
 
@@ -31,7 +31,7 @@ Companion document: [PROTOCOL.md](PROTOCOL.md) — wire protocol, discovery form
 
 ### Constraints
 - Native UI per platform: Kotlin/Jetpack Compose (Android), SwiftUI (iOS + macOS), WinUI 3 (Windows).
-- The only backend is Send Rendezvous, a Cloudflare Worker on the free plan (§9.1). It stores nothing, admits only attested clients, and carries file data only on the capped relay fallback. Everything else stays peer to peer.
+- The only backend is Send Rendezvous, a Cloudflare Worker on the free plan (§9.1). It stores no data of its own, admits only attested clients, and carries file data only on the capped relay fallback. Everything else stays peer to peer.
 
 ---
 
@@ -401,7 +401,7 @@ Windows PCs without a TPM 2.0 that exposes an EK certificate (some older or VM i
 
 The core learns the production URL at build time from `WOOOSH_RENDEZVOUS_URL` (see `Core/build-bindings.sh`); a build without it reports that no service is configured until Settings names one.
 
-`wrangler.jsonc` declares no KV, D1, or R2 bindings, `observability.enabled = false`, and `logpush = false`. Its `dev` environment (`--env dev`) is a second Worker, `wooosh-rendezvous-dev`, carrying the debug-build allowlist; the production Worker has no bypass. The test suite reads the same file, so the two cannot drift.
+`wrangler.jsonc` declares no KV, D1, or R2 bindings, `observability.enabled = true` (Workers Logs, for operating the service), and `logpush = false`. Its `dev` environment (`--env dev`) is a second Worker, `wooosh-rendezvous-dev`, carrying the debug-build allowlist; the production Worker has no bypass. The test suite reads the same file, so the two cannot drift.
 
 ### 9.4 Cost on the Cloudflare free plan
 
@@ -420,7 +420,7 @@ If usage outgrows this, Workers Paid ($5/month) raises every limit by orders of 
 
 ### 9.5 Privacy
 
-The rendezvous **stores nothing**: no Durable Object storage writes, no KV/D1/R2, no logs (PROTOCOL.md §9.1).
+The rendezvous **stores no data of its own**: no Durable Object storage writes, no KV/D1/R2 (PROTOCOL.md §9.1). Workers Logs is enabled, so Cloudflare keeps a log line per request (time, URL path including the room id, status, and request metadata) for its standard retention period. Room ids are random and meaningless outside one introduction; file names, contents, keys, and tokens never reach the Worker.
 
 What it necessarily **sees**, in memory, while a room is open: both clients' IP addresses and address candidates, the room id, message timing and sizes, and each client's admission tier. What it **never sees**: identity keys, ticket tokens, display names, file names, file contents. Relayed bytes are QUIC ciphertext.
 
@@ -464,7 +464,7 @@ Bluetooth (§9.6) finds and pairs devices with no shared network, but moving the
 - **The default is Paired only**, on every shell. The core deliberately has no default (`Config.visibility` is required), so each shell sets it. A fresh install on a shared network — an office, a dorm, a café — should not be reachable by strangers before the user has opted in, and the QR carve-out means the safe default still cannot block its own pairing flow. `wooosh-cli` keeps `--visibility everyone` as its default because it is a test harness driven by an explicit flag, not a shipped product surface.
 - Discovery broadcasts contain only: display name, device type, protocol version, port, and a *rotating* discovery ID — the long-term identity key is never broadcast, so passive listeners can't track a device across networks by key.
 - Files never touch their final destination until hash-verified; staging is app-private.
-- No accounts, no telemetry. The one server, Send Rendezvous, stores nothing and never sees keys, tokens, names, or file contents (§9.5).
+- No accounts, no telemetry. The one server, Send Rendezvous, stores no data of its own and never sees keys, tokens, names, or file contents; Cloudflare keeps its request logs (§9.5).
 
 ---
 

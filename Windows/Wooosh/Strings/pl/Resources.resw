@@ -778,7 +778,7 @@
     <comment>Status while the code is being minted.</comment>
   </data>
   <data name="InternetServiceNote" xml:space="preserve">
-    <value>Pobranie kodu łączy się z serwerem Send, aby oba urządzenia mogły się odnaleźć. Serwer nie przechowuje o nich żadnych danych, a pliki są przesyłane bezpośrednio, gdy tylko istnieje bezpośrednia trasa.</value>
+    <value>Pobranie kodu łączy się z serwerem Send, aby oba urządzenia mogły się odnaleźć. Serwer nigdy nie widzi nazw ani zawartości plików, a pliki są przesyłane bezpośrednio, gdy tylko istnieje bezpośrednia trasa.</value>
     <comment>Explains what getting an internet code contacts.</comment>
   </data>
   <data name="ErrorTicketFailed" xml:space="preserve">

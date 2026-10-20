@@ -1,5 +1,6 @@
 // Wooosh Rendezvous (DESIGN.md §9, PROTOCOL.md §9). Introduces two devices and
-// stores nothing: no KV, D1, R2, Durable Object storage or logs.
+// stores nothing itself: no KV, D1, R2 or Durable Object storage. Requests are
+// logged by Cloudflare Workers Logs (PROTOCOL.md §9.1).
 
 import type { Env } from "./env";
 

@@ -223,7 +223,7 @@
     <string name="pairing_scan_accepts">配對碼與網際網路代碼在這裡都可以使用。</string>
     <string name="pairing_code_detected">已辨識代碼</string>
     <string name="internet_intro_body">Send 也可以透過網際網路連線到不在此網路中的裝置。取得一個代碼，然後交給要傳送檔案的裝置。</string>
-    <string name="internet_service_note">取得代碼時會聯絡 Send 伺服器，讓兩台裝置找到彼此。伺服器不會保留任何紀錄，只要有直接路徑，檔案就會在裝置之間直接傳輸。</string>
+    <string name="internet_service_note">取得代碼時會聯絡 Send 伺服器，讓兩台裝置找到彼此。伺服器看不到檔名或檔案內容，只要有直接路徑，檔案就會在裝置之間直接傳輸。</string>
     <string name="internet_preparing">正在準備代碼，需要幾秒鐘。</string>
     <string name="internet_ready_body">用要傳送檔案的裝置掃描此代碼，或複製後透過你信任的管道傳送。</string>
     <string name="internet_expiry">此代碼僅可使用一次，兩分鐘後失效。</string>
@@ -234,7 +234,7 @@
     <string name="settings_internet_wooosh">Send</string>
     <string name="settings_internet_custom">自有</string>
     <string name="settings_internet_server_url">伺服器位址</string>
-    <string name="settings_internet_wooosh_footer">Send 透過自己的伺服器為兩台裝置牽線，伺服器不會保留任何紀錄。只要有直接路徑，檔案就會在裝置之間直接傳輸。</string>
+    <string name="settings_internet_wooosh_footer">Send 透過自己的伺服器為兩台裝置牽線，伺服器看不到檔名或檔案內容。只要有直接路徑，檔案就會在裝置之間直接傳輸。</string>
     <string name="settings_internet_custom_footer">Send 使用你填寫的伺服器。對方裝置也必須使用同一台伺服器。</string>
     <string name="error_internet_server_invalid">該伺服器位址無效，Send 保留了先前的設定。</string>
     <string name="settings_internet_off">關閉</string>

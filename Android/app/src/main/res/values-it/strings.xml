@@ -235,7 +235,7 @@
     <string name="pairing_scan_accepts">Qui funzionano sia i codici di abbinamento sia i codici internet.</string>
     <string name="pairing_code_detected">Codice rilevato</string>
     <string name="internet_intro_body">Send può connettersi anche via internet, per un dispositivo che non è su questa rete. Richiedi un codice e dallo al dispositivo che invierà i file.</string>
-    <string name="internet_service_note">Ottenere un codice contatta il server di Send perché i due dispositivi si trovino. Non ne conserva alcuna traccia, e i file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto.</string>
+    <string name="internet_service_note">Ottenere un codice contatta il server di Send perché i due dispositivi si trovino. Non vede mai nomi né contenuti dei file, e i file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto.</string>
     <string name="internet_preparing">Preparazione di un codice. Richiede qualche secondo.</string>
     <string name="internet_ready_body">Scansiona questo codice con il dispositivo che invierà i file, oppure copialo e invialo tramite un canale di cui ti fidi.</string>
     <string name="internet_expiry">Questo codice funziona una volta e scade dopo due minuti.</string>
@@ -246,7 +246,7 @@
     <string name="settings_internet_wooosh">Send</string>
     <string name="settings_internet_custom">Personale</string>
     <string name="settings_internet_server_url">Indirizzo del server</string>
-    <string name="settings_internet_wooosh_footer">Send mette in contatto i due dispositivi tramite il proprio server, che non ne conserva alcuna traccia. I file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto.</string>
+    <string name="settings_internet_wooosh_footer">Send mette in contatto i due dispositivi tramite il proprio server, che non vede mai nomi né contenuti dei file. I file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto.</string>
     <string name="settings_internet_custom_footer">Send usa il server che inserisci. L\'altro dispositivo deve usare lo stesso server.</string>
     <string name="error_internet_server_invalid">Questo indirizzo del server non è valido. Send ha mantenuto l\'impostazione precedente.</string>
     <string name="settings_internet_off">Disattivato</string>
