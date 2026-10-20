@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Peer Arc, Devices: The two ends are devices, not points: phone to phone over a dotted path.
+    Layer: Path.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="375.4" cy="513.1" r="26.0" opacity="0.70"/>
+    <circle cx="413.1" cy="459.5" r="26.0" opacity="0.70"/>
+    <circle cx="459.5" cy="413.1" r="26.0" opacity="0.70"/>
+    <circle cx="513.1" cy="375.4" r="26.0" opacity="0.70"/>
+  </g>
+</svg>

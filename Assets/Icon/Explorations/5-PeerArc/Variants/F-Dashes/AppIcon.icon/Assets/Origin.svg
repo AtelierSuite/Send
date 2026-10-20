@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Peer Arc, Dashes: Rounded dashes instead of dots: heavier, so the path holds up at small sizes.
+    Layer: Origin.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="324.0" cy="704.0" r="88" opacity="0.5"/>
+  </g>
+</svg>

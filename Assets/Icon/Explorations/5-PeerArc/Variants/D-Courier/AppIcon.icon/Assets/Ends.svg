@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Peer Arc, Courier: A file in flight at the top of the arc, between two devices: the file is the subject.
+    Layer: Ends.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="324.0" cy="704.0" r="88" opacity="0.45"/>
+    <circle cx="704.0" cy="324.0" r="88" opacity="0.7"/>
+  </g>
+</svg>

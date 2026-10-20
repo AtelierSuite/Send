@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Peer Arc, ArrowArc: A solid arc ending in an arrowhead at the receiver: unmistakably one way.
+    Layer: Destination.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="704.0" cy="324.0" r="100" opacity="0.95"/>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Peer Arc, Arrival: Rings around the receiver show it picking up what the dots carry.
+    Layer: Path.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="351.0" cy="563.4" r="24.0" opacity="0.45"/>
+    <circle cx="404.2" cy="470.5" r="27.0" opacity="0.60"/>
+    <circle cx="481.3" cy="396.1" r="30.0" opacity="0.75"/>
+  </g>
+</svg>

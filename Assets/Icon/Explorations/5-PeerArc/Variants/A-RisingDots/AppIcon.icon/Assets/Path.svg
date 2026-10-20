@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Peer Arc, RisingDots: Dots grow and brighten toward the receiver, so the path reads as travel in one direction.
+    Layer: Path.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="351.0" cy="563.4" r="20.0" opacity="0.40"/>
+    <circle cx="383.1" cy="500.5" r="24.0" opacity="0.51"/>
+    <circle cx="426.3" cy="444.6" r="28.0" opacity="0.62"/>
+    <circle cx="479.1" cy="397.7" r="32.0" opacity="0.74"/>
+    <circle cx="539.6" cy="361.4" r="36.0" opacity="0.85"/>
+  </g>
+</svg>
