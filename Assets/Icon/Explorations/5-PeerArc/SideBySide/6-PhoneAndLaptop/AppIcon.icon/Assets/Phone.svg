@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Side by Side, PhoneAndLaptop: A phone and a laptop on one baseline: across devices, not just phone to phone.
+    Layer: Phone.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M263.0 502.0H337.0A38 38 0 0 1 375.0 540.0V700.0A38 38 0 0 1 337.0 738.0H263.0A38 38 0 0 1 225.0 700.0V540.0A38 38 0 0 1 263.0 502.0Z" opacity="0.45"/>
+  </g>
+</svg>

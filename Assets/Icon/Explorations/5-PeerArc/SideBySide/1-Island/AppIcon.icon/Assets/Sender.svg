@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Side by Side, Island: Solid phones with a Dynamic Island cut out, the smallest mark that says phone.
+    Layer: Sender.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path fill-rule="evenodd" d="M286.0 472.0H374.0A44 44 0 0 1 418.0 516.0V708.0A44 44 0 0 1 374.0 752.0H286.0A44 44 0 0 1 242.0 708.0V516.0A44 44 0 0 1 286.0 472.0ZM308.0 494.0H352.0A12 12 0 0 1 364.0 506.0V506.0A12 12 0 0 1 352.0 518.0H308.0A12 12 0 0 1 296.0 506.0V506.0A12 12 0 0 1 308.0 494.0Z" opacity="0.45"/>
+  </g>
+</svg>

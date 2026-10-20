@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Side by Side, Outline: Phones drawn as frames only: lighter, closer to a line icon.
+    Layer: Sender.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path fill-rule="evenodd" d="M286.0 472.0H374.0A44 44 0 0 1 418.0 516.0V708.0A44 44 0 0 1 374.0 752.0H286.0A44 44 0 0 1 242.0 708.0V516.0A44 44 0 0 1 286.0 472.0ZM286.0 498.0H374.0A18 18 0 0 1 392.0 516.0V708.0A18 18 0 0 1 374.0 726.0H286.0A18 18 0 0 1 268.0 708.0V516.0A18 18 0 0 1 286.0 498.0Z" opacity="0.5"/>
+  </g>
+</svg>

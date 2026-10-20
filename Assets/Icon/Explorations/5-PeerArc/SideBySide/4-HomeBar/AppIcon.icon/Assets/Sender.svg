@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Side by Side, HomeBar: Solid phones with a home indicator cut out along the bottom edge.
+    Layer: Sender.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path fill-rule="evenodd" d="M286.0 472.0H374.0A44 44 0 0 1 418.0 516.0V708.0A44 44 0 0 1 374.0 752.0H286.0A44 44 0 0 1 242.0 708.0V516.0A44 44 0 0 1 286.0 472.0ZM302.0 718.0H358.0A8 8 0 0 1 366.0 726.0V726.0A8 8 0 0 1 358.0 734.0H302.0A8 8 0 0 1 294.0 726.0V726.0A8 8 0 0 1 302.0 718.0Z" opacity="0.45"/>
+  </g>
+</svg>

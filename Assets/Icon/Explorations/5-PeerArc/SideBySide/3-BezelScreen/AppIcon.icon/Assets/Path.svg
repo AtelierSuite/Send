@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Side by Side, BezelScreen: A frame and a translucent screen, so each phone has a face.
+    Layer: Path.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="345.7" cy="388.0" r="18.0" opacity="0.40"/>
+    <circle cx="412.9" cy="309.4" r="21.0" opacity="0.51"/>
+    <circle cx="512.0" cy="280.0" r="24.0" opacity="0.62"/>
+    <circle cx="611.1" cy="309.4" r="27.0" opacity="0.74"/>
+    <circle cx="678.3" cy="388.0" r="30.0" opacity="0.85"/>
+  </g>
+</svg>

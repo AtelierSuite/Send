@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Side by Side, FileOnScreen: The sending phone shows the file it is sending; the path carries it across.
+    Layer: File.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M302.0 559.0H342.0L372.0 589.0V651.0A14 14 0 0 1 358.0 665.0H302.0A14 14 0 0 1 288.0 651.0V573.0A14 14 0 0 1 302.0 559.0Z" opacity="0.95"/>
+  </g>
+</svg>
