@@ -1,6 +1,6 @@
-# Wooosh
+# Send
 
-Encrypted file sharing, local and peer to peer. Native apps for Android, iOS, macOS, and Windows over a shared Rust core. No accounts. The only server is Wooosh Rendezvous, a Cloudflare Worker that introduces devices across networks and stores nothing.
+Encrypted file sharing, local and peer to peer. Native apps for Android, iOS, macOS, and Windows over a shared Rust core. No accounts. The only server is Send Rendezvous, a Cloudflare Worker that introduces devices across networks and stores nothing.
 
 Specs in `Assets/Documentation/` are authoritative and must stay in sync with the code: [DESIGN.md](Assets/Documentation/DESIGN.md), [PROTOCOL.md](Assets/Documentation/PROTOCOL.md), [COPY_STYLE.md](Assets/Documentation/COPY_STYLE.md), [STATUS.md](Assets/Documentation/STATUS.md).
 
@@ -15,8 +15,9 @@ Specs in `Assets/Documentation/` are authoritative and must stay in sync with th
 | `Apple/ci_scripts/` | Xcode Cloud hooks. Must stay beside `Wooosh.xcodeproj` and executable (`100755`). |
 | `Assets/Documentation/` | All docs. No top-level `docs/`. |
 | `Assets/Screenshots/` | All screenshots, never inside platform folders. |
+| `Assets/Icon/` | Icon sources. `Explorations/` holds the candidate designs; the shipped one is copied to `Apple/Wooosh/AppIcon.icon`, and the Android and Windows icons are derived from it. |
 
-Identifiers: `com.tsubuzaki.Wooosh` (Apple), `com.tsubuzaki.WoooshGo` (Android).
+Identifiers: `com.tsubuzaki.Wooosh` (Apple), `com.tsubuzaki.WoooshGo` (Android). The product is **Send** (repo `AtelierSuite/Send`); "Wooosh" survives only in identifiers that must not change: bundle and package IDs, wire strings (`wooosh/1`, `wooosh-net:2`, the mDNS service type, key-derivation labels), on-disk state directories, and internal code names.
 
 ## Build
 Rust is not on `PATH`: `export PATH="/opt/homebrew/opt/rustup/bin:$PATH"`.
@@ -57,6 +58,7 @@ After changing `Core/src`:
 - macOS is first-class, not a port: system toolbar, `Settings { }` scene, Mac-sized controls.
 - iOS sheet buttons are full-width, ≥44pt (aim ~50pt).
 - iOS bare Done/Cancel use `Button(role: .confirm)` / `Button(role: .cancel)` with no label.
+- The app icon follows the Atelier suite: one flat hue (Send is violet, `0.42, 0.30, 0.92`) under white Liquid Glass layers drawn on a 1024 canvas, opacity steps for depth, no gradients in the artwork.
 - Device icons come from the `dt` enum (PROTOCOL.md §3.1). Non-Apple phones use `smartphone`. Unknown values get a neutral glyph.
 
 **Behaviour**
@@ -76,7 +78,7 @@ After changing `Core/src`:
 
 **Copy** (see COPY_STYLE.md)
 - Professional, concise, no jargon.
-- Say "Wooosh", never "this app" or "the app".
+- Say "Send", never "this app" or "the app".
 - No em-dashes.
 - Title Case for buttons, headers, and titles, in English only.
 - Localize everything: en, ja, ko, zh-Hans, zh-Hant, de, es, fr, it, nl, pt-BR, pl, ru, sv. No hardcoded display strings.

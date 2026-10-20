@@ -18,7 +18,7 @@ enum KeepAwake {
             guard activityToken == nil else { return }
             activityToken = ProcessInfo.processInfo.beginActivity(
                 options: .idleSystemSleepDisabled,
-                reason: "Wooosh file transfer in progress"
+                reason: "Send file transfer in progress"
             )
         } else if let token = activityToken {
             ProcessInfo.processInfo.endActivity(token)

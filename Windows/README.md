@@ -1,6 +1,6 @@
-# Wooosh for Windows
+# Send for Windows
 
-WinUI 3 shell for [Wooosh](../README.md). Same shared Rust core as the Apple and Android
+WinUI 3 shell for [Send](../README.md). Same shared Rust core as the Apple and Android
 shells, same protocol, native UI.
 
 > **This has never been compiled or run.** It was written on a Mac, which has no Visual
@@ -37,7 +37,7 @@ target an explicit architecture.
 The first build restores three packages: `Microsoft.WindowsAppSDK`,
 `Microsoft.Windows.SDK.BuildTools` and `System.Security.Cryptography.ProtectedData`.
 
-The app will launch, discover other Wooosh devices on the LAN, and show a red banner saying
+The app will launch, discover other Send devices on the LAN, and show a red banner saying
 it could not start. That is expected and correct: the transfer engine is not linked yet.
 
 ## Layout
@@ -52,7 +52,7 @@ Windows/
     ├── Package.appxmanifest            identity, capabilities, Share Target
     ├── App.xaml / App.xaml.cs          app lifetime, share-target activation
     ├── MainWindow.xaml / .cs           title bar, frame, minimize-to-tray
-    ├── Assets/                         placeholder MSIX logos (see below)
+    ├── Assets/                         MSIX logos, rendered from Apple/Wooosh/AppIcon.icon
     ├── Core/
     │   ├── IWoooshCore.cs              the DESIGN.md §4 contract
     │   ├── CoreModels.cs               Config, PeerRef, TrustedPeerInfo, FileMeta, …
@@ -114,7 +114,7 @@ something the OS already publishes correctly. A third-party mDNS NuGet package h
 problem plus a dependency this project would then own.
 
 The awkward part, documented in `DnssdAdvertiser.cs`: `DnssdServiceInstance` can only be
-registered against a `StreamSocketListener` or a `DatagramSocket`, and Wooosh's listener is
+registered against a `StreamSocketListener` or a `DatagramSocket`, and Send's listener is
 a QUIC UDP socket owned by the core. TCP and UDP port numbers are separate namespaces, so
 the advertiser binds a `StreamSocketListener` on the same port *number* purely to have
 something to attach the registration to. It accepts nothing. DNS-SD convention already puts
@@ -162,7 +162,7 @@ Either way, `IWoooshCore` is the seam and nothing above it has to change.
 
 **There is deliberately no mock implementation.** The Apple and Android shells both had one
 and both had it removed. A shell that can fabricate peers and transfers makes every
-screenshot, demo and bug report ambiguous. When the core is missing, Wooosh says so.
+screenshot, demo and bug report ambiguous. When the core is missing, Send says so.
 
 ### Localization
 
@@ -193,7 +193,7 @@ Two mechanisms are worth flagging:
 ### Accent colour
 
 There is no brand colour anywhere. Everything tinted uses `AccentFillColorDefaultBrush`,
-`AccentTextFillColorPrimaryBrush` and `AccentButtonStyle`, so Wooosh follows the user's
+`AccentTextFillColorPrimaryBrush` and `AccentButtonStyle`, so Send follows the user's
 Windows accent (DESIGN.md §5). `App.xaml` aliases them so a view never reaches for a
 literal.
 
@@ -259,7 +259,7 @@ Everything below is marked with a `TODO(...)` comment at the place it belongs.
    handler in `App.xaml.cs` only logs. It has to stage the `StorageItems` into the local
    folder and report the share operation complete *before* the transfer finishes, or
    Windows keeps the source app blocked for the whole send.
-6. **File Explorer context-menu verb.** DESIGN.md §8 asks for "Send with Wooosh" on
+6. **File Explorer context-menu verb.** DESIGN.md §8 asks for a "Send" verb on
    right-click. On Windows 11 that is a sparse-package `IExplorerCommand` COM server, which
    is a project of its own. `Package.appxmanifest` documents what it needs. An XML-only stub
    would register a verb that does nothing, which is worse than no verb.
@@ -269,11 +269,11 @@ Everything below is marked with a `TODO(...)` comment at the place it belongs.
 8. **`TODO(views)`: the remaining dialogs.** `IncomingOfferDialog` is written but never
    shown; SAS comparison, pairing result and the `KeyChanged` warning have no dialog yet.
    `KeyChanged` in particular must be prominent and must never offer a silent re-pin.
-9. **`TODO(DESIGN.md §6)`: the `Wooosh/<date>` subfolder** for receives of more than 20
+9. **`TODO(DESIGN.md §6)`: the `Send/<date>` subfolder** for receives of more than 20
    files.
-10. **Placeholder art.** `Assets/*.png` are flat grey rectangles at the right dimensions so
-   the package builds. Replace them, and add the scaled variants
-   (`.scale-100/125/150/200/400`) Windows expects.
+10. **Logo scale variants.** `Assets/*.png` are the Send icon at 100% scale only, rendered
+   from `Apple/Wooosh/AppIcon.icon`. Add the scaled variants (`.scale-125/150/200/400`)
+   and the `targetsize-*` taskbar icons Windows expects.
 11. **Package identity.** `Publisher="CN=Tsubuzaki"` is a placeholder for a local
     self-signed test certificate. Replace it before doing anything but F5 on a dev machine.
 12. **UDP discovery fallback** (PROTOCOL.md §3.2, broadcast on 44777). Not implemented here.

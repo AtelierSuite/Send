@@ -60,7 +60,7 @@
 		081D1F9FAF40238650522892 /* WoooshCoreFFI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WoooshCoreFFI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EC2E626FF0A4DD73D9180B0 /* WoooshCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = WoooshCore.xcframework; path = ../Core/dist/WoooshCore.xcframework; sourceTree = "<group>"; };
 		692E606ACBD407A941A647D0 /* WoooshShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WoooshShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F4308E826FC2E6257C310A1 /* Wooosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wooosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F4308E826FC2E6257C310A1 /* Send.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Send.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA211C7A377E1D92E06FB5E6 /* wooosh_core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = wooosh_core.swift; path = ../Core/bindings/swift/wooosh_core.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,7 +159,7 @@
 		F006CAA4588ED7D3F84632F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8F4308E826FC2E6257C310A1 /* Wooosh.app */,
+				8F4308E826FC2E6257C310A1 /* Send.app */,
 				081D1F9FAF40238650522892 /* WoooshCoreFFI.framework */,
 				692E606ACBD407A941A647D0 /* WoooshShareExtension.appex */,
 			);
@@ -210,7 +210,7 @@
 			packageProductDependencies = (
 			);
 			productName = Wooosh;
-			productReference = 8F4308E826FC2E6257C310A1 /* Wooosh.app */;
+			productReference = 8F4308E826FC2E6257C310A1 /* Send.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B0DE3ABF8601D3743D3F600F /* WoooshCoreFFI */ = {
@@ -434,12 +434,13 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Wooosh/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Send;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSBluetoothWhileInUseUsageDescription = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Wooosh uses the camera to scan another device's pairing QR code.";
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Wooosh uses your local network to find nearby devices so you can send and receive files.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Wooosh saves received photos and videos to your Photos library.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Send uses the camera to scan another device's pairing QR code.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Send uses your local network to find nearby devices so you can send and receive files.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Send saves received photos and videos to your Photos library.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,7 +448,8 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.Wooosh;
-				PRODUCT_NAME = Wooosh;
+				PRODUCT_MODULE_NAME = Wooosh;
+				PRODUCT_NAME = Send;
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -598,12 +600,13 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Wooosh/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Send;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSBluetoothWhileInUseUsageDescription = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Wooosh uses the camera to scan another device's pairing QR code.";
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Wooosh uses your local network to find nearby devices so you can send and receive files.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Wooosh saves received photos and videos to your Photos library.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Send uses the camera to scan another device's pairing QR code.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Send uses your local network to find nearby devices so you can send and receive files.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Send saves received photos and videos to your Photos library.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -611,7 +614,8 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.Wooosh;
-				PRODUCT_NAME = Wooosh;
+				PRODUCT_MODULE_NAME = Wooosh;
+				PRODUCT_NAME = Send;
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";

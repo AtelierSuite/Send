@@ -22,7 +22,7 @@
                 Margin="16,0,0,0"
                 VerticalAlignment="Center"
                 Style="{ThemeResource CaptionTextBlockStyle}"
-                Text="Wooosh" />
+                Text="Send" />
         </Border>
 
         <Frame x:Name="RootFrame" Grid.Row="1" />

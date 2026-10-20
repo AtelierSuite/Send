@@ -13,7 +13,7 @@ public sealed partial class MainWindow : Window
     {
         InitializeComponent();
 
-        Title = "Wooosh";
+        Title = "Send";
         ExtendsContentIntoTitleBar = true;
         SetTitleBar(TitleBarArea);
 

@@ -1,6 +1,6 @@
-# Wooosh
+# Send
 
-Wooosh sends files directly between nearby devices on the same network. Transfers are encrypted end to end and go straight from one device to the other, with no accounts, no servers, and nothing stored in the cloud.
+Send sends files directly between nearby devices on the same network. Transfers are encrypted end to end and go straight from one device to the other, with no accounts, no servers, and nothing stored in the cloud.
 
 Devices find each other automatically. Photos and videos land in your photo library on iOS, and everything else goes to Downloads. Apps for iOS, macOS, and Android share one Rust core that handles pairing, encryption, and transfers.
 

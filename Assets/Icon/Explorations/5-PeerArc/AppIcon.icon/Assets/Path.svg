@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Two devices joined by an arc of dots: a direct, peer-to-peer path with nothing in between.
+    The dotted arc between the devices.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M352 604C380 420 490 312 620 300" fill="none" stroke="#FFFFFF" stroke-width="64" stroke-linecap="round" stroke-dasharray="0 120" opacity="0.7"/>
+  </g>
+</svg>

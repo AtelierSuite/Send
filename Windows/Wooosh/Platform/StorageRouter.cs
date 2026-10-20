@@ -14,7 +14,7 @@ public static partial class StorageRouter
     {
         var destination = NextAvailablePath(DownloadsPath(), originalName);
 
-        // TODO(DESIGN.md §6): >20-file receives belong in a Wooosh/<date> subfolder, which needs a count this call lacks.
+        // TODO(DESIGN.md §6): >20-file receives belong in a Send/<date> subfolder, which needs a count this call lacks.
         File.Move(stagedPath, destination, overwrite: false);
         ApplyMarkOfTheWeb(destination);
         return destination;

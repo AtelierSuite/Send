@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Three files sliding to the right, fading behind the leading one: files in motion.
+    The trailing file, faintest.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <rect x="228" y="356" width="256" height="312" rx="48" opacity="0.3"/>
+  </g>
+</svg>

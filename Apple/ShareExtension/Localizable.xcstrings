@@ -2,91 +2,91 @@
   "sourceLanguage": "en",
   "strings": {
     "share_ext_preparing": {
-      "comment": "Status inside the system share sheet while Wooosh copies the shared files.",
+      "comment": "Status inside the system share sheet while Send copies the shared files.",
       "extractionState": "manual",
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Senden mit Wooosh wird vorbereitet …"
+            "value": "Senden wird vorbereitet …"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preparing to send with Wooosh…"
+            "value": "Preparing to send…"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preparando el envío con Wooosh…"
+            "value": "Preparando el envío…"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Préparation de l'envoi avec Wooosh…"
+            "value": "Préparation de l'envoi…"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preparazione dell'invio con Wooosh…"
+            "value": "Preparazione dell'invio…"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh で送信する準備をしています…"
+            "value": "送信の準備をしています…"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh로 보낼 준비 중…"
+            "value": "보낼 준비 중…"
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Versturen met Wooosh voorbereiden…"
+            "value": "Versturen voorbereiden…"
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Przygotowywanie wysyłki przez Wooosh…"
+            "value": "Przygotowywanie wysyłki…"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preparando o envio com o Wooosh…"
+            "value": "Preparando o envio…"
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Подготовка к отправке через Wooosh…"
+            "value": "Подготовка к отправке…"
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Förbereder sändning med Wooosh…"
+            "value": "Förbereder sändning…"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "正在准备通过 Wooosh 发送…"
+            "value": "正在准备发送…"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "正在準備透過 Wooosh 傳送…"
+            "value": "正在準備傳送…"
           }
         }
       }

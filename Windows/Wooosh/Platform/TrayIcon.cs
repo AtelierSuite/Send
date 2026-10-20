@@ -47,7 +47,7 @@ public sealed partial class TrayIcon : IDisposable
             CallbackMessage = WmTrayCallback,
             Icon = LoadIconW(IntPtr.Zero, IdiApplication),
             // The product name is never translated (COPY_STYLE.md §2).
-            Tip = "Wooosh",
+            Tip = "Send",
         };
 
         Shell_NotifyIconW(NimAdd, ref _data);

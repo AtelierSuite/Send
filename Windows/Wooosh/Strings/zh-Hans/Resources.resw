@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
-    Wooosh for Windows. Generated from the shipped Android translations so both
+    Send for Windows. Generated from the shipped Android translations so both
     shells use one term per concept; see Assets/Documentation/COPY_STYLE.md.
     Plural forms are selected by Localization/PluralRules.cs using the CLDR
     category for the resource's locale, so keys carry a .One/.Few/.Many/.Other
@@ -66,7 +66,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppName" xml:space="preserve">
-    <value>Wooosh</value>
+    <value>Send</value>
     <comment>The product name. Never translated (COPY_STYLE.md §2).</comment>
   </data>
   <data name="DeviceKindIPhone" xml:space="preserve">
@@ -222,7 +222,7 @@
     <comment>Title of the empty device list.</comment>
   </data>
   <data name="EmptyBody" xml:space="preserve">
-    <value>同一 Wi-Fi 网络中运行 Wooosh 的设备会自动显示在这里。</value>
+    <value>同一 Wi-Fi 网络中运行 Send 的设备会自动显示在这里。</value>
     <comment>Body of the empty device list.</comment>
   </data>
   <data name="EmptyVisibilityEveryone" xml:space="preserve">
@@ -342,7 +342,7 @@
     <comment>Status while files are being prepared for sending.</comment>
   </data>
   <data name="TransferResumable" xml:space="preserve">
-    <value>{0} Wooosh 可以从中断处继续。</value>
+    <value>{0} Send 可以从中断处继续。</value>
     <comment>Appended to a failure that can continue later. {0} is the failure message.</comment>
   </data>
   <data name="PairingTitle" xml:space="preserve">
@@ -386,7 +386,7 @@
     <comment>Title after a successful pairing. {0} is a device name.</comment>
   </data>
   <data name="PairingSuccessBody" xml:space="preserve">
-    <value>从现在起，Wooosh 会信任这台设备。你不需要再与它核对验证短语。</value>
+    <value>从现在起，Send 会信任这台设备。你不需要再与它核对验证短语。</value>
     <comment>Explanation after a successful pairing.</comment>
   </data>
   <data name="PairingFailedTitle" xml:space="preserve">
@@ -394,7 +394,7 @@
     <comment>Title shown when pairing did not succeed.</comment>
   </data>
   <data name="PairingFailedTitleNamed" xml:space="preserve">
-    <value>Wooosh 无法与 {0} 配对</value>
+    <value>Send 无法与 {0} 配对</value>
     <comment>Title when pairing with a named device failed. {0} is a device name.</comment>
   </data>
   <data name="SasTitle" xml:space="preserve">
@@ -418,7 +418,7 @@
     <comment>Title of the warning that a paired device&#x27;s key changed.</comment>
   </data>
   <data name="KeyChangedBody" xml:space="preserve">
-    <value>“{0}”出示的安全密钥与配对时不同。这通常发生在重新安装 Wooosh 或重置设备之后，但也可能意味着另一台设备正在冒充它。在你重新配对之前，与这台设备的传输会被阻止。</value>
+    <value>“{0}”出示的安全密钥与配对时不同。这通常发生在重新安装 Send 或重置设备之后，但也可能意味着另一台设备正在冒充它。在你重新配对之前，与这台设备的传输会被阻止。</value>
     <comment>Body of the security-key warning. {0} is a device name.</comment>
   </data>
   <data name="KeyChangedExpectedLabel" xml:space="preserve">
@@ -519,10 +519,10 @@
   </data>
   <data name="SettingsStarting" xml:space="preserve">
     <value>正在启动…</value>
-    <comment>Placeholder shown until Wooosh has finished starting up.</comment>
+    <comment>Placeholder shown until Send has finished starting up.</comment>
   </data>
   <data name="ErrorSendFailedTitle" xml:space="preserve">
-    <value>Wooosh 无法发送</value>
+    <value>无法发送</value>
     <comment>Dialog title when a send could not start.</comment>
   </data>
   <data name="ErrorSendFailedBody" xml:space="preserve">
@@ -534,19 +534,19 @@
     <comment>Shown when the chosen files could not be read.</comment>
   </data>
   <data name="ErrorStillResolving" xml:space="preserve">
-    <value>Wooosh 仍在查找 {0}。请稍后重试。</value>
+    <value>Send 仍在查找 {0}。请稍后重试。</value>
     <comment>Shown when a device has been seen but not reached yet. {0} is a device name.</comment>
   </data>
   <data name="ErrorUnreachable" xml:space="preserve">
-    <value>Wooosh 无法确定如何连接“{0}”。它可能刚刚离线。</value>
+    <value>Send 无法确定如何连接“{0}”。它可能刚刚离线。</value>
     <comment>Shown when no address for a device could be worked out. {0} is a device name.</comment>
   </data>
   <data name="ErrorSaveFailed" xml:space="preserve">
-    <value>Wooosh 无法保存此文件。</value>
+    <value>Send 无法保存此文件。</value>
     <comment>Shown when a received file could not be stored.</comment>
   </data>
   <data name="ErrorStorageUnavailable" xml:space="preserve">
-    <value>Wooosh 无法访问用于存放接收文件的文件夹。请检查是否有可用空间，然后重试。</value>
+    <value>Send 无法访问用于存放接收文件的文件夹。请检查是否有可用空间，然后重试。</value>
     <comment>Shown when the folder for received files cannot be used.</comment>
   </data>
   <data name="ErrorPairingRequired" xml:space="preserve">
@@ -554,20 +554,20 @@
     <comment>Core error: the other device accepts paired devices only.</comment>
   </data>
   <data name="ErrorVersionMismatch" xml:space="preserve">
-    <value>该设备运行的 Wooosh 版本不兼容。请在两台设备上更新 Wooosh。</value>
-    <comment>Core error: incompatible Wooosh versions.</comment>
+    <value>该设备运行的 Send 版本不兼容。请在两台设备上更新 Send。</value>
+    <comment>Core error: incompatible Send versions.</comment>
   </data>
   <data name="ErrorKeyChanged" xml:space="preserve">
     <value>该设备出示的安全密钥与配对时不同。请重新配对后继续。</value>
     <comment>Core error: a paired device presented a different key.</comment>
   </data>
   <data name="ErrorQrKeyMismatch" xml:space="preserve">
-    <value>响应的设备与配对码中的设备不符。Wooosh 已停止配对。</value>
+    <value>响应的设备与配对码中的设备不符。Send 已停止配对。</value>
     <comment>Core error: the device that answered is not the one in the pairing code.</comment>
   </data>
   <data name="ErrorInvalidQr" xml:space="preserve">
-    <value>这不是 Wooosh 配对码。</value>
-    <comment>Core error: the scanned or pasted text is not a Wooosh pairing code.</comment>
+    <value>这不是 Send 配对码。</value>
+    <comment>Core error: the scanned or pasted text is not a Send pairing code.</comment>
   </data>
   <data name="ErrorPairingExpired" xml:space="preserve">
     <value>该配对码已失效。请索取一个新的配对码。</value>
@@ -578,7 +578,7 @@
     <comment>Generic pairing failure with no more detail available.</comment>
   </data>
   <data name="ErrorPairingTimeout" xml:space="preserve">
-    <value>Wooosh 未能及时连接到该设备。请确认它仍在显示配对码，并且两台设备位于同一 Wi-Fi 网络中。</value>
+    <value>Send 未能及时连接到该设备。请确认它仍在显示配对码，并且两台设备位于同一 Wi-Fi 网络中。</value>
     <comment>Shown when a pairing attempt ran out of time.</comment>
   </data>
   <data name="ErrorSasTimeout" xml:space="preserve">
@@ -586,7 +586,7 @@
     <comment>Shown when the other device did not confirm the verification code in time.</comment>
   </data>
   <data name="ErrorConnect" xml:space="preserve">
-    <value>Wooosh 无法连接到该设备。请确认两台设备位于同一 Wi-Fi 网络中。</value>
+    <value>Send 无法连接到该设备。请确认两台设备位于同一 Wi-Fi 网络中。</value>
     <comment>Core error: the other device could not be reached at all.</comment>
   </data>
   <data name="ErrorUnknownPeer" xml:space="preserve">
@@ -594,15 +594,15 @@
     <comment>Core error: the connection to that device is gone.</comment>
   </data>
   <data name="ErrorNotStarted" xml:space="preserve">
-    <value>Wooosh 仍在启动中。请稍后重试。</value>
-    <comment>Core error: Wooosh has not finished starting yet.</comment>
+    <value>Send 仍在启动中。请稍后重试。</value>
+    <comment>Core error: Send has not finished starting yet.</comment>
   </data>
   <data name="ErrorCrypto" xml:space="preserve">
-    <value>Wooosh 无法验证安全连接。请重试。</value>
+    <value>Send 无法验证安全连接。请重试。</value>
     <comment>Core error: the secure connection could not be verified.</comment>
   </data>
   <data name="ErrorIo" xml:space="preserve">
-    <value>Wooosh 无法读取或写入文件。请检查是否有可用空间，然后重试。</value>
+    <value>Send 无法读取或写入文件。请检查是否有可用空间，然后重试。</value>
     <comment>Core error: a file could not be read or written.</comment>
   </data>
   <data name="ErrorTransferFailed" xml:space="preserve">
@@ -622,11 +622,11 @@
     <comment>Shown when the other device never answered a request.</comment>
   </data>
   <data name="ErrorCoreStart" xml:space="preserve">
-    <value>Wooosh 无法启动。请关闭 Wooosh 后重新打开。</value>
-    <comment>Shown when Wooosh failed to start up at all.</comment>
+    <value>Send 无法启动。请关闭 Send 后重新打开。</value>
+    <comment>Shown when Send failed to start up at all.</comment>
   </data>
   <data name="ErrorProtocol" xml:space="preserve">
-    <value>对方设备发送了 Wooosh 无法识别的内容。请在两台设备上更新 Wooosh。</value>
+    <value>对方设备发送了 Send 无法识别的内容。请在两台设备上更新 Send。</value>
     <comment>Core error: the other device sent something this build does not understand.</comment>
   </data>
   <data name="OfferTitle.Other" xml:space="preserve">
@@ -650,28 +650,28 @@
     <comment>Summary when every file in a transfer failed. {0} is the file count.</comment>
   </data>
   <data name="TrayOpen" xml:space="preserve">
-    <value>打开 Wooosh</value>
+    <value>打开 Send</value>
     <comment>Notification-area menu item that brings the window back.</comment>
   </data>
   <data name="TrayQuit" xml:space="preserve">
-    <value>退出 Wooosh</value>
-    <comment>Notification-area menu item that shuts Wooosh down completely.</comment>
+    <value>退出 Send</value>
+    <comment>Notification-area menu item that shuts Send down completely.</comment>
   </data>
   <data name="SettingsSectionBackground" xml:space="preserve">
     <value>后台运行</value>
-    <comment>Settings section header for what Wooosh does when the window is closed.</comment>
+    <comment>Settings section header for what Send does when the window is closed.</comment>
   </data>
   <data name="SettingsKeepRunning" xml:space="preserve">
-    <value>关闭窗口后继续运行 Wooosh</value>
-    <comment>Toggle: closing the window leaves Wooosh in the notification area.</comment>
+    <value>关闭窗口后继续运行 Send</value>
+    <comment>Toggle: closing the window leaves Send in the notification area.</comment>
   </data>
   <data name="SettingsKeepRunningDesc" xml:space="preserve">
-    <value>Wooosh 会保留在通知区域，可以继续接收文件。</value>
+    <value>Send 会保留在通知区域，可以继续接收文件。</value>
     <comment>Helper text under the keep-running toggle.</comment>
   </data>
   <data name="ShareTargetTitle" xml:space="preserve">
-    <value>使用 Wooosh 发送</value>
-    <comment>Label Wooosh shows in the Windows share sheet.</comment>
+    <value>Send</value>
+    <comment>Label Send shows in the Windows share sheet.</comment>
   </data>
   <data name="OtherDeviceTitle" xml:space="preserve">
     <value>其他设备</value>
@@ -718,11 +718,11 @@
     <comment>Status while the code is being minted.</comment>
   </data>
   <data name="InternetServiceNote" xml:space="preserve">
-    <value>获取代码时会联系 Wooosh 服务器，让两台设备找到彼此。服务器不会保留任何记录，只要存在直接路径，文件就会在设备之间直接传输。</value>
+    <value>获取代码时会联系 Send 服务器，让两台设备找到彼此。服务器不会保留任何记录，只要存在直接路径，文件就会在设备之间直接传输。</value>
     <comment>Explains what getting an internet code contacts.</comment>
   </data>
   <data name="ErrorTicketFailed" xml:space="preserve">
-    <value>Wooosh 无法获取互联网代码。请检查连接后重试。</value>
+    <value>Send 无法获取互联网代码。请检查连接后重试。</value>
     <comment>Error when the internet code could not be minted.</comment>
   </data>
   <data name="OtherDeviceBodyDesktop" xml:space="preserve">

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generated for Wooosh. Base language is English; see Assets/Documentation/COPY_STYLE.md. -->
+<!-- Generated for Send. Base language is English; see Assets/Documentation/COPY_STYLE.md. -->
 <resources>
     <!-- The product name. Never translated. -->
-    <string name="app_name" translatable="false">Wooosh</string>
+    <string name="app_name" translatable="false">Send</string>
     <!-- Device kinds that are brand names and stay untranslated. -->
     <string name="device_kind_iphone" translatable="false">iPhone</string>
     <string name="device_kind_ipad" translatable="false">iPad</string>
@@ -86,7 +86,7 @@
     <!-- Title of the empty device list. -->
     <string name="empty_title">Looking for Devices</string>
     <!-- Body of the empty device list. -->
-    <string name="empty_body">Devices running Wooosh on the same Wi-Fi network appear here automatically.</string>
+    <string name="empty_body">Devices running Send on the same Wi-Fi network appear here automatically.</string>
     <!-- Extra line on the empty device list when everyone can see this device. -->
     <string name="empty_visibility_everyone">Everyone nearby can see this device.</string>
     <!-- Extra line on the empty device list when only paired devices can see this device. -->
@@ -99,12 +99,12 @@
     <string name="share_batch_waiting">Waiting for “%1$s” to appear nearby.</string>
     <!-- Status shown while shared files are being copied. -->
     <string name="share_preparing">Preparing to share…</string>
-    <!-- Message shown when the share sheet handed Wooosh nothing it can send. -->
+    <!-- Message shown when the share sheet handed Send nothing it can send. -->
     <string name="share_nothing">There is nothing to send.</string>
-    <!-- Status inside the system share sheet while Wooosh copies the shared files. -->
-    <string name="share_ext_preparing">Preparing to send with Wooosh…</string>
+    <!-- Status inside the system share sheet while Send copies the shared files. -->
+    <string name="share_ext_preparing">Preparing to send…</string>
     <!-- Share-shortcut label for a paired device with no name of its own. -->
-    <string name="shortcut_fallback_name">Wooosh device</string>
+    <string name="shortcut_fallback_name">Send device</string>
     <!-- Where a received photo or video was stored: the system Photos library. -->
     <string name="storage_location_photos">Photos</string>
     <!-- Where a received document was stored: the system Files app. -->
@@ -154,7 +154,7 @@
     <!-- Status line for a transfer that finished, when no detail is available. -->
     <string name="transfer_state_done">Done</string>
     <!-- Appended to a failure that can continue later. %1$s is the failure message. -->
-    <string name="transfer_resumable">%1$s Wooosh can pick up where it left off.</string>
+    <string name="transfer_resumable">%1$s Send can pick up where it left off.</string>
     <!-- Progress line. %1$s is bytes done, %2$s the total. -->
     <string name="transfer_progress_bytes">%1$s of %2$s</string>
     <!-- Transfer speed. %1$s is a formatted byte size such as 12 MB. -->
@@ -212,7 +212,7 @@
     <!-- Accessibility label for the QR image. -->
     <string name="pairing_qr_a11y">Pairing QR code</string>
     <!-- Instructions on the scan tab. -->
-    <string name="pairing_scan_body">Point the camera at the pairing code shown in Wooosh on the other device.</string>
+    <string name="pairing_scan_body">Point the camera at the pairing code shown in Send on the other device.</string>
     <!-- Instructions under the live camera view. -->
     <string name="pairing_scan_focus_hint">Point the camera at the pairing code on the other device. Tap to focus.</string>
     <!-- Prompt shown over the camera while scanning. -->
@@ -230,11 +230,11 @@
     <!-- Title after a successful pairing. %1$s is a device name. -->
     <string name="pairing_success_title">Paired with %1$s</string>
     <!-- Explanation after a successful pairing. -->
-    <string name="pairing_success_body">Wooosh trusts this device from now on. You will not need to compare verification phrases with it again.</string>
+    <string name="pairing_success_body">Send trusts this device from now on. You will not need to compare verification phrases with it again.</string>
     <!-- Title shown when pairing did not succeed. -->
     <string name="pairing_failed_title">Pairing Failed</string>
     <!-- Title when pairing with a named device failed. %1$s is a device name. -->
-    <string name="pairing_failed_title_named">Wooosh Couldn\'t Pair with %1$s</string>
+    <string name="pairing_failed_title_named">Send Couldn\'t Pair with %1$s</string>
     <!-- Question asking whether to pair. %1$s is a device name. -->
     <string name="sas_title">Pair with %1$s?</string>
     <!-- Instructions for comparing the six-digit verification code. -->
@@ -246,7 +246,7 @@
     <!-- Title of the warning that a paired device's key changed. -->
     <string name="keychanged_title">Security Key Changed</string>
     <!-- Body of the security-key warning. %1$s is a device name. -->
-    <string name="keychanged_body">“%1$s” is presenting a different security key than when you paired. This usually happens after Wooosh is reinstalled or the device is reset, but it can also mean another device is impersonating it. Transfers with this device are blocked until you pair again.</string>
+    <string name="keychanged_body">“%1$s” is presenting a different security key than when you paired. This usually happens after Send is reinstalled or the device is reset, but it can also mean another device is impersonating it. Transfers with this device are blocked until you pair again.</string>
     <!-- Label above the verification phrase recorded at pairing time. -->
     <string name="keychanged_expected_label">You Paired With</string>
     <!-- Label above the verification phrase the device shows now. -->
@@ -293,14 +293,14 @@
     <string name="settings_device_id">Device ID</string>
     <!-- Helper text under the device identifier. -->
     <string name="settings_device_id_footer">Identifies this device to others when pairing.</string>
-    <!-- Placeholder shown until Wooosh has finished starting up. -->
+    <!-- Placeholder shown until Send has finished starting up. -->
     <string name="settings_starting">Starting…</string>
     <!-- Settings section header shown only when something went wrong. -->
     <string name="settings_section_problem">Problem</string>
     <!-- Description of the Off option. -->
     <string name="settings_visibility_off_desc">This device is hidden and cannot receive files. You can still see other devices and send to them.</string>
     <!-- Alert title when a send could not start. -->
-    <string name="error_send_failed_title">Wooosh Couldn\'t Send</string>
+    <string name="error_send_failed_title">Couldn\'t Send Files</string>
     <!-- Fallback body when a send could not start. -->
     <string name="error_send_failed_body">Those files couldn\'t be sent. Try again.</string>
     <!-- Shown when the chosen files could not be read. -->
@@ -308,25 +308,25 @@
     <!-- Shown when picked photos or videos could not be prepared. -->
     <string name="error_files_unprepared">Those items couldn\'t be prepared for sending. Try again.</string>
     <!-- Shown when a device has been seen but not reached yet. %1$s is a device name. -->
-    <string name="error_still_resolving">Wooosh is still finding %1$s. Try again in a moment.</string>
+    <string name="error_still_resolving">Send is still finding %1$s. Try again in a moment.</string>
     <!-- Shown when no address for a device could be worked out. %1$s is a device name. -->
-    <string name="error_unreachable">Wooosh couldn\'t work out how to reach “%1$s”. It may have just gone offline.</string>
+    <string name="error_unreachable">Send couldn\'t work out how to reach “%1$s”. It may have just gone offline.</string>
     <!-- Shown when a received file could not be stored. -->
-    <string name="error_save_failed">Wooosh couldn\'t save this file.</string>
+    <string name="error_save_failed">Send couldn\'t save this file.</string>
     <!-- Shown when the folder for received files cannot be used. -->
-    <string name="error_storage_unavailable">Wooosh couldn\'t reach the folder for received files. Check that there is free space and try again.</string>
+    <string name="error_storage_unavailable">Send couldn\'t reach the folder for received files. Check that there is free space and try again.</string>
     <!-- Core error: the other device accepts paired devices only. -->
     <string name="error_pairing_required">That device only accepts files from devices it has paired with.</string>
-    <!-- Core error: incompatible Wooosh versions. -->
-    <string name="error_version_mismatch">That device runs a version of Wooosh that is not compatible. Update Wooosh on both devices.</string>
+    <!-- Core error: incompatible Send versions. -->
+    <string name="error_version_mismatch">That device runs a version of Send that is not compatible. Update Send on both devices.</string>
     <!-- Core error: a paired device presented a different key. -->
     <string name="error_key_changed">That device is presenting a different security key than when you paired. Pair again to continue.</string>
     <!-- Core error: the device that answered is not the one in the pairing code. -->
-    <string name="error_qr_key_mismatch">The device that answered is not the one in the pairing code. Wooosh stopped pairing.</string>
-    <!-- Core error: the scanned or pasted text is not a Wooosh pairing code. -->
-    <string name="error_invalid_qr">That is not a Wooosh pairing code.</string>
-    <!-- Shown when a scan produced something that is not a Wooosh pairing code. -->
-    <string name="error_pairing_not_a_code">That is not a Wooosh pairing code. Scan the code shown under Pair a Device on the other device.</string>
+    <string name="error_qr_key_mismatch">The device that answered is not the one in the pairing code. Send stopped pairing.</string>
+    <!-- Core error: the scanned or pasted text is not a Send pairing code. -->
+    <string name="error_invalid_qr">That is not a Send pairing code.</string>
+    <!-- Shown when a scan produced something that is not a Send pairing code. -->
+    <string name="error_pairing_not_a_code">That is not a Send pairing code. Scan the code shown under Pair a Device on the other device.</string>
     <!-- Core error: the pairing code is no longer valid. -->
     <string name="error_pairing_expired">That pairing code has expired. Ask for a fresh one.</string>
     <!-- Shown when a pasted or scanned pairing code was already too old. -->
@@ -334,21 +334,21 @@
     <!-- Generic pairing failure with no more detail available. -->
     <string name="error_pairing_failed">Pairing did not finish. Try again.</string>
     <!-- Shown when a pairing attempt ran out of time. -->
-    <string name="error_pairing_timeout">Wooosh couldn\'t reach that device in time. Check that it is still showing its pairing code and that both devices are on the same Wi-Fi network.</string>
+    <string name="error_pairing_timeout">Send couldn\'t reach that device in time. Check that it is still showing its pairing code and that both devices are on the same Wi-Fi network.</string>
     <!-- Shown when the other device did not confirm the verification code in time. -->
     <string name="error_sas_timeout">The other device didn\'t confirm in time. Start pairing again when both devices are ready.</string>
     <!-- Core error: the other device could not be reached at all. -->
-    <string name="error_connect">Wooosh couldn\'t reach that device. Check that both devices are on the same Wi-Fi network.</string>
+    <string name="error_connect">Send couldn\'t reach that device. Check that both devices are on the same Wi-Fi network.</string>
     <!-- Core error: the connection to that device is gone. -->
     <string name="error_unknown_peer">That device is no longer connected.</string>
-    <!-- Core error: Wooosh has not finished starting yet. -->
-    <string name="error_not_started">Wooosh is still starting. Try again in a moment.</string>
-    <!-- Core error: Wooosh is already running. -->
-    <string name="error_already_started">Wooosh is already running.</string>
+    <!-- Core error: Send has not finished starting yet. -->
+    <string name="error_not_started">Send is still starting. Try again in a moment.</string>
+    <!-- Core error: Send is already running. -->
+    <string name="error_already_started">Send is already running.</string>
     <!-- Core error: the secure connection could not be verified. -->
-    <string name="error_crypto">Wooosh could not verify the secure connection. Try again.</string>
+    <string name="error_crypto">Send could not verify the secure connection. Try again.</string>
     <!-- Core error: a file could not be read or written. -->
-    <string name="error_io">Wooosh could not read or write a file. Check that there is free space and try again.</string>
+    <string name="error_io">Send could not read or write a file. Check that there is free space and try again.</string>
     <!-- Generic transfer failure with no more detail available. -->
     <string name="error_transfer_failed">The transfer stopped before it finished. Try again.</string>
     <!-- Core error: the transfer referenced is no longer active. -->
@@ -359,8 +359,8 @@
     <string name="error_cancelled_by_peer">The other device cancelled the transfer.</string>
     <!-- Shown when the other device never answered a request. -->
     <string name="error_no_answer">The other device didn\'t answer in time.</string>
-    <!-- Shown when Wooosh failed to start up at all. -->
-    <string name="error_core_start">Wooosh could not start. Close Wooosh and open it again.</string>
+    <!-- Shown when Send failed to start up at all. -->
+    <string name="error_core_start">Send could not start. Close Send and open it again.</string>
     <!-- Shown when the other device refused a pairing code that had already been used. -->
     <string name="error_pairing_code_rejected">The other device rejected that pairing code. Each code works only once. Show a fresh one and scan it again.</string>
     <!-- Shown when the person on the other device refused to pair. -->
@@ -368,7 +368,7 @@
     <!-- Shown when the connection died part-way through pairing. -->
     <string name="error_pairing_dropped">The connection dropped before pairing finished. Try again.</string>
     <!-- Core error: the other device sent something this build does not understand. -->
-    <string name="error_protocol">The other device sent something Wooosh did not understand. Update Wooosh on both devices.</string>
+    <string name="error_protocol">The other device sent something Send did not understand. Update Send on both devices.</string>
     <!-- Banner title while files wait to be sent. -->
     <plurals name="share_batch_ready">
         <item quantity="one">%1$d file ready to send</item>
@@ -432,23 +432,23 @@
     <string name="pairing_tab_internet">Internet</string>
     <string name="pairing_scan_accepts">Pairing codes and internet codes both work here.</string>
     <string name="pairing_code_detected">Code Detected</string>
-    <string name="internet_intro_body">Wooosh can also connect over the internet, for a device that is not on this network. Get a code, then give it to the device that will send the files.</string>
-    <string name="internet_service_note">Getting a code contacts the Wooosh server so the two devices can find each other. It keeps no record of them, and files travel directly between the devices whenever a direct route exists.</string>
+    <string name="internet_intro_body">Send can also connect over the internet, for a device that is not on this network. Get a code, then give it to the device that will send the files.</string>
+    <string name="internet_service_note">Getting a code contacts the Send server so the two devices can find each other. It keeps no record of them, and files travel directly between the devices whenever a direct route exists.</string>
     <string name="internet_preparing">Getting a code ready. This takes a few seconds.</string>
     <string name="internet_ready_body">Scan this code with the device that will send the files, or copy it and send it over a channel you trust.</string>
     <string name="internet_expiry">This code works once and expires after two minutes.</string>
     <string name="action_get_internet_code">Get a Code</string>
     <string name="internet_qr_a11y">Internet code as a QR code</string>
-    <string name="error_ticket_failed">Wooosh could not get an internet code. Check the connection and try again.</string>
+    <string name="error_ticket_failed">Send could not get an internet code. Check the connection and try again.</string>
     <string name="settings_section_internet">Internet Connections</string>
-    <string name="settings_internet_wooosh">Wooosh</string>
+    <string name="settings_internet_wooosh">Send</string>
     <string name="settings_internet_custom">My Own</string>
     <string name="settings_internet_server_url">Server Address</string>
-    <string name="settings_internet_wooosh_footer">Wooosh introduces the two devices through its own server, which keeps no record of them. Files travel directly between the devices whenever a direct route exists.</string>
-    <string name="settings_internet_custom_footer">Wooosh uses the server you enter. The other device must use the same server.</string>
-    <string name="error_internet_server_invalid">That server address is not valid. Wooosh kept the previous setting.</string>
+    <string name="settings_internet_wooosh_footer">Send introduces the two devices through its own server, which keeps no record of them. Files travel directly between the devices whenever a direct route exists.</string>
+    <string name="settings_internet_custom_footer">Send uses the server you enter. The other device must use the same server.</string>
+    <string name="error_internet_server_invalid">That server address is not valid. Send kept the previous setting.</string>
     <string name="settings_internet_off">Off</string>
-    <string name="settings_internet_off_footer">Wooosh turns internet transfers off and contacts nothing. Sending works only between devices on the same network.</string>
+    <string name="settings_internet_off_footer">Send turns internet transfers off and contacts nothing. Sending works only between devices on the same network.</string>
     <string name="internet_off_body">Internet transfers are off. Turn them on in Settings to get a code.</string>
     <string name="error_internet_off">That is an internet code, and internet transfers are off. Turn them on in Settings.</string>
     <string name="other_device_title">Other Device</string>
@@ -456,7 +456,7 @@
     <string name="other_device_body">Scan the code from the device you want to send to, or paste it below.</string>
     <string name="other_device_connecting_body">Connecting over the internet takes longer than on a local network.</string>
     <string name="other_device_scan_prompt">Scan the code from the other device</string>
-    <string name="error_relay_file_too_large">Wooosh could not connect the two devices directly. Over an indirect connection, files must be under %1$s. Try again, or use a network that allows a direct connection.</string>
+    <string name="error_relay_file_too_large">Send could not connect the two devices directly. Over an indirect connection, files must be under %1$s. Try again, or use a network that allows a direct connection.</string>
     <string name="other_device_send">Send</string>
     <string name="other_device_receive">Receive</string>
     <string name="internet_send_title">Send Over Internet</string>
@@ -465,14 +465,14 @@
     <string name="internet_send_waiting">Waiting for the other device.</string>
     <string name="internet_send_started_title">Sending</string>
     <string name="internet_send_started_body">The transfer is running. You can follow it in the device list.</string>
-    <string name="internet_relayed_limit">Wooosh could not connect the two devices directly. This connection can only send files up to %1$s.</string>
+    <string name="internet_relayed_limit">Send could not connect the two devices directly. This connection can only send files up to %1$s.</string>
     <string name="internet_connecting_title">Connecting</string>
     <string name="internet_progress_body">Keep the other device on its code screen. Connecting over the internet can take up to a minute.</string>
-    <string name="internet_failed_title_named">Wooosh Couldn\'t Connect to %1$s</string>
-    <string name="error_internet_timeout">Wooosh couldn\'t reach that device in time. Check that it is still showing its code and that both devices have an internet connection.</string>
-    <string name="camera_permission_body">Wooosh needs the camera to read a code. Nothing is recorded or sent.</string>
+    <string name="internet_failed_title_named">Send Couldn\'t Connect to %1$s</string>
+    <string name="error_internet_timeout">Send couldn\'t reach that device in time. Check that it is still showing its code and that both devices have an internet connection.</string>
+    <string name="camera_permission_body">Send needs the camera to read a code. Nothing is recorded or sent.</string>
     <string name="action_allow_camera">Allow Camera</string>
-    <string name="error_relay_unavailable">Wooosh could not connect the two devices directly, and this device cannot use an indirect connection. Try again, or use a network that allows a direct connection.</string>
+    <string name="error_relay_unavailable">Send could not connect the two devices directly, and this device cannot use an indirect connection. Try again, or use a network that allows a direct connection.</string>
     <string name="error_internet_quota">This device has reached today\'s limit for internet transfers. Try again tomorrow, or use the same network as the other device.</string>
-    <string name="error_internet_unavailable">Wooosh could not reach its server. Check the connection and try again later.</string>
+    <string name="error_internet_unavailable">Send could not reach its server. Check the connection and try again later.</string>
 </resources>

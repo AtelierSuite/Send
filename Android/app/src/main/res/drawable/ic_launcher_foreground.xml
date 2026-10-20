@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Paper airplane in perspective: the far wing is foreshortened and dimmer, so
-     the form reads as a solid object banking away rather than a flat arrow.
-     Geometry is pre-scaled into the 72dp safe zone of the 108dp adaptive-icon
-     canvas, so nothing clips under any launcher mask.
-
-     Placed by opacity-weighted area centroid, not bounding box: the nose is a
-     thin point and the wing carries the mass, so centring the box leaves the
-     glyph looking shifted up and to the right. No further optical nudge: an
-     extra shift left was tried and looked worse. -->
+<!-- The paper plane from Assets/Icon/Explorations/1-PaperPlane, same geometry and
+     opacities as the Apple layers. Scaled about the centre so the nose, the
+     farthest point, stays inside the 66dp safe circle under every launcher mask.
+     Also the monochrome layer: themed icons use only the alpha. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="1024"
     android:viewportHeight="1024">
-    <path
-        android:pathData="M 701.2,326.5 L 441.2,630.2 Q 492.2,666.6 557.7,708.2 Z"
-        android:fillColor="#FFFFFF"
-        android:fillAlpha="0.55" />
-    <path
-        android:pathData="M 701.2,326.5 L 441.2,630.2 L 456.8,715.5 Q 459.9,725.9 468.2,716.5 Z"
-        android:fillColor="#FFFFFF"
-        android:fillAlpha="0.78" />
-    <path
-        android:pathData="M 701.2,326.5 L 314.3,479.4 Q 308.1,484.6 315.4,488.8 L 441.2,630.2 Z"
-        android:fillColor="#FFFFFF" />
+    <group
+        android:pivotX="512"
+        android:pivotY="512"
+        android:scaleX="0.69"
+        android:scaleY="0.69">
+        <path
+            android:name="far"
+            android:pathData="M807.7 299.7A28 28 0 0 0 759.6 274.3L481.8 588.1A28 28 0 0 0 481.2 624.5L632.8 809.2A28 28 0 0 0 681.6 798.3Z"
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.5" />
+        <path
+            android:name="keel"
+            android:pathData="M498.1 633.2A18 18 0 0 0 468.5 648.0L476.0 773.8A18 18 0 0 0 505.0 786.9L578.5 729.6A18 18 0 0 0 579.1 701.7Z"
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.75" />
+        <path
+            android:name="near"
+            android:pathData="M751.5 283.4A28 28 0 0 0 719.3 239.2L237.4 450.8A28 28 0 0 0 237.1 501.9L447.2 597.4A28 28 0 0 0 479.7 590.5Z"
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.95" />
+    </group>
 </vector>

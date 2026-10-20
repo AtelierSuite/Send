@@ -1,4 +1,4 @@
-# Wooosh — Implementation Status
+# Send — Implementation Status
 
 Last updated: 2026-10-05. Specs: [DESIGN.md](DESIGN.md), [PROTOCOL.md](PROTOCOL.md), [COPY_STYLE.md](COPY_STYLE.md).
 
@@ -6,7 +6,7 @@ Last updated: 2026-10-05. Specs: [DESIGN.md](DESIGN.md), [PROTOCOL.md](PROTOCOL.
 
 | Component | Builds | Runtime verified | Notes |
 |---|---|---|---|
-| `Core/` (Rust) | ✅ | ✅ 37/37 unit, 22/22 integration (+1 `#[ignore]`d, passing against the Worker under `cf dev`) | QUIC + pairing + transfers + resume; internet path through Wooosh Rendezvous with in-house hole punching and a capped relay (PROTOCOL.md §9). iroh removed |
+| `Core/` (Rust) | ✅ | ✅ 37/37 unit, 22/22 integration (+1 `#[ignore]`d, passing against the Worker under `cf dev`) | QUIC + pairing + transfers + resume; internet path through Send Rendezvous with in-house hole punching and a capped relay (PROTOCOL.md §9). iroh removed |
 | `Apple/` macOS | ✅ | ✅ transfers to iOS and to Android, both directions with the CLI | unsandboxed run only; internet transfer never run across networks |
 | `Apple/` iOS | ✅ | ✅ on device: transfers, Photos routing, camera QR scanning; launches clean in the iOS 26.5 Simulator and discovers a real peer | share extension with a real App Group unverified; internet transfer never run across networks |
 | `Android/` | ✅ | ✅ physical Pixel 7a: discovery, send and receive, pairing, revoke, KEY_CHANGED, QR scanning | internet transfer never run at all, on any network |
@@ -46,7 +46,7 @@ Identity is unified: one Ed25519 keypair per install, held by the core, stored t
 14. **`PairedOnly` killed every internet transfer** (`engine.rs`) — the shipped default on all three shells. The post-HELLO check carved out a pending ticket; the OFFER check did not, and this path never pairs, so `trusted` is always false. The token was redeemed *and burned*, then the connection closed on the OFFER, leaving a dead code. Every pre-existing internet test used `Visibility::Everyone`, which is why it survived. Both directions now tested under `PairedOnly`.
 15. **Android treated ticket redemption as pairing.** `PairingManager` waited for a `PairingResult` this path never emits (it emits `TicketRedeemed`), so a working transfer sat behind a spinner until a 75 s watchdog reported a false "pairing timed out" — labelled "Pairing" throughout, which §9.4 says it is not. A stale `api.rs` doc comment promising `PairingResult` is what led the shell there, having already propagated into the generated bindings and an Apple comment.
 16. **A second internet send silently did nothing** (Android): the recorded redemption was never cleared, so revisiting the Send tab fired against a dead code and returned early on an empty outbox. Apple already cleared it.
-17. **QR scanning appeared to do nothing** (Android) — two causes behind one symptom. ZXing's separate `CaptureActivity` leaves Wooosh no UI surface between detection and the activity finishing, so no alert could appear during the one moment the user is watching. *And* its full-screen preview negotiated a 2560×1280 ultra-wide on which a real pairing QR never decoded at all: 27 s and zero decodes, versus 41 ms once the preview was square. Fixed by embedding the scanner in Compose.
+17. **QR scanning appeared to do nothing** (Android) — two causes behind one symptom. ZXing's separate `CaptureActivity` leaves Send no UI surface between detection and the activity finishing, so no alert could appear during the one moment the user is watching. *And* its full-screen preview negotiated a 2560×1280 ultra-wide on which a real pairing QR never decoded at all: 27 s and zero decodes, versus 41 ms once the preview was square. Fixed by embedding the scanner in Compose.
 
 ## Repository conventions
 
@@ -60,14 +60,14 @@ Identity is unified: one Ed25519 keypair per install, held by the core, stored t
 
 ## What is left
 
-**Migration: iroh → Wooosh Rendezvous (2026-10-05)**
+**Migration: iroh → Send Rendezvous (2026-10-05)**
 
 Decisions: the project runs one server, the Worker; Windows and the CLI attest with a TPM 2.0 rather than a hardware ID string, which would be forgeable; relayed files are capped at 10 MB, and users are told when a connection is relayed; the Apple minimum is OS 27 so every Mac has App Attest; iOS and Android ship on their stores, desktop outside them.
 
 Done and verified locally:
 - **Worker** (`Worker/`): rooms, admission on the room socket, App Attest, Play Integrity, TPM credential activation, per-device and per-network quotas, relay forwarding, no storage and no logs. `npm test`: 22 tests in the Workers runtime. The TPM MakeCredential output matches an independent implementation (tpm2-pytss's algorithm on pyca/cryptography) byte for byte; App Attest is tested against a locally minted chain in Apple's format, not a real device's attestation.
 - **Core**: iroh is gone, outright rather than behind a feature flag. Internet sessions are plain quinn connections over a path-selecting socket (`rendezvous/pathsock.rs`); STUN, MAC'd candidate exchange and probes, relay batching, admission caching, and `wooosh-net:2` tickets that no longer carry IP addresses. Integration tests cover direct and relayed transfers, the 10 MB relay cap and the `PeerRoute` event, refused relaying for Unverified clients, and withdrawn or reused codes failing immediately. The `#[ignore]`d test passed against the real Worker under `cf dev`: 8 MiB hash-verified, direct and fully relayed.
-- **Shells**: Apple installs an App Attest attestor and Android a Play Integrity attestor; Settings shows Internet Connections with Wooosh, My Own, and Off (the old iroh setting migrates only "Off"); new errors have copy in all 14 locales. Builds: macOS, iOS device, iOS Simulator, Android debug.
+- **Shells**: Apple installs an App Attest attestor and Android a Play Integrity attestor; Settings shows Internet Connections with Send, My Own, and Off (the old iroh setting migrates only "Off"); new errors have copy in all 14 locales. Builds: macOS, iOS device, iOS Simulator, Android debug.
 
 Not done:
 - **Deployment.** The Worker has never run on Cloudflare. Needs `SERVER_SECRET` and the Play Integrity service account uploaded as secrets (`cf deploy --secrets-file`), `PLAY_CERT_SHA256` from Play Console, then the production URL compiled into release cores with `WOOOSH_RENDEZVOUS_URL`. Until then a build has no default service and internet transfers report it.

@@ -3742,85 +3742,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Geräte, auf denen Wooosh im selben WLAN läuft, erscheinen hier automatisch."
+            "value": "Geräte, auf denen Send im selben WLAN läuft, erscheinen hier automatisch."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Devices running Wooosh on the same Wi-Fi network appear here automatically."
+            "value": "Devices running Send on the same Wi-Fi network appear here automatically."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Los dispositivos que ejecutan Wooosh en la misma red Wi-Fi aparecen aquí automáticamente."
+            "value": "Los dispositivos que ejecutan Send en la misma red Wi-Fi aparecen aquí automáticamente."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Les appareils qui utilisent Wooosh sur le même réseau Wi-Fi apparaissent ici automatiquement."
+            "value": "Les appareils qui utilisent Send sur le même réseau Wi-Fi apparaissent ici automatiquement."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "I dispositivi che usano Wooosh sulla stessa rete Wi-Fi compaiono qui automaticamente."
+            "value": "I dispositivi che usano Send sulla stessa rete Wi-Fi compaiono qui automaticamente."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "同じ Wi-Fi ネットワークで Wooosh を実行しているデバイスが、ここに自動的に表示されます。"
+            "value": "同じ Wi-Fi ネットワークで Send を実行しているデバイスが、ここに自動的に表示されます。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "같은 Wi-Fi 네트워크에서 Wooosh를 실행 중인 기기가 여기에 자동으로 표시됩니다."
+            "value": "같은 Wi-Fi 네트워크에서 Send를 실행 중인 기기가 여기에 자동으로 표시됩니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Apparaten waarop Wooosh draait in hetzelfde wifinetwerk verschijnen hier automatisch."
+            "value": "Apparaten waarop Send draait in hetzelfde wifinetwerk verschijnen hier automatisch."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Urządzenia z Wooosh w tej samej sieci Wi-Fi pojawiają się tu automatycznie."
+            "value": "Urządzenia z Send w tej samej sieci Wi-Fi pojawiają się tu automatycznie."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dispositivos com o Wooosh na mesma rede Wi-Fi aparecem aqui automaticamente."
+            "value": "Dispositivos com o Send na mesma rede Wi-Fi aparecem aqui automaticamente."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Устройства с Wooosh в той же сети Wi-Fi появляются здесь автоматически."
+            "value": "Устройства с Send в той же сети Wi-Fi появляются здесь автоматически."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Enheter som kör Wooosh i samma Wi-Fi-nätverk visas här automatiskt."
+            "value": "Enheter som kör Send i samma Wi-Fi-nätverk visas här automatiskt."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "同一 Wi-Fi 网络中运行 Wooosh 的设备会自动显示在这里。"
+            "value": "同一 Wi-Fi 网络中运行 Send 的设备会自动显示在这里。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "同一 Wi-Fi 網路中執行 Wooosh 的裝置會自動顯示在這裡。"
+            "value": "同一 Wi-Fi 網路中執行 Send 的裝置會自動顯示在這裡。"
           }
         }
       }
@@ -4186,91 +4186,91 @@
       }
     },
     "error_already_started": {
-      "comment": "Core error: Wooosh is already running.",
+      "comment": "Core error: Send is already running.",
       "extractionState": "manual",
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh läuft bereits."
+            "value": "Send läuft bereits."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh is already running."
+            "value": "Send is already running."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh ya está en marcha."
+            "value": "Send ya está en marcha."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh est déjà en cours d'exécution."
+            "value": "Send est déjà en cours d'exécution."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh è già in esecuzione."
+            "value": "Send è già in esecuzione."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh はすでに実行中です。"
+            "value": "Send はすでに実行中です。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 이미 실행 중입니다."
+            "value": "Send가 이미 실행 중입니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh draait al."
+            "value": "Send draait al."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh już działa."
+            "value": "Send już działa."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh já está em execução."
+            "value": "O Send já está em execução."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh уже запущен."
+            "value": "Send уже запущен."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh körs redan."
+            "value": "Send körs redan."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 已在运行。"
+            "value": "Send 已在运行。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 已在執行。"
+            "value": "Send 已在執行。"
           }
         }
       }
@@ -4372,175 +4372,175 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte das Gerät nicht erreichen. Prüfe, ob beide Geräte im selben WLAN sind."
+            "value": "Send konnte das Gerät nicht erreichen. Prüfe, ob beide Geräte im selben WLAN sind."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh couldn't reach that device. Check that both devices are on the same Wi-Fi network."
+            "value": "Send couldn't reach that device. Check that both devices are on the same Wi-Fi network."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no ha podido contactar con ese dispositivo. Comprueba que ambos dispositivos estén en la misma red Wi-Fi."
+            "value": "Send no ha podido contactar con ese dispositivo. Comprueba que ambos dispositivos estén en la misma red Wi-Fi."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu joindre cet appareil. Vérifiez que les deux appareils sont sur le même réseau Wi-Fi."
+            "value": "Send n'a pas pu joindre cet appareil. Vérifiez que les deux appareils sont sur le même réseau Wi-Fi."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito a raggiungere quel dispositivo. Verifica che entrambi i dispositivi siano sulla stessa rete Wi-Fi."
+            "value": "Send non è riuscito a raggiungere quel dispositivo. Verifica che entrambi i dispositivi siano sulla stessa rete Wi-Fi."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh はそのデバイスに接続できませんでした。両方のデバイスが同じ Wi-Fi ネットワークにあることを確認してください。"
+            "value": "Send はそのデバイスに接続できませんでした。両方のデバイスが同じ Wi-Fi ネットワークにあることを確認してください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 해당 기기에 연결하지 못했습니다. 두 기기가 같은 Wi-Fi 네트워크에 있는지 확인하세요."
+            "value": "Send가 해당 기기에 연결하지 못했습니다. 두 기기가 같은 Wi-Fi 네트워크에 있는지 확인하세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon dat apparaat niet bereiken. Controleer of beide apparaten in hetzelfde wifinetwerk zitten."
+            "value": "Send kon dat apparaat niet bereiken. Controleer of beide apparaten in hetzelfde wifinetwerk zitten."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie połączył się z tym urządzeniem. Sprawdź, czy oba urządzenia są w tej samej sieci Wi-Fi."
+            "value": "Send nie połączył się z tym urządzeniem. Sprawdź, czy oba urządzenia są w tej samej sieci Wi-Fi."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu alcançar esse dispositivo. Confira se os dois dispositivos estão na mesma rede Wi-Fi."
+            "value": "O Send não conseguiu alcançar esse dispositivo. Confira se os dois dispositivos estão na mesma rede Wi-Fi."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог связаться с этим устройством. Убедитесь, что оба устройства в одной сети Wi-Fi."
+            "value": "Send не смог связаться с этим устройством. Убедитесь, что оба устройства в одной сети Wi-Fi."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte nå enheten. Kontrollera att båda enheterna är i samma Wi-Fi-nätverk."
+            "value": "Send kunde inte nå enheten. Kontrollera att båda enheterna är i samma Wi-Fi-nätverk."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法连接到该设备。请确认两台设备位于同一 Wi-Fi 网络中。"
+            "value": "Send 无法连接到该设备。请确认两台设备位于同一 Wi-Fi 网络中。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法連線到該裝置。請確認兩台裝置位於同一 Wi-Fi 網路中。"
+            "value": "Send 無法連線到該裝置。請確認兩台裝置位於同一 Wi-Fi 網路中。"
           }
         }
       }
     },
     "error_core_start": {
-      "comment": "Shown when Wooosh failed to start up at all.",
+      "comment": "Shown when Send failed to start up at all.",
       "extractionState": "manual",
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte nicht starten. Schließe Wooosh und öffne es erneut."
+            "value": "Send konnte nicht starten. Schließe Send und öffne es erneut."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh could not start. Close Wooosh and open it again."
+            "value": "Send could not start. Close Send and open it again."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no ha podido iniciarse. Cierra Wooosh y vuelve a abrirlo."
+            "value": "Send no ha podido iniciarse. Cierra Send y vuelve a abrirlo."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu démarrer. Fermez Wooosh et rouvrez-le."
+            "value": "Send n'a pas pu démarrer. Fermez Send et rouvrez-le."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito ad avviarsi. Chiudi Wooosh e riaprilo."
+            "value": "Send non è riuscito ad avviarsi. Chiudi Send e riaprilo."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh を起動できませんでした。Wooosh を終了してから、もう一度開いてください。"
+            "value": "Send を起動できませんでした。Send を終了してから、もう一度開いてください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh를 시작하지 못했습니다. Wooosh를 닫았다가 다시 열어 주세요."
+            "value": "Send를 시작하지 못했습니다. Send를 닫았다가 다시 열어 주세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon niet starten. Sluit Wooosh en open het opnieuw."
+            "value": "Send kon niet starten. Sluit Send en open het opnieuw."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie mógł się uruchomić. Zamknij Wooosh i otwórz ponownie."
+            "value": "Send nie mógł się uruchomić. Zamknij Send i otwórz ponownie."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu iniciar. Feche o Wooosh e abra de novo."
+            "value": "O Send não conseguiu iniciar. Feche o Send e abra de novo."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог запуститься. Закройте Wooosh и откройте снова."
+            "value": "Send не смог запуститься. Закройте Send и откройте снова."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte starta. Stäng Wooosh och öppna det igen."
+            "value": "Send kunde inte starta. Stäng Send och öppna det igen."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法启动。请关闭 Wooosh 后重新打开。"
+            "value": "Send 无法启动。请关闭 Send 后重新打开。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法啟動。請關閉 Wooosh 後重新開啟。"
+            "value": "Send 無法啟動。請關閉 Send 後重新開啟。"
           }
         }
       }
@@ -4552,85 +4552,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte die sichere Verbindung nicht überprüfen. Versuche es erneut."
+            "value": "Send konnte die sichere Verbindung nicht überprüfen. Versuche es erneut."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh could not verify the secure connection. Try again."
+            "value": "Send could not verify the secure connection. Try again."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no ha podido verificar la conexión segura. Vuelve a intentarlo."
+            "value": "Send no ha podido verificar la conexión segura. Vuelve a intentarlo."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu vérifier la connexion sécurisée. Réessayez."
+            "value": "Send n'a pas pu vérifier la connexion sécurisée. Réessayez."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito a verificare la connessione sicura. Riprova."
+            "value": "Send non è riuscito a verificare la connessione sicura. Riprova."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は安全な接続を確認できませんでした。もう一度お試しください。"
+            "value": "Send は安全な接続を確認できませんでした。もう一度お試しください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 보안 연결을 확인하지 못했습니다. 다시 시도해 주세요."
+            "value": "Send가 보안 연결을 확인하지 못했습니다. 다시 시도해 주세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon de beveiligde verbinding niet verifiëren. Probeer het opnieuw."
+            "value": "Send kon de beveiligde verbinding niet verifiëren. Probeer het opnieuw."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie zweryfikował bezpiecznego połączenia. Spróbuj ponownie."
+            "value": "Send nie zweryfikował bezpiecznego połączenia. Spróbuj ponownie."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu verificar a conexão segura. Tente de novo."
+            "value": "O Send não conseguiu verificar a conexão segura. Tente de novo."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог проверить защищённое соединение. Повторите попытку."
+            "value": "Send не смог проверить защищённое соединение. Повторите попытку."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte verifiera den säkra anslutningen. Försök igen."
+            "value": "Send kunde inte verifiera den säkra anslutningen. Försök igen."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法验证安全连接。请重试。"
+            "value": "Send 无法验证安全连接。请重试。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法驗證安全連線。請重試。"
+            "value": "Send 無法驗證安全連線。請重試。"
           }
         }
       }
@@ -5090,85 +5090,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Diese Serveradresse ist ungültig. Wooosh hat die vorherige Einstellung behalten."
+            "value": "Diese Serveradresse ist ungültig. Send hat die vorherige Einstellung behalten."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "That server address is not valid. Wooosh kept the previous setting."
+            "value": "That server address is not valid. Send kept the previous setting."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Esa dirección de servidor no es válida. Wooosh mantuvo el ajuste anterior."
+            "value": "Esa dirección de servidor no es válida. Send mantuvo el ajuste anterior."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cette adresse de serveur n'est pas valide. Wooosh a conservé le réglage précédent."
+            "value": "Cette adresse de serveur n'est pas valide. Send a conservé le réglage précédent."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Questo indirizzo del server non è valido. Wooosh ha mantenuto l'impostazione precedente."
+            "value": "Questo indirizzo del server non è valido. Send ha mantenuto l'impostazione precedente."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "そのサーバーのアドレスは無効です。Wooosh は以前の設定を維持しました。"
+            "value": "そのサーバーのアドレスは無効です。Send は以前の設定を維持しました。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "서버 주소가 올바르지 않습니다. Wooosh는 이전 설정을 유지했습니다."
+            "value": "서버 주소가 올바르지 않습니다. Send는 이전 설정을 유지했습니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dat serveradres is ongeldig. Wooosh heeft de vorige instelling behouden."
+            "value": "Dat serveradres is ongeldig. Send heeft de vorige instelling behouden."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ten adres serwera jest nieprawidłowy. Wooosh zachował poprzednie ustawienie."
+            "value": "Ten adres serwera jest nieprawidłowy. Send zachował poprzednie ustawienie."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Esse endereço de servidor não é válido. O Wooosh manteve a configuração anterior."
+            "value": "Esse endereço de servidor não é válido. O Send manteve a configuração anterior."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Этот адрес сервера недействителен. Wooosh сохранил прежнюю настройку."
+            "value": "Этот адрес сервера недействителен. Send сохранил прежнюю настройку."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Den serveradressen är ogiltig. Wooosh behöll den tidigare inställningen."
+            "value": "Den serveradressen är ogiltig. Send behöll den tidigare inställningen."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "该服务器地址无效，Wooosh 保留了先前的设置。"
+            "value": "该服务器地址无效，Send 保留了先前的设置。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "該伺服器位址無效，Wooosh 保留了先前的設定。"
+            "value": "該伺服器位址無效，Send 保留了先前的設定。"
           }
         }
       }
@@ -5178,175 +5178,175 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte seinen Server nicht erreichen. Prüfe die Verbindung und versuche es später erneut."
+            "value": "Send konnte seinen Server nicht erreichen. Prüfe die Verbindung und versuche es später erneut."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh could not reach its server. Check the connection and try again later."
+            "value": "Send could not reach its server. Check the connection and try again later."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no pudo comunicarse con su servidor. Revisa la conexión e inténtalo más tarde."
+            "value": "Send no pudo comunicarse con su servidor. Revisa la conexión e inténtalo más tarde."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu joindre son serveur. Vérifiez la connexion et réessayez plus tard."
+            "value": "Send n'a pas pu joindre son serveur. Vérifiez la connexion et réessayez plus tard."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito a raggiungere il proprio server. Controlla la connessione e riprova più tardi."
+            "value": "Send non è riuscito a raggiungere il proprio server. Controlla la connessione e riprova più tardi."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh はサーバーに接続できませんでした。接続を確認して、しばらくしてからもう一度お試しください。"
+            "value": "Send はサーバーに接続できませんでした。接続を確認して、しばらくしてからもう一度お試しください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 서버에 연결하지 못했습니다. 연결을 확인하고 잠시 후 다시 시도하세요."
+            "value": "Send가 서버에 연결하지 못했습니다. 연결을 확인하고 잠시 후 다시 시도하세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon zijn server niet bereiken. Controleer de verbinding en probeer het later opnieuw."
+            "value": "Send kon zijn server niet bereiken. Controleer de verbinding en probeer het later opnieuw."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie mógł połączyć się ze swoim serwerem. Sprawdź połączenie i spróbuj ponownie później."
+            "value": "Send nie mógł połączyć się ze swoim serwerem. Sprawdź połączenie i spróbuj ponownie później."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu acessar o servidor. Verifique a conexão e tente de novo mais tarde."
+            "value": "O Send não conseguiu acessar o servidor. Verifique a conexão e tente de novo mais tarde."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог связаться со своим сервером. Проверьте подключение и попробуйте позже."
+            "value": "Send не смог связаться со своим сервером. Проверьте подключение и попробуйте позже."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte nå sin server. Kontrollera anslutningen och försök igen senare."
+            "value": "Send kunde inte nå sin server. Kontrollera anslutningen och försök igen senare."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法连接到服务器。请检查网络连接，稍后再试。"
+            "value": "Send 无法连接到服务器。请检查网络连接，稍后再试。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法連線到伺服器。請檢查網路連線，稍後再試。"
+            "value": "Send 無法連線到伺服器。請檢查網路連線，稍後再試。"
           }
         }
       }
     },
     "error_invalid_qr": {
-      "comment": "Core error: the scanned or pasted text is not a Wooosh pairing code.",
+      "comment": "Core error: the scanned or pasted text is not a Send pairing code.",
       "extractionState": "manual",
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Das ist kein Wooosh-Kopplungscode."
+            "value": "Das ist kein Send-Kopplungscode."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "That is not a Wooosh pairing code."
+            "value": "That is not a Send pairing code."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Eso no es un código de vinculación de Wooosh."
+            "value": "Eso no es un código de vinculación de Send."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Il ne s'agit pas d'un code d'association Wooosh."
+            "value": "Il ne s'agit pas d'un code d'association Send."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Questo non è un codice di abbinamento Wooosh."
+            "value": "Questo non è un codice di abbinamento Send."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "これは Wooosh のペアリングコードではありません。"
+            "value": "これは Send のペアリングコードではありません。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 페어링 코드가 아닙니다."
+            "value": "Send 페어링 코드가 아닙니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dat is geen Wooosh-koppelcode."
+            "value": "Dat is geen Send-koppelcode."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "To nie jest kod parowania Wooosh."
+            "value": "To nie jest kod parowania Send."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Isso não é um código de pareamento do Wooosh."
+            "value": "Isso não é um código de pareamento do Send."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Это не код связи Wooosh."
+            "value": "Это не код связи Send."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Det är inte en parkopplingskod för Wooosh."
+            "value": "Det är inte en parkopplingskod för Send."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "这不是 Wooosh 配对码。"
+            "value": "这不是 Send 配对码。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "這不是 Wooosh 配對碼。"
+            "value": "這不是 Send 配對碼。"
           }
         }
       }
@@ -5358,85 +5358,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte eine Datei nicht lesen oder schreiben. Prüfe den freien Speicher und versuche es erneut."
+            "value": "Send konnte eine Datei nicht lesen oder schreiben. Prüfe den freien Speicher und versuche es erneut."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh could not read or write a file. Check that there is free space and try again."
+            "value": "Send could not read or write a file. Check that there is free space and try again."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no ha podido leer o escribir un archivo. Comprueba que haya espacio libre y vuelve a intentarlo."
+            "value": "Send no ha podido leer o escribir un archivo. Comprueba que haya espacio libre y vuelve a intentarlo."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu lire ou écrire un fichier. Vérifiez l'espace disponible et réessayez."
+            "value": "Send n'a pas pu lire ou écrire un fichier. Vérifiez l'espace disponible et réessayez."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito a leggere o scrivere un file. Verifica lo spazio libero e riprova."
+            "value": "Send non è riuscito a leggere o scrivere un file. Verifica lo spazio libero e riprova."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh はファイルの読み書きができませんでした。空き容量を確認してもう一度お試しください。"
+            "value": "Send はファイルの読み書きができませんでした。空き容量を確認してもう一度お試しください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 파일을 읽거나 쓰지 못했습니다. 여유 공간을 확인한 뒤 다시 시도해 주세요."
+            "value": "Send가 파일을 읽거나 쓰지 못했습니다. 여유 공간을 확인한 뒤 다시 시도해 주세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon een bestand niet lezen of schrijven. Controleer de vrije ruimte en probeer het opnieuw."
+            "value": "Send kon een bestand niet lezen of schrijven. Controleer de vrije ruimte en probeer het opnieuw."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie odczytał lub nie zapisał pliku. Sprawdź wolne miejsce i spróbuj ponownie."
+            "value": "Send nie odczytał lub nie zapisał pliku. Sprawdź wolne miejsce i spróbuj ponownie."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu ler ou gravar um arquivo. Verifique se há espaço livre e tente de novo."
+            "value": "O Send não conseguiu ler ou gravar um arquivo. Verifique se há espaço livre e tente de novo."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог прочитать или записать файл. Проверьте свободное место и повторите попытку."
+            "value": "Send не смог прочитать или записать файл. Проверьте свободное место и повторите попытку."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte läsa eller skriva en fil. Kontrollera ledigt utrymme och försök igen."
+            "value": "Send kunde inte läsa eller skriva en fil. Kontrollera ledigt utrymme och försök igen."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法读取或写入文件。请检查是否有可用空间，然后重试。"
+            "value": "Send 无法读取或写入文件。请检查是否有可用空间，然后重试。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法讀取或寫入檔案。請檢查是否有可用空間，然後重試。"
+            "value": "Send 無法讀取或寫入檔案。請檢查是否有可用空間，然後重試。"
           }
         }
       }
@@ -5622,91 +5622,91 @@
       }
     },
     "error_not_started": {
-      "comment": "Core error: Wooosh has not finished starting yet.",
+      "comment": "Core error: Send has not finished starting yet.",
       "extractionState": "manual",
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh startet noch. Versuche es gleich noch einmal."
+            "value": "Send startet noch. Versuche es gleich noch einmal."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh is still starting. Try again in a moment."
+            "value": "Send is still starting. Try again in a moment."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh todavía se está iniciando. Vuelve a intentarlo en un momento."
+            "value": "Send todavía se está iniciando. Vuelve a intentarlo en un momento."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh est en cours de démarrage. Réessayez dans un instant."
+            "value": "Send est en cours de démarrage. Réessayez dans un instant."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh è ancora in avvio. Riprova tra un momento."
+            "value": "Send è ancora in avvio. Riprova tra un momento."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は起動中です。少し待ってからもう一度お試しください。"
+            "value": "Send は起動中です。少し待ってからもう一度お試しください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 아직 시작하는 중입니다. 잠시 후 다시 시도해 주세요."
+            "value": "Send가 아직 시작하는 중입니다. 잠시 후 다시 시도해 주세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh is nog aan het starten. Probeer het zo meteen opnieuw."
+            "value": "Send is nog aan het starten. Probeer het zo meteen opnieuw."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh jeszcze się uruchamia. Spróbuj ponownie za chwilę."
+            "value": "Send jeszcze się uruchamia. Spróbuj ponownie za chwilę."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh ainda está iniciando. Tente de novo daqui a pouco."
+            "value": "O Send ainda está iniciando. Tente de novo daqui a pouco."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh ещё запускается. Повторите попытку через мгновение."
+            "value": "Send ещё запускается. Повторите попытку через мгновение."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh startar fortfarande. Försök igen om en stund."
+            "value": "Send startar fortfarande. Försök igen om en stund."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 仍在启动中。请稍后重试。"
+            "value": "Send 仍在启动中。请稍后重试。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 仍在啟動中。請稍後重試。"
+            "value": "Send 仍在啟動中。請稍後重試。"
           }
         }
       }
@@ -6252,91 +6252,91 @@
       }
     },
     "error_pairing_not_a_code": {
-      "comment": "Shown when a scan produced something that is not a Wooosh pairing code.",
+      "comment": "Shown when a scan produced something that is not a Send pairing code.",
       "extractionState": "manual",
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Das ist kein Wooosh-Kopplungscode. Scanne den Code, der auf dem anderen Gerät unter „Gerät koppeln“ angezeigt wird."
+            "value": "Das ist kein Send-Kopplungscode. Scanne den Code, der auf dem anderen Gerät unter „Gerät koppeln“ angezeigt wird."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "That is not a Wooosh pairing code. Scan the code shown under Pair a Device on the other device."
+            "value": "That is not a Send pairing code. Scan the code shown under Pair a Device on the other device."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Eso no es un código de vinculación de Wooosh. Escanea el código que aparece en «Vincular un dispositivo» en el otro dispositivo."
+            "value": "Eso no es un código de vinculación de Send. Escanea el código que aparece en «Vincular un dispositivo» en el otro dispositivo."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Il ne s'agit pas d'un code d'association Wooosh. Scannez le code affiché sous « Associer un appareil » sur l'autre appareil."
+            "value": "Il ne s'agit pas d'un code d'association Send. Scannez le code affiché sous « Associer un appareil » sur l'autre appareil."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Questo non è un codice di abbinamento Wooosh. Scansiona il codice mostrato sotto «Abbina un dispositivo» sull'altro dispositivo."
+            "value": "Questo non è un codice di abbinamento Send. Scansiona il codice mostrato sotto «Abbina un dispositivo» sull'altro dispositivo."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "これは Wooosh のペアリングコードではありません。相手のデバイスの「デバイスをペアリング」に表示されているコードをスキャンしてください。"
+            "value": "これは Send のペアリングコードではありません。相手のデバイスの「デバイスをペアリング」に表示されているコードをスキャンしてください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 페어링 코드가 아닙니다. 상대 기기의 ‘기기 페어링’에 표시된 코드를 스캔하세요."
+            "value": "Send 페어링 코드가 아닙니다. 상대 기기의 ‘기기 페어링’에 표시된 코드를 스캔하세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dat is geen Wooosh-koppelcode. Scan de code die op het andere apparaat onder ‘Apparaat koppelen’ staat."
+            "value": "Dat is geen Send-koppelcode. Scan de code die op het andere apparaat onder ‘Apparaat koppelen’ staat."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "To nie jest kod parowania Wooosh. Zeskanuj kod widoczny w sekcji „Sparuj urządzenie” na drugim urządzeniu."
+            "value": "To nie jest kod parowania Send. Zeskanuj kod widoczny w sekcji „Sparuj urządzenie” na drugim urządzeniu."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Isso não é um código de pareamento do Wooosh. Escaneie o código exibido em “Parear um dispositivo” no outro dispositivo."
+            "value": "Isso não é um código de pareamento do Send. Escaneie o código exibido em “Parear um dispositivo” no outro dispositivo."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Это не код связи Wooosh. Отсканируйте код из раздела «Связать устройство» на другом устройстве."
+            "value": "Это не код связи Send. Отсканируйте код из раздела «Связать устройство» на другом устройстве."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Det är inte en parkopplingskod för Wooosh. Skanna koden som visas under ”Parkoppla en enhet” på den andra enheten."
+            "value": "Det är inte en parkopplingskod för Send. Skanna koden som visas under ”Parkoppla en enhet” på den andra enheten."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "这不是 Wooosh 配对码。请扫描另一台设备上“配对设备”里显示的配对码。"
+            "value": "这不是 Send 配对码。请扫描另一台设备上“配对设备”里显示的配对码。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "這不是 Wooosh 配對碼。請掃描另一台裝置上「配對裝置」中顯示的配對碼。"
+            "value": "這不是 Send 配對碼。請掃描另一台裝置上「配對裝置」中顯示的配對碼。"
           }
         }
       }
@@ -6438,85 +6438,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte das Gerät nicht rechtzeitig erreichen. Prüfe, ob es den Kopplungscode noch anzeigt und ob beide Geräte im selben WLAN sind."
+            "value": "Send konnte das Gerät nicht rechtzeitig erreichen. Prüfe, ob es den Kopplungscode noch anzeigt und ob beide Geräte im selben WLAN sind."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh couldn't reach that device in time. Check that it is still showing its pairing code and that both devices are on the same Wi-Fi network."
+            "value": "Send couldn't reach that device in time. Check that it is still showing its pairing code and that both devices are on the same Wi-Fi network."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no ha podido contactar con ese dispositivo a tiempo. Comprueba que siga mostrando su código de vinculación y que ambos dispositivos estén en la misma red Wi-Fi."
+            "value": "Send no ha podido contactar con ese dispositivo a tiempo. Comprueba que siga mostrando su código de vinculación y que ambos dispositivos estén en la misma red Wi-Fi."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu joindre cet appareil à temps. Vérifiez qu'il affiche toujours son code d'association et que les deux appareils sont sur le même réseau Wi-Fi."
+            "value": "Send n'a pas pu joindre cet appareil à temps. Vérifiez qu'il affiche toujours son code d'association et que les deux appareils sont sur le même réseau Wi-Fi."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito a raggiungere quel dispositivo in tempo. Verifica che stia ancora mostrando il codice di abbinamento e che entrambi i dispositivi siano sulla stessa rete Wi-Fi."
+            "value": "Send non è riuscito a raggiungere quel dispositivo in tempo. Verifica che stia ancora mostrando il codice di abbinamento e che entrambi i dispositivi siano sulla stessa rete Wi-Fi."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は時間内にそのデバイスに接続できませんでした。相手のデバイスにペアリングコードがまだ表示されていること、両方のデバイスが同じ Wi-Fi ネットワークにあることを確認してください。"
+            "value": "Send は時間内にそのデバイスに接続できませんでした。相手のデバイスにペアリングコードがまだ表示されていること、両方のデバイスが同じ Wi-Fi ネットワークにあることを確認してください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 제한 시간 안에 해당 기기에 연결하지 못했습니다. 상대 기기에 페어링 코드가 계속 표시되어 있는지, 두 기기가 같은 Wi-Fi 네트워크에 있는지 확인하세요."
+            "value": "Send가 제한 시간 안에 해당 기기에 연결하지 못했습니다. 상대 기기에 페어링 코드가 계속 표시되어 있는지, 두 기기가 같은 Wi-Fi 네트워크에 있는지 확인하세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon dat apparaat niet op tijd bereiken. Controleer of het de koppelcode nog toont en of beide apparaten in hetzelfde wifinetwerk zitten."
+            "value": "Send kon dat apparaat niet op tijd bereiken. Controleer of het de koppelcode nog toont en of beide apparaten in hetzelfde wifinetwerk zitten."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie zdążył połączyć się z tym urządzeniem. Sprawdź, czy nadal wyświetla kod parowania i czy oba urządzenia są w tej samej sieci Wi-Fi."
+            "value": "Send nie zdążył połączyć się z tym urządzeniem. Sprawdź, czy nadal wyświetla kod parowania i czy oba urządzenia są w tej samej sieci Wi-Fi."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu alcançar esse dispositivo a tempo. Confira se ele ainda está mostrando o código de pareamento e se os dois dispositivos estão na mesma rede Wi-Fi."
+            "value": "O Send não conseguiu alcançar esse dispositivo a tempo. Confira se ele ainda está mostrando o código de pareamento e se os dois dispositivos estão na mesma rede Wi-Fi."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не успел связаться с этим устройством. Убедитесь, что оно всё ещё показывает код связи и что оба устройства в одной сети Wi-Fi."
+            "value": "Send не успел связаться с этим устройством. Убедитесь, что оно всё ещё показывает код связи и что оба устройства в одной сети Wi-Fi."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nådde inte enheten i tid. Kontrollera att den fortfarande visar sin parkopplingskod och att båda enheterna är i samma Wi-Fi-nätverk."
+            "value": "Send nådde inte enheten i tid. Kontrollera att den fortfarande visar sin parkopplingskod och att båda enheterna är i samma Wi-Fi-nätverk."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 未能及时连接到该设备。请确认它仍在显示配对码，并且两台设备位于同一 Wi-Fi 网络中。"
+            "value": "Send 未能及时连接到该设备。请确认它仍在显示配对码，并且两台设备位于同一 Wi-Fi 网络中。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 未能及時連線到該裝置。請確認它仍在顯示配對碼，且兩台裝置位於同一 Wi-Fi 網路中。"
+            "value": "Send 未能及時連線到該裝置。請確認它仍在顯示配對碼，且兩台裝置位於同一 Wi-Fi 網路中。"
           }
         }
       }
@@ -6528,85 +6528,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Das andere Gerät hat etwas gesendet, das Wooosh nicht versteht. Aktualisiere Wooosh auf beiden Geräten."
+            "value": "Das andere Gerät hat etwas gesendet, das Send nicht versteht. Aktualisiere Send auf beiden Geräten."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "The other device sent something Wooosh did not understand. Update Wooosh on both devices."
+            "value": "The other device sent something Send did not understand. Update Send on both devices."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "El otro dispositivo ha enviado algo que Wooosh no entiende. Actualiza Wooosh en ambos dispositivos."
+            "value": "El otro dispositivo ha enviado algo que Send no entiende. Actualiza Send en ambos dispositivos."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "L'autre appareil a envoyé quelque chose que Wooosh ne comprend pas. Mettez Wooosh à jour sur les deux appareils."
+            "value": "L'autre appareil a envoyé quelque chose que Send ne comprend pas. Mettez Send à jour sur les deux appareils."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "L'altro dispositivo ha inviato qualcosa che Wooosh non capisce. Aggiorna Wooosh su entrambi i dispositivi."
+            "value": "L'altro dispositivo ha inviato qualcosa che Send non capisce. Aggiorna Send su entrambi i dispositivi."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "相手のデバイスから、Wooosh が解釈できないデータが送られてきました。両方のデバイスで Wooosh を更新してください。"
+            "value": "相手のデバイスから、Send が解釈できないデータが送られてきました。両方のデバイスで Send を更新してください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "상대 기기가 Wooosh가 이해할 수 없는 내용을 보냈습니다. 두 기기에서 Wooosh를 업데이트하세요."
+            "value": "상대 기기가 Send가 이해할 수 없는 내용을 보냈습니다. 두 기기에서 Send를 업데이트하세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Het andere apparaat stuurde iets dat Wooosh niet begrijpt. Werk Wooosh op beide apparaten bij."
+            "value": "Het andere apparaat stuurde iets dat Send niet begrijpt. Werk Send op beide apparaten bij."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Drugie urządzenie wysłało coś, czego Wooosh nie rozumie. Zaktualizuj Wooosh na obu urządzeniach."
+            "value": "Drugie urządzenie wysłało coś, czego Send nie rozumie. Zaktualizuj Send na obu urządzeniach."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O outro dispositivo enviou algo que o Wooosh não entendeu. Atualize o Wooosh nos dois dispositivos."
+            "value": "O outro dispositivo enviou algo que o Send não entendeu. Atualize o Send nos dois dispositivos."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Другое устройство отправило данные, которые Wooosh не понимает. Обновите Wooosh на обоих устройствах."
+            "value": "Другое устройство отправило данные, которые Send не понимает. Обновите Send на обоих устройствах."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Den andra enheten skickade något Wooosh inte förstod. Uppdatera Wooosh på båda enheterna."
+            "value": "Den andra enheten skickade något Send inte förstod. Uppdatera Send på båda enheterna."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "对方设备发送了 Wooosh 无法识别的内容。请在两台设备上更新 Wooosh。"
+            "value": "对方设备发送了 Send 无法识别的内容。请在两台设备上更新 Send。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "對方裝置傳送了 Wooosh 無法識別的內容。請在兩台裝置上更新 Wooosh。"
+            "value": "對方裝置傳送了 Send 無法識別的內容。請在兩台裝置上更新 Send。"
           }
         }
       }
@@ -6618,85 +6618,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Das antwortende Gerät ist nicht das aus dem Kopplungscode. Wooosh hat die Kopplung abgebrochen."
+            "value": "Das antwortende Gerät ist nicht das aus dem Kopplungscode. Send hat die Kopplung abgebrochen."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "The device that answered is not the one in the pairing code. Wooosh stopped pairing."
+            "value": "The device that answered is not the one in the pairing code. Send stopped pairing."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "El dispositivo que ha respondido no es el del código de vinculación. Wooosh ha detenido la vinculación."
+            "value": "El dispositivo que ha respondido no es el del código de vinculación. Send ha detenido la vinculación."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "L'appareil qui a répondu n'est pas celui du code d'association. Wooosh a interrompu l'association."
+            "value": "L'appareil qui a répondu n'est pas celui du code d'association. Send a interrompu l'association."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Il dispositivo che ha risposto non è quello del codice di abbinamento. Wooosh ha interrotto l'abbinamento."
+            "value": "Il dispositivo che ha risposto non è quello del codice di abbinamento. Send ha interrotto l'abbinamento."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "応答したデバイスは、ペアリングコードのデバイスではありません。Wooosh はペアリングを中止しました。"
+            "value": "応答したデバイスは、ペアリングコードのデバイスではありません。Send はペアリングを中止しました。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "응답한 기기가 페어링 코드의 기기와 다릅니다. Wooosh가 페어링을 중단했습니다."
+            "value": "응답한 기기가 페어링 코드의 기기와 다릅니다. Send가 페어링을 중단했습니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Het apparaat dat antwoordde is niet dat uit de koppelcode. Wooosh heeft het koppelen gestopt."
+            "value": "Het apparaat dat antwoordde is niet dat uit de koppelcode. Send heeft het koppelen gestopt."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Urządzenie, które odpowiedziało, nie jest tym z kodu parowania. Wooosh przerwał parowanie."
+            "value": "Urządzenie, które odpowiedziało, nie jest tym z kodu parowania. Send przerwał parowanie."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O dispositivo que respondeu não é o do código de pareamento. O Wooosh interrompeu o pareamento."
+            "value": "O dispositivo que respondeu não é o do código de pareamento. O Send interrompeu o pareamento."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ответившее устройство не совпадает с указанным в коде связи. Wooosh прервал связывание."
+            "value": "Ответившее устройство не совпадает с указанным в коде связи. Send прервал связывание."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Enheten som svarade är inte den i parkopplingskoden. Wooosh avbröt parkopplingen."
+            "value": "Enheten som svarade är inte den i parkopplingskoden. Send avbröt parkopplingen."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "响应的设备与配对码中的设备不符。Wooosh 已停止配对。"
+            "value": "响应的设备与配对码中的设备不符。Send 已停止配对。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "回應的裝置與配對碼中的裝置不符。Wooosh 已停止配對。"
+            "value": "回應的裝置與配對碼中的裝置不符。Send 已停止配對。"
           }
         }
       }
@@ -6708,85 +6708,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte die beiden Geräte nicht direkt verbinden. Über eine indirekte Verbindung müssen Dateien kleiner als %1$@ sein. Versuche es erneut oder nutze ein Netzwerk, das eine direkte Verbindung erlaubt."
+            "value": "Send konnte die beiden Geräte nicht direkt verbinden. Über eine indirekte Verbindung müssen Dateien kleiner als %1$@ sein. Versuche es erneut oder nutze ein Netzwerk, das eine direkte Verbindung erlaubt."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh could not connect the two devices directly. Over an indirect connection, files must be under %1$@. Try again, or use a network that allows a direct connection."
+            "value": "Send could not connect the two devices directly. Over an indirect connection, files must be under %1$@. Try again, or use a network that allows a direct connection."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no pudo conectar los dos dispositivos directamente. Con una conexión indirecta, los archivos deben ser menores de %1$@. Inténtalo de nuevo o usa una red que permita una conexión directa."
+            "value": "Send no pudo conectar los dos dispositivos directamente. Con una conexión indirecta, los archivos deben ser menores de %1$@. Inténtalo de nuevo o usa una red que permita una conexión directa."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu connecter les deux appareils directement. Sur une connexion indirecte, les fichiers doivent faire moins de %1$@. Réessayez ou utilisez un réseau qui autorise une connexion directe."
+            "value": "Send n'a pas pu connecter les deux appareils directement. Sur une connexion indirecte, les fichiers doivent faire moins de %1$@. Réessayez ou utilisez un réseau qui autorise une connexion directe."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito a collegare i due dispositivi direttamente. Su una connessione indiretta i file devono essere sotto %1$@. Riprova oppure usa una rete che consenta una connessione diretta."
+            "value": "Send non è riuscito a collegare i due dispositivi direttamente. Su una connessione indiretta i file devono essere sotto %1$@. Riprova oppure usa una rete che consenta una connessione diretta."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は 2 台のデバイスを直接つなげられませんでした。間接的な接続では、ファイルは %1$@ 未満である必要があります。もう一度試すか、直接接続できるネットワークをお使いください。"
+            "value": "Send は 2 台のデバイスを直接つなげられませんでした。間接的な接続では、ファイルは %1$@ 未満である必要があります。もう一度試すか、直接接続できるネットワークをお使いください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 두 기기를 직접 연결하지 못했습니다. 간접 연결에서는 파일이 %1$@ 미만이어야 합니다. 다시 시도하거나 직접 연결이 가능한 네트워크를 사용하세요."
+            "value": "Send가 두 기기를 직접 연결하지 못했습니다. 간접 연결에서는 파일이 %1$@ 미만이어야 합니다. 다시 시도하거나 직접 연결이 가능한 네트워크를 사용하세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon de twee apparaten niet rechtstreeks verbinden. Via een indirecte verbinding moeten bestanden kleiner zijn dan %1$@. Probeer het opnieuw of gebruik een netwerk dat een directe verbinding toelaat."
+            "value": "Send kon de twee apparaten niet rechtstreeks verbinden. Via een indirecte verbinding moeten bestanden kleiner zijn dan %1$@. Probeer het opnieuw of gebruik een netwerk dat een directe verbinding toelaat."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie mógł połączyć obu urządzeń bezpośrednio. Przy połączeniu pośrednim pliki muszą być mniejsze niż %1$@. Spróbuj ponownie lub użyj sieci pozwalającej na połączenie bezpośrednie."
+            "value": "Send nie mógł połączyć obu urządzeń bezpośrednio. Przy połączeniu pośrednim pliki muszą być mniejsze niż %1$@. Spróbuj ponownie lub użyj sieci pozwalającej na połączenie bezpośrednie."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu conectar os dois dispositivos diretamente. Em uma conexão indireta, os arquivos precisam ter menos de %1$@. Tente de novo ou use uma rede que permita conexão direta."
+            "value": "O Send não conseguiu conectar os dois dispositivos diretamente. Em uma conexão indireta, os arquivos precisam ter menos de %1$@. Tente de novo ou use uma rede que permita conexão direta."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог соединить устройства напрямую. При непрямом соединении файлы должны быть меньше %1$@. Попробуйте снова или используйте сеть, допускающую прямое соединение."
+            "value": "Send не смог соединить устройства напрямую. При непрямом соединении файлы должны быть меньше %1$@. Попробуйте снова или используйте сеть, допускающую прямое соединение."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte koppla ihop enheterna direkt. Över en indirekt anslutning måste filer vara mindre än %1$@. Försök igen eller använd ett nätverk som tillåter en direkt anslutning."
+            "value": "Send kunde inte koppla ihop enheterna direkt. Över en indirekt anslutning måste filer vara mindre än %1$@. Försök igen eller använd ett nätverk som tillåter en direkt anslutning."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法让两台设备直连。通过间接连接时，文件必须小于 %1$@。请重试，或改用允许直连的网络。"
+            "value": "Send 无法让两台设备直连。通过间接连接时，文件必须小于 %1$@。请重试，或改用允许直连的网络。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法讓兩台裝置直連。透過間接連線時，檔案必須小於 %1$@。請重試，或改用允許直連的網路。"
+            "value": "Send 無法讓兩台裝置直連。透過間接連線時，檔案必須小於 %1$@。請重試，或改用允許直連的網路。"
           }
         }
       }
@@ -6796,85 +6796,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte die beiden Geräte nicht direkt verbinden, und dieses Gerät kann keine indirekte Verbindung nutzen. Versuche es erneut oder nutze ein Netzwerk, das eine direkte Verbindung erlaubt."
+            "value": "Send konnte die beiden Geräte nicht direkt verbinden, und dieses Gerät kann keine indirekte Verbindung nutzen. Versuche es erneut oder nutze ein Netzwerk, das eine direkte Verbindung erlaubt."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh could not connect the two devices directly, and this device cannot use an indirect connection. Try again, or use a network that allows a direct connection."
+            "value": "Send could not connect the two devices directly, and this device cannot use an indirect connection. Try again, or use a network that allows a direct connection."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no pudo conectar los dos dispositivos directamente, y este dispositivo no puede usar una conexión indirecta. Inténtalo de nuevo o usa una red que permita una conexión directa."
+            "value": "Send no pudo conectar los dos dispositivos directamente, y este dispositivo no puede usar una conexión indirecta. Inténtalo de nuevo o usa una red que permita una conexión directa."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu connecter les deux appareils directement, et cet appareil ne peut pas utiliser de connexion indirecte. Réessayez ou utilisez un réseau qui autorise une connexion directe."
+            "value": "Send n'a pas pu connecter les deux appareils directement, et cet appareil ne peut pas utiliser de connexion indirecte. Réessayez ou utilisez un réseau qui autorise une connexion directe."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito a collegare i due dispositivi direttamente, e questo dispositivo non può usare una connessione indiretta. Riprova oppure usa una rete che consenta una connessione diretta."
+            "value": "Send non è riuscito a collegare i due dispositivi direttamente, e questo dispositivo non può usare una connessione indiretta. Riprova oppure usa una rete che consenta una connessione diretta."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は 2 台のデバイスを直接つなげられず、このデバイスでは間接的な接続を使えません。もう一度試すか、直接接続できるネットワークをお使いください。"
+            "value": "Send は 2 台のデバイスを直接つなげられず、このデバイスでは間接的な接続を使えません。もう一度試すか、直接接続できるネットワークをお使いください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 두 기기를 직접 연결하지 못했고, 이 기기에서는 간접 연결을 사용할 수 없습니다. 다시 시도하거나 직접 연결이 가능한 네트워크를 사용하세요."
+            "value": "Send가 두 기기를 직접 연결하지 못했고, 이 기기에서는 간접 연결을 사용할 수 없습니다. 다시 시도하거나 직접 연결이 가능한 네트워크를 사용하세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon de twee apparaten niet rechtstreeks verbinden, en dit apparaat kan geen indirecte verbinding gebruiken. Probeer het opnieuw of gebruik een netwerk dat een directe verbinding toelaat."
+            "value": "Send kon de twee apparaten niet rechtstreeks verbinden, en dit apparaat kan geen indirecte verbinding gebruiken. Probeer het opnieuw of gebruik een netwerk dat een directe verbinding toelaat."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie mógł połączyć obu urządzeń bezpośrednio, a to urządzenie nie może korzystać z połączenia pośredniego. Spróbuj ponownie lub użyj sieci pozwalającej na połączenie bezpośrednie."
+            "value": "Send nie mógł połączyć obu urządzeń bezpośrednio, a to urządzenie nie może korzystać z połączenia pośredniego. Spróbuj ponownie lub użyj sieci pozwalającej na połączenie bezpośrednie."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu conectar os dois dispositivos diretamente, e este dispositivo não pode usar uma conexão indireta. Tente de novo ou use uma rede que permita conexão direta."
+            "value": "O Send não conseguiu conectar os dois dispositivos diretamente, e este dispositivo não pode usar uma conexão indireta. Tente de novo ou use uma rede que permita conexão direta."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог соединить устройства напрямую, а это устройство не может использовать непрямое соединение. Попробуйте снова или используйте сеть, допускающую прямое соединение."
+            "value": "Send не смог соединить устройства напрямую, а это устройство не может использовать непрямое соединение. Попробуйте снова или используйте сеть, допускающую прямое соединение."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte koppla ihop enheterna direkt, och den här enheten kan inte använda en indirekt anslutning. Försök igen eller använd ett nätverk som tillåter en direkt anslutning."
+            "value": "Send kunde inte koppla ihop enheterna direkt, och den här enheten kan inte använda en indirekt anslutning. Försök igen eller använd ett nätverk som tillåter en direkt anslutning."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法让两台设备直连，而本设备无法使用间接连接。请重试，或改用允许直连的网络。"
+            "value": "Send 无法让两台设备直连，而本设备无法使用间接连接。请重试，或改用允许直连的网络。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法讓兩台裝置直連，而本裝置無法使用間接連線。請重試，或改用允許直連的網路。"
+            "value": "Send 無法讓兩台裝置直連，而本裝置無法使用間接連線。請重試，或改用允許直連的網路。"
           }
         }
       }
@@ -6976,85 +6976,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte diese Datei nicht sichern."
+            "value": "Send konnte diese Datei nicht sichern."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh couldn't save this file."
+            "value": "Send couldn't save this file."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no ha podido guardar este archivo."
+            "value": "Send no ha podido guardar este archivo."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu enregistrer ce fichier."
+            "value": "Send n'a pas pu enregistrer ce fichier."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito a salvare questo file."
+            "value": "Send non è riuscito a salvare questo file."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh はこのファイルを保存できませんでした。"
+            "value": "Send はこのファイルを保存できませんでした。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 이 파일을 저장하지 못했습니다."
+            "value": "Send가 이 파일을 저장하지 못했습니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon dit bestand niet bewaren."
+            "value": "Send kon dit bestand niet bewaren."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie zapisał tego pliku."
+            "value": "Send nie zapisał tego pliku."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu salvar este arquivo."
+            "value": "O Send não conseguiu salvar este arquivo."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог сохранить этот файл."
+            "value": "Send не смог сохранить этот файл."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte spara filen."
+            "value": "Send kunde inte spara filen."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法保存此文件。"
+            "value": "Send 无法保存此文件。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法儲存此檔案。"
+            "value": "Send 無法儲存此檔案。"
           }
         }
       }
@@ -7156,85 +7156,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte nicht senden"
+            "value": "Senden nicht möglich"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh Couldn't Send"
+            "value": "Couldn't Send Files"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no pudo enviar"
+            "value": "No se pudo enviar"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu envoyer"
+            "value": "Envoi impossible"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito a inviare"
+            "value": "Invio non riuscito"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は送信できませんでした"
+            "value": "送信できませんでした"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 보내지 못했습니다"
+            "value": "보내지 못했습니다"
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon niet versturen"
+            "value": "Versturen mislukt"
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie mógł wysłać"
+            "value": "Nie udało się wysłać"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu enviar"
+            "value": "Não foi possível enviar"
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог отправить"
+            "value": "Не удалось отправить"
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte skicka"
+            "value": "Det gick inte att skicka"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法发送"
+            "value": "无法发送"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法傳送"
+            "value": "無法傳送"
           }
         }
       }
@@ -7246,85 +7246,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh sucht noch nach %1$@. Versuche es gleich noch einmal."
+            "value": "Send sucht noch nach %1$@. Versuche es gleich noch einmal."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh is still finding %1$@. Try again in a moment."
+            "value": "Send is still finding %1$@. Try again in a moment."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh todavía está buscando %1$@. Vuelve a intentarlo en un momento."
+            "value": "Send todavía está buscando %1$@. Vuelve a intentarlo en un momento."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh recherche encore %1$@. Réessayez dans un instant."
+            "value": "Send recherche encore %1$@. Réessayez dans un instant."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh sta ancora cercando %1$@. Riprova tra un momento."
+            "value": "Send sta ancora cercando %1$@. Riprova tra un momento."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は %1$@ を探しています。少し待ってからもう一度お試しください。"
+            "value": "Send は %1$@ を探しています。少し待ってからもう一度お試しください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 아직 %1$@을(를) 찾는 중입니다. 잠시 후 다시 시도해 주세요."
+            "value": "Send가 아직 %1$@을(를) 찾는 중입니다. 잠시 후 다시 시도해 주세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh is %1$@ nog aan het zoeken. Probeer het zo meteen opnieuw."
+            "value": "Send is %1$@ nog aan het zoeken. Probeer het zo meteen opnieuw."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nadal szuka urządzenia %1$@. Spróbuj ponownie za chwilę."
+            "value": "Send nadal szuka urządzenia %1$@. Spróbuj ponownie za chwilę."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh ainda está procurando %1$@. Tente de novo daqui a pouco."
+            "value": "O Send ainda está procurando %1$@. Tente de novo daqui a pouco."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh ещё ищет устройство %1$@. Повторите попытку через мгновение."
+            "value": "Send ещё ищет устройство %1$@. Повторите попытку через мгновение."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh letar fortfarande efter %1$@. Försök igen om en stund."
+            "value": "Send letar fortfarande efter %1$@. Försök igen om en stund."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 仍在查找 %1$@。请稍后重试。"
+            "value": "Send 仍在查找 %1$@。请稍后重试。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 仍在尋找 %1$@。請稍後重試。"
+            "value": "Send 仍在尋找 %1$@。請稍後重試。"
           }
         }
       }
@@ -7336,85 +7336,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte den Ordner für empfangene Dateien nicht erreichen. Prüfe den freien Speicher und versuche es erneut."
+            "value": "Send konnte den Ordner für empfangene Dateien nicht erreichen. Prüfe den freien Speicher und versuche es erneut."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh couldn't reach the folder for received files. Check that there is free space and try again."
+            "value": "Send couldn't reach the folder for received files. Check that there is free space and try again."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no ha podido acceder a la carpeta de archivos recibidos. Comprueba que haya espacio libre y vuelve a intentarlo."
+            "value": "Send no ha podido acceder a la carpeta de archivos recibidos. Comprueba que haya espacio libre y vuelve a intentarlo."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu accéder au dossier des fichiers reçus. Vérifiez l'espace disponible et réessayez."
+            "value": "Send n'a pas pu accéder au dossier des fichiers reçus. Vérifiez l'espace disponible et réessayez."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito ad accedere alla cartella dei file ricevuti. Verifica lo spazio libero e riprova."
+            "value": "Send non è riuscito ad accedere alla cartella dei file ricevuti. Verifica lo spazio libero e riprova."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は受信ファイル用のフォルダにアクセスできませんでした。空き容量を確認してもう一度お試しください。"
+            "value": "Send は受信ファイル用のフォルダにアクセスできませんでした。空き容量を確認してもう一度お試しください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 받은 파일 폴더에 접근하지 못했습니다. 여유 공간을 확인한 뒤 다시 시도해 주세요."
+            "value": "Send가 받은 파일 폴더에 접근하지 못했습니다. 여유 공간을 확인한 뒤 다시 시도해 주세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon de map voor ontvangen bestanden niet bereiken. Controleer de vrije ruimte en probeer het opnieuw."
+            "value": "Send kon de map voor ontvangen bestanden niet bereiken. Controleer de vrije ruimte en probeer het opnieuw."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie uzyskał dostępu do folderu odebranych plików. Sprawdź wolne miejsce i spróbuj ponownie."
+            "value": "Send nie uzyskał dostępu do folderu odebranych plików. Sprawdź wolne miejsce i spróbuj ponownie."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu acessar a pasta dos arquivos recebidos. Verifique se há espaço livre e tente de novo."
+            "value": "O Send não conseguiu acessar a pasta dos arquivos recebidos. Verifique se há espaço livre e tente de novo."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог обратиться к папке для полученных файлов. Проверьте свободное место и повторите попытку."
+            "value": "Send не смог обратиться к папке для полученных файлов. Проверьте свободное место и повторите попытку."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte nå mappen för mottagna filer. Kontrollera ledigt utrymme och försök igen."
+            "value": "Send kunde inte nå mappen för mottagna filer. Kontrollera ledigt utrymme och försök igen."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法访问用于存放接收文件的文件夹。请检查是否有可用空间，然后重试。"
+            "value": "Send 无法访问用于存放接收文件的文件夹。请检查是否有可用空间，然后重试。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法存取用於存放接收檔案的資料夾。請檢查是否有可用空間，然後重試。"
+            "value": "Send 無法存取用於存放接收檔案的資料夾。請檢查是否有可用空間，然後重試。"
           }
         }
       }
@@ -7426,85 +7426,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte keinen Internetcode holen. Prüfe die Verbindung und versuche es erneut."
+            "value": "Send konnte keinen Internetcode holen. Prüfe die Verbindung und versuche es erneut."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh could not get an internet code. Check the connection and try again."
+            "value": "Send could not get an internet code. Check the connection and try again."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no pudo obtener un código de internet. Comprueba la conexión e inténtalo de nuevo."
+            "value": "Send no pudo obtener un código de internet. Comprueba la conexión e inténtalo de nuevo."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu obtenir de code Internet. Vérifiez la connexion et réessayez."
+            "value": "Send n'a pas pu obtenir de code Internet. Vérifiez la connexion et réessayez."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito a ottenere un codice internet. Controlla la connessione e riprova."
+            "value": "Send non è riuscito a ottenere un codice internet. Controlla la connessione e riprova."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh はインターネットコードを取得できませんでした。接続を確認してもう一度お試しください。"
+            "value": "Send はインターネットコードを取得できませんでした。接続を確認してもう一度お試しください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 인터넷 코드를 받지 못했습니다. 연결을 확인한 뒤 다시 시도하세요."
+            "value": "Send가 인터넷 코드를 받지 못했습니다. 연결을 확인한 뒤 다시 시도하세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon geen internetcode ophalen. Controleer de verbinding en probeer het opnieuw."
+            "value": "Send kon geen internetcode ophalen. Controleer de verbinding en probeer het opnieuw."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie mógł pobrać kodu internetowego. Sprawdź połączenie i spróbuj ponownie."
+            "value": "Send nie mógł pobrać kodu internetowego. Sprawdź połączenie i spróbuj ponownie."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu obter um código de internet. Verifique a conexão e tente novamente."
+            "value": "O Send não conseguiu obter um código de internet. Verifique a conexão e tente novamente."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог получить интернет-код. Проверьте подключение и попробуйте снова."
+            "value": "Send не смог получить интернет-код. Проверьте подключение и попробуйте снова."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte hämta någon internetkod. Kontrollera anslutningen och försök igen."
+            "value": "Send kunde inte hämta någon internetkod. Kontrollera anslutningen och försök igen."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法获取互联网代码。请检查连接后重试。"
+            "value": "Send 无法获取互联网代码。请检查连接后重试。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法取得網際網路代碼。請檢查連線後再試一次。"
+            "value": "Send 無法取得網際網路代碼。請檢查連線後再試一次。"
           }
         }
       }
@@ -7786,175 +7786,175 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte nicht ermitteln, wie „%1$@“ erreichbar ist. Vielleicht ist es gerade offline gegangen."
+            "value": "Send konnte nicht ermitteln, wie „%1$@“ erreichbar ist. Vielleicht ist es gerade offline gegangen."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh couldn't work out how to reach “%1$@”. It may have just gone offline."
+            "value": "Send couldn't work out how to reach “%1$@”. It may have just gone offline."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no ha podido determinar cómo llegar a «%1$@». Puede que se haya desconectado hace un momento."
+            "value": "Send no ha podido determinar cómo llegar a «%1$@». Puede que se haya desconectado hace un momento."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu déterminer comment joindre « %1$@ ». L'appareil vient peut-être de se déconnecter."
+            "value": "Send n'a pas pu déterminer comment joindre « %1$@ ». L'appareil vient peut-être de se déconnecter."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito a capire come raggiungere «%1$@». Potrebbe essersi appena disconnesso."
+            "value": "Send non è riuscito a capire come raggiungere «%1$@». Potrebbe essersi appena disconnesso."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は「%1$@」への接続方法を判別できませんでした。オフラインになった可能性があります。"
+            "value": "Send は「%1$@」への接続方法を判別できませんでした。オフラインになった可能性があります。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 “%1$@”에 연결할 방법을 찾지 못했습니다. 방금 오프라인이 되었을 수 있습니다."
+            "value": "Send가 “%1$@”에 연결할 방법을 찾지 못했습니다. 방금 오프라인이 되었을 수 있습니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon niet bepalen hoe ‘%1$@’ te bereiken is. Mogelijk is het net offline gegaan."
+            "value": "Send kon niet bepalen hoe ‘%1$@’ te bereiken is. Mogelijk is het net offline gegaan."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie ustalił, jak połączyć się z urządzeniem „%1$@”. Mogło właśnie przejść w tryb offline."
+            "value": "Send nie ustalił, jak połączyć się z urządzeniem „%1$@”. Mogło właśnie przejść w tryb offline."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu descobrir como chegar a “%1$@”. Pode ser que ele tenha ficado offline agora."
+            "value": "O Send não conseguiu descobrir como chegar a “%1$@”. Pode ser que ele tenha ficado offline agora."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог определить, как связаться с устройством «%1$@». Возможно, оно только что отключилось."
+            "value": "Send не смог определить, как связаться с устройством «%1$@». Возможно, оно только что отключилось."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte avgöra hur ”%1$@” nås. Enheten kan just ha gått offline."
+            "value": "Send kunde inte avgöra hur ”%1$@” nås. Enheten kan just ha gått offline."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法确定如何连接“%1$@”。它可能刚刚离线。"
+            "value": "Send 无法确定如何连接“%1$@”。它可能刚刚离线。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法判斷如何連線「%1$@」。它可能剛剛離線。"
+            "value": "Send 無法判斷如何連線「%1$@」。它可能剛剛離線。"
           }
         }
       }
     },
     "error_version_mismatch": {
-      "comment": "Core error: incompatible Wooosh versions.",
+      "comment": "Core error: incompatible Send versions.",
       "extractionState": "manual",
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Auf diesem Gerät läuft eine nicht kompatible Wooosh-Version. Aktualisiere Wooosh auf beiden Geräten."
+            "value": "Auf diesem Gerät läuft eine nicht kompatible Send-Version. Aktualisiere Send auf beiden Geräten."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "That device runs a version of Wooosh that is not compatible. Update Wooosh on both devices."
+            "value": "That device runs a version of Send that is not compatible. Update Send on both devices."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ese dispositivo usa una versión de Wooosh que no es compatible. Actualiza Wooosh en ambos dispositivos."
+            "value": "Ese dispositivo usa una versión de Send que no es compatible. Actualiza Send en ambos dispositivos."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cet appareil utilise une version de Wooosh incompatible. Mettez Wooosh à jour sur les deux appareils."
+            "value": "Cet appareil utilise une version de Send incompatible. Mettez Send à jour sur les deux appareils."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Quel dispositivo usa una versione di Wooosh non compatibile. Aggiorna Wooosh su entrambi i dispositivi."
+            "value": "Quel dispositivo usa una versione di Send non compatibile. Aggiorna Send su entrambi i dispositivi."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "そのデバイスは互換性のないバージョンの Wooosh を実行しています。両方のデバイスで Wooosh を更新してください。"
+            "value": "そのデバイスは互換性のないバージョンの Send を実行しています。両方のデバイスで Send を更新してください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "해당 기기는 호환되지 않는 버전의 Wooosh를 실행 중입니다. 두 기기에서 Wooosh를 업데이트하세요."
+            "value": "해당 기기는 호환되지 않는 버전의 Send를 실행 중입니다. 두 기기에서 Send를 업데이트하세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dat apparaat gebruikt een versie van Wooosh die niet compatibel is. Werk Wooosh op beide apparaten bij."
+            "value": "Dat apparaat gebruikt een versie van Send die niet compatibel is. Werk Send op beide apparaten bij."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "To urządzenie ma niezgodną wersję Wooosh. Zaktualizuj Wooosh na obu urządzeniach."
+            "value": "To urządzenie ma niezgodną wersję Send. Zaktualizuj Send na obu urządzeniach."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Esse dispositivo usa uma versão do Wooosh que não é compatível. Atualize o Wooosh nos dois dispositivos."
+            "value": "Esse dispositivo usa uma versão do Send que não é compatível. Atualize o Send nos dois dispositivos."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "На этом устройстве несовместимая версия Wooosh. Обновите Wooosh на обоих устройствах."
+            "value": "На этом устройстве несовместимая версия Send. Обновите Send на обоих устройствах."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Enheten kör en version av Wooosh som inte är kompatibel. Uppdatera Wooosh på båda enheterna."
+            "value": "Enheten kör en version av Send som inte är kompatibel. Uppdatera Send på båda enheterna."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "该设备运行的 Wooosh 版本不兼容。请在两台设备上更新 Wooosh。"
+            "value": "该设备运行的 Send 版本不兼容。请在两台设备上更新 Send。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "該裝置執行的 Wooosh 版本不相容。請在兩台裝置上更新 Wooosh。"
+            "value": "該裝置執行的 Send 版本不相容。請在兩台裝置上更新 Send。"
           }
         }
       }
@@ -8460,85 +8460,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kann sich auch über das Internet verbinden, für ein Gerät außerhalb dieses Netzwerks. Hole einen Code und gib ihn dem Gerät, das die Dateien sendet."
+            "value": "Send kann sich auch über das Internet verbinden, für ein Gerät außerhalb dieses Netzwerks. Hole einen Code und gib ihn dem Gerät, das die Dateien sendet."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh can also connect over the internet, for a device that is not on this network. Get a code, then give it to the device that will send the files."
+            "value": "Send can also connect over the internet, for a device that is not on this network. Get a code, then give it to the device that will send the files."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh también puede conectarse por internet, para un dispositivo que no está en esta red. Obtén un código y dáselo al dispositivo que enviará los archivos."
+            "value": "Send también puede conectarse por internet, para un dispositivo que no está en esta red. Obtén un código y dáselo al dispositivo que enviará los archivos."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh peut aussi se connecter par Internet, pour un appareil qui n'est pas sur ce réseau. Obtenez un code, puis donnez-le à l'appareil qui enverra les fichiers."
+            "value": "Send peut aussi se connecter par Internet, pour un appareil qui n'est pas sur ce réseau. Obtenez un code, puis donnez-le à l'appareil qui enverra les fichiers."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh può connettersi anche via internet, per un dispositivo che non è su questa rete. Richiedi un codice e dallo al dispositivo che invierà i file."
+            "value": "Send può connettersi anche via internet, per un dispositivo che non è su questa rete. Richiedi un codice e dallo al dispositivo che invierà i file."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は同じネットワークにないデバイスとも、インターネット経由で接続できます。コードを取得し、ファイルを送る側のデバイスに渡してください。"
+            "value": "Send は同じネットワークにないデバイスとも、インターネット経由で接続できます。コードを取得し、ファイルを送る側のデバイスに渡してください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh는 같은 네트워크에 없는 기기와도 인터넷으로 연결할 수 있습니다. 코드를 받아 파일을 보낼 기기에 전달하세요."
+            "value": "Send는 같은 네트워크에 없는 기기와도 인터넷으로 연결할 수 있습니다. 코드를 받아 파일을 보낼 기기에 전달하세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kan ook via internet verbinden, voor een apparaat dat niet op dit netwerk zit. Vraag een code aan en geef die aan het apparaat dat de bestanden verstuurt."
+            "value": "Send kan ook via internet verbinden, voor een apparaat dat niet op dit netwerk zit. Vraag een code aan en geef die aan het apparaat dat de bestanden verstuurt."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh może połączyć się także przez internet, z urządzeniem spoza tej sieci. Pobierz kod i przekaż go urządzeniu, które wyśle pliki."
+            "value": "Send może połączyć się także przez internet, z urządzeniem spoza tej sieci. Pobierz kod i przekaż go urządzeniu, które wyśle pliki."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh também pode conectar pela internet, para um dispositivo que não está nesta rede. Obtenha um código e entregue-o ao dispositivo que vai enviar os arquivos."
+            "value": "O Send também pode conectar pela internet, para um dispositivo que não está nesta rede. Obtenha um código e entregue-o ao dispositivo que vai enviar os arquivos."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh может подключаться и через интернет, к устройству вне этой сети. Получите код и передайте его устройству, которое будет отправлять файлы."
+            "value": "Send может подключаться и через интернет, к устройству вне этой сети. Получите код и передайте его устройству, которое будет отправлять файлы."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kan även ansluta via internet, till en enhet som inte finns i det här nätverket. Hämta en kod och ge den till enheten som ska skicka filerna."
+            "value": "Send kan även ansluta via internet, till en enhet som inte finns i det här nätverket. Hämta en kod och ge den till enheten som ska skicka filerna."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 也可以通过互联网连接不在此网络中的设备。获取一个代码，然后交给要发送文件的设备。"
+            "value": "Send 也可以通过互联网连接不在此网络中的设备。获取一个代码，然后交给要发送文件的设备。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 也可以透過網際網路連線到不在此網路中的裝置。取得一個代碼，然後交給要傳送檔案的裝置。"
+            "value": "Send 也可以透過網際網路連線到不在此網路中的裝置。取得一個代碼，然後交給要傳送檔案的裝置。"
           }
         }
       }
@@ -8910,85 +8910,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte die beiden Geräte nicht direkt verbinden. Über diese Verbindung können nur Dateien bis %1$@ gesendet werden."
+            "value": "Send konnte die beiden Geräte nicht direkt verbinden. Über diese Verbindung können nur Dateien bis %1$@ gesendet werden."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh could not connect the two devices directly. This connection can only send files up to %1$@."
+            "value": "Send could not connect the two devices directly. This connection can only send files up to %1$@."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no pudo conectar los dos dispositivos directamente. Esta conexión solo puede enviar archivos de hasta %1$@."
+            "value": "Send no pudo conectar los dos dispositivos directamente. Esta conexión solo puede enviar archivos de hasta %1$@."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu connecter les deux appareils directement. Cette connexion ne peut envoyer que des fichiers de %1$@ maximum."
+            "value": "Send n'a pas pu connecter les deux appareils directement. Cette connexion ne peut envoyer que des fichiers de %1$@ maximum."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito a collegare i due dispositivi direttamente. Questa connessione può inviare solo file fino a %1$@."
+            "value": "Send non è riuscito a collegare i due dispositivi direttamente. Questa connessione può inviare solo file fino a %1$@."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は 2 台のデバイスを直接つなげられませんでした。この接続で送信できるのは %1$@ までのファイルです。"
+            "value": "Send は 2 台のデバイスを直接つなげられませんでした。この接続で送信できるのは %1$@ までのファイルです。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 두 기기를 직접 연결하지 못했습니다. 이 연결로는 최대 %1$@의 파일만 보낼 수 있습니다."
+            "value": "Send가 두 기기를 직접 연결하지 못했습니다. 이 연결로는 최대 %1$@의 파일만 보낼 수 있습니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon de twee apparaten niet rechtstreeks verbinden. Via deze verbinding kunnen alleen bestanden tot %1$@ worden verstuurd."
+            "value": "Send kon de twee apparaten niet rechtstreeks verbinden. Via deze verbinding kunnen alleen bestanden tot %1$@ worden verstuurd."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie mógł połączyć obu urządzeń bezpośrednio. Przez to połączenie można wysyłać tylko pliki do %1$@."
+            "value": "Send nie mógł połączyć obu urządzeń bezpośrednio. Przez to połączenie można wysyłać tylko pliki do %1$@."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu conectar os dois dispositivos diretamente. Esta conexão só pode enviar arquivos de até %1$@."
+            "value": "O Send não conseguiu conectar os dois dispositivos diretamente. Esta conexão só pode enviar arquivos de até %1$@."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог соединить устройства напрямую. Через это соединение можно отправлять только файлы до %1$@."
+            "value": "Send не смог соединить устройства напрямую. Через это соединение можно отправлять только файлы до %1$@."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte koppla ihop enheterna direkt. Den här anslutningen kan bara skicka filer på upp till %1$@."
+            "value": "Send kunde inte koppla ihop enheterna direkt. Den här anslutningen kan bara skicka filer på upp till %1$@."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法让两台设备直连。此连接只能发送不超过 %1$@ 的文件。"
+            "value": "Send 无法让两台设备直连。此连接只能发送不超过 %1$@ 的文件。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法讓兩台裝置直連。此連線只能傳送不超過 %1$@ 的檔案。"
+            "value": "Send 無法讓兩台裝置直連。此連線只能傳送不超過 %1$@ 的檔案。"
           }
         }
       }
@@ -9540,85 +9540,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Beim Abrufen eines Codes kontaktiert Wooosh seinen Server, damit sich die beiden Geräte finden. Er speichert nichts über sie, und Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht."
+            "value": "Beim Abrufen eines Codes kontaktiert Send seinen Server, damit sich die beiden Geräte finden. Er speichert nichts über sie, und Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Getting a code contacts the Wooosh server so the two devices can find each other. It keeps no record of them, and files travel directly between the devices whenever a direct route exists."
+            "value": "Getting a code contacts the Send server so the two devices can find each other. It keeps no record of them, and files travel directly between the devices whenever a direct route exists."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Obtener un código contacta con el servidor de Wooosh para que los dos dispositivos se encuentren. No guarda ningún registro de ellos, y los archivos viajan directamente entre los dispositivos siempre que haya una ruta directa."
+            "value": "Obtener un código contacta con el servidor de Send para que los dos dispositivos se encuentren. No guarda ningún registro de ellos, y los archivos viajan directamente entre los dispositivos siempre que haya una ruta directa."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Obtenir un code contacte le serveur Wooosh pour que les deux appareils se trouvent. Il ne conserve aucune trace d'eux, et les fichiers passent directement d'un appareil à l'autre dès qu'une route directe existe."
+            "value": "Obtenir un code contacte le serveur Send pour que les deux appareils se trouvent. Il ne conserve aucune trace d'eux, et les fichiers passent directement d'un appareil à l'autre dès qu'une route directe existe."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ottenere un codice contatta il server di Wooosh perché i due dispositivi si trovino. Non ne conserva alcuna traccia, e i file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto."
+            "value": "Ottenere un codice contatta il server di Send perché i due dispositivi si trovino. Non ne conserva alcuna traccia, e i file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "コードを取得すると、2 台のデバイスが互いを見つけられるよう Wooosh のサーバーに接続します。サーバーは記録を残さず、直接の経路があればファイルはデバイス間で直接送られます。"
+            "value": "コードを取得すると、2 台のデバイスが互いを見つけられるよう Send のサーバーに接続します。サーバーは記録を残さず、直接の経路があればファイルはデバイス間で直接送られます。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "코드를 받으면 두 기기가 서로를 찾을 수 있도록 Wooosh 서버에 연결합니다. 서버는 기록을 남기지 않으며, 직접 연결할 수 있으면 파일은 기기 간에 직접 전송됩니다."
+            "value": "코드를 받으면 두 기기가 서로를 찾을 수 있도록 Send 서버에 연결합니다. 서버는 기록을 남기지 않으며, 직접 연결할 수 있으면 파일은 기기 간에 직접 전송됩니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Een code ophalen maakt contact met de server van Wooosh, zodat de twee apparaten elkaar vinden. Die bewaart niets over ze, en bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is."
+            "value": "Een code ophalen maakt contact met de server van Send, zodat de twee apparaten elkaar vinden. Die bewaart niets over ze, en bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pobranie kodu łączy się z serwerem Wooosh, aby oba urządzenia mogły się odnaleźć. Serwer nie przechowuje o nich żadnych danych, a pliki są przesyłane bezpośrednio, gdy tylko istnieje bezpośrednia trasa."
+            "value": "Pobranie kodu łączy się z serwerem Send, aby oba urządzenia mogły się odnaleźć. Serwer nie przechowuje o nich żadnych danych, a pliki są przesyłane bezpośrednio, gdy tylko istnieje bezpośrednia trasa."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Obter um código contata o servidor do Wooosh para que os dois dispositivos se encontrem. Ele não guarda nenhum registro deles, e os arquivos vão direto de um dispositivo para o outro sempre que houver uma rota direta."
+            "value": "Obter um código contata o servidor do Send para que os dois dispositivos se encontrem. Ele não guarda nenhum registro deles, e os arquivos vão direto de um dispositivo para o outro sempre que houver uma rota direta."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Чтобы устройства нашли друг друга, при получении кода Wooosh обращается к своему серверу. Он ничего о них не хранит, а файлы передаются напрямую, когда есть прямой маршрут."
+            "value": "Чтобы устройства нашли друг друга, при получении кода Send обращается к своему серверу. Он ничего о них не хранит, а файлы передаются напрямую, когда есть прямой маршрут."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "När du hämtar en kod kontaktar Wooosh sin server så att enheterna hittar varandra. Den sparar inget om dem, och filer skickas direkt mellan enheterna när det finns en direkt väg."
+            "value": "När du hämtar en kod kontaktar Send sin server så att enheterna hittar varandra. Den sparar inget om dem, och filer skickas direkt mellan enheterna när det finns en direkt väg."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "获取代码时会联系 Wooosh 服务器，让两台设备找到彼此。服务器不会保留任何记录，只要存在直接路径，文件就会在设备之间直接传输。"
+            "value": "获取代码时会联系 Send 服务器，让两台设备找到彼此。服务器不会保留任何记录，只要存在直接路径，文件就会在设备之间直接传输。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "取得代碼時會聯絡 Wooosh 伺服器，讓兩台裝置找到彼此。伺服器不會保留任何紀錄，只要有直接路徑，檔案就會在裝置之間直接傳輸。"
+            "value": "取得代碼時會聯絡 Send 伺服器，讓兩台裝置找到彼此。伺服器不會保留任何紀錄，只要有直接路徑，檔案就會在裝置之間直接傳輸。"
           }
         }
       }
@@ -9720,85 +9720,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "„%1$@“ zeigt einen anderen Sicherheitsschlüssel als beim Koppeln. Das passiert meist nach einer Neuinstallation von Wooosh oder einem Zurücksetzen des Geräts, kann aber auch bedeuten, dass ein anderes Gerät sich dafür ausgibt. Übertragungen mit diesem Gerät sind blockiert, bis du erneut koppelst."
+            "value": "„%1$@“ zeigt einen anderen Sicherheitsschlüssel als beim Koppeln. Das passiert meist nach einer Neuinstallation von Send oder einem Zurücksetzen des Geräts, kann aber auch bedeuten, dass ein anderes Gerät sich dafür ausgibt. Übertragungen mit diesem Gerät sind blockiert, bis du erneut koppelst."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "“%1$@” is presenting a different security key than when you paired. This usually happens after Wooosh is reinstalled or the device is reset, but it can also mean another device is impersonating it. Transfers with this device are blocked until you pair again."
+            "value": "“%1$@” is presenting a different security key than when you paired. This usually happens after Send is reinstalled or the device is reset, but it can also mean another device is impersonating it. Transfers with this device are blocked until you pair again."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "«%1$@» presenta una clave de seguridad distinta a la de la vinculación. Suele ocurrir tras reinstalar Wooosh o restablecer el dispositivo, pero también puede significar que otro dispositivo se está haciendo pasar por él. Las transferencias con este dispositivo están bloqueadas hasta que vuelvas a vincularlo."
+            "value": "«%1$@» presenta una clave de seguridad distinta a la de la vinculación. Suele ocurrir tras reinstalar Send o restablecer el dispositivo, pero también puede significar que otro dispositivo se está haciendo pasar por él. Las transferencias con este dispositivo están bloqueadas hasta que vuelvas a vincularlo."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "« %1$@ » présente une clé de sécurité différente de celle utilisée lors de l'association. Cela arrive généralement après une réinstallation de Wooosh ou une réinitialisation de l'appareil, mais cela peut aussi signifier qu'un autre appareil se fait passer pour lui. Les transferts avec cet appareil sont bloqués jusqu'à une nouvelle association."
+            "value": "« %1$@ » présente une clé de sécurité différente de celle utilisée lors de l'association. Cela arrive généralement après une réinstallation de Send ou une réinitialisation de l'appareil, mais cela peut aussi signifier qu'un autre appareil se fait passer pour lui. Les transferts avec cet appareil sont bloqués jusqu'à une nouvelle association."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "«%1$@» presenta una chiave di sicurezza diversa da quella dell'abbinamento. Di solito succede dopo una reinstallazione di Wooosh o un ripristino del dispositivo, ma può anche significare che un altro dispositivo si sta spacciando per lui. I trasferimenti con questo dispositivo sono bloccati finché non lo abbini di nuovo."
+            "value": "«%1$@» presenta una chiave di sicurezza diversa da quella dell'abbinamento. Di solito succede dopo una reinstallazione di Send o un ripristino del dispositivo, ma può anche significare che un altro dispositivo si sta spacciando per lui. I trasferimenti con questo dispositivo sono bloccati finché non lo abbini di nuovo."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "「%1$@」は、ペアリング時とは異なるセキュリティキーを提示しています。通常は Wooosh の再インストールやデバイスの初期化の後に起こりますが、別のデバイスがなりすましている可能性もあります。再度ペアリングするまで、このデバイスとの転送はブロックされます。"
+            "value": "「%1$@」は、ペアリング時とは異なるセキュリティキーを提示しています。通常は Send の再インストールやデバイスの初期化の後に起こりますが、別のデバイスがなりすましている可能性もあります。再度ペアリングするまで、このデバイスとの転送はブロックされます。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "“%1$@”이(가) 페어링할 때와 다른 보안 키를 제시하고 있습니다. 보통 Wooosh를 다시 설치하거나 기기를 초기화한 뒤에 발생하지만, 다른 기기가 사칭하고 있을 수도 있습니다. 다시 페어링할 때까지 이 기기와의 전송은 차단됩니다."
+            "value": "“%1$@”이(가) 페어링할 때와 다른 보안 키를 제시하고 있습니다. 보통 Send를 다시 설치하거나 기기를 초기화한 뒤에 발생하지만, 다른 기기가 사칭하고 있을 수도 있습니다. 다시 페어링할 때까지 이 기기와의 전송은 차단됩니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "‘%1$@’ toont een andere beveiligingssleutel dan bij het koppelen. Dat gebeurt meestal na het opnieuw installeren van Wooosh of het resetten van het apparaat, maar het kan ook betekenen dat een ander apparaat zich ervoor uitgeeft. Overdrachten met dit apparaat zijn geblokkeerd totdat je opnieuw koppelt."
+            "value": "‘%1$@’ toont een andere beveiligingssleutel dan bij het koppelen. Dat gebeurt meestal na het opnieuw installeren van Send of het resetten van het apparaat, maar het kan ook betekenen dat een ander apparaat zich ervoor uitgeeft. Overdrachten met dit apparaat zijn geblokkeerd totdat je opnieuw koppelt."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Urządzenie „%1$@” przedstawia inny klucz zabezpieczeń niż podczas parowania. Zwykle dzieje się tak po ponownej instalacji Wooosh lub zresetowaniu urządzenia, ale może też oznaczać, że podszywa się pod nie inne urządzenie. Transfery z tym urządzeniem są zablokowane do czasu ponownego sparowania."
+            "value": "Urządzenie „%1$@” przedstawia inny klucz zabezpieczeń niż podczas parowania. Zwykle dzieje się tak po ponownej instalacji Send lub zresetowaniu urządzenia, ale może też oznaczać, że podszywa się pod nie inne urządzenie. Transfery z tym urządzeniem są zablokowane do czasu ponownego sparowania."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "“%1$@” está apresentando uma chave de segurança diferente da usada no pareamento. Isso normalmente acontece depois de reinstalar o Wooosh ou redefinir o dispositivo, mas também pode significar que outro dispositivo está se passando por ele. As transferências com este dispositivo ficam bloqueadas até você parear de novo."
+            "value": "“%1$@” está apresentando uma chave de segurança diferente da usada no pareamento. Isso normalmente acontece depois de reinstalar o Send ou redefinir o dispositivo, mas também pode significar que outro dispositivo está se passando por ele. As transferências com este dispositivo ficam bloqueadas até você parear de novo."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Устройство «%1$@» предъявляет другой ключ безопасности, чем при связывании. Обычно так бывает после переустановки Wooosh или сброса устройства, но это может означать и подмену устройства. Передачи с этим устройством заблокированы, пока вы не свяжетесь заново."
+            "value": "Устройство «%1$@» предъявляет другой ключ безопасности, чем при связывании. Обычно так бывает после переустановки Send или сброса устройства, но это может означать и подмену устройства. Передачи с этим устройством заблокированы, пока вы не свяжетесь заново."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "”%1$@” visar en annan säkerhetsnyckel än vid parkopplingen. Det händer oftast efter en ominstallation av Wooosh eller en återställning av enheten, men det kan också betyda att en annan enhet utger sig för att vara den. Överföringar med enheten är blockerade tills du parkopplar igen."
+            "value": "”%1$@” visar en annan säkerhetsnyckel än vid parkopplingen. Det händer oftast efter en ominstallation av Send eller en återställning av enheten, men det kan också betyda att en annan enhet utger sig för att vara den. Överföringar med enheten är blockerade tills du parkopplar igen."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "“%1$@”出示的安全密钥与配对时不同。这通常发生在重新安装 Wooosh 或重置设备之后，但也可能意味着另一台设备正在冒充它。在你重新配对之前，与这台设备的传输会被阻止。"
+            "value": "“%1$@”出示的安全密钥与配对时不同。这通常发生在重新安装 Send 或重置设备之后，但也可能意味着另一台设备正在冒充它。在你重新配对之前，与这台设备的传输会被阻止。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "「%1$@」出示的安全金鑰與配對時不同。這通常發生在重新安裝 Wooosh 或重置裝置之後，但也可能表示另一台裝置正在冒充它。在你重新配對之前，與這台裝置的傳輸會被封鎖。"
+            "value": "「%1$@」出示的安全金鑰與配對時不同。這通常發生在重新安裝 Send 或重置裝置之後，但也可能表示另一台裝置正在冒充它。在你重新配對之前，與這台裝置的傳輸會被封鎖。"
           }
         }
       }
@@ -13496,85 +13496,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh konnte nicht mit %1$@ koppeln"
+            "value": "Send konnte nicht mit %1$@ koppeln"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh Couldn't Pair with %1$@"
+            "value": "Send Couldn't Pair with %1$@"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh no pudo vincularse con %1$@"
+            "value": "Send no pudo vincularse con %1$@"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh n'a pas pu s'associer à %1$@"
+            "value": "Send n'a pas pu s'associer à %1$@"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh non è riuscito ad abbinarsi a %1$@"
+            "value": "Send non è riuscito ad abbinarsi a %1$@"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は %1$@ とペアリングできませんでした"
+            "value": "Send は %1$@ とペアリングできませんでした"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 %1$@과(와) 페어링하지 못했습니다"
+            "value": "Send가 %1$@과(와) 페어링하지 못했습니다"
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kon niet koppelen met %1$@"
+            "value": "Send kon niet koppelen met %1$@"
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nie mógł sparować się z urządzeniem %1$@"
+            "value": "Send nie mógł sparować się z urządzeniem %1$@"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh não conseguiu parear com %1$@"
+            "value": "O Send não conseguiu parear com %1$@"
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh не смог связаться с устройством %1$@"
+            "value": "Send не смог связаться с устройством %1$@"
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh kunde inte parkoppla med %1$@"
+            "value": "Send kunde inte parkoppla med %1$@"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 无法与 %1$@ 配对"
+            "value": "Send 无法与 %1$@ 配对"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 無法與 %1$@ 配對"
+            "value": "Send 無法與 %1$@ 配對"
           }
         }
       }
@@ -14126,85 +14126,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Richte die Kamera auf den Kopplungscode, den Wooosh auf dem anderen Gerät anzeigt."
+            "value": "Richte die Kamera auf den Kopplungscode, den Send auf dem anderen Gerät anzeigt."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Point the camera at the pairing code shown in Wooosh on the other device."
+            "value": "Point the camera at the pairing code shown in Send on the other device."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Apunta la cámara al código de vinculación que muestra Wooosh en el otro dispositivo."
+            "value": "Apunta la cámara al código de vinculación que muestra Send en el otro dispositivo."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dirigez l'appareil photo vers le code d'association affiché par Wooosh sur l'autre appareil."
+            "value": "Dirigez l'appareil photo vers le code d'association affiché par Send sur l'autre appareil."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inquadra con la fotocamera il codice di abbinamento mostrato da Wooosh sull'altro dispositivo."
+            "value": "Inquadra con la fotocamera il codice di abbinamento mostrato da Send sull'altro dispositivo."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "相手のデバイスの Wooosh に表示されているペアリングコードにカメラを向けてください。"
+            "value": "相手のデバイスの Send に表示されているペアリングコードにカメラを向けてください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "상대 기기의 Wooosh에 표시된 페어링 코드에 카메라를 비추세요."
+            "value": "상대 기기의 Send에 표시된 페어링 코드에 카메라를 비추세요."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Richt de camera op de koppelcode die Wooosh op het andere apparaat toont."
+            "value": "Richt de camera op de koppelcode die Send op het andere apparaat toont."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Skieruj aparat na kod parowania wyświetlany przez Wooosh na drugim urządzeniu."
+            "value": "Skieruj aparat na kod parowania wyświetlany przez Send na drugim urządzeniu."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aponte a câmera para o código de pareamento que o Wooosh mostra no outro dispositivo."
+            "value": "Aponte a câmera para o código de pareamento que o Send mostra no outro dispositivo."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Наведите камеру на код связи, показанный в Wooosh на другом устройстве."
+            "value": "Наведите камеру на код связи, показанный в Send на другом устройстве."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Rikta kameran mot parkopplingskoden som Wooosh visar på den andra enheten."
+            "value": "Rikta kameran mot parkopplingskoden som Send visar på den andra enheten."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "将摄像头对准另一台设备上 Wooosh 显示的配对码。"
+            "value": "将摄像头对准另一台设备上 Send 显示的配对码。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "將相機對準另一台裝置上 Wooosh 顯示的配對碼。"
+            "value": "將相機對準另一台裝置上 Send 顯示的配對碼。"
           }
         }
       }
@@ -14666,85 +14666,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh vertraut diesem Gerät ab sofort. Du musst die Bestätigungswörter nicht mehr abgleichen."
+            "value": "Send vertraut diesem Gerät ab sofort. Du musst die Bestätigungswörter nicht mehr abgleichen."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh trusts this device from now on. You will not need to compare verification phrases with it again."
+            "value": "Send trusts this device from now on. You will not need to compare verification phrases with it again."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "A partir de ahora Wooosh confía en este dispositivo. No hará falta que vuelvas a comparar frases de verificación con él."
+            "value": "A partir de ahora Send confía en este dispositivo. No hará falta que vuelvas a comparar frases de verificación con él."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh fait désormais confiance à cet appareil. Vous n'aurez plus à comparer les phrases de vérification avec lui."
+            "value": "Send fait désormais confiance à cet appareil. Vous n'aurez plus à comparer les phrases de vérification avec lui."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "D'ora in poi Wooosh si fida di questo dispositivo. Non dovrai più confrontare le frasi di verifica con lui."
+            "value": "D'ora in poi Send si fida di questo dispositivo. Non dovrai più confrontare le frasi di verifica con lui."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は今後このデバイスを信頼します。次回以降、確認フレーズを照合する必要はありません。"
+            "value": "Send は今後このデバイスを信頼します。次回以降、確認フレーズを照合する必要はありません。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "이제 Wooosh는 이 기기를 신뢰합니다. 앞으로는 확인 문구를 비교할 필요가 없습니다."
+            "value": "이제 Send는 이 기기를 신뢰합니다. 앞으로는 확인 문구를 비교할 필요가 없습니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh vertrouwt dit apparaat vanaf nu. Je hoeft geen verificatiezinnen meer met dit apparaat te vergelijken."
+            "value": "Send vertrouwt dit apparaat vanaf nu. Je hoeft geen verificatiezinnen meer met dit apparaat te vergelijken."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Od teraz Wooosh ufa temu urządzeniu. Nie będzie już trzeba porównywać z nim fraz weryfikacyjnych."
+            "value": "Od teraz Send ufa temu urządzeniu. Nie będzie już trzeba porównywać z nim fraz weryfikacyjnych."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "A partir de agora o Wooosh confia neste dispositivo. Você não vai precisar comparar frases de verificação com ele de novo."
+            "value": "A partir de agora o Send confia neste dispositivo. Você não vai precisar comparar frases de verificação com ele de novo."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Теперь Wooosh доверяет этому устройству. Сверять проверочные фразы с ним больше не потребуется."
+            "value": "Теперь Send доверяет этому устройству. Сверять проверочные фразы с ним больше не потребуется."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh litar på den här enheten från och med nu. Du behöver inte jämföra verifieringsfraser med den igen."
+            "value": "Send litar på den här enheten från och med nu. Du behöver inte jämföra verifieringsfraser med den igen."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "从现在起，Wooosh 会信任这台设备。你不需要再与它核对验证短语。"
+            "value": "从现在起，Send 会信任这台设备。你不需要再与它核对验证短语。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "從現在起，Wooosh 會信任這台裝置。你不需要再與它核對驗證短語。"
+            "value": "從現在起，Send 會信任這台裝置。你不需要再與它核對驗證短語。"
           }
         }
       }
@@ -16736,85 +16736,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh nutzt den eingetragenen Server. Das andere Gerät muss denselben Server nutzen."
+            "value": "Send nutzt den eingetragenen Server. Das andere Gerät muss denselben Server nutzen."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh uses the server you enter. The other device must use the same server."
+            "value": "Send uses the server you enter. The other device must use the same server."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh usa el servidor que indiques. El otro dispositivo debe usar el mismo servidor."
+            "value": "Send usa el servidor que indiques. El otro dispositivo debe usar el mismo servidor."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh utilise le serveur que vous indiquez. L'autre appareil doit utiliser le même serveur."
+            "value": "Send utilise le serveur que vous indiquez. L'autre appareil doit utiliser le même serveur."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh usa il server che inserisci. L'altro dispositivo deve usare lo stesso server."
+            "value": "Send usa il server che inserisci. L'altro dispositivo deve usare lo stesso server."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は入力したサーバーを使います。相手のデバイスも同じサーバーを使う必要があります。"
+            "value": "Send は入力したサーバーを使います。相手のデバイスも同じサーバーを使う必要があります。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh는 입력한 서버를 사용합니다. 상대 기기도 같은 서버를 사용해야 합니다."
+            "value": "Send는 입력한 서버를 사용합니다. 상대 기기도 같은 서버를 사용해야 합니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh gebruikt de server die je invult. Het andere apparaat moet dezelfde server gebruiken."
+            "value": "Send gebruikt de server die je invult. Het andere apparaat moet dezelfde server gebruiken."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh korzysta z podanego serwera. Drugie urządzenie musi używać tego samego serwera."
+            "value": "Send korzysta z podanego serwera. Drugie urządzenie musi używać tego samego serwera."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh usa o servidor que você informar. O outro dispositivo precisa usar o mesmo servidor."
+            "value": "O Send usa o servidor que você informar. O outro dispositivo precisa usar o mesmo servidor."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh использует указанный сервер. Другое устройство должно использовать тот же сервер."
+            "value": "Send использует указанный сервер. Другое устройство должно использовать тот же сервер."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh använder servern du anger. Den andra enheten måste använda samma server."
+            "value": "Send använder servern du anger. Den andra enheten måste använda samma server."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 使用你填写的服务器。对方设备也必须使用同一台服务器。"
+            "value": "Send 使用你填写的服务器。对方设备也必须使用同一台服务器。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 使用你填寫的伺服器。對方裝置也必須使用同一台伺服器。"
+            "value": "Send 使用你填寫的伺服器。對方裝置也必須使用同一台伺服器。"
           }
         }
       }
@@ -16916,85 +16916,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh schaltet Internetübertragungen aus und kontaktiert nichts. Senden funktioniert nur zwischen Geräten im selben Netzwerk."
+            "value": "Send schaltet Internetübertragungen aus und kontaktiert nichts. Senden funktioniert nur zwischen Geräten im selben Netzwerk."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh turns internet transfers off and contacts nothing. Sending works only between devices on the same network."
+            "value": "Send turns internet transfers off and contacts nothing. Sending works only between devices on the same network."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh desactiva las transferencias por internet y no contacta con nada. Enviar solo funciona entre dispositivos de la misma red."
+            "value": "Send desactiva las transferencias por internet y no contacta con nada. Enviar solo funciona entre dispositivos de la misma red."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh désactive les transferts par Internet et ne contacte rien. L'envoi ne fonctionne qu'entre appareils du même réseau."
+            "value": "Send désactive les transferts par Internet et ne contacte rien. L'envoi ne fonctionne qu'entre appareils du même réseau."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh disattiva i trasferimenti via internet e non contatta nulla. L'invio funziona solo tra dispositivi sulla stessa rete."
+            "value": "Send disattiva i trasferimenti via internet e non contatta nulla. L'invio funziona solo tra dispositivi sulla stessa rete."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh はインターネット転送をオフにし、どこにも接続しません。送信は同じネットワーク上のデバイス間でのみ行えます。"
+            "value": "Send はインターネット転送をオフにし、どこにも接続しません。送信は同じネットワーク上のデバイス間でのみ行えます。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh가 인터넷 전송을 끄고 아무 곳에도 연결하지 않습니다. 전송은 같은 네트워크의 기기 사이에서만 가능합니다."
+            "value": "Send가 인터넷 전송을 끄고 아무 곳에도 연결하지 않습니다. 전송은 같은 네트워크의 기기 사이에서만 가능합니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh schakelt internetoverdrachten uit en benadert niets. Versturen werkt alleen tussen apparaten op hetzelfde netwerk."
+            "value": "Send schakelt internetoverdrachten uit en benadert niets. Versturen werkt alleen tussen apparaten op hetzelfde netwerk."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh wyłącza przesyłanie przez internet i z niczym się nie łączy. Wysyłanie działa tylko między urządzeniami w tej samej sieci."
+            "value": "Send wyłącza przesyłanie przez internet i z niczym się nie łączy. Wysyłanie działa tylko między urządzeniami w tej samej sieci."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh desativa as transferências pela internet e não contata nada. O envio funciona só entre dispositivos na mesma rede."
+            "value": "O Send desativa as transferências pela internet e não contata nada. O envio funciona só entre dispositivos na mesma rede."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh отключает передачу через интернет и ни к чему не обращается. Отправка работает только между устройствами в одной сети."
+            "value": "Send отключает передачу через интернет и ни к чему не обращается. Отправка работает только между устройствами в одной сети."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh stänger av internetöverföringar och kontaktar ingenting. Att skicka fungerar bara mellan enheter i samma nätverk."
+            "value": "Send stänger av internetöverföringar och kontaktar ingenting. Att skicka fungerar bara mellan enheter i samma nätverk."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 关闭互联网传输，不连接任何服务。仅可在同一网络的设备之间发送。"
+            "value": "Send 关闭互联网传输，不连接任何服务。仅可在同一网络的设备之间发送。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 關閉網際網路傳輸，不連線任何服務。僅可在同一網路的裝置之間傳送。"
+            "value": "Send 關閉網際網路傳輸，不連線任何服務。僅可在同一網路的裝置之間傳送。"
           }
         }
       }
@@ -17096,85 +17096,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh"
+            "value": "Send"
           }
         }
       }
@@ -17186,85 +17186,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh bringt die beiden Geräte über einen eigenen Server zusammen, der nichts über sie speichert. Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht."
+            "value": "Send bringt die beiden Geräte über einen eigenen Server zusammen, der nichts über sie speichert. Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh introduces the two devices through its own server, which keeps no record of them. Files travel directly between the devices whenever a direct route exists."
+            "value": "Send introduces the two devices through its own server, which keeps no record of them. Files travel directly between the devices whenever a direct route exists."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh pone en contacto los dos dispositivos con su propio servidor, que no guarda ningún registro de ellos. Los archivos viajan directamente entre los dispositivos siempre que haya una ruta directa."
+            "value": "Send pone en contacto los dos dispositivos con su propio servidor, que no guarda ningún registro de ellos. Los archivos viajan directamente entre los dispositivos siempre que haya una ruta directa."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh met les deux appareils en relation grâce à son propre serveur, qui ne conserve aucune trace d'eux. Les fichiers passent directement d'un appareil à l'autre dès qu'une route directe existe."
+            "value": "Send met les deux appareils en relation grâce à son propre serveur, qui ne conserve aucune trace d'eux. Les fichiers passent directement d'un appareil à l'autre dès qu'une route directe existe."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh mette in contatto i due dispositivi tramite il proprio server, che non ne conserva alcuna traccia. I file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto."
+            "value": "Send mette in contatto i due dispositivi tramite il proprio server, che non ne conserva alcuna traccia. I file viaggiano direttamente tra i dispositivi quando esiste un percorso diretto."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh は独自のサーバーで 2 台のデバイスを引き合わせます。サーバーはデバイスの記録を残しません。直接の経路があれば、ファイルはデバイス間で直接送られます。"
+            "value": "Send は独自のサーバーで 2 台のデバイスを引き合わせます。サーバーはデバイスの記録を残しません。直接の経路があれば、ファイルはデバイス間で直接送られます。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh는 자체 서버로 두 기기를 연결해 줍니다. 서버는 기기에 대한 기록을 남기지 않습니다. 직접 연결할 수 있으면 파일은 기기 간에 직접 전송됩니다."
+            "value": "Send는 자체 서버로 두 기기를 연결해 줍니다. 서버는 기기에 대한 기록을 남기지 않습니다. 직접 연결할 수 있으면 파일은 기기 간에 직접 전송됩니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh brengt de twee apparaten samen via een eigen server, die niets over ze bewaart. Bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is."
+            "value": "Send brengt de twee apparaten samen via een eigen server, die niets over ze bewaart. Bestanden gaan rechtstreeks tussen de apparaten zodra er een directe route is."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh łączy oba urządzenia przez własny serwer, który nie przechowuje o nich żadnych danych. Pliki są przesyłane bezpośrednio między urządzeniami, gdy tylko istnieje bezpośrednia trasa."
+            "value": "Send łączy oba urządzenia przez własny serwer, który nie przechowuje o nich żadnych danych. Pliki są przesyłane bezpośrednio między urządzeniami, gdy tylko istnieje bezpośrednia trasa."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Wooosh apresenta os dois dispositivos por meio do próprio servidor, que não guarda nenhum registro deles. Os arquivos vão direto de um dispositivo para o outro sempre que houver uma rota direta."
+            "value": "O Send apresenta os dois dispositivos por meio do próprio servidor, que não guarda nenhum registro deles. Os arquivos vão direto de um dispositivo para o outro sempre que houver uma rota direta."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh связывает два устройства через собственный сервер, который ничего о них не хранит. Файлы передаются напрямую между устройствами, когда есть прямой маршрут."
+            "value": "Send связывает два устройства через собственный сервер, который ничего о них не хранит. Файлы передаются напрямую между устройствами, когда есть прямой маршрут."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh för samman de två enheterna via en egen server som inte sparar något om dem. Filer skickas direkt mellan enheterna när det finns en direkt väg."
+            "value": "Send för samman de två enheterna via en egen server som inte sparar något om dem. Filer skickas direkt mellan enheterna när det finns en direkt väg."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 通过自己的服务器为两台设备牵线，服务器不会保留任何记录。只要存在直接路径，文件就会在设备之间直接传输。"
+            "value": "Send 通过自己的服务器为两台设备牵线，服务器不会保留任何记录。只要存在直接路径，文件就会在设备之间直接传输。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 透過自己的伺服器為兩台裝置牽線，伺服器不會保留任何紀錄。只要有直接路徑，檔案就會在裝置之間直接傳輸。"
+            "value": "Send 透過自己的伺服器為兩台裝置牽線，伺服器不會保留任何紀錄。只要有直接路徑，檔案就會在裝置之間直接傳輸。"
           }
         }
       }
@@ -18260,7 +18260,7 @@
       }
     },
     "settings_starting": {
-      "comment": "Placeholder shown until Wooosh has finished starting up.",
+      "comment": "Placeholder shown until Send has finished starting up.",
       "extractionState": "manual",
       "localizations": {
         "de": {
@@ -19474,97 +19474,97 @@
       }
     },
     "share_ext_preparing": {
-      "comment": "Status inside the system share sheet while Wooosh copies the shared files.",
+      "comment": "Status inside the system share sheet while Send copies the shared files.",
       "extractionState": "manual",
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Senden mit Wooosh wird vorbereitet …"
+            "value": "Senden wird vorbereitet …"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preparing to send with Wooosh…"
+            "value": "Preparing to send…"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preparando el envío con Wooosh…"
+            "value": "Preparando el envío…"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Préparation de l'envoi avec Wooosh…"
+            "value": "Préparation de l'envoi…"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preparazione dell'invio con Wooosh…"
+            "value": "Preparazione dell'invio…"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh で送信する準備をしています…"
+            "value": "送信の準備をしています…"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh로 보낼 준비 중…"
+            "value": "보낼 준비 중…"
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Versturen met Wooosh voorbereiden…"
+            "value": "Versturen voorbereiden…"
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Przygotowywanie wysyłki przez Wooosh…"
+            "value": "Przygotowywanie wysyłki…"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preparando o envio com o Wooosh…"
+            "value": "Preparando o envio…"
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Подготовка к отправке через Wooosh…"
+            "value": "Подготовка к отправке…"
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Förbereder sändning med Wooosh…"
+            "value": "Förbereder sändning…"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "正在准备通过 Wooosh 发送…"
+            "value": "正在准备发送…"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "正在準備透過 Wooosh 傳送…"
+            "value": "正在準備傳送…"
           }
         }
       }
     },
     "share_nothing": {
-      "comment": "Message shown when the share sheet handed Wooosh nothing it can send.",
+      "comment": "Message shown when the share sheet handed Send nothing it can send.",
       "extractionState": "manual",
       "localizations": {
         "de": {
@@ -19750,85 +19750,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh-Gerät"
+            "value": "Send-Gerät"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh device"
+            "value": "Send device"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dispositivo Wooosh"
+            "value": "Dispositivo Send"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Appareil Wooosh"
+            "value": "Appareil Send"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dispositivo Wooosh"
+            "value": "Dispositivo Send"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh デバイス"
+            "value": "Send デバイス"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 기기"
+            "value": "Send 기기"
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh-apparaat"
+            "value": "Send-apparaat"
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Urządzenie Wooosh"
+            "value": "Urządzenie Send"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dispositivo Wooosh"
+            "value": "Dispositivo Send"
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Устройство Wooosh"
+            "value": "Устройство Send"
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh-enhet"
+            "value": "Send-enhet"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 设备"
+            "value": "Send 设备"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wooosh 裝置"
+            "value": "Send 裝置"
           }
         }
       }
@@ -23344,85 +23344,85 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ Wooosh kann dort weitermachen, wo es aufgehört hat."
+            "value": "%1$@ Send kann dort weitermachen, wo es aufgehört hat."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ Wooosh can pick up where it left off."
+            "value": "%1$@ Send can pick up where it left off."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ Wooosh puede continuar donde lo dejó."
+            "value": "%1$@ Send puede continuar donde lo dejó."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ Wooosh peut reprendre là où il s'est arrêté."
+            "value": "%1$@ Send peut reprendre là où il s'est arrêté."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ Wooosh può riprendere da dove si era interrotto."
+            "value": "%1$@ Send può riprendere da dove si era interrotto."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ Wooosh は中断したところから再開できます。"
+            "value": "%1$@ Send は中断したところから再開できます。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ Wooosh는 중단된 지점부터 이어서 진행할 수 있습니다."
+            "value": "%1$@ Send는 중단된 지점부터 이어서 진행할 수 있습니다."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ Wooosh kan verdergaan waar het gebleven was."
+            "value": "%1$@ Send kan verdergaan waar het gebleven was."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ Wooosh może wznowić od miejsca przerwania."
+            "value": "%1$@ Send może wznowić od miejsca przerwania."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ O Wooosh pode continuar de onde parou."
+            "value": "%1$@ O Send pode continuar de onde parou."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ Wooosh может продолжить с того же места."
+            "value": "%1$@ Send может продолжить с того же места."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ Wooosh kan fortsätta där det slutade."
+            "value": "%1$@ Send kan fortsätta där det slutade."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ Wooosh 可以从中断处继续。"
+            "value": "%1$@ Send 可以从中断处继续。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "%1$@ Wooosh 可以從中斷處繼續。"
+            "value": "%1$@ Send 可以從中斷處繼續。"
           }
         }
       }

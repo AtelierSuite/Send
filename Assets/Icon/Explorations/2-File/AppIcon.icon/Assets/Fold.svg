@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    A document with an arrow leaving it: a file being sent. The page matches Libretto's sheet.
+    The folded corner of the page.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M556 236V340A48 48 0 0 0 604 388H708Z" opacity="0.6"/>
+  </g>
+</svg>

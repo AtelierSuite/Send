@@ -12,7 +12,7 @@ use wooosh_core::{
 };
 
 #[derive(Parser)]
-#[command(name = "wooosh-cli", about = "Wooosh core test CLI", version)]
+#[command(name = "wooosh-cli", about = "Send core test CLI", version)]
 struct Cli {
     /// State directory (identity key, trust store). Default: ~/.wooosh-cli
     #[arg(long, global = true)]

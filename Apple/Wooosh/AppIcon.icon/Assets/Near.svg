@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    A folded paper plane climbing to the upper right: the plainest picture of sending.
+    The near wing, the brightest face of the plane.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M751.5 283.4A28 28 0 0 0 719.3 239.2L237.4 450.8A28 28 0 0 0 237.1 501.9L447.2 597.4A28 28 0 0 0 479.7 590.5Z" opacity="0.95"/>
+  </g>
+</svg>

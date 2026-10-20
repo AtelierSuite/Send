@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wooosh Protocol · Visual Walkthrough</title>
+<title>Send Protocol · Visual Walkthrough</title>
 <style>
   :root {
     --bg:            #ffffff;
@@ -331,13 +331,13 @@
 
 <header class="masthead">
   <p class="eyebrow">Protocol Version 1</p>
-  <h1>How Wooosh Moves A File</h1>
-  <p class="standfirst">Wooosh is local-network file sharing for Android, iOS, macOS, and Windows. There are no accounts, no cloud, and no server anyone has to run. Two devices find each other on the same Wi-Fi network, open an encrypted QUIC connection directly to one another, prove who they are with pinned public keys, and stream files that are hash-verified before they are ever placed where you can see them. This page walks through the two flows that matter: a transfer between strangers, and a transfer between devices that have been paired.</p>
+  <h1>How Send Moves A File</h1>
+  <p class="standfirst">Send is local-network file sharing for Android, iOS, macOS, and Windows. There are no accounts, no cloud, and no server anyone has to run. Two devices find each other on the same Wi-Fi network, open an encrypted QUIC connection directly to one another, prove who they are with pinned public keys, and stream files that are hash-verified before they are ever placed where you can see them. This page walks through the two flows that matter: a transfer between strangers, and a transfer between devices that have been paired.</p>
 </header>
 
 <section id="what">
-  <h2><span class="num">01</span>What Wooosh Is</h2>
-  <p class="lede">Everything below is drawn from the normative specification. The wire details come from the Wooosh Protocol Specification, and the product behaviour comes from the Wooosh System Design document.</p>
+  <h2><span class="num">01</span>What Send Is</h2>
+  <p class="lede">Everything below is drawn from the normative specification. The wire details come from the Send Protocol Specification, and the product behaviour comes from the Send System Design document.</p>
 
   <p>Three facts shape every diagram on this page.</p>
   <ul>
@@ -398,7 +398,7 @@
 
 <section id="scenario-1">
   <h2><span class="num">03</span>Scenario One: Alice Sends To Bob, Unpaired</h2>
-  <p class="lede">Alice has never met Bob. Bob is running in Everyone mode, which means Wooosh announces him on the network and lets unpaired senders make an offer, subject to consent. The channel is encrypted from the first packet after the QUIC Initial, but it stays <strong>untrusted</strong> for the whole exchange unless Bob chooses to pair.</p>
+  <p class="lede">Alice has never met Bob. Bob is running in Everyone mode, which means Send announces him on the network and lets unpaired senders make an offer, subject to consent. The channel is encrypted from the first packet after the QUIC Initial, but it stays <strong>untrusted</strong> for the whole exchange unless Bob chooses to pair.</p>
 
   <div class="figure">
     <div class="figure-head">
@@ -510,7 +510,7 @@
   <rect class="box" x="700" y="1180" width="460" height="171"/>
   <rect x="700" y="1180" width="4" height="171" fill="var(--yellow)"/>
   <text class="bt" x="720" y="1201">Consent sheet · the sender is unpaired</text>
-  <text class="bl" x="720" y="1219">Wooosh shows Alice's six-word fingerprint phrase and asks Bob</text>
+  <text class="bl" x="720" y="1219">Send shows Alice's six-word fingerprint phrase and asks Bob</text>
   <text class="bl" x="720" y="1237">to confirm it matches the phrase on Alice's screen.</text>
   <text class="cd" x="720" y="1262">orbit · maple · candle · river · tiger · onyx</text>
   <rect x="720" y="1267" width="150" height="30" fill="none" stroke="var(--txt)" stroke-width="1"/>
@@ -570,7 +570,7 @@
   <rect x="700" y="2025" width="4" height="163" fill="var(--green)"/>
   <text class="bt" x="720" y="2046">FileReady · the native shell routes the verified file</text>
   <text class="bl" x="720" y="2064">iOS: photos and videos to the Photos library, everything else to</text>
-  <text class="bl" x="720" y="2082">Wooosh in the Files app.</text>
+  <text class="bl" x="720" y="2082">Send in the Files app.</text>
   <text class="bl" x="720" y="2100">Android: everything to Downloads through MediaStore.</text>
   <text class="bl" x="720" y="2118">macOS and Windows: everything to the Downloads folder.</text>
   <text class="bl" x="720" y="2136">The move is atomic per file: verify, move or insert, and only then</text>
@@ -757,7 +757,7 @@
   <text class="bt" x="720" y="1869">Consent sheet · the sender is paired</text>
   <text class="bl" x="720" y="1887">No fingerprint phrase and no comparison step. The channel was</text>
   <text class="bl" x="720" y="1905">authenticated by the pinned key before any file metadata arrived,</text>
-  <text class="bl" x="720" y="1923">so there is nothing left for a person to check. Wooosh can accept</text>
+  <text class="bl" x="720" y="1923">so there is nothing left for a person to check. Send can accept</text>
   <text class="bl" x="720" y="1941">automatically when the device is paired and the setting is on.</text>
   <rect x="720" y="1946" width="120" height="30" fill="var(--accent)"/>
   <text class="bt" x="780" y="1965" text-anchor="middle" fill="#ffffff">Accept</text>
@@ -775,7 +775,7 @@
   <rect class="box" x="400" y="2123" width="760" height="91"/>
   <rect x="400" y="2123" width="4" height="91" fill="var(--red)"/>
   <text class="bt" x="420" y="2144">If the key ever changes</text>
-  <text class="bl" x="420" y="2162">A pinned peer that presents a different key is a hard failure. Wooosh closes with KEY_CHANGED and surfaces</text>
+  <text class="bl" x="420" y="2162">A pinned peer that presents a different key is a hard failure. Send closes with KEY_CHANGED and surfaces</text>
   <text class="bl" x="420" y="2180">it prominently, because it is the signal for both a man in the middle and an honest reinstall.</text>
   <text class="bl" x="420" y="2198">Re-pairing is required. There is no silent re-pin and no trust-on-first-use downgrade.</text>
 </svg>
@@ -821,7 +821,7 @@
 
 <section id="ceremonies">
   <h2><span class="num">05</span>The Two Verification Ceremonies</h2>
-  <p class="lede">First contact is the only moment a man in the middle has a chance. Wooosh closes it in one of two ways, and both work by making the attacker's substituted key visible to a person rather than only to software.</p>
+  <p class="lede">First contact is the only moment a man in the middle has a chance. Send closes it in one of two ways, and both work by making the attacker's substituted key visible to a person rather than only to software.</p>
 
   <div class="compare">
     <div>
@@ -848,7 +848,7 @@
   <div class="table-scroll">
     <table>
       <thead>
-        <tr><th>Threat</th><th>How Wooosh Answers It</th></tr>
+        <tr><th>Threat</th><th>How Send Answers It</th></tr>
       </thead>
       <tbody>
         <tr><td>Passive sniffing on open Wi-Fi</td><td>Everything after the QUIC Initial is TLS 1.3 encrypted. Broadcasts carry no file data and no long-term identifier.</td></tr>
@@ -883,8 +883,8 @@
         <tr><th>Mode</th><th>Behaviour</th></tr>
       </thead>
       <tbody>
-        <tr><td>Everyone</td><td>Wooosh announces itself and accepts offers from unpaired senders, gated by the consent sheet in Figure 1.</td></tr>
-        <tr><td>Paired Only</td><td>Wooosh still announces itself, but closes an unpaired connection with <span class="c">PAIRING_REQUIRED</span> right after reading the peer's HELLO and without sending its own. The one carve-out is a pairing the user just started: while a QR token or a SAS exchange is pending, untrusted connections are accepted and restricted to HELLO plus the pairing message.</td></tr>
+        <tr><td>Everyone</td><td>Send announces itself and accepts offers from unpaired senders, gated by the consent sheet in Figure 1.</td></tr>
+        <tr><td>Paired Only</td><td>Send still announces itself, but closes an unpaired connection with <span class="c">PAIRING_REQUIRED</span> right after reading the peer's HELLO and without sending its own. The one carve-out is a pairing the user just started: while a QR token or a SAS exchange is pending, untrusted connections are accepted and restricted to HELLO plus the pairing message.</td></tr>
         <tr><td>Off</td><td>No announcements and no listener.</td></tr>
       </tbody>
     </table>
@@ -892,7 +892,7 @@
 </section>
 
 <footer>
-  <p>Wooosh protocol version 1. This page is a visual companion to the normative specification in <span class="c">Assets/Documentation/PROTOCOL.md</span> and the system design in <span class="c">Assets/Documentation/DESIGN.md</span>. Where the two disagree with this page, they win.</p>
+  <p>Send protocol version 1. This page is a visual companion to the normative specification in <span class="c">Assets/Documentation/PROTOCOL.md</span> and the system design in <span class="c">Assets/Documentation/DESIGN.md</span>. Where the two disagree with this page, they win.</p>
 </footer>
 
 </div>

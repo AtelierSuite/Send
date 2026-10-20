@@ -1,4 +1,4 @@
-# Wooosh — System Design
+# Send — System Design
 
 AirDrop-style file sharing for Android, iOS, macOS, and Windows. Minimal UI, native on every platform, end-to-end encrypted, no accounts. The only server is a stateless rendezvous Worker on Cloudflare that introduces devices across networks and stores nothing (§9).
 
@@ -31,7 +31,7 @@ Companion document: [PROTOCOL.md](PROTOCOL.md) — wire protocol, discovery form
 
 ### Constraints
 - Native UI per platform: Kotlin/Jetpack Compose (Android), SwiftUI (iOS + macOS), WinUI 3 (Windows).
-- The only backend is Wooosh Rendezvous, a Cloudflare Worker on the free plan (§9.1). It stores nothing, admits only attested clients, and carries file data only on the capped relay fallback. Everything else stays peer to peer.
+- The only backend is Send Rendezvous, a Cloudflare Worker on the free plan (§9.1). It stores nothing, admits only attested clients, and carries file data only on the capped relay fallback. Everything else stays peer to peer.
 
 ---
 
@@ -182,7 +182,7 @@ Pinning itself is *not* delegated to the shell: passing `expected_pubkey = null`
 | `start` | the host `KeyStore` (invoked **synchronously, on the calling thread**), then binding the QUIC endpoint |
 | `pair_with_qr` | full QUIC handshake + PAIR_ACCEPT — worst case ≈10 s per address hint + 20 s reply timeout |
 | `connect_peer` | QUIC handshake + HELLO exchange — up to ≈10 s on an unreachable address |
-| `begin_internet_ticket` | joining the room and admission: a platform attestation call (network calls to Apple or Google) at most about once a day, a cached token otherwise. The first moment Wooosh contacts the rendezvous |
+| `begin_internet_ticket` | joining the room and admission: a platform attestation call (network calls to Apple or Google) at most about once a day, a cached token otherwise. The first moment Send contacts the rendezvous |
 | `redeem_ticket` | admission, waiting for the publisher (≤30 s), ≤2 s candidate gathering, the 5 s punch window, a ≤20 s QUIC handshake and the 20 s pairing-reply timeout |
 | `connect_nearby` | the LAN hint race (6 s), then the same as `redeem_ticket` without the token |
 | `send` / `resume_transfer` | the core runtime while the transfer is registered (streaming itself is asynchronous) |
@@ -203,7 +203,7 @@ The core maintains the canonical list; shells render it verbatim.
 - **Row content**: device-type icon (phone/tablet/laptop/desktop), device name, state line (Ready · Paired ✓ · Away · Receiving…), plus the route when it is not the LAN: **Nearby** (Bluetooth, §9.6) or **Over the Internet** (§9.1). A paired-checkmark, not a separate section — sections would move rows. The route updates in the state line; it never moves the row.
 - **Tap** → file picker (or immediate send when launched from the share extension).
 - **Incoming offer** → modal sheet: sender name + verification state, file count/total size, thumbnail strip, Accept / Decline. Unpaired senders additionally show the fingerprint code with a "Pair & remember" option.
-- Empty state explains visibility mode, says that nearby devices appear while Wooosh is open on both, and offers Pair a Device.
+- Empty state explains visibility mode, says that nearby devices appear while Send is open on both, and offers Pair a Device.
 
 Platform notes:
 - **Android**: Compose `LazyColumn`, `animateItem` disabled for reorder (there is none), Material 3 dynamic color.
@@ -222,7 +222,7 @@ Platform notes:
 
 | Platform | Photos & videos | Everything else |
 |---|---|---|
-| iOS | `PHAssetCreationRequest` into the Photos library (permission: add-only `PHPhotoLibrary` access) | App `Documents/` with `UIFileSharingEnabled` + `LSSupportsOpeningDocumentsInPlace` → shows up in Files under *On My iPhone → Wooosh* |
+| iOS | `PHAssetCreationRequest` into the Photos library (permission: add-only `PHPhotoLibrary` access) | App `Documents/` with `UIFileSharingEnabled` + `LSSupportsOpeningDocumentsInPlace` → shows up in Files under *On My iPhone → Send* |
 | Android | `MediaStore.Downloads` (API 29+; `IS_PENDING=1` during move, then publish) | Same — everything goes to `Downloads/` per requirement |
 | macOS | `~/Downloads` (user-selected-file access via one-time folder grant if sandboxed) | `~/Downloads` |
 | Windows | `KnownFolders.DownloadsFolder` | Same |
@@ -231,16 +231,16 @@ Rules:
 - Classification by MIME sniff + extension (core supplies `kind`, shell may override).
 - Name collisions: append ` (2)`, ` (3)`… — never overwrite.
 - The move is atomic per file: verify hash → move/insert → only then report success to the sender. A transfer is never reported complete for a file the user can't find.
-- Multi-file receives on Android/desktop optionally land in a `Wooosh/<date>` subfolder of Downloads when count > 20 (keeps Downloads usable); single files always go to Downloads root.
+- Multi-file receives on Android/desktop optionally land in a `Send/<date>` subfolder of Downloads when count > 20 (keeps Downloads usable); single files always go to Downloads root.
 
 **Arrival notification (mobile).** Once a received transfer has finished *and* every file has been routed, the shell posts a notification whose tap opens what arrived. It waits for routing to finish on purpose: a notification that opened a file still sitting in staging would be a lie, and routing is asynchronous, so whichever of "transfer done" and "last file routed" happens second is what posts.
 
 | | Tapping a single received file | Several at once |
 |---|---|---|
-| iOS | Document: Quick Look inside Wooosh, from the URL kept at routing time. Photo or video: hands off to Photos. Add-only library access means Wooosh never holds a readable URL for what it inserted and cannot deep-link to the asset, so opening Photos itself is the honest ceiling — escalating to full library read access just to preview one photo is the wrong trade | Opens Wooosh, where the transfer card lists them |
-| Android | `ACTION_VIEW` on the `MediaStore` content URI retained at insert time (`RoutedFile.uri`), with a read grant. On API 26-28 there is no insert, so the URI comes from the media scan and the notification degrades to opening Wooosh if the scan does not return one | `ACTION_VIEW_DOWNLOADS` |
+| iOS | Document: Quick Look inside Send, from the URL kept at routing time. Photo or video: hands off to Photos. Add-only library access means Send never holds a readable URL for what it inserted and cannot deep-link to the asset, so opening Photos itself is the honest ceiling — escalating to full library read access just to preview one photo is the wrong trade | Opens Send, where the transfer card lists them |
+| Android | `ACTION_VIEW` on the `MediaStore` content URI retained at insert time (`RoutedFile.uri`), with a read grant. On API 26-28 there is no insert, so the URI comes from the media scan and the notification degrades to opening Send if the scan does not return one | `ACTION_VIEW_DOWNLOADS` |
 
-Android needs `<queries>` entries for `VIEW` and `VIEW_DOWNLOADS`, or API 30+ package-visibility filtering makes every viewer invisible and the tap always falls back to Wooosh. Both platforms ask for notification permission when a transfer is actually incoming, not at launch.
+Android needs `<queries>` entries for `VIEW` and `VIEW_DOWNLOADS`, or API 30+ package-visibility filtering makes every viewer invisible and the tap always falls back to Send. Both platforms ask for notification permission when a transfer is actually incoming, not at launch.
 
 ---
 
@@ -266,12 +266,12 @@ Transport is **QUIC** (quinn) with TLS 1.3 — one UDP socket, multiplexed strea
 
 Notes on the iOS path, because it has sharp edges:
 
-- **No second Live Activity.** The system already draws one for the continued-processing task and Wooosh cannot restyle it. Shipping an ActivityKit activity alongside would put two progress bars for one transfer on the same Lock Screen, so Wooosh ships none.
+- **No second Live Activity.** The system already draws one for the continued-processing task and Send cannot restyle it. Shipping an ActivityKit activity alongside would put two progress bars for one transfer on the same Lock Screen, so Send ships none.
 - **One task for the whole receive session**, not one per transfer or per file. Apple's guidance is explicit that many small tasks is the wrong shape, and the scheduler caps how many run at once.
 - **Progress must keep moving, but not too fast.** A task that looks stalled is force-expired; a task updated dozens of times a second is expired for lock traffic. The core emits `Progress` every 8 MiB per file, which on a fast LAN is well past that, so the shell coalesces to 4/s.
-- **Expiration and the user pressing Stop are indistinguishable** through this API — both just call `expirationHandler`. Wooosh treats it as "stop" only when backgrounded, where the transfer could not have continued anyway; on screen it keeps going, having lost nothing but the assertion.
+- **Expiration and the user pressing Stop are indistinguishable** through this API — both just call `expirationHandler`. Send treats it as "stop" only when backgrounded, where the transfer could not have continued anyway; on screen it keeps going, having lost nothing but the assertion.
 - **Submission requires the foreground**, so a transfer that somehow begins while backgrounded simply runs without an assertion.
-- Runtime is not guaranteed or unbounded, and the Simulator does not support it at all. Receiving still works best with Wooosh open, and the UI says so.
+- Runtime is not guaranteed or unbounded, and the Simulator does not support it at all. Receiving still works best with Send open, and the UI says so.
 
 macOS and Windows have no equivalent constraint; Android's foreground service is the closest analogue and is strictly stronger.
 
@@ -284,7 +284,7 @@ macOS and Windows have no equivalent constraint; Android's foreground service is
 | iOS | Share Extension target. Extension memory is tight (~120 MB), so it never transfers by itself: it copies/bookmarks the shared items into the **App Group** container, then opens the main app via deep link (`wooosh://send?batch=…`) with the device list pre-filtered to alive peers. |
 | macOS | Share Extension, same App Group handoff, but macOS extensions may also complete small sends inline (no memory pressure). |
 | Android | `ACTION_SEND` / `ACTION_SEND_MULTIPLE` intent filters (all MIME types) + **Direct Share**: paired devices published as sharing shortcuts (`ShortcutManagerCompat.pushDynamicShortcut`) so they appear as one-tap targets in the system share sheet. |
-| Windows | **Share Target** contract in the package manifest (activation kind `ShareTarget`), plus an optional File Explorer context-menu verb ("Send with Wooosh") for classic right-click flows. |
+| Windows | **Share Target** contract in the package manifest (activation kind `ShareTarget`), plus an optional File Explorer context-menu verb ("Send") for classic right-click flows. |
 
 All four funnel into the same core `send()` call; the share UI is a trimmed device-list screen (same ordering/staleness rules).
 
@@ -296,16 +296,16 @@ All four funnel into the same core `send()` call; the share UI is a trimmed devi
 
 All of these reuse the exact same pairing trust model and transfer protocol. Only the path packets take changes.
 
-### 9.1 Primary: Wooosh Rendezvous (internet P2P through a Cloudflare Worker)
+### 9.1 Primary: Send Rendezvous (internet P2P through a Cloudflare Worker)
 
-Wooosh runs one piece of infrastructure: **Wooosh Rendezvous**, a Cloudflare Worker with one Durable Object per "room". It introduces two devices and then gets out of the way. Each device learns its public address from a STUN server, the two swap address candidates through the room, and both hole punch so that QUIC runs **directly** between them. Only when punching fails does the room forward traffic itself, and then only for files up to 10 MB (§9.1.2). Wire format and every normative rule are in PROTOCOL.md §9.
+Send runs one piece of infrastructure: **Send Rendezvous**, a Cloudflare Worker with one Durable Object per "room". It introduces two devices and then gets out of the way. Each device learns its public address from a STUN server, the two swap address candidates through the room, and both hole punch so that QUIC runs **directly** between them. Only when punching fails does the room forward traffic itself, and then only for files up to 10 MB (§9.1.2). Wire format and every normative rule are in PROTOCOL.md §9.
 
 Why a Worker and not iroh, which this replaces:
 
-| | Wooosh Rendezvous | iroh (previous) |
+| | Send Rendezvous | iroh (previous) |
 |---|---|---|
 | Who runs the introducer | The project, on Cloudflare's free plan | n0's public relays, shared with every iroh app |
-| Abuse control | Device attestation before any room is joined (§9.2) | None available to Wooosh |
+| Abuse control | Device attestation before any room is joined (§9.2) | None available to Send |
 | What a ticket discloses | Key, token, room id | Key, token, relay URL, **LAN and public IPs** |
 | Paired devices over the internet | Possible without a code (PROTOCOL.md §9.9) | Needed a fresh ticket every time |
 | NAT traversal code | Ours: STUN, candidate exchange, punching, path selection (`inet/` in the core) | iroh's, mature and multipath |
@@ -321,7 +321,7 @@ The honest cost of the switch is the NAT traversal row: iroh's traversal is more
 
 UX: one entry point, **Other Device**, which opens a single screen with two segments, **Send** and **Receive**. Segmented picker on Apple, tabs on Android, a `SelectorBar` on Windows.
 
-- **Send**: choose files, then Wooosh publishes a **ticket** (rendered as a QR and as copyable text) and waits. Redemption starts the transfer.
+- **Send**: choose files, then Send publishes a **ticket** (rendered as a QR and as copyable text) and waits. Redemption starts the transfer.
 - **Receive**: scan or paste the ticket the other device is showing. Redeeming it *is* the consent, so no second prompt follows.
 
 The ticket travels over any channel the users already share (Messages, email, in person). Works across accounts, networks, and mobile data.
@@ -354,7 +354,7 @@ The rendezvous is contacted **lazily**: on the first ticket operation, a Bluetoo
 | `RendezvousQuota` | This device's daily allowance is used up | Try again tomorrow |
 | `RendezvousUnavailable` | The service is down or over Cloudflare's daily limit | Try again later |
 
-**Rendezvous selection** is `Config.rendezvous_url`, changeable at runtime via `set_rendezvous_url`, surfaced in Settings on every shell as **Internet Connections**, with the choices Wooosh, My Own, and Off:
+**Rendezvous selection** is `Config.rendezvous_url`, changeable at runtime via `set_rendezvous_url`, surfaced in Settings on every shell as **Internet Connections**, with the choices Send, My Own, and Off:
 
 | Value | Meaning |
 |---|---|
@@ -364,9 +364,9 @@ The rendezvous is contacted **lazily**: on the first ticket operation, a Bluetoo
 
 #### 9.1.1 Paired devices over the internet
 
-Each paired device has a per-device toggle, **Reach Over the Internet**, off by default. While Wooosh is in the foreground it holds one hibernated WebSocket per opted-in device, in a room derived from the two keys (PROTOCOL.md §9.9). If the other device is doing the same, they meet, and its row reads **Ready · Over the Internet** and accepts sends like any paired row, with no code. The toggle is per device and off by default because the rendezvous can see that the same pair met more than once in a UTC day.
+Each paired device has a per-device toggle, **Reach Over the Internet**, off by default. While Send is in the foreground it holds one hibernated WebSocket per opted-in device, in a room derived from the two keys (PROTOCOL.md §9.9). If the other device is doing the same, they meet, and its row reads **Ready · Over the Internet** and accepts sends like any paired row, with no code. The toggle is per device and off by default because the rendezvous can see that the same pair met more than once in a UTC day.
 
-Both devices must have Wooosh open. Reaching a closed app would mean push notifications, which means the Worker storing push tokens, and that breaks the storage rule (§9.5). Not planned.
+Both devices must have Send open. Reaching a closed app would mean push notifications, which means the Worker storing push tokens, and that breaks the storage rule (§9.5). Not planned.
 
 #### 9.1.2 Relay fallback
 
@@ -391,7 +391,7 @@ Admission is abuse control for a shared free quota, not transfer security (PROTO
 
 **Distribution decides what is available.** iOS ships on the App Store and Android on Google Play, so App Attest and Play Integrity (which requires `PLAY_RECOGNIZED`, i.e. a Play-installed build) work as specified. The desktop apps ship **outside** their stores: macOS as a notarized Developer ID app, Windows as a sideloaded MSIX. TPM attestation does not care how Windows was installed. For the Mac, Apple documents App Attest only for TestFlight, App Store, and Enterprise distribution, and does not say whether a Developer ID provisioning profile can include the capability. That is the first spike of phase 1 (STATUS.md); if it cannot, Macs and the macOS CLI are Unverified.
 
-**No hardware ID strings.** SMBIOS UUIDs, `MachineGuid`, and MAC addresses were considered for Windows and the CLI and rejected: they are self-reported, so anyone can send any value, and they are stable tracking identifiers. A TPM proves the key is in real hardware; a string proves nothing. TPM attestation proves real hardware, not a genuine Wooosh binary, which is why Windows and the CLI sit in their own tier with the same quota.
+**No hardware ID strings.** SMBIOS UUIDs, `MachineGuid`, and MAC addresses were considered for Windows and the CLI and rejected: they are self-reported, so anyone can send any value, and they are stable tracking identifiers. A TPM proves the key is in real hardware; a string proves nothing. TPM attestation proves real hardware, not a genuine Send binary, which is why Windows and the CLI sit in their own tier with the same quota.
 
 Windows PCs without a TPM 2.0 that exposes an EK certificate (some older or VM installs) fall to Unverified.
 
@@ -424,23 +424,23 @@ The rendezvous **stores nothing**: no Durable Object storage writes, no KV/D1/R2
 
 What it necessarily **sees**, in memory, while a room is open: both clients' IP addresses and address candidates, the room id, message timing and sizes, and each client's admission tier. What it **never sees**: identity keys, ticket tokens, display names, file names, file contents. Relayed bytes are QUIC ciphertext.
 
-What is outside the project's control: Cloudflare's edge keeps standard request metadata (IP, time, URL path) under its own policy; Apple, Google, and TPM vendors learn that a device performed an attestation for Wooosh. Settings and the privacy policy say both plainly.
+What is outside the project's control: Cloudflare's edge keeps standard request metadata (IP, time, URL path) under its own policy; Apple, Google, and TPM vendors learn that a device performed an attestation for Send. Settings and the privacy policy say both plainly.
 
 Compared with the iroh path, tickets no longer carry IP addresses, and the introducer is no longer shared with every other iroh application.
 
 ### 9.6 Nearby over Bluetooth
 
-BLE is how Wooosh finds a device in the same room, regardless of network, and how pairing gets easy. It is never a data transport (PROTOCOL.md §3.4).
+BLE is how Send finds a device in the same room, regardless of network, and how pairing gets easy. It is never a data transport (PROTOCOL.md §3.4).
 
 - **Discovery.** BLE sightings feed the same registry as mDNS: one row per device, first sighting from either source sets its place, stale only when **both** sources go quiet for 10 s. A device on another network but within Bluetooth range appears as **Ready · Nearby**.
 - **Sending to a nearby row** connects over the LAN if the devices turn out to share one, otherwise through a rendezvous room. That route is cheap (a handful of quota units) and still direct; it needs internet access on both devices.
 - **Pairing without a camera.** **Pair a Device** opens on a list of nearby unpaired devices from BLE and mDNS. Tapping one runs the existing SAS ceremony (PROTOCOL.md §4.3): both screens show the same six digits, and each user presses **Confirm** (a deliberate press, never a default action). QR is still offered below the list for devices that cannot use Bluetooth. This also gives SAS the UI entry point it never had.
 - **Visibility.** Under Paired only, a stranger in range sees nothing but an anonymous UUID; under Everyone, the device's name and type are readable over BLE, as they already are over mDNS. The visibility setting's description says so.
-- **Foreground only.** iOS hides background BLE advertisements from non-iOS scanners, so BLE runs while Wooosh is open. The empty state says Wooosh finds nearby devices while it is open on both.
+- **Foreground only.** iOS hides background BLE advertisements from non-iOS scanners, so BLE runs while Send is open. The empty state says Send finds nearby devices while it is open on both.
 - **Permissions**, asked when Pair a Device or the device list first needs them, not at launch: iOS/macOS `NSBluetoothAlwaysUsageDescription` (plus the sandbox Bluetooth entitlement on macOS); Android `BLUETOOTH_SCAN` with `neverForLocation`, `BLUETOOTH_ADVERTISE`, `BLUETOOTH_CONNECT`; Windows the `bluetooth` capability.
 
 ### 9.7 Power-user: Tailscale as the network
-If both users run Tailscale and share nodes across their tailnets (Tailscale's built-in cross-account node sharing invite, free tier), each device just has a stable WireGuard-encrypted IP. Wooosh needs almost nothing: listen on all interfaces (already true) and offer **Add device manually** (`add_manual_peer(host)`) accepting a Tailscale IP/MagicDNS name. mDNS doesn't cross tailnets, so discovery is manual, but pairing and transfer are unchanged, and Wooosh's E2E crypto still applies on top of WireGuard. Zero code beyond the manual-add field; document it as a recipe.
+If both users run Tailscale and share nodes across their tailnets (Tailscale's built-in cross-account node sharing invite, free tier), each device just has a stable WireGuard-encrypted IP. Send needs almost nothing: listen on all interfaces (already true) and offer **Add device manually** (`add_manual_peer(host)`) accepting a Tailscale IP/MagicDNS name. mDNS doesn't cross tailnets, so discovery is manual, but pairing and transfer are unchanged, and Send's E2E crypto still applies on top of WireGuard. Zero code beyond the manual-add field; document it as a recipe.
 
 ### 9.8 Zero-infrastructure fallback: wormhole-style codes
 Adopt the Magic Wormhole model: a short human-speakable code (`7-guitar-sunset`) performs a PAKE (SPAKE2) through the public wormhole mailbox/relay servers. It overlaps the rendezvous's job with a worse trust ceremony. Hold unless users ask.
@@ -464,7 +464,7 @@ Bluetooth (§9.6) finds and pairs devices with no shared network, but moving the
 - **The default is Paired only**, on every shell. The core deliberately has no default (`Config.visibility` is required), so each shell sets it. A fresh install on a shared network — an office, a dorm, a café — should not be reachable by strangers before the user has opted in, and the QR carve-out means the safe default still cannot block its own pairing flow. `wooosh-cli` keeps `--visibility everyone` as its default because it is a test harness driven by an explicit flag, not a shipped product surface.
 - Discovery broadcasts contain only: display name, device type, protocol version, port, and a *rotating* discovery ID — the long-term identity key is never broadcast, so passive listeners can't track a device across networks by key.
 - Files never touch their final destination until hash-verified; staging is app-private.
-- No accounts, no telemetry. The one server, Wooosh Rendezvous, stores nothing and never sees keys, tokens, names, or file contents (§9.5).
+- No accounts, no telemetry. The one server, Send Rendezvous, stores nothing and never sees keys, tokens, names, or file contents (§9.5).
 
 ---
 

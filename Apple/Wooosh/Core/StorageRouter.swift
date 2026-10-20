@@ -15,7 +15,7 @@ enum StorageRouter {
         var errorDescription: String? {
             switch self {
             case .photosPermissionDenied:
-                "Wooosh isn't allowed to add to your Photos library."
+                "Send isn't allowed to add to your Photos library."
             case .destinationUnavailable:
                 L.t("error_storage_unavailable")
             }

@@ -97,7 +97,7 @@ impl NetTicket {
         let (ver_str, params) = rest.split_once('?').ok_or_else(|| bad("missing params"))?;
         let version: u64 = ver_str.parse().map_err(|_| bad("bad version"))?;
         if version == 1 {
-            return Err(bad("this code is from an older version of Wooosh"));
+            return Err(bad("this code is from an older version of Send"));
         }
         if version != TICKET_VERSION {
             return Err(bad("unsupported version"));

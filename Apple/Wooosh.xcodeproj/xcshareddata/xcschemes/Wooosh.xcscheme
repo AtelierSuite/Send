@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8FE70D42ECD1DC75DAEDBB39"
-               BuildableName = "Wooosh.app"
+               BuildableName = "Send.app"
                BlueprintName = "Wooosh"
                ReferencedContainer = "container:Wooosh.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8FE70D42ECD1DC75DAEDBB39"
-            BuildableName = "Wooosh.app"
+            BuildableName = "Send.app"
             BlueprintName = "Wooosh"
             ReferencedContainer = "container:Wooosh.xcodeproj">
          </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8FE70D42ECD1DC75DAEDBB39"
-            BuildableName = "Wooosh.app"
+            BuildableName = "Send.app"
             BlueprintName = "Wooosh"
             ReferencedContainer = "container:Wooosh.xcodeproj">
          </BuildableReference>
@@ -71,7 +71,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8FE70D42ECD1DC75DAEDBB39"
-            BuildableName = "Wooosh.app"
+            BuildableName = "Send.app"
             BlueprintName = "Wooosh"
             ReferencedContainer = "container:Wooosh.xcodeproj">
          </BuildableReference>

@@ -1,78 +1,99 @@
 {
   "fill" : {
-    "linear-gradient" : [
-      "display-p3:0.18333,0.64464,1.00000,1.00000",
-      "srgb:0.03922,0.34510,1.00000,1.00000"
-    ]
+    "automatic-gradient" : "extended-srgb:0.42000,0.30000,0.92000,1.00000"
   },
   "groups" : [
     {
+      "blend-mode" : "normal",
       "layers" : [
         {
           "fill-specializations" : [
             {
               "appearance" : "dark",
               "value" : {
-                "solid" : "srgb:0.65123,0.76227,1.00000,1.00000"
+                "solid" : "srgb:1.00000,1.00000,1.00000,1.00000"
               }
             }
           ],
-          "image-name" : "plane-wing-near.svg",
-          "name" : "Near Wing",
-          "opacity-specializations" : [
+          "glass" : true,
+          "hidden" : false,
+          "image-name" : "Near.svg",
+          "name" : "Near",
+          "position-specializations" : [
             {
-              "appearance" : "dark",
-              "value" : 1
+              "value" : {
+                "scale" : 1.0,
+                "translation-in-points" : [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "idiom" : "square",
+              "value" : {
+                "scale" : 1.15,
+                "translation-in-points" : [
+                  0,
+                  0
+                ]
+              }
             }
           ]
         },
         {
-          "fill-specializations" : [
-            {
-              "appearance" : "dark",
-              "value" : {
-                "solid" : "srgb:0.51089,0.66661,1.00000,0.82324"
-              }
-            }
-          ],
-          "image-name" : "plane-keel.svg",
+          "glass" : true,
+          "hidden" : false,
+          "image-name" : "Keel.svg",
           "name" : "Keel",
-          "opacity-specializations" : [
+          "position-specializations" : [
             {
-              "appearance" : "dark",
-              "value" : 1
+              "value" : {
+                "scale" : 1.0,
+                "translation-in-points" : [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "idiom" : "square",
+              "value" : {
+                "scale" : 1.15,
+                "translation-in-points" : [
+                  0,
+                  0
+                ]
+              }
             }
           ]
         },
         {
-          "fill-specializations" : [
+          "glass" : true,
+          "hidden" : false,
+          "image-name" : "Far.svg",
+          "name" : "Far",
+          "position-specializations" : [
             {
-              "appearance" : "dark",
               "value" : {
-                "solid" : "srgb:0.17718,0.41466,0.92310,0.56463"
+                "scale" : 1.0,
+                "translation-in-points" : [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "idiom" : "square",
+              "value" : {
+                "scale" : 1.15,
+                "translation-in-points" : [
+                  0,
+                  0
+                ]
               }
             }
-          ],
-          "image-name" : "plane-wing-far.svg",
-          "name" : "Far Wing",
-          "opacity-specializations" : [
-            {
-              "appearance" : "dark",
-              "value" : 1
-            }
           ]
-        }
-      ],
-      "position-specializations" : [
-        {
-          "idiom" : "watchOS",
-          "value" : {
-            "scale" : 0.89,
-            "translation-in-points" : [
-              -17,
-              1
-            ]
-          }
         }
       ],
       "shadow" : {

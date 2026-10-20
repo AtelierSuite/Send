@@ -1,4 +1,4 @@
-# Wooosh Protocol Specification (v1)
+# Send Protocol Specification (v1)
 
 Wire-level companion to [DESIGN.md](DESIGN.md). Normative for `wooosh-core`.
 
@@ -68,7 +68,7 @@ Every **2 s** while the app is frontmost (30 s otherwise), and immediately on jo
 
 BLE finds devices that are physically close whether or not they share a network, and introduces them. **It never carries file data**: BLE throughput is orders of magnitude below the 4 GB requirement. After an introduction the devices connect over the LAN (§4.1) or a rendezvous room (§9.4), and everything from TLS onward is unchanged.
 
-**Advertisement.** Service UUID `WOOOSH_BLE_SERVICE` (128-bit, fixed per protocol version) and nothing else. iOS cannot put service data or a custom payload in an advertisement, and a local name would broadcast the device name to everyone in radio range, so neither is used. Advertising runs while Wooosh is in the foreground with visibility not `Off`. iOS moves background advertisements into an overflow area that only iOS scanners filtering for the UUID can see, so background BLE discovery is not relied on anywhere.
+**Advertisement.** Service UUID `WOOOSH_BLE_SERVICE` (128-bit, fixed per protocol version) and nothing else. iOS cannot put service data or a custom payload in an advertisement, and a local name would broadcast the device name to everyone in radio range, so neither is used. Advertising runs while Send is in the foreground with visibility not `Off`. iOS moves background advertisements into an overflow area that only iOS scanners filtering for the UUID can see, so background BLE discovery is not relied on anywhere.
 
 **GATT.** One service, one read-only characteristic `INFO`, CBOR:
 
@@ -85,9 +85,9 @@ INFO { v: 1, rid: bytes8, vis: "e"|"p",
 
 1. If any `lan` hint is reachable, dial the hints concurrently as in §4.2 (race, not queue). This is the fast path when both devices are on one network but mDNS is blocked.
 2. Otherwise, both sides join `room` as `peer` and hole punch (§9.5) with `k_room = rk`. The advertiser joins when its INFO is read and leaves after 120 s if nobody arrives.
-3. TLS and HELLO as §4.1. A pinned key is trusted as usual. An unknown key is `untrusted`, and **pairing is the §4.3 SAS comparison**, which both screens display. No BLE-specific pairing ceremony exists, and BLE link-layer pairing (Just Works or passkey) is not used: neither binds to the Wooosh identity keys.
+3. TLS and HELLO as §4.1. A pinned key is trusted as usual. An unknown key is `untrusted`, and **pairing is the §4.3 SAS comparison**, which both screens display. No BLE-specific pairing ceremony exists, and BLE link-layer pairing (Just Works or passkey) is not used: neither binds to the Send identity keys.
 
-**Privacy.** Under `PairedOnly`, `INFO` omits `dn` and `dt`, and the scanner shows no row until a handshake proves a pinned key. A stranger in range learns only that a Wooosh device is nearby and its current `rid`, which rotates. Under `Everyone`, `INFO` discloses the name and type to anyone in radio range, the same disclosure mDNS makes to anyone on the LAN, and the visibility setting says so.
+**Privacy.** Under `PairedOnly`, `INFO` omits `dn` and `dt`, and the scanner shows no row until a handshake proves a pinned key. A stranger in range learns only that a Send device is nearby and its current `rid`, which rotates. Under `Everyone`, `INFO` discloses the name and type to anyone in radio range, the same disclosure mDNS makes to anyone on the LAN, and the visibility setting says so.
 
 **Registry.** A BLE sighting feeds the same registry as mDNS (§3.3): rows keyed by `rid`, ordered by first sighting from either source, stale after 10 s without a sighting from **either** source. A device seen by both is one row.
 
@@ -210,11 +210,11 @@ Out of scope v1: metadata privacy against the local network operator (they can s
 - Unknown CBOR map keys MUST be ignored (forward compat); unknown `t` on the control stream → `ERR_UNSUPPORTED {t}` response, connection stays up.
 - `caps` in HELLO gates optional features (e.g. future `zstd` compression, `dir` structured folders) — both sides must advertise a capability to use it.
 
-## 9. Internet path (off-LAN, Wooosh Rendezvous)
+## 9. Internet path (off-LAN, Send Rendezvous)
 
 > **Status: implemented in the core, the Worker and both shells; not yet run across real networks** (STATUS.md). §9.9 (paired rendezvous) and NAT-PMP/PCP mapped candidates are not implemented. iroh, which this replaces, is specified in this document as of commit `5daa4d9`.
 
-Everything above describes packets on a LAN. §9 defines the second path they can take: a direct QUIC session between two networks, hole punched with the help of **Wooosh Rendezvous**, a Cloudflare Worker operated by the project (DESIGN.md §9.1). **Only the path changes.** HELLO, OFFER/DECISION, the file streams, the resume ledger, the close codes and the trust model are the ones defined in §4–§6, byte for byte, and implementations MUST NOT fork them per transport.
+Everything above describes packets on a LAN. §9 defines the second path they can take: a direct QUIC session between two networks, hole punched with the help of **Send Rendezvous**, a Cloudflare Worker operated by the project (DESIGN.md §9.1). **Only the path changes.** HELLO, OFFER/DECISION, the file streams, the resume ledger, the close codes and the trust model are the ones defined in §4–§6, byte for byte, and implementations MUST NOT fork them per transport.
 
 ### 9.1 Roles
 
@@ -224,13 +224,13 @@ Everything above describes packets on a LAN. §9 defines the second path they ca
 | **STUN** (`stun.cloudflare.com:3478`, UDP) | Tells a client its public `ip:port` as seen from outside its NAT | Anything else. Workers cannot open UDP sockets, so the rendezvous cannot do this itself |
 | **Clients** | Gather candidates, punch, run the §4–§6 protocol end to end | Trust the rendezvous with anything that grants access to files |
 
-The rendezvous is a matchmaker. It is never a party to the Wooosh handshake, so a compromised or hostile rendezvous can deny service but cannot read, forge, or redirect a session to anyone other than the pinned key (§9.10).
+The rendezvous is a matchmaker. It is never a party to the Send handshake, so a compromised or hostile rendezvous can deny service but cannot read, forge, or redirect a session to anyone other than the pinned key (§9.10).
 
 **Storage rule (normative).** The rendezvous MUST NOT write to Durable Object storage, KV, D1, R2, or any log sink. All state (rooms, quota counters) lives in Durable Object memory and dies with the object. Workers Logs and Logpush are disabled. Cloudflare's own edge request metadata is outside the project's control and is disclosed as such in DESIGN.md §9.5.
 
 ### 9.2 Admission (device attestation)
 
-The rendezvous runs on a free plan with a hard daily quota (DESIGN.md §9.4). Admission exists to stop that quota being spent by anything other than real Wooosh installs. **It is abuse control, not a security boundary.** Session security rests entirely on the §2 identity keys, and nothing in this section may be relied on for it.
+The rendezvous runs on a free plan with a hard daily quota (DESIGN.md §9.4). Admission exists to stop that quota being spent by anything other than real Send installs. **It is abuse control, not a security boundary.** Session security rests entirely on the §2 identity keys, and nothing in this section may be relied on for it.
 
 Admission runs **on the room's own WebSocket** (§9.4), before the client may do anything else there. There are no separate HTTP endpoints: one connection per session costs one request, and verification runs under the Durable Object's CPU limit (30 s per message) rather than the free plan's 10 ms Worker limit.
 
@@ -240,19 +240,19 @@ Admission runs **on the room's own WebSocket** (§9.4), before the client may do
 
 A refused admission answers `{ t: "error", code }` and closes. `bad_token` and `attestation_failed` make the client clear its cached token and key credential and retry once; if a fresh proof was refused, the retry is anonymous rather than a repeat of the same proof.
 
-`qk` is the **quota key**: `HMAC(daily_secret, hardware_identity)` where `hardware_identity` is whatever stable handle the evidence proved: the App Attest key ID; for Android, a random per-install ID that the client binds into the Play Integrity `requestHash = hex(SHA-256(nonce ‖ install_id))` (Play Integrity deliberately exposes no device identifier); or the TPM EK public key. `daily_secret` rotates at 00:00 UTC and is never stored, so `qk` cannot be linked across days, and the hardware identity itself is never kept. The token carries **no Wooosh identity key**: the rendezvous must not learn who is talking to whom.
+`qk` is the **quota key**: `HMAC(daily_secret, hardware_identity)` where `hardware_identity` is whatever stable handle the evidence proved: the App Attest key ID; for Android, a random per-install ID that the client binds into the Play Integrity `requestHash = hex(SHA-256(nonce ‖ install_id))` (Play Integrity deliberately exposes no device identifier); or the TPM EK public key. `daily_secret` rotates at 00:00 UTC and is never stored, so `qk` cannot be linked across days, and the hardware identity itself is never kept. The token carries **no Send identity key**: the rendezvous must not learn who is talking to whom.
 
 | Platform | Evidence | Tier |
 |---|---|---|
 | iOS / iPadOS | App Attest over `clientDataHash = SHA-256(nonce)`. First run: attestation object (verify the chain to the Apple App Attestation root, the nonce extension, the key ID, the App ID, counter 0, `aaguid` = `appattest`). The Worker returns a **key credential**, an HMAC-sealed `{ kid, pub, appId, exp }` blob the client keeps, so the Worker stays stateless. Later admissions: key credential + assertion over `nonce`. Assertion counters are not checked: the Worker keeps no per-key state, and the single-use nonce already makes each assertion fresh | **Verified app** |
-| macOS (Developer ID, outside the Mac App Store) | App Attest, as iOS, with the entitlement set to `production` (outside TestFlight, the App Store, and Enterprise, the entitlement chooses the environment). Requires macOS 27, the Wooosh minimum. **Unverified** whether a Developer ID provisioning profile can carry the App Attest capability; until confirmed, Macs fall to Unverified | **Verified app** |
+| macOS (Developer ID, outside the Mac App Store) | App Attest, as iOS, with the entitlement set to `production` (outside TestFlight, the App Store, and Enterprise, the entitlement chooses the environment). Requires macOS 27, the Send minimum. **Unverified** whether a Developer ID provisioning profile can carry the App Attest capability; until confirmed, Macs fall to Unverified | **Verified app** |
 | Android | Play Integrity standard request, `requestHash = SHA-256(nonce)`. The Worker decodes via Google's server API and requires `PLAY_RECOGNIZED`, the release signing-cert digest, and `MEETS_DEVICE_INTEGRITY` | **Verified app** |
 | Windows | TPM 2.0 credential activation (below) | **Verified hardware** |
 | `wooosh-cli` on Linux / Windows | TPM 2.0 credential activation, where a TPM is present | **Verified hardware** |
 | `wooosh-cli` on macOS | App Attest, **only** when the binary runs from inside the signed `Wooosh.app` bundle (§9.2.1) | **Verified app** |
 | Any client whose attestation is unavailable or fails `isSupported` | None | **Unverified** |
 
-**TPM 2.0 credential activation** (Windows and the CLI). RSA endorsement keys only, which is what Windows provisions by default; an ECC-only TPM falls to Unverified. Proves "this attestation key (AK) lives in the same genuine TPM as this endorsement key (EK)". It does *not* prove the binary is Wooosh; there is no Windows equivalent of App Attest, hence the separate tier.
+**TPM 2.0 credential activation** (Windows and the CLI). RSA endorsement keys only, which is what Windows provisions by default; an ECC-only TPM falls to Unverified. Proves "this attestation key (AK) lives in the same genuine TPM as this endorsement key (EK)". It does *not* prove the binary is Send; there is no Windows equivalent of App Attest, hence the separate tier.
 
 1. Client creates (once, then reuses) a restricted signing AK under the EK and sends `tpm: { ek_cert, ek_chain, ak_public }`. `ek_chain` carries the intermediates, which the client fetches from the certificate's AIA URL if the OS does not have them; the Worker bundles roots only. On firmware TPMs the EK certificate itself is fetched by the OS from the vendor, not read from NV.
 2. Worker verifies `ek_cert` chains to a bundled TPM manufacturer root (the RootCA set of Microsoft's published `TrustedTpm.cab`, regenerated by `Worker/scripts/update-roots.sh`), checks the AK attributes (`fixedTPM`, `fixedParent`, `sensitiveDataOrigin`, `restricted`, `sign`, not `decrypt`, name algorithm SHA-256), then runs `TPM2_MakeCredential` in software against the EK with a random secret `s`, and answers `{ t: "tpm-challenge", credential_blob, encrypted_secret }`. `SHA-256(s)` stays in the socket's attachment.
@@ -336,7 +336,7 @@ Relay frames (§9.6) are **binary** frames, `0x05` followed by `[u16 len][datagr
 
 ### 9.5 Candidates and hole punching
 
-Each client runs **one UDP socket** for the session. QUIC, STUN, and punch probes share it, demultiplexed by first byte (RFC 9443: `0x00–0x03` STUN, `0x40–0x7F`/`0xC0–0xFF` QUIC; probes use STUN Binding with a Wooosh attribute).
+Each client runs **one UDP socket** for the session. QUIC, STUN, and punch probes share it, demultiplexed by first byte (RFC 9443: `0x00–0x03` STUN, `0x40–0x7F`/`0xC0–0xFF` QUIC; probes use STUN Binding with a Send attribute).
 
 1. **Gather.** `host`: every interface address, with link-local omitted and loopback last (it is how two sessions on one machine meet; a peer elsewhere can never validate it). `srflx`: STUN Binding to the STUN server (`stun.cloudflare.com:3478` by default) from the session socket, over each address family it resolves to. `mapped`: a UPnP-IGD / NAT-PMP / PCP mapping where the router allows one; specified but **not implemented** (n0's standalone `portmapper` crate is the candidate). Gathering is capped at 2 s.
 2. **Exchange.** `cand` to the room, with `ufrag` 8 random bytes (hex) and `mac = BLAKE3-keyed(k_room, "wooosh cand\0" ‖ ufrag ‖ ("\n" ‖ kind ‖ "|" ‖ addr)*)[0..16]`, hex. `k_room = BLAKE3-derive-key("wooosh room v2", tok)` for tickets, `rk` from BLE INFO for `peer` rooms. The rendezvous cannot compute `k_room`, so it cannot inject candidates the other client will accept. A bad `mac` is dropped.
@@ -402,11 +402,11 @@ A user who wants a durable pairing off-LAN can run the §4.3 SAS ceremony over a
 
 > **Status: not implemented.** Specified here so §9.4's `pair` role is defined; the Worker already accepts it.
 
-Two devices that are already paired can meet over the internet without a ticket, provided both have Wooosh open. Each derives the same room id from the pair alone:
+Two devices that are already paired can meet over the internet without a ticket, provided both have Send open. Each derives the same room id from the pair alone:
 
 `room = BLAKE3-keyed(key = BLAKE3("wooosh pair room v2" ‖ min(pkA,pkB) ‖ max(pkA,pkB)), "YYYY-MM-DD" UTC)[0..16]`
 
-The room is opaque to the rendezvous, which cannot recover either key from it. It does rotate only daily, so within one UTC day the rendezvous can tell that the same pair met more than once. That linkability is the price of not needing a ticket, and is why this path is opt-in per paired device (DESIGN.md §9.1). A client joins the room of every opted-in paired device while Wooosh is in the foreground, and leaves when it is backgrounded; when the other device joins too, the two are introduced as in §9.5. `k_room` for candidate MACs is derived the same way with a different label. Trust is the pin: no token is involved, and an unpinned key closes `KEY_CHANGED` as on the LAN.
+The room is opaque to the rendezvous, which cannot recover either key from it. It does rotate only daily, so within one UTC day the rendezvous can tell that the same pair met more than once. That linkability is the price of not needing a ticket, and is why this path is opt-in per paired device (DESIGN.md §9.1). A client joins the room of every opted-in paired device while Send is in the foreground, and leaves when it is backgrounded; when the other device joins too, the two are introduced as in §9.5. `k_room` for candidate MACs is derived the same way with a different label. Trust is the pin: no token is involved, and an unpinned key closes `KEY_CHANGED` as on the LAN.
 
 ### 9.10 Threat notes specific to the rendezvous
 

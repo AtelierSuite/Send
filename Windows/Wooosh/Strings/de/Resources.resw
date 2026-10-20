@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
-    Wooosh for Windows. Generated from the shipped Android translations so both
+    Send for Windows. Generated from the shipped Android translations so both
     shells use one term per concept; see Assets/Documentation/COPY_STYLE.md.
     Plural forms are selected by Localization/PluralRules.cs using the CLDR
     category for the resource's locale, so keys carry a .One/.Few/.Many/.Other
@@ -66,7 +66,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppName" xml:space="preserve">
-    <value>Wooosh</value>
+    <value>Send</value>
     <comment>The product name. Never translated (COPY_STYLE.md §2).</comment>
   </data>
   <data name="DeviceKindIPhone" xml:space="preserve">
@@ -222,7 +222,7 @@
     <comment>Title of the empty device list.</comment>
   </data>
   <data name="EmptyBody" xml:space="preserve">
-    <value>Geräte, auf denen Wooosh im selben WLAN läuft, erscheinen hier automatisch.</value>
+    <value>Geräte, auf denen Send im selben WLAN läuft, erscheinen hier automatisch.</value>
     <comment>Body of the empty device list.</comment>
   </data>
   <data name="EmptyVisibilityEveryone" xml:space="preserve">
@@ -342,7 +342,7 @@
     <comment>Status while files are being prepared for sending.</comment>
   </data>
   <data name="TransferResumable" xml:space="preserve">
-    <value>{0} Wooosh kann dort weitermachen, wo es aufgehört hat.</value>
+    <value>{0} Send kann dort weitermachen, wo es aufgehört hat.</value>
     <comment>Appended to a failure that can continue later. {0} is the failure message.</comment>
   </data>
   <data name="PairingTitle" xml:space="preserve">
@@ -386,7 +386,7 @@
     <comment>Title after a successful pairing. {0} is a device name.</comment>
   </data>
   <data name="PairingSuccessBody" xml:space="preserve">
-    <value>Wooosh vertraut diesem Gerät ab sofort. Du musst die Bestätigungswörter nicht mehr abgleichen.</value>
+    <value>Send vertraut diesem Gerät ab sofort. Du musst die Bestätigungswörter nicht mehr abgleichen.</value>
     <comment>Explanation after a successful pairing.</comment>
   </data>
   <data name="PairingFailedTitle" xml:space="preserve">
@@ -394,7 +394,7 @@
     <comment>Title shown when pairing did not succeed.</comment>
   </data>
   <data name="PairingFailedTitleNamed" xml:space="preserve">
-    <value>Wooosh konnte nicht mit {0} koppeln</value>
+    <value>Send konnte nicht mit {0} koppeln</value>
     <comment>Title when pairing with a named device failed. {0} is a device name.</comment>
   </data>
   <data name="SasTitle" xml:space="preserve">
@@ -418,7 +418,7 @@
     <comment>Title of the warning that a paired device&#x27;s key changed.</comment>
   </data>
   <data name="KeyChangedBody" xml:space="preserve">
-    <value>„{0}“ zeigt einen anderen Sicherheitsschlüssel als beim Koppeln. Das passiert meist nach einer Neuinstallation von Wooosh oder einem Zurücksetzen des Geräts, kann aber auch bedeuten, dass ein anderes Gerät sich dafür ausgibt. Übertragungen mit diesem Gerät sind blockiert, bis du erneut koppelst.</value>
+    <value>„{0}“ zeigt einen anderen Sicherheitsschlüssel als beim Koppeln. Das passiert meist nach einer Neuinstallation von Send oder einem Zurücksetzen des Geräts, kann aber auch bedeuten, dass ein anderes Gerät sich dafür ausgibt. Übertragungen mit diesem Gerät sind blockiert, bis du erneut koppelst.</value>
     <comment>Body of the security-key warning. {0} is a device name.</comment>
   </data>
   <data name="KeyChangedExpectedLabel" xml:space="preserve">
@@ -519,10 +519,10 @@
   </data>
   <data name="SettingsStarting" xml:space="preserve">
     <value>Wird gestartet …</value>
-    <comment>Placeholder shown until Wooosh has finished starting up.</comment>
+    <comment>Placeholder shown until Send has finished starting up.</comment>
   </data>
   <data name="ErrorSendFailedTitle" xml:space="preserve">
-    <value>Wooosh konnte nicht senden</value>
+    <value>Senden nicht möglich</value>
     <comment>Dialog title when a send could not start.</comment>
   </data>
   <data name="ErrorSendFailedBody" xml:space="preserve">
@@ -534,19 +534,19 @@
     <comment>Shown when the chosen files could not be read.</comment>
   </data>
   <data name="ErrorStillResolving" xml:space="preserve">
-    <value>Wooosh sucht noch nach {0}. Versuche es gleich noch einmal.</value>
+    <value>Send sucht noch nach {0}. Versuche es gleich noch einmal.</value>
     <comment>Shown when a device has been seen but not reached yet. {0} is a device name.</comment>
   </data>
   <data name="ErrorUnreachable" xml:space="preserve">
-    <value>Wooosh konnte nicht ermitteln, wie „{0}“ erreichbar ist. Vielleicht ist es gerade offline gegangen.</value>
+    <value>Send konnte nicht ermitteln, wie „{0}“ erreichbar ist. Vielleicht ist es gerade offline gegangen.</value>
     <comment>Shown when no address for a device could be worked out. {0} is a device name.</comment>
   </data>
   <data name="ErrorSaveFailed" xml:space="preserve">
-    <value>Wooosh konnte diese Datei nicht sichern.</value>
+    <value>Send konnte diese Datei nicht sichern.</value>
     <comment>Shown when a received file could not be stored.</comment>
   </data>
   <data name="ErrorStorageUnavailable" xml:space="preserve">
-    <value>Wooosh konnte den Ordner für empfangene Dateien nicht erreichen. Prüfe den freien Speicher und versuche es erneut.</value>
+    <value>Send konnte den Ordner für empfangene Dateien nicht erreichen. Prüfe den freien Speicher und versuche es erneut.</value>
     <comment>Shown when the folder for received files cannot be used.</comment>
   </data>
   <data name="ErrorPairingRequired" xml:space="preserve">
@@ -554,20 +554,20 @@
     <comment>Core error: the other device accepts paired devices only.</comment>
   </data>
   <data name="ErrorVersionMismatch" xml:space="preserve">
-    <value>Auf diesem Gerät läuft eine nicht kompatible Wooosh-Version. Aktualisiere Wooosh auf beiden Geräten.</value>
-    <comment>Core error: incompatible Wooosh versions.</comment>
+    <value>Auf diesem Gerät läuft eine nicht kompatible Send-Version. Aktualisiere Send auf beiden Geräten.</value>
+    <comment>Core error: incompatible Send versions.</comment>
   </data>
   <data name="ErrorKeyChanged" xml:space="preserve">
     <value>Dieses Gerät zeigt einen anderen Sicherheitsschlüssel als beim Koppeln. Koppele erneut, um fortzufahren.</value>
     <comment>Core error: a paired device presented a different key.</comment>
   </data>
   <data name="ErrorQrKeyMismatch" xml:space="preserve">
-    <value>Das antwortende Gerät ist nicht das aus dem Kopplungscode. Wooosh hat die Kopplung abgebrochen.</value>
+    <value>Das antwortende Gerät ist nicht das aus dem Kopplungscode. Send hat die Kopplung abgebrochen.</value>
     <comment>Core error: the device that answered is not the one in the pairing code.</comment>
   </data>
   <data name="ErrorInvalidQr" xml:space="preserve">
-    <value>Das ist kein Wooosh-Kopplungscode.</value>
-    <comment>Core error: the scanned or pasted text is not a Wooosh pairing code.</comment>
+    <value>Das ist kein Send-Kopplungscode.</value>
+    <comment>Core error: the scanned or pasted text is not a Send pairing code.</comment>
   </data>
   <data name="ErrorPairingExpired" xml:space="preserve">
     <value>Dieser Kopplungscode ist abgelaufen. Lass dir einen neuen geben.</value>
@@ -578,7 +578,7 @@
     <comment>Generic pairing failure with no more detail available.</comment>
   </data>
   <data name="ErrorPairingTimeout" xml:space="preserve">
-    <value>Wooosh konnte das Gerät nicht rechtzeitig erreichen. Prüfe, ob es den Kopplungscode noch anzeigt und ob beide Geräte im selben WLAN sind.</value>
+    <value>Send konnte das Gerät nicht rechtzeitig erreichen. Prüfe, ob es den Kopplungscode noch anzeigt und ob beide Geräte im selben WLAN sind.</value>
     <comment>Shown when a pairing attempt ran out of time.</comment>
   </data>
   <data name="ErrorSasTimeout" xml:space="preserve">
@@ -586,7 +586,7 @@
     <comment>Shown when the other device did not confirm the verification code in time.</comment>
   </data>
   <data name="ErrorConnect" xml:space="preserve">
-    <value>Wooosh konnte das Gerät nicht erreichen. Prüfe, ob beide Geräte im selben WLAN sind.</value>
+    <value>Send konnte das Gerät nicht erreichen. Prüfe, ob beide Geräte im selben WLAN sind.</value>
     <comment>Core error: the other device could not be reached at all.</comment>
   </data>
   <data name="ErrorUnknownPeer" xml:space="preserve">
@@ -594,15 +594,15 @@
     <comment>Core error: the connection to that device is gone.</comment>
   </data>
   <data name="ErrorNotStarted" xml:space="preserve">
-    <value>Wooosh startet noch. Versuche es gleich noch einmal.</value>
-    <comment>Core error: Wooosh has not finished starting yet.</comment>
+    <value>Send startet noch. Versuche es gleich noch einmal.</value>
+    <comment>Core error: Send has not finished starting yet.</comment>
   </data>
   <data name="ErrorCrypto" xml:space="preserve">
-    <value>Wooosh konnte die sichere Verbindung nicht überprüfen. Versuche es erneut.</value>
+    <value>Send konnte die sichere Verbindung nicht überprüfen. Versuche es erneut.</value>
     <comment>Core error: the secure connection could not be verified.</comment>
   </data>
   <data name="ErrorIo" xml:space="preserve">
-    <value>Wooosh konnte eine Datei nicht lesen oder schreiben. Prüfe den freien Speicher und versuche es erneut.</value>
+    <value>Send konnte eine Datei nicht lesen oder schreiben. Prüfe den freien Speicher und versuche es erneut.</value>
     <comment>Core error: a file could not be read or written.</comment>
   </data>
   <data name="ErrorTransferFailed" xml:space="preserve">
@@ -622,11 +622,11 @@
     <comment>Shown when the other device never answered a request.</comment>
   </data>
   <data name="ErrorCoreStart" xml:space="preserve">
-    <value>Wooosh konnte nicht starten. Schließe Wooosh und öffne es erneut.</value>
-    <comment>Shown when Wooosh failed to start up at all.</comment>
+    <value>Send konnte nicht starten. Schließe Send und öffne es erneut.</value>
+    <comment>Shown when Send failed to start up at all.</comment>
   </data>
   <data name="ErrorProtocol" xml:space="preserve">
-    <value>Das andere Gerät hat etwas gesendet, das Wooosh nicht versteht. Aktualisiere Wooosh auf beiden Geräten.</value>
+    <value>Das andere Gerät hat etwas gesendet, das Send nicht versteht. Aktualisiere Send auf beiden Geräten.</value>
     <comment>Core error: the other device sent something this build does not understand.</comment>
   </data>
   <data name="OfferTitle.One" xml:space="preserve">
@@ -670,28 +670,28 @@
     <comment>Summary when every file in a transfer failed. {0} is the file count.</comment>
   </data>
   <data name="TrayOpen" xml:space="preserve">
-    <value>Wooosh öffnen</value>
+    <value>Send öffnen</value>
     <comment>Notification-area menu item that brings the window back.</comment>
   </data>
   <data name="TrayQuit" xml:space="preserve">
-    <value>Wooosh beenden</value>
-    <comment>Notification-area menu item that shuts Wooosh down completely.</comment>
+    <value>Send beenden</value>
+    <comment>Notification-area menu item that shuts Send down completely.</comment>
   </data>
   <data name="SettingsSectionBackground" xml:space="preserve">
     <value>Im Hintergrund</value>
-    <comment>Settings section header for what Wooosh does when the window is closed.</comment>
+    <comment>Settings section header for what Send does when the window is closed.</comment>
   </data>
   <data name="SettingsKeepRunning" xml:space="preserve">
-    <value>Wooosh beim Schließen des Fensters weiterlaufen lassen</value>
-    <comment>Toggle: closing the window leaves Wooosh in the notification area.</comment>
+    <value>Send beim Schließen des Fensters weiterlaufen lassen</value>
+    <comment>Toggle: closing the window leaves Send in the notification area.</comment>
   </data>
   <data name="SettingsKeepRunningDesc" xml:space="preserve">
-    <value>Wooosh bleibt im Infobereich und kann weiterhin Dateien empfangen.</value>
+    <value>Send bleibt im Infobereich und kann weiterhin Dateien empfangen.</value>
     <comment>Helper text under the keep-running toggle.</comment>
   </data>
   <data name="ShareTargetTitle" xml:space="preserve">
-    <value>Mit Wooosh senden</value>
-    <comment>Label Wooosh shows in the Windows share sheet.</comment>
+    <value>Send</value>
+    <comment>Label Send shows in the Windows share sheet.</comment>
   </data>
   <data name="OtherDeviceTitle" xml:space="preserve">
     <value>Anderes Gerät</value>
@@ -738,11 +738,11 @@
     <comment>Status while the code is being minted.</comment>
   </data>
   <data name="InternetServiceNote" xml:space="preserve">
-    <value>Beim Abrufen eines Codes kontaktiert Wooosh seinen Server, damit sich die beiden Geräte finden. Er speichert nichts über sie, und Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht.</value>
+    <value>Beim Abrufen eines Codes kontaktiert Send seinen Server, damit sich die beiden Geräte finden. Er speichert nichts über sie, und Dateien gehen direkt von Gerät zu Gerät, sobald ein direkter Weg besteht.</value>
     <comment>Explains what getting an internet code contacts.</comment>
   </data>
   <data name="ErrorTicketFailed" xml:space="preserve">
-    <value>Wooosh konnte keinen Internetcode holen. Prüfe die Verbindung und versuche es erneut.</value>
+    <value>Send konnte keinen Internetcode holen. Prüfe die Verbindung und versuche es erneut.</value>
     <comment>Error when the internet code could not be minted.</comment>
   </data>
   <data name="OtherDeviceBodyDesktop" xml:space="preserve">

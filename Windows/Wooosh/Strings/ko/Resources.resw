@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
-    Wooosh for Windows. Generated from the shipped Android translations so both
+    Send for Windows. Generated from the shipped Android translations so both
     shells use one term per concept; see Assets/Documentation/COPY_STYLE.md.
     Plural forms are selected by Localization/PluralRules.cs using the CLDR
     category for the resource's locale, so keys carry a .One/.Few/.Many/.Other
@@ -66,7 +66,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppName" xml:space="preserve">
-    <value>Wooosh</value>
+    <value>Send</value>
     <comment>The product name. Never translated (COPY_STYLE.md §2).</comment>
   </data>
   <data name="DeviceKindIPhone" xml:space="preserve">
@@ -222,7 +222,7 @@
     <comment>Title of the empty device list.</comment>
   </data>
   <data name="EmptyBody" xml:space="preserve">
-    <value>같은 Wi-Fi 네트워크에서 Wooosh를 실행 중인 기기가 여기에 자동으로 표시됩니다.</value>
+    <value>같은 Wi-Fi 네트워크에서 Send를 실행 중인 기기가 여기에 자동으로 표시됩니다.</value>
     <comment>Body of the empty device list.</comment>
   </data>
   <data name="EmptyVisibilityEveryone" xml:space="preserve">
@@ -342,7 +342,7 @@
     <comment>Status while files are being prepared for sending.</comment>
   </data>
   <data name="TransferResumable" xml:space="preserve">
-    <value>{0} Wooosh는 중단된 지점부터 이어서 진행할 수 있습니다.</value>
+    <value>{0} Send는 중단된 지점부터 이어서 진행할 수 있습니다.</value>
     <comment>Appended to a failure that can continue later. {0} is the failure message.</comment>
   </data>
   <data name="PairingTitle" xml:space="preserve">
@@ -386,7 +386,7 @@
     <comment>Title after a successful pairing. {0} is a device name.</comment>
   </data>
   <data name="PairingSuccessBody" xml:space="preserve">
-    <value>이제 Wooosh는 이 기기를 신뢰합니다. 앞으로는 확인 문구를 비교할 필요가 없습니다.</value>
+    <value>이제 Send는 이 기기를 신뢰합니다. 앞으로는 확인 문구를 비교할 필요가 없습니다.</value>
     <comment>Explanation after a successful pairing.</comment>
   </data>
   <data name="PairingFailedTitle" xml:space="preserve">
@@ -394,7 +394,7 @@
     <comment>Title shown when pairing did not succeed.</comment>
   </data>
   <data name="PairingFailedTitleNamed" xml:space="preserve">
-    <value>Wooosh가 {0}과(와) 페어링하지 못했습니다</value>
+    <value>Send가 {0}과(와) 페어링하지 못했습니다</value>
     <comment>Title when pairing with a named device failed. {0} is a device name.</comment>
   </data>
   <data name="SasTitle" xml:space="preserve">
@@ -418,7 +418,7 @@
     <comment>Title of the warning that a paired device&#x27;s key changed.</comment>
   </data>
   <data name="KeyChangedBody" xml:space="preserve">
-    <value>“{0}”이(가) 페어링할 때와 다른 보안 키를 제시하고 있습니다. 보통 Wooosh를 다시 설치하거나 기기를 초기화한 뒤에 발생하지만, 다른 기기가 사칭하고 있을 수도 있습니다. 다시 페어링할 때까지 이 기기와의 전송은 차단됩니다.</value>
+    <value>“{0}”이(가) 페어링할 때와 다른 보안 키를 제시하고 있습니다. 보통 Send를 다시 설치하거나 기기를 초기화한 뒤에 발생하지만, 다른 기기가 사칭하고 있을 수도 있습니다. 다시 페어링할 때까지 이 기기와의 전송은 차단됩니다.</value>
     <comment>Body of the security-key warning. {0} is a device name.</comment>
   </data>
   <data name="KeyChangedExpectedLabel" xml:space="preserve">
@@ -519,10 +519,10 @@
   </data>
   <data name="SettingsStarting" xml:space="preserve">
     <value>시작하는 중…</value>
-    <comment>Placeholder shown until Wooosh has finished starting up.</comment>
+    <comment>Placeholder shown until Send has finished starting up.</comment>
   </data>
   <data name="ErrorSendFailedTitle" xml:space="preserve">
-    <value>Wooosh가 보내지 못했습니다</value>
+    <value>보내지 못했습니다</value>
     <comment>Dialog title when a send could not start.</comment>
   </data>
   <data name="ErrorSendFailedBody" xml:space="preserve">
@@ -534,19 +534,19 @@
     <comment>Shown when the chosen files could not be read.</comment>
   </data>
   <data name="ErrorStillResolving" xml:space="preserve">
-    <value>Wooosh가 아직 {0}을(를) 찾는 중입니다. 잠시 후 다시 시도해 주세요.</value>
+    <value>Send가 아직 {0}을(를) 찾는 중입니다. 잠시 후 다시 시도해 주세요.</value>
     <comment>Shown when a device has been seen but not reached yet. {0} is a device name.</comment>
   </data>
   <data name="ErrorUnreachable" xml:space="preserve">
-    <value>Wooosh가 “{0}”에 연결할 방법을 찾지 못했습니다. 방금 오프라인이 되었을 수 있습니다.</value>
+    <value>Send가 “{0}”에 연결할 방법을 찾지 못했습니다. 방금 오프라인이 되었을 수 있습니다.</value>
     <comment>Shown when no address for a device could be worked out. {0} is a device name.</comment>
   </data>
   <data name="ErrorSaveFailed" xml:space="preserve">
-    <value>Wooosh가 이 파일을 저장하지 못했습니다.</value>
+    <value>Send가 이 파일을 저장하지 못했습니다.</value>
     <comment>Shown when a received file could not be stored.</comment>
   </data>
   <data name="ErrorStorageUnavailable" xml:space="preserve">
-    <value>Wooosh가 받은 파일 폴더에 접근하지 못했습니다. 여유 공간을 확인한 뒤 다시 시도해 주세요.</value>
+    <value>Send가 받은 파일 폴더에 접근하지 못했습니다. 여유 공간을 확인한 뒤 다시 시도해 주세요.</value>
     <comment>Shown when the folder for received files cannot be used.</comment>
   </data>
   <data name="ErrorPairingRequired" xml:space="preserve">
@@ -554,20 +554,20 @@
     <comment>Core error: the other device accepts paired devices only.</comment>
   </data>
   <data name="ErrorVersionMismatch" xml:space="preserve">
-    <value>해당 기기는 호환되지 않는 버전의 Wooosh를 실행 중입니다. 두 기기에서 Wooosh를 업데이트하세요.</value>
-    <comment>Core error: incompatible Wooosh versions.</comment>
+    <value>해당 기기는 호환되지 않는 버전의 Send를 실행 중입니다. 두 기기에서 Send를 업데이트하세요.</value>
+    <comment>Core error: incompatible Send versions.</comment>
   </data>
   <data name="ErrorKeyChanged" xml:space="preserve">
     <value>해당 기기가 페어링할 때와 다른 보안 키를 제시하고 있습니다. 계속하려면 다시 페어링하세요.</value>
     <comment>Core error: a paired device presented a different key.</comment>
   </data>
   <data name="ErrorQrKeyMismatch" xml:space="preserve">
-    <value>응답한 기기가 페어링 코드의 기기와 다릅니다. Wooosh가 페어링을 중단했습니다.</value>
+    <value>응답한 기기가 페어링 코드의 기기와 다릅니다. Send가 페어링을 중단했습니다.</value>
     <comment>Core error: the device that answered is not the one in the pairing code.</comment>
   </data>
   <data name="ErrorInvalidQr" xml:space="preserve">
-    <value>Wooosh 페어링 코드가 아닙니다.</value>
-    <comment>Core error: the scanned or pasted text is not a Wooosh pairing code.</comment>
+    <value>Send 페어링 코드가 아닙니다.</value>
+    <comment>Core error: the scanned or pasted text is not a Send pairing code.</comment>
   </data>
   <data name="ErrorPairingExpired" xml:space="preserve">
     <value>해당 페어링 코드가 만료되었습니다. 새 코드를 요청하세요.</value>
@@ -578,7 +578,7 @@
     <comment>Generic pairing failure with no more detail available.</comment>
   </data>
   <data name="ErrorPairingTimeout" xml:space="preserve">
-    <value>Wooosh가 제한 시간 안에 해당 기기에 연결하지 못했습니다. 상대 기기에 페어링 코드가 계속 표시되어 있는지, 두 기기가 같은 Wi-Fi 네트워크에 있는지 확인하세요.</value>
+    <value>Send가 제한 시간 안에 해당 기기에 연결하지 못했습니다. 상대 기기에 페어링 코드가 계속 표시되어 있는지, 두 기기가 같은 Wi-Fi 네트워크에 있는지 확인하세요.</value>
     <comment>Shown when a pairing attempt ran out of time.</comment>
   </data>
   <data name="ErrorSasTimeout" xml:space="preserve">
@@ -586,7 +586,7 @@
     <comment>Shown when the other device did not confirm the verification code in time.</comment>
   </data>
   <data name="ErrorConnect" xml:space="preserve">
-    <value>Wooosh가 해당 기기에 연결하지 못했습니다. 두 기기가 같은 Wi-Fi 네트워크에 있는지 확인하세요.</value>
+    <value>Send가 해당 기기에 연결하지 못했습니다. 두 기기가 같은 Wi-Fi 네트워크에 있는지 확인하세요.</value>
     <comment>Core error: the other device could not be reached at all.</comment>
   </data>
   <data name="ErrorUnknownPeer" xml:space="preserve">
@@ -594,15 +594,15 @@
     <comment>Core error: the connection to that device is gone.</comment>
   </data>
   <data name="ErrorNotStarted" xml:space="preserve">
-    <value>Wooosh가 아직 시작하는 중입니다. 잠시 후 다시 시도해 주세요.</value>
-    <comment>Core error: Wooosh has not finished starting yet.</comment>
+    <value>Send가 아직 시작하는 중입니다. 잠시 후 다시 시도해 주세요.</value>
+    <comment>Core error: Send has not finished starting yet.</comment>
   </data>
   <data name="ErrorCrypto" xml:space="preserve">
-    <value>Wooosh가 보안 연결을 확인하지 못했습니다. 다시 시도해 주세요.</value>
+    <value>Send가 보안 연결을 확인하지 못했습니다. 다시 시도해 주세요.</value>
     <comment>Core error: the secure connection could not be verified.</comment>
   </data>
   <data name="ErrorIo" xml:space="preserve">
-    <value>Wooosh가 파일을 읽거나 쓰지 못했습니다. 여유 공간을 확인한 뒤 다시 시도해 주세요.</value>
+    <value>Send가 파일을 읽거나 쓰지 못했습니다. 여유 공간을 확인한 뒤 다시 시도해 주세요.</value>
     <comment>Core error: a file could not be read or written.</comment>
   </data>
   <data name="ErrorTransferFailed" xml:space="preserve">
@@ -622,11 +622,11 @@
     <comment>Shown when the other device never answered a request.</comment>
   </data>
   <data name="ErrorCoreStart" xml:space="preserve">
-    <value>Wooosh를 시작하지 못했습니다. Wooosh를 닫았다가 다시 열어 주세요.</value>
-    <comment>Shown when Wooosh failed to start up at all.</comment>
+    <value>Send를 시작하지 못했습니다. Send를 닫았다가 다시 열어 주세요.</value>
+    <comment>Shown when Send failed to start up at all.</comment>
   </data>
   <data name="ErrorProtocol" xml:space="preserve">
-    <value>상대 기기가 Wooosh가 이해할 수 없는 내용을 보냈습니다. 두 기기에서 Wooosh를 업데이트하세요.</value>
+    <value>상대 기기가 Send가 이해할 수 없는 내용을 보냈습니다. 두 기기에서 Send를 업데이트하세요.</value>
     <comment>Core error: the other device sent something this build does not understand.</comment>
   </data>
   <data name="OfferTitle.Other" xml:space="preserve">
@@ -650,28 +650,28 @@
     <comment>Summary when every file in a transfer failed. {0} is the file count.</comment>
   </data>
   <data name="TrayOpen" xml:space="preserve">
-    <value>Wooosh 열기</value>
+    <value>Send 열기</value>
     <comment>Notification-area menu item that brings the window back.</comment>
   </data>
   <data name="TrayQuit" xml:space="preserve">
-    <value>Wooosh 종료</value>
-    <comment>Notification-area menu item that shuts Wooosh down completely.</comment>
+    <value>Send 종료</value>
+    <comment>Notification-area menu item that shuts Send down completely.</comment>
   </data>
   <data name="SettingsSectionBackground" xml:space="preserve">
     <value>백그라운드</value>
-    <comment>Settings section header for what Wooosh does when the window is closed.</comment>
+    <comment>Settings section header for what Send does when the window is closed.</comment>
   </data>
   <data name="SettingsKeepRunning" xml:space="preserve">
-    <value>창을 닫아도 Wooosh 계속 실행</value>
-    <comment>Toggle: closing the window leaves Wooosh in the notification area.</comment>
+    <value>창을 닫아도 Send 계속 실행</value>
+    <comment>Toggle: closing the window leaves Send in the notification area.</comment>
   </data>
   <data name="SettingsKeepRunningDesc" xml:space="preserve">
-    <value>Wooosh가 알림 영역에 남아 계속 파일을 받을 수 있습니다.</value>
+    <value>Send가 알림 영역에 남아 계속 파일을 받을 수 있습니다.</value>
     <comment>Helper text under the keep-running toggle.</comment>
   </data>
   <data name="ShareTargetTitle" xml:space="preserve">
-    <value>Wooosh로 보내기</value>
-    <comment>Label Wooosh shows in the Windows share sheet.</comment>
+    <value>Send</value>
+    <comment>Label Send shows in the Windows share sheet.</comment>
   </data>
   <data name="OtherDeviceTitle" xml:space="preserve">
     <value>다른 기기</value>
@@ -718,11 +718,11 @@
     <comment>Status while the code is being minted.</comment>
   </data>
   <data name="InternetServiceNote" xml:space="preserve">
-    <value>코드를 받으면 두 기기가 서로를 찾을 수 있도록 Wooosh 서버에 연결합니다. 서버는 기록을 남기지 않으며, 직접 연결할 수 있으면 파일은 기기 간에 직접 전송됩니다.</value>
+    <value>코드를 받으면 두 기기가 서로를 찾을 수 있도록 Send 서버에 연결합니다. 서버는 기록을 남기지 않으며, 직접 연결할 수 있으면 파일은 기기 간에 직접 전송됩니다.</value>
     <comment>Explains what getting an internet code contacts.</comment>
   </data>
   <data name="ErrorTicketFailed" xml:space="preserve">
-    <value>Wooosh가 인터넷 코드를 받지 못했습니다. 연결을 확인한 뒤 다시 시도하세요.</value>
+    <value>Send가 인터넷 코드를 받지 못했습니다. 연결을 확인한 뒤 다시 시도하세요.</value>
     <comment>Error when the internet code could not be minted.</comment>
   </data>
   <data name="OtherDeviceBodyDesktop" xml:space="preserve">

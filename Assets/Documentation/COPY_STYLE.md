@@ -1,4 +1,4 @@
-# Wooosh — Copy & Localization Style Guide
+# Send — Copy & Localization Style Guide
 
 Normative for all user-facing text in every shell (iOS, macOS, Android, and Windows when it exists). Applies to buttons, titles, section headers, body copy, empty states, error messages, notifications, share-sheet labels, permission-rationale strings, and accessibility labels.
 
@@ -11,19 +11,19 @@ Professional and concise. Plain language a non-technical person understands on f
 - Never expose internal identifiers, enum names, exception text, or file paths in copy meant for a normal user.
 
 ## 2. Product name
-The product is **Wooosh**. Always refer to it by name.
+The product is **Send**. Always refer to it by name.
 
 - Never "this app", "the app", or "the application" in user-facing text.
-- Correct: "Wooosh needs access to your local network to find nearby devices."
+- Correct: "Send needs access to your local network to find nearby devices."
 - Wrong: "This app needs access to your local network."
-- The name is never translated or transliterated. It keeps its spelling in every locale, including CJK, and takes no article ("Wooosh", not "the Wooosh").
+- The name is never translated or transliterated. It keeps its spelling in every locale, including CJK, and takes no article ("Send", not "the Send").
 
 ## 3. Punctuation
 **No em-dashes (—) anywhere.** Rephrase rather than substituting a different dash.
 
 - Split into two sentences, or use a colon, or restructure the clause.
-- Wrong: "Wooosh could not reach that device — check your Wi-Fi."
-- Right: "Wooosh could not reach that device. Check that both devices are on the same Wi-Fi network."
+- Wrong: "Send could not reach that device — check your Wi-Fi."
+- Right: "Send could not reach that device. Check that both devices are on the same Wi-Fi network."
 - En-dashes (–) are acceptable only in genuine numeric ranges. Hyphens in compound words are fine.
 
 ## 4. Capitalization

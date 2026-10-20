@@ -136,7 +136,7 @@ class TransferManager(
     /** `TransferDone` does not name its peer, and the ticket rows need to know. */
     private val peerIdByTransfer = ConcurrentHashMap<TransferId, String>()
 
-    /** `Wooosh/<yyyy-MM-dd>` when the transfer has > 20 files, else null (DESIGN.md §6). */
+    /** `Send/<yyyy-MM-dd>` when the transfer has > 20 files, else null (DESIGN.md §6). */
     private val subfolders = ConcurrentHashMap<TransferId, String>()
 
     init {
@@ -231,7 +231,7 @@ class TransferManager(
         }
         if (acceptedFileIds.size > FILES_PER_SUBFOLDER_THRESHOLD) {
             subfolders[offer.transferId] =
-                "Wooosh/${LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE)}"
+                "Send/${LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE)}"
         }
         // Also stored on TransferStarted, which a tiny file's FileReady can beat.
         manifests[offer.transferId] = offer.manifest.associateBy { it.id }
@@ -244,7 +244,7 @@ class TransferManager(
         val ids = offer.manifest.map { it.id }
         if (ids.size > FILES_PER_SUBFOLDER_THRESHOLD) {
             subfolders[offer.transferId] =
-                "Wooosh/${LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE)}"
+                "Send/${LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE)}"
         }
         manifests[offer.transferId] = offer.manifest.associateBy { it.id }
         beginPending(offer.transferId)
@@ -288,7 +288,7 @@ class TransferManager(
                 ) {
                     subfolders.putIfAbsent(
                         event.transferId,
-                        "Wooosh/${LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE)}",
+                        "Send/${LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE)}",
                     )
                 }
                 val peerName = requestedPeerNames.remove(event.transferId)
