@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Devices, Tilted: The phones lean toward each other, as if handing something across.
+    Layer: Receiver.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M660.0 198.0H748.0A40 40 0 0 1 788.0 238.0V410.0A40 40 0 0 1 748.0 450.0H660.0A40 40 0 0 1 620.0 410.0V238.0A40 40 0 0 1 660.0 198.0Z" opacity="0.95" transform="rotate(14 704.0 324.0)"/>
+  </g>
+</svg>

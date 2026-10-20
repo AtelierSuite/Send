@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Devices, PhoneToMac: A phone sending to a laptop: across platforms, not just phone to phone.
+    Layer: Display.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M510.0 318.0H750.0A12 12 0 0 1 762.0 330.0V466.0A12 12 0 0 1 750.0 478.0H510.0A12 12 0 0 1 498.0 466.0V330.0A12 12 0 0 1 510.0 318.0Z" opacity="0.4"/>
+  </g>
+</svg>

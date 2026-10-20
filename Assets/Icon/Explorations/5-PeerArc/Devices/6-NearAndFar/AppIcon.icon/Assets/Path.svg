@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Devices, NearAndFar: A large, near phone sending to a small, distant one: the path recedes into the distance.
+    Layer: Path.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="406.2" cy="458.4" r="32.0" opacity="0.50"/>
+    <circle cx="458.2" cy="401.0" r="27.3" opacity="0.60"/>
+    <circle cx="520.4" cy="354.9" r="22.7" opacity="0.70"/>
+    <circle cx="590.5" cy="322.1" r="18.0" opacity="0.80"/>
+  </g>
+</svg>

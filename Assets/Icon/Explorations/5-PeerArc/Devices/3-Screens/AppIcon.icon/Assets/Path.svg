@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Devices, Screens: Phones drawn with a bezel and a screen, so they read as devices rather than tiles.
+    Layer: Path.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="366.8" cy="528.9" r="24.0" opacity="0.70"/>
+    <circle cx="409.3" cy="464.1" r="24.0" opacity="0.70"/>
+    <circle cx="464.1" cy="409.3" r="24.0" opacity="0.70"/>
+    <circle cx="528.9" cy="366.8" r="24.0" opacity="0.70"/>
+  </g>
+</svg>

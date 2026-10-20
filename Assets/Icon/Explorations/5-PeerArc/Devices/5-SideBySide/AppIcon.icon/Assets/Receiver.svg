@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Devices, SideBySide: Two phones on one baseline, the path arcing over them from left to right.
+    Layer: Receiver.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M648.0 472.0H740.0A42 42 0 0 1 782.0 514.0V710.0A42 42 0 0 1 740.0 752.0H648.0A42 42 0 0 1 606.0 710.0V514.0A42 42 0 0 1 648.0 472.0Z" opacity="0.95"/>
+  </g>
+</svg>

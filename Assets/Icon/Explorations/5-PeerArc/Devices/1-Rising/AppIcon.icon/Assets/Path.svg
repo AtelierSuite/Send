@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Devices, Rising: Phone to phone, with dots that grow and brighten toward the receiver.
+    Layer: Path.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="366.8" cy="528.9" r="20.0" opacity="0.40"/>
+    <circle cx="409.3" cy="464.1" r="24.7" opacity="0.55"/>
+    <circle cx="464.1" cy="409.3" r="29.3" opacity="0.70"/>
+    <circle cx="528.9" cy="366.8" r="34.0" opacity="0.85"/>
+  </g>
+</svg>

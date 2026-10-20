@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Devices, Screens: Phones drawn with a bezel and a screen, so they read as devices rather than tiles.
+    Layer: Sender.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path fill-rule="evenodd" d="M280.0 578.0H368.0A40 40 0 0 1 408.0 618.0V790.0A40 40 0 0 1 368.0 830.0H280.0A40 40 0 0 1 240.0 790.0V618.0A40 40 0 0 1 280.0 578.0ZM280.0 604.0H368.0A14 14 0 0 1 382.0 618.0V790.0A14 14 0 0 1 368.0 804.0H280.0A14 14 0 0 1 266.0 790.0V618.0A14 14 0 0 1 280.0 604.0Z" opacity="0.6"/>
+    <path d="M280.0 604.0H368.0A14 14 0 0 1 382.0 618.0V790.0A14 14 0 0 1 368.0 804.0H280.0A14 14 0 0 1 266.0 790.0V618.0A14 14 0 0 1 280.0 604.0Z" opacity="0.25"/>
+  </g>
+</svg>
