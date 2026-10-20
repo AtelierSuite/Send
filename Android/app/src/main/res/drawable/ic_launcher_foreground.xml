@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- The paper plane from Assets/Icon/Explorations/1-PaperPlane, same geometry and
-     opacities as the Apple layers. Scaled about the centre so the nose, the
-     farthest point, stays inside the 66dp safe circle under every launcher mask.
-     Also the monochrome layer: themed icons use only the alpha. -->
+<!-- The Send icon from Assets/Icon/Explorations/5-PeerArc/Incoming/SpeedLines/6-Fading:
+     a file dropping into a folder, with streaks that brighten toward it. Same paths and
+     opacities as the Apple layers, drawn flat: launchers have no glass or blur. Scaled
+     about the centre so the glyph fills the tile as it does on Apple and stays inside
+     the 66dp safe circle. Also the monochrome layer: themed icons use only the alpha. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
@@ -11,21 +12,66 @@
     <group
         android:pivotX="512"
         android:pivotY="512"
-        android:scaleX="0.69"
-        android:scaleY="0.69">
+        android:scaleX="0.76"
+        android:scaleY="0.76">
         <path
-            android:name="far"
-            android:pathData="M807.7 299.7A28 28 0 0 0 759.6 274.3L481.8 588.1A28 28 0 0 0 481.2 624.5L632.8 809.2A28 28 0 0 0 681.6 798.3Z"
+            android:name="back"
+            android:pathData="M359.3 487.1H459.8A24.213740458015266 24.213740458015266 0 0 1 484.1 511.3V543.0A24.213740458015266 24.213740458015266 0 0 1 459.8 567.2H359.3A24.213740458015266 24.213740458015266 0 0 1 335.1 543.0V511.3A24.213740458015266 24.213740458015266 0 0 1 359.3 487.1ZM368.6 520.6H655.4A33.52671755725191 33.52671755725191 0 0 1 688.9 554.1V766.5A33.52671755725191 33.52671755725191 0 0 1 655.4 800.0H368.6A33.52671755725191 33.52671755725191 0 0 1 335.1 766.5V554.1A33.52671755725191 33.52671755725191 0 0 1 368.6 520.6Z"
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.55" />
+        <path
+            android:name="motionTop"
+            android:pathData="M446.0 278.6H446.0A15.0 15.0 0 0 1 461.0 293.6V298.1A15.0 15.0 0 0 1 446.0 313.1H446.0A15.0 15.0 0 0 1 431.0 298.1V293.6A15.0 15.0 0 0 1 446.0 278.6Z"
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.15" />
+        <path
+            android:name="motionTop"
+            android:pathData="M512.0 224.0H512.0A15.0 15.0 0 0 1 527.0 239.0V261.7A15.0 15.0 0 0 1 512.0 276.7H512.0A15.0 15.0 0 0 1 497.0 261.7V239.0A15.0 15.0 0 0 1 512.0 224.0Z"
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.22" />
+        <path
+            android:name="motionTop"
+            android:pathData="M578.0 278.6H578.0A15.0 15.0 0 0 1 593.0 293.6V298.1A15.0 15.0 0 0 1 578.0 313.1H578.0A15.0 15.0 0 0 1 563.0 298.1V293.6A15.0 15.0 0 0 1 578.0 278.6Z"
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.15" />
+        <path
+            android:name="motionMiddle"
+            android:pathData="M446.0 325.1H446.0A15.0 15.0 0 0 1 461.0 340.1V344.5A15.0 15.0 0 0 1 446.0 359.5H446.0A15.0 15.0 0 0 1 431.0 344.5V340.1A15.0 15.0 0 0 1 446.0 325.1Z"
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.32" />
+        <path
+            android:name="motionMiddle"
+            android:pathData="M512.0 288.7H512.0A15.0 15.0 0 0 1 527.0 303.7V326.3A15.0 15.0 0 0 1 512.0 341.3H512.0A15.0 15.0 0 0 1 497.0 326.3V303.7A15.0 15.0 0 0 1 512.0 288.7Z"
             android:fillColor="#FFFFFF"
             android:fillAlpha="0.5" />
         <path
-            android:name="keel"
-            android:pathData="M498.1 633.2A18 18 0 0 0 468.5 648.0L476.0 773.8A18 18 0 0 0 505.0 786.9L578.5 729.6A18 18 0 0 0 579.1 701.7Z"
+            android:name="motionMiddle"
+            android:pathData="M578.0 325.1H578.0A15.0 15.0 0 0 1 593.0 340.1V344.5A15.0 15.0 0 0 1 578.0 359.5H578.0A15.0 15.0 0 0 1 563.0 344.5V340.1A15.0 15.0 0 0 1 578.0 325.1Z"
             android:fillColor="#FFFFFF"
-            android:fillAlpha="0.75" />
+            android:fillAlpha="0.32" />
         <path
-            android:name="near"
-            android:pathData="M751.5 283.4A28 28 0 0 0 719.3 239.2L237.4 450.8A28 28 0 0 0 237.1 501.9L447.2 597.4A28 28 0 0 0 479.7 590.5Z"
+            android:name="motionBottom"
+            android:pathData="M446.0 371.5H446.0A15.0 15.0 0 0 1 461.0 386.5V391.0A15.0 15.0 0 0 1 446.0 406.0H446.0A15.0 15.0 0 0 1 431.0 391.0V386.5A15.0 15.0 0 0 1 446.0 371.5Z"
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.55" />
+        <path
+            android:name="motionBottom"
+            android:pathData="M512.0 353.3H512.0A15.0 15.0 0 0 1 527.0 368.3V391.0A15.0 15.0 0 0 1 512.0 406.0H512.0A15.0 15.0 0 0 1 497.0 391.0V368.3A15.0 15.0 0 0 1 512.0 353.3Z"
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.85" />
+        <path
+            android:name="motionBottom"
+            android:pathData="M578.0 371.5H578.0A15.0 15.0 0 0 1 593.0 386.5V391.0A15.0 15.0 0 0 1 578.0 406.0H578.0A15.0 15.0 0 0 1 563.0 391.0V386.5A15.0 15.0 0 0 1 578.0 371.5Z"
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.55" />
+        <path
+            android:name="file"
+            android:pathData="M438.4 434.0H552.0L609.8 491.7V614.7A24.213740458015266 24.213740458015266 0 0 1 585.6 638.9H438.4A24.213740458015266 24.213740458015266 0 0 1 414.2 614.7V458.2A24.213740458015266 24.213740458015266 0 0 1 438.4 434.0Z"
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.85" />
+        <path
+            android:name="front"
+            android:pathData="M368.6 576.5H655.4A33.52671755725191 33.52671755725191 0 0 1 688.9 610.0V766.5A33.52671755725191 33.52671755725191 0 0 1 655.4 800.0H368.6A33.52671755725191 33.52671755725191 0 0 1 335.1 766.5V610.0A33.52671755725191 33.52671755725191 0 0 1 368.6 576.5Z"
             android:fillColor="#FFFFFF"
             android:fillAlpha="0.95" />
     </group>
