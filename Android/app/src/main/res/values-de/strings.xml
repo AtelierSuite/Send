@@ -36,6 +36,7 @@
     <string name="peer_state_ready">Bereit</string>
     <string name="peer_state_ready_paired">Bereit · Gekoppelt</string>
     <string name="peer_state_ready_internet">Bereit · Über das Internet</string>
+    <string name="peer_state_ready_internet_limited">Bereit · Bis %1$s pro Datei</string>
     <string name="peer_state_away">Nicht erreichbar</string>
     <string name="peer_state_tap_to_send">Zum Senden tippen</string>
     <string name="peer_badge_paired">Gekoppelt</string>
@@ -258,7 +259,6 @@
     <string name="other_device_connecting_body">Eine Verbindung über das Internet dauert länger als im lokalen Netzwerk.</string>
     <string name="other_device_scan_prompt">Scanne den Code des anderen Geräts</string>
     <string name="error_relay_file_too_large">Wooosh konnte die beiden Geräte nicht direkt verbinden. Über eine indirekte Verbindung müssen Dateien kleiner als %1$s sein. Versuche es erneut oder nutze ein Netzwerk, das eine direkte Verbindung erlaubt.</string>
-    <string name="error_relay_metered_file_too_large">Wooosh konnte die beiden Geräte nicht direkt verbinden, und eines davon nutzt mobile Daten. In diesem Fall müssen Dateien kleiner als %1$s sein. Versuche es erneut über WLAN.</string>
     <string name="other_device_send">Senden</string>
     <string name="other_device_receive">Empfangen</string>
     <string name="internet_send_title">Über Internet senden</string>
@@ -267,6 +267,7 @@
     <string name="internet_send_waiting">Warten auf das andere Gerät.</string>
     <string name="internet_send_started_title">Wird gesendet</string>
     <string name="internet_send_started_body">Die Übertragung läuft. Du kannst sie in der Geräteliste verfolgen.</string>
+    <string name="internet_relayed_limit">Wooosh konnte die beiden Geräte nicht direkt verbinden. Über diese Verbindung können nur Dateien bis %1$s gesendet werden.</string>
     <string name="internet_connecting_title">Verbinden</string>
     <string name="internet_progress_body">Lass auf dem anderen Gerät den Code-Bildschirm geöffnet. Eine Verbindung über das Internet kann bis zu einer Minute dauern.</string>
     <string name="internet_failed_title_named">Wooosh konnte keine Verbindung zu %1$s herstellen</string>

@@ -350,6 +350,7 @@ struct PeerRowView: View {
     private var stateLine: String {
         if peer.isStale { return L.t("peer_state_away") }
         // Said plainly: the row is otherwise indistinguishable from a device on this network.
+        if peer.isRelayed { return L.f("peer_state_ready_internet_limited", RelayLimit.text) }
         if peer.isTicketOnly { return L.t("peer_state_ready_internet") }
         return L.t(isPaired ? "peer_state_ready_paired" : "peer_state_ready")
     }

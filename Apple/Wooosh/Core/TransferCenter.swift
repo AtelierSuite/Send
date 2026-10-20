@@ -172,7 +172,7 @@ final class TransferCenter {
 
     func handle(event: CoreEvent) {
         switch event {
-        case .ticketRedeemed, .peerConnected, .peerDisconnected, .pairingSAS,
+        case .ticketRedeemed, .peerConnected, .peerDisconnected, .peerRoute, .pairingSAS,
              .pairingResult, .keyChanged:
             // Owned by AppModel; listed so a new event cannot be swallowed here.
             break

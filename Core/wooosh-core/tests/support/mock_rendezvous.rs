@@ -152,7 +152,7 @@ async fn serve(tcp: tokio::net::TcpStream, state: Arc<Mutex<State>>, relay_unver
                     Some("cand") => {
                         clients[me].cand = true;
                         if let Some(o) = other.filter(|&o| clients[o].admitted) {
-                            let _ = clients[o].tx.send(text(json!({"t": "cand", "c": v["c"], "ufrag": v["ufrag"], "m": v["m"], "mac": v["mac"]})));
+                            let _ = clients[o].tx.send(text(json!({"t": "cand", "c": v["c"], "ufrag": v["ufrag"], "mac": v["mac"]})));
                             if clients[o].cand {
                                 let _ = tx.send(text(json!({"t": "go"})));
                                 let _ = clients[o].tx.send(text(json!({"t": "go"})));

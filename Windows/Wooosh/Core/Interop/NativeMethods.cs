@@ -50,10 +50,6 @@ internal static partial class NativeMethods
         IntPtr ptr, RustBuffer mode, ref RustCallStatus status);
 
     [LibraryImport(Library)]
-    public static partial void uniffi_wooosh_core_fn_method_woooshcore_set_metered(
-        IntPtr ptr, sbyte metered, ref RustCallStatus status);
-
-    [LibraryImport(Library)]
     public static partial RustBuffer uniffi_wooosh_core_fn_method_woooshcore_device_id(IntPtr ptr, ref RustCallStatus status);
 
     [LibraryImport(Library)]
@@ -110,6 +106,9 @@ internal static partial class NativeMethods
 
     [LibraryImport(Library)]
     public static partial RustBuffer uniffi_wooosh_core_fn_func_device_id_for(RustBuffer pubkey, ref RustCallStatus status);
+
+    [LibraryImport(Library)]
+    public static partial ulong uniffi_wooosh_core_fn_func_relay_max_file_bytes(ref RustCallStatus status);
 
     [LibraryImport(Library)]
     public static partial RustBuffer uniffi_wooosh_core_fn_func_fingerprint_phrase_for(RustBuffer pubkey, ref RustCallStatus status);

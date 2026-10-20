@@ -124,11 +124,6 @@ impl Conn {
         self.net.as_ref().map_or(true, |n| n.is_direct())
     }
 
-    /// The internet peer said it is on mobile data (PROTOCOL.md §9.6).
-    pub fn peer_metered(&self) -> bool {
-        self.net.as_ref().is_some_and(|n| n.peer_metered())
-    }
-
     pub async fn wait_for_direct(&self, timeout: Duration) -> bool {
         if self.is_direct() {
             return true;

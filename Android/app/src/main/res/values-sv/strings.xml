@@ -36,6 +36,7 @@
     <string name="peer_state_ready">Redo</string>
     <string name="peer_state_ready_paired">Redo · Parkopplad</string>
     <string name="peer_state_ready_internet">Redo · Via internet</string>
+    <string name="peer_state_ready_internet_limited">Redo · Upp till %1$s per fil</string>
     <string name="peer_state_away">Frånvarande</string>
     <string name="peer_state_tap_to_send">Tryck för att skicka</string>
     <string name="peer_badge_paired">Parkopplad</string>
@@ -258,7 +259,6 @@
     <string name="other_device_connecting_body">Att ansluta via internet tar längre tid än i ett lokalt nätverk.</string>
     <string name="other_device_scan_prompt">Skanna koden från den andra enheten</string>
     <string name="error_relay_file_too_large">Wooosh kunde inte koppla ihop enheterna direkt. Över en indirekt anslutning måste filer vara mindre än %1$s. Försök igen eller använd ett nätverk som tillåter en direkt anslutning.</string>
-    <string name="error_relay_metered_file_too_large">Wooosh kunde inte koppla ihop enheterna direkt, och en av dem använder mobildata. Då måste filer vara mindre än %1$s. Försök igen via wifi.</string>
     <string name="other_device_send">Skicka</string>
     <string name="other_device_receive">Ta emot</string>
     <string name="internet_send_title">Skicka via internet</string>
@@ -267,6 +267,7 @@
     <string name="internet_send_waiting">Väntar på den andra enheten.</string>
     <string name="internet_send_started_title">Skickar</string>
     <string name="internet_send_started_body">Överföringen pågår. Du kan följa den i enhetslistan.</string>
+    <string name="internet_relayed_limit">Wooosh kunde inte koppla ihop enheterna direkt. Den här anslutningen kan bara skicka filer på upp till %1$s.</string>
     <string name="internet_connecting_title">Ansluter</string>
     <string name="internet_progress_body">Låt den andra enheten vara kvar på kodskärmen. Att ansluta via internet kan ta upp till en minut.</string>
     <string name="internet_failed_title_named">Wooosh kunde inte ansluta till %1$s</string>

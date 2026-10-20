@@ -16,10 +16,6 @@ public interface IWoooshCore : IDisposable
 
     void SetVisibility(CoreVisibility mode);
 
-    /// <summary>Whether Windows reports the connection as metered. Lowers the relayed file
-    /// cap for both devices (PROTOCOL.md §9.6); call on start and on every change.</summary>
-    void SetMetered(bool metered);
-
     /// <summary>BLAKE3(pubkey)[0..16] (PROTOCOL.md §2). Null before Start.</summary>
     string? DeviceId { get; }
 

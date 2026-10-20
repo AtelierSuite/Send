@@ -197,6 +197,10 @@
     <value>就绪 · 已配对</value>
     <comment>Device row subtitle: reachable and already paired.</comment>
   </data>
+  <data name="PeerStateReadyInternetLimited" xml:space="preserve">
+    <value>就绪 · 每个文件最大 {0}</value>
+    <comment>Device row subtitle: live over the internet but relayed, so only small files can be sent. {0} is a size like "10 MB".</comment>
+  </data>
   <data name="PeerStateAway" xml:space="preserve">
     <value>已离开</value>
     <comment>Device row subtitle: the device stopped answering and cannot be used.</comment>

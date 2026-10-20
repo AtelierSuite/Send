@@ -76,6 +76,7 @@
     <!-- Device row subtitle: reachable and already paired. -->
     <string name="peer_state_ready_paired">Ready · Paired</string>
     <string name="peer_state_ready_internet">Ready · Over the Internet</string>
+    <string name="peer_state_ready_internet_limited">Ready · Up to %1$s per File</string>
     <!-- Device row subtitle: the device stopped answering and cannot be used. -->
     <string name="peer_state_away">Away</string>
     <!-- Device row subtitle while files are waiting to be sent. -->
@@ -456,7 +457,6 @@
     <string name="other_device_connecting_body">Connecting over the internet takes longer than on a local network.</string>
     <string name="other_device_scan_prompt">Scan the code from the other device</string>
     <string name="error_relay_file_too_large">Wooosh could not connect the two devices directly. Over an indirect connection, files must be under %1$s. Try again, or use a network that allows a direct connection.</string>
-    <string name="error_relay_metered_file_too_large">Wooosh could not connect the two devices directly, and one of them is on mobile data. In that case, files must be under %1$s. Try again on Wi-Fi.</string>
     <string name="other_device_send">Send</string>
     <string name="other_device_receive">Receive</string>
     <string name="internet_send_title">Send Over Internet</string>
@@ -465,6 +465,7 @@
     <string name="internet_send_waiting">Waiting for the other device.</string>
     <string name="internet_send_started_title">Sending</string>
     <string name="internet_send_started_body">The transfer is running. You can follow it in the device list.</string>
+    <string name="internet_relayed_limit">Wooosh could not connect the two devices directly. This connection can only send files up to %1$s.</string>
     <string name="internet_connecting_title">Connecting</string>
     <string name="internet_progress_body">Keep the other device on its code screen. Connecting over the internet can take up to a minute.</string>
     <string name="internet_failed_title_named">Wooosh Couldn\'t Connect to %1$s</string>

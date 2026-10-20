@@ -1027,10 +1027,16 @@ fn relayed_transfer_completes_and_enforces_the_size_cap() {
     let ticket = s.core.begin_internet_ticket().unwrap();
     s.drain();
     r.core.redeem_ticket(ticket).unwrap();
+    // The shells warn about the small limit before anything is picked.
+    let relayed_peer = wait_for(&r.rx, Duration::from_secs(20), "PeerRoute relayed", |e| match e {
+        CoreEvent::PeerRoute { peer_id, relayed: true } => Some(peer_id.clone()),
+        _ => None,
+    });
     let receiver_id = wait_for(&s.rx, Duration::from_secs(20), "TicketRedeemed", |e| match e {
         CoreEvent::TicketRedeemed { peer_id, .. } => Some(peer_id.clone()),
         _ => None,
     });
+    assert_ne!(relayed_peer, receiver_id, "each side reports the other");
 
     let src = tmp.path().join("relayed.bin");
     write_random_file(&src, 4 * MIB, 0xACE);
@@ -1058,36 +1064,6 @@ fn relayed_transfer_completes_and_enforces_the_size_cap() {
         _ => None,
     });
     assert!(err.contains("RELAY_FILE_TOO_LARGE"), "got {err}");
-}
-
-/// Mobile data on either side lowers the relayed cap to 10 MB (§9.6). The
-/// receiver's flag reaches the sender through its candidates, so the sender
-/// refuses before the OFFER rather than being declined.
-#[test]
-fn relayed_cap_is_smaller_when_the_peer_is_on_mobile_data() {
-    let tmp = tempfile::tempdir().unwrap();
-    let s = Node::start_offline_internet(tmp.path(), "metered-sender", Visibility::Everyone);
-    let r = Node::start_offline_internet(tmp.path(), "metered-receiver", Visibility::Everyone);
-    s.core.debug_force_relay(true).unwrap();
-    r.core.debug_force_relay(true).unwrap();
-    r.core.set_metered(true).unwrap();
-
-    let ticket = s.core.begin_internet_ticket().unwrap();
-    s.drain();
-    r.core.redeem_ticket(ticket).unwrap();
-    let receiver_id = wait_for(&s.rx, Duration::from_secs(20), "TicketRedeemed", |e| match e {
-        CoreEvent::TicketRedeemed { peer_id, .. } => Some(peer_id.clone()),
-        _ => None,
-    });
-
-    let big = tmp.path().join("over-metered-cap.bin");
-    std::fs::File::create(&big).unwrap().set_len(wooosh_core::relay_metered_max_file_bytes() + 1).unwrap();
-    let tid = s.core.send(receiver_id, vec![big.to_string_lossy().to_string()]).unwrap();
-    let err = wait_for(&s.rx, Duration::from_secs(30), "metered relay cap TransferError", |e| match e {
-        CoreEvent::TransferError { transfer_id, error, .. } if *transfer_id == tid => Some(error.clone()),
-        _ => None,
-    });
-    assert!(err.contains("RELAY_METERED_FILE_TOO_LARGE"), "got {err}");
 }
 
 /// Production never relays Unverified clients (§9.2); with no direct path the

@@ -38,6 +38,8 @@ data class Peer(
      * must never wear the paired badge. Cleared on `PeerConnected`, not on disconnect.
      */
     val viaTicket: Boolean = false,
+    /** Internet session with no direct path: only small files can be sent (PROTOCOL.md §9.6). */
+    val isRelayed: Boolean = false,
 ) {
     /** Null when nothing has resolved yet. */
     val address: String?

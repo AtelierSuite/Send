@@ -36,6 +36,7 @@
     <string name="peer_state_ready">Gereed</string>
     <string name="peer_state_ready_paired">Gereed · Gekoppeld</string>
     <string name="peer_state_ready_internet">Gereed · Via internet</string>
+    <string name="peer_state_ready_internet_limited">Gereed · Tot %1$s per bestand</string>
     <string name="peer_state_away">Afwezig</string>
     <string name="peer_state_tap_to_send">Tik om te versturen</string>
     <string name="peer_badge_paired">Gekoppeld</string>
@@ -258,7 +259,6 @@
     <string name="other_device_connecting_body">Verbinden via internet duurt langer dan op een lokaal netwerk.</string>
     <string name="other_device_scan_prompt">Scan de code van het andere apparaat</string>
     <string name="error_relay_file_too_large">Wooosh kon de twee apparaten niet rechtstreeks verbinden. Via een indirecte verbinding moeten bestanden kleiner zijn dan %1$s. Probeer het opnieuw of gebruik een netwerk dat een directe verbinding toelaat.</string>
-    <string name="error_relay_metered_file_too_large">Wooosh kon de twee apparaten niet rechtstreeks verbinden en een van beide gebruikt mobiele data. In dat geval moeten bestanden kleiner zijn dan %1$s. Probeer het opnieuw via wifi.</string>
     <string name="other_device_send">Versturen</string>
     <string name="other_device_receive">Ontvangen</string>
     <string name="internet_send_title">Via internet versturen</string>
@@ -267,6 +267,7 @@
     <string name="internet_send_waiting">Wachten op het andere apparaat.</string>
     <string name="internet_send_started_title">Bezig met versturen</string>
     <string name="internet_send_started_body">De overdracht loopt. Je kunt hem volgen in de apparatenlijst.</string>
+    <string name="internet_relayed_limit">Wooosh kon de twee apparaten niet rechtstreeks verbinden. Via deze verbinding kunnen alleen bestanden tot %1$s worden verstuurd.</string>
     <string name="internet_connecting_title">Verbinden</string>
     <string name="internet_progress_body">Houd het andere apparaat op het codescherm. Verbinden via internet kan tot een minuut duren.</string>
     <string name="internet_failed_title_named">Wooosh kon geen verbinding maken met %1$s</string>

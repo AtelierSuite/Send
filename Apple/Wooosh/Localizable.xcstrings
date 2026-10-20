@@ -6791,96 +6791,6 @@
         }
       }
     },
-    "error_relay_metered_file_too_large": {
-      "comment": "Transfer refused: relayed route, a device on mobile data, and a file over the smaller limit. %1$@/%1$s is a size like \"10 MB\".",
-      "extractionState": "manual",
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wooosh konnte die beiden Geräte nicht direkt verbinden, und eines davon nutzt mobile Daten. In diesem Fall müssen Dateien kleiner als %1$@ sein. Versuche es erneut über WLAN."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wooosh could not connect the two devices directly, and one of them is on mobile data. In that case, files must be under %1$@. Try again on Wi-Fi."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wooosh no pudo conectar los dos dispositivos directamente y uno de ellos usa datos móviles. En ese caso, los archivos deben ser menores de %1$@. Inténtalo de nuevo con Wi-Fi."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wooosh n'a pas pu connecter les deux appareils directement, et l'un d'eux utilise les données mobiles. Dans ce cas, les fichiers doivent faire moins de %1$@. Réessayez en Wi-Fi."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wooosh non è riuscito a collegare i due dispositivi direttamente e uno dei due usa i dati mobili. In questo caso i file devono essere sotto %1$@. Riprova con il Wi-Fi."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wooosh は 2 台のデバイスを直接つなげられませんでした。また、一方がモバイルデータ通信を使用しています。この場合、ファイルは %1$@ 未満である必要があります。Wi-Fi でもう一度お試しください。"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wooosh가 두 기기를 직접 연결하지 못했으며, 한 기기가 모바일 데이터를 사용 중입니다. 이 경우 파일이 %1$@ 미만이어야 합니다. Wi-Fi에서 다시 시도하세요."
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wooosh kon de twee apparaten niet rechtstreeks verbinden en een van beide gebruikt mobiele data. In dat geval moeten bestanden kleiner zijn dan %1$@. Probeer het opnieuw via wifi."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wooosh nie mógł połączyć obu urządzeń bezpośrednio, a jedno z nich korzysta z danych komórkowych. W takim przypadku pliki muszą być mniejsze niż %1$@. Spróbuj ponownie przez Wi-Fi."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "O Wooosh não conseguiu conectar os dois dispositivos diretamente, e um deles está usando dados móveis. Nesse caso, os arquivos precisam ter menos de %1$@. Tente de novo pelo Wi-Fi."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wooosh не смог соединить устройства напрямую, а одно из них использует мобильный интернет. В этом случае файлы должны быть меньше %1$@. Попробуйте снова через Wi-Fi."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wooosh kunde inte koppla ihop enheterna direkt, och en av dem använder mobildata. Då måste filer vara mindre än %1$@. Försök igen via wifi."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wooosh 无法让两台设备直连，且其中一台正在使用移动数据。此时文件必须小于 %1$@。请连接 Wi-Fi 后重试。"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wooosh 無法讓兩台裝置直連，且其中一台正在使用行動數據。此時檔案必須小於 %1$@。請連上 Wi-Fi 後再試一次。"
-          }
-        }
-      }
-    },
     "error_relay_unavailable": {
       "localizations": {
         "de": {
@@ -8989,6 +8899,96 @@
           "stringUnit": {
             "state": "translated",
             "value": "用要傳送檔案的裝置掃描此代碼，或複製後透過你信任的管道傳送。"
+          }
+        }
+      }
+    },
+    "internet_relayed_limit": {
+      "comment": "Note once an internet connection is up but relayed. %1$@/%1$s is a size like \"10 MB\".",
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh konnte die beiden Geräte nicht direkt verbinden. Über diese Verbindung können nur Dateien bis %1$@ gesendet werden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh could not connect the two devices directly. This connection can only send files up to %1$@."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh no pudo conectar los dos dispositivos directamente. Esta conexión solo puede enviar archivos de hasta %1$@."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh n'a pas pu connecter les deux appareils directement. Cette connexion ne peut envoyer que des fichiers de %1$@ maximum."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh non è riuscito a collegare i due dispositivi direttamente. Questa connessione può inviare solo file fino a %1$@."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh は 2 台のデバイスを直接つなげられませんでした。この接続で送信できるのは %1$@ までのファイルです。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh가 두 기기를 직접 연결하지 못했습니다. 이 연결로는 최대 %1$@의 파일만 보낼 수 있습니다."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh kon de twee apparaten niet rechtstreeks verbinden. Via deze verbinding kunnen alleen bestanden tot %1$@ worden verstuurd."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh nie mógł połączyć obu urządzeń bezpośrednio. Przez to połączenie można wysyłać tylko pliki do %1$@."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Wooosh não conseguiu conectar os dois dispositivos diretamente. Esta conexão só pode enviar arquivos de até %1$@."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh не смог соединить устройства напрямую. Через это соединение можно отправлять только файлы до %1$@."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh kunde inte koppla ihop enheterna direkt. Den här anslutningen kan bara skicka filer på upp till %1$@."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh 无法让两台设备直连。此连接只能发送不超过 %1$@ 的文件。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wooosh 無法讓兩台裝置直連。此連線只能傳送不超過 %1$@ 的檔案。"
           }
         }
       }
@@ -15555,6 +15555,96 @@
           "stringUnit": {
             "state": "translated",
             "value": "就緒 · 透過網際網路"
+          }
+        }
+      }
+    },
+    "peer_state_ready_internet_limited": {
+      "comment": "Device row subtitle: live over the internet path, but relayed, so only small files can be sent. %1$@/%1$s is a size like \"10 MB\".",
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bereit · Bis %1$@ pro Datei"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ready · Up to %1$@ per File"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listo · Hasta %1$@ por archivo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prêt · Jusqu'à %1$@ par fichier"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pronto · Fino a %1$@ per file"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "準備完了・1 ファイル %1$@ まで"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "준비됨 · 파일당 최대 %1$@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gereed · Tot %1$@ per bestand"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gotowe · Do %1$@ na plik"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pronto · Até %1$@ por arquivo"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готово · До %1$@ на файл"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Redo · Upp till %1$@ per fil"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "就绪 · 每个文件最大 %1$@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "就緒 · 每個檔案最大 %1$@"
           }
         }
       }

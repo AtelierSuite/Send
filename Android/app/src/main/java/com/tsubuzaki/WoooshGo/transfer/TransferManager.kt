@@ -382,6 +382,8 @@ class TransferManager(
 
             is CoreEvent.PeerDisconnected -> registry.onDisconnected(event.peerId)
 
+            is CoreEvent.PeerRoute -> registry.onRoute(event.peerId, event.relayed)
+
             else -> Unit // handled by PairingManager
         }
     }

@@ -39,15 +39,11 @@ pub struct Options {
     pub wait_for_peer: Duration,
     /// Tests only: never validate a direct path, so the relay carries everything.
     pub force_relay: bool,
-    /// This device is on mobile data, as the OS reports it (§9.6).
-    pub metered: bool,
 }
 
 pub struct NetSession {
     pub conn: quinn::Connection,
     socket: Arc<PathSocket>,
-    /// What the other side reported in its `cand`, authenticated by the MAC.
-    peer_metered: bool,
     _endpoint: quinn::Endpoint,
     _room: RoomConn,
 }
@@ -55,10 +51,6 @@ pub struct NetSession {
 impl NetSession {
     pub fn is_direct(&self) -> bool {
         self.socket.is_direct()
-    }
-
-    pub fn peer_metered(&self) -> bool {
-        self.peer_metered
     }
 }
 
@@ -68,11 +60,10 @@ struct Candidate {
     addr: SocketAddr,
 }
 
-fn cand_mac(key: &[u8; 32], ufrag: &str, metered: bool, cands: &[(String, String)]) -> String {
+fn cand_mac(key: &[u8; 32], ufrag: &str, cands: &[(String, String)]) -> String {
     let mut h = blake3::Hasher::new_keyed(key);
     h.update(b"wooosh cand\0");
     h.update(ufrag.as_bytes());
-    h.update(if metered { b"\0m1" } else { b"\0m0" });
     for (k, a) in cands {
         h.update(b"\n");
         h.update(k.as_bytes());
@@ -179,12 +170,11 @@ pub async fn establish(
         "t": "cand",
         "c": wire.iter().map(|(k, a)| json!({"kind": k, "a": a})).collect::<Vec<_>>(),
         "ufrag": ufrag,
-        "m": opts.metered,
-        "mac": cand_mac(&room_key, &ufrag, opts.metered, &wire),
+        "mac": cand_mac(&room_key, &ufrag, &wire),
     }));
 
     let deadline = Instant::now() + CANDIDATE_EXCHANGE_TIMEOUT;
-    let mut remote: Option<RemoteCands> = None;
+    let mut remote: Option<(String, Vec<SocketAddr>)> = None;
     let mut go = false;
     while remote.is_none() || !go {
         match next_event(&mut room, deadline).await? {
@@ -199,7 +189,7 @@ pub async fn establish(
             _ => {}
         }
     }
-    let RemoteCands { ufrag: their_ufrag, addrs: their_addrs, metered: peer_metered } = remote.unwrap();
+    let (their_ufrag, their_addrs) = remote.unwrap();
 
     // 3. Punch. Probing continues in the background for the upgrade window.
     let mut validated = sock.validated();
@@ -280,28 +270,21 @@ pub async fn establish(
             }
         } => return Err(e),
     };
-    Ok(NetSession { conn, socket: sock, peer_metered, _endpoint: endpoint, _room: room })
+    Ok(NetSession { conn, socket: sock, _endpoint: endpoint, _room: room })
 }
 
-struct RemoteCands {
-    ufrag: String,
-    addrs: Vec<SocketAddr>,
-    metered: bool,
-}
-
-fn verify_candidates(key: &[u8; 32], v: &Value) -> Option<RemoteCands> {
+fn verify_candidates(key: &[u8; 32], v: &Value) -> Option<(String, Vec<SocketAddr>)> {
     let ufrag = v["ufrag"].as_str()?.to_string();
-    let metered = v["m"].as_bool()?;
     let list = v["c"].as_array()?;
     let wire: Vec<(String, String)> = list
         .iter()
         .filter_map(|c| Some((c["kind"].as_str()?.to_string(), c["a"].as_str()?.to_string())))
         .collect();
-    if wire.len() != list.len() || v["mac"].as_str()? != cand_mac(key, &ufrag, metered, &wire) {
+    if wire.len() != list.len() || v["mac"].as_str()? != cand_mac(key, &ufrag, &wire) {
         return None;
     }
     let addrs = wire.iter().filter_map(|(_, a)| a.parse().ok()).map(canonical).collect();
-    Some(RemoteCands { ufrag, addrs, metered })
+    Some((ufrag, addrs))
 }
 
 #[cfg(test)]
@@ -312,17 +295,12 @@ mod tests {
     fn candidate_mac_rejects_injection() {
         let key = [3u8; 32];
         let wire = vec![("host".to_string(), "192.0.2.4:5000".to_string())];
-        let mac = cand_mac(&key, "abcd", true, &wire);
-        let good = json!({"ufrag": "abcd", "m": true, "mac": mac, "c": [{"kind": "host", "a": "192.0.2.4:5000"}]});
-        let r = verify_candidates(&key, &good).unwrap();
-        assert_eq!(r.addrs, vec!["192.0.2.4:5000".parse().unwrap()]);
-        assert!(r.metered);
+        let mac = cand_mac(&key, "abcd", &wire);
+        let good = json!({"ufrag": "abcd", "mac": mac, "c": [{"kind": "host", "a": "192.0.2.4:5000"}]});
+        assert_eq!(verify_candidates(&key, &good).unwrap().1, vec!["192.0.2.4:5000".parse().unwrap()]);
         // A rendezvous that adds or swaps a candidate cannot recompute the MAC.
-        let injected = json!({"ufrag": "abcd", "m": true, "mac": mac, "c": [{"kind": "host", "a": "198.51.100.66:5000"}]});
+        let injected = json!({"ufrag": "abcd", "mac": mac, "c": [{"kind": "host", "a": "198.51.100.66:5000"}]});
         assert!(verify_candidates(&key, &injected).is_none());
         assert!(verify_candidates(&[4u8; 32], &good).is_none());
-        // Nor clear the mobile-data flag to lift the smaller relay cap.
-        let unmetered = json!({"ufrag": "abcd", "m": false, "mac": mac, "c": [{"kind": "host", "a": "192.0.2.4:5000"}]});
-        assert!(verify_candidates(&key, &unmetered).is_none());
     }
 }

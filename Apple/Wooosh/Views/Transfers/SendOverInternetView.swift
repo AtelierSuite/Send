@@ -41,6 +41,12 @@ struct SendOverInternetView: View {
                         status(symbol: "checkmark.circle.fill", tint: .green,
                                title: L.t("internet_send_started_title"),
                                body: L.t("internet_send_started_body"))
+                        if model.isRelayed(peerID: model.ticketRedeemedPeerID) {
+                            Text(L.f("internet_relayed_limit", RelayLimit.text))
+                                .font(.callout)
+                                .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
+                        }
                     } else if let ticket {
                         QRCodeView(payload: ticket, accessibilityKey: "internet_qr_a11y")
                             .frame(width: 240, height: 240)

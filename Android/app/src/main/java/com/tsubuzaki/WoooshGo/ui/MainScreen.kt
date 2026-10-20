@@ -55,12 +55,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.tsubuzaki.WoooshGo.R
 import com.tsubuzaki.WoooshGo.core.TransferId
+import com.tsubuzaki.WoooshGo.core.relayLimitText
 import com.tsubuzaki.WoooshGo.peers.Peer
 import com.tsubuzaki.WoooshGo.settings.Visibility
 import com.tsubuzaki.WoooshGo.share.OutboxRepository
@@ -386,16 +388,18 @@ private fun PeerRow(
                 style = MaterialTheme.typography.bodyLarge,
             )
             Text(
-                    text = stringResource(
-                    when {
-                        peer.isStale -> R.string.peer_state_away
-                        armedToSend -> R.string.peer_state_tap_to_send
-                        // Said plainly: the row is otherwise indistinguishable from a LAN device.
-                        peer.viaTicket -> R.string.peer_state_ready_internet
-                        isPaired -> R.string.peer_state_ready_paired
-                        else -> R.string.peer_state_ready
-                    }
-                ),
+                    text = when {
+                    peer.isStale -> stringResource(R.string.peer_state_away)
+                    armedToSend -> stringResource(R.string.peer_state_tap_to_send)
+                    peer.isRelayed -> stringResource(
+                        R.string.peer_state_ready_internet_limited,
+                        relayLimitText(LocalContext.current),
+                    )
+                    // Said plainly: the row is otherwise indistinguishable from a LAN device.
+                    peer.viaTicket -> stringResource(R.string.peer_state_ready_internet)
+                    isPaired -> stringResource(R.string.peer_state_ready_paired)
+                    else -> stringResource(R.string.peer_state_ready)
+                },
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )

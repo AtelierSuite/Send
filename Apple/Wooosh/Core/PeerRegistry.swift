@@ -91,11 +91,19 @@ final class PeerRegistry {
         peers[index].isStale = true
     }
 
+    /// `PeerRoute` follows `PeerConnected`, so the row already exists.
+    func setRelayed(_ relayed: Bool, peerID: String) {
+        guard let index = peers.firstIndex(where: { $0.corePeerID == peerID }) else { return }
+        peers[index].isRelayed = relayed
+    }
+
     func disconnected(peerID: String) {
         guard let index = peers.firstIndex(where: { $0.corePeerID == peerID }) else { return }
         // `knownDeviceID` stays: a reconnect needs it to pin `expectedPublicKey`.
         peers[index].corePeerID = nil
         peers[index].isTrusted = false
+        // A LAN reconnect never sends `PeerRoute`, so the limit must not outlive the session.
+        peers[index].isRelayed = false
         // Rows never move or vanish, so a connection-only row goes stale (§5).
         if peers[index].rid.hasPrefix("core:") {
             peers[index].isStale = true

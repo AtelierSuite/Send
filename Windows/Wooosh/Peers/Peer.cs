@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.CompilerServices;
+using Wooosh.Core;
 using Wooosh.Localization;
 
 namespace Wooosh.Peers;
@@ -82,12 +83,28 @@ public sealed partial class Peer : INotifyPropertyChanged
         }
     }
 
+    private bool _isRelayed;
+    /// <summary>Internet session with no direct path: only small files can be sent (PROTOCOL.md §9.6).</summary>
+    public bool IsRelayed
+    {
+        get => _isRelayed;
+        set
+        {
+            if (Set(ref _isRelayed, value))
+            {
+                Raise(nameof(State));
+            }
+        }
+    }
+
     /// <summary>Paired is shown inline, not as a section: sections would move rows (DESIGN.md §5).</summary>
     public string State => IsStale
         ? Strings.Get("PeerStateAway")
-        : IsPaired
-            ? Strings.Get("PeerStateReadyPaired")
-            : Strings.Get("PeerStateReady");
+        : IsRelayed
+            ? Strings.Format("PeerStateReadyInternetLimited", RelayLimit.Text)
+            : IsPaired
+                ? Strings.Get("PeerStateReadyPaired")
+                : Strings.Get("PeerStateReady");
 
     /// <summary>A stale row is disabled, not removed.</summary>
     public bool IsAvailable => !IsStale;

@@ -161,13 +161,24 @@ class PeerRegistry(private val scope: CoroutineScope) {
         }
     }
 
+    /** `PeerRoute` follows `PeerConnected`, so the row already exists. */
+    @Synchronized
+    fun onRoute(peerId: String, relayed: Boolean) {
+        _peers.update { list ->
+            list.map { peer -> if (peer.peerId == peerId) peer.copy(isRelayed = relayed) else peer }
+        }
+    }
+
     /** A connection-only row has no address to retry, and rows never vanish (DESIGN.md §5). */
     @Synchronized
     fun onDisconnected(peerId: String) {
         _peers.update { list ->
             list.map { peer ->
+                // A LAN reconnect never sends `PeerRoute`, so the limit must not outlive the session.
                 if (peer.peerId == peerId && peer.rid.startsWith(CORE_RID_PREFIX)) {
-                    peer.copy(isStale = true)
+                    peer.copy(isStale = true, isRelayed = false)
+                } else if (peer.peerId == peerId) {
+                    peer.copy(isRelayed = false)
                 } else {
                     peer
                 }

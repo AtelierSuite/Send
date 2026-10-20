@@ -36,6 +36,7 @@
     <string name="peer_state_ready">就绪</string>
     <string name="peer_state_ready_paired">就绪 · 已配对</string>
     <string name="peer_state_ready_internet">就绪 · 通过互联网</string>
+    <string name="peer_state_ready_internet_limited">就绪 · 每个文件最大 %1$s</string>
     <string name="peer_state_away">已离开</string>
     <string name="peer_state_tap_to_send">轻点即可发送</string>
     <string name="peer_badge_paired">已配对</string>
@@ -246,7 +247,6 @@
     <string name="other_device_connecting_body">通过互联网连接比在本地网络中更慢。</string>
     <string name="other_device_scan_prompt">扫描对方设备上的代码</string>
     <string name="error_relay_file_too_large">Wooosh 无法让两台设备直连。通过间接连接时，文件必须小于 %1$s。请重试，或改用允许直连的网络。</string>
-    <string name="error_relay_metered_file_too_large">Wooosh 无法让两台设备直连，且其中一台正在使用移动数据。此时文件必须小于 %1$s。请连接 Wi-Fi 后重试。</string>
     <string name="other_device_send">发送</string>
     <string name="other_device_receive">接收</string>
     <string name="internet_send_title">通过互联网发送</string>
@@ -255,6 +255,7 @@
     <string name="internet_send_waiting">正在等待对方设备。</string>
     <string name="internet_send_started_title">正在发送</string>
     <string name="internet_send_started_body">传输进行中，可在设备列表中查看。</string>
+    <string name="internet_relayed_limit">Wooosh 无法让两台设备直连。此连接只能发送不超过 %1$s 的文件。</string>
     <string name="internet_connecting_title">正在连接</string>
     <string name="internet_progress_body">请让另一台设备保持在代码界面。通过互联网连接最多可能需要一分钟。</string>
     <string name="internet_failed_title_named">Wooosh 无法连接到 %1$s</string>

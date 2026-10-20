@@ -197,6 +197,10 @@
     <value>Pronto · Abbinato</value>
     <comment>Device row subtitle: reachable and already paired.</comment>
   </data>
+  <data name="PeerStateReadyInternetLimited" xml:space="preserve">
+    <value>Pronto · Fino a {0} per file</value>
+    <comment>Device row subtitle: live over the internet but relayed, so only small files can be sent. {0} is a size like "10 MB".</comment>
+  </data>
   <data name="PeerStateAway" xml:space="preserve">
     <value>Non disponibile</value>
     <comment>Device row subtitle: the device stopped answering and cannot be used.</comment>

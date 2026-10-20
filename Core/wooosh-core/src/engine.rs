@@ -38,9 +38,7 @@ const DIRECT_PATH_TIMEOUT: Duration = Duration::from_secs(15);
 
 /// Per-file cap on a **relayed** connection (PROTOCOL.md §9.6); direct is
 /// uncapped. The relay spends a daily quota every user shares.
-pub const RELAY_MAX_FILE_BYTES: u64 = 1024 * 1024 * 1024;
-/// The relayed cap when either side is on mobile data (PROTOCOL.md §9.6).
-pub const RELAY_METERED_MAX_FILE_BYTES: u64 = 10 * 1000 * 1000;
+pub const RELAY_MAX_FILE_BYTES: u64 = 10 * 1000 * 1000;
 const SMALL_FILE_LIMIT: u64 = 1024 * 1024; // <1 MiB => pipelined
 const MAX_SLOTS: usize = 4;
 const CHUNK: usize = 1024 * 1024;
@@ -168,8 +166,6 @@ struct Inner {
     stun_server: Option<String>,
     /// Tests only: never take a direct path.
     force_relay: AtomicBool,
-    /// The OS says this device is on mobile data; shells keep it current.
-    metered: AtomicBool,
     admission: Admission,
     ticket_pending: Mutex<Option<TicketPending>>,
     /// The published ticket's session while it is still being set up.
@@ -345,7 +341,6 @@ impl Engine {
                 Some(s) => Some(s),
             },
             force_relay: AtomicBool::new(false),
-            metered: AtomicBool::new(false),
             admission: Admission::new(Some(cfg.trust_store_path.with_file_name("rendezvous.json"))),
             ticket_pending: Mutex::new(None),
             ticket_task: Mutex::new(None),
@@ -588,10 +583,6 @@ impl Engine {
     /// Tests only: refuse every direct path so the relay carries the session.
     pub fn set_force_relay(&self, on: bool) {
         self.inner.force_relay.store(on, Ordering::SeqCst);
-    }
-
-    pub fn set_metered(&self, on: bool) {
-        self.inner.metered.store(on, Ordering::SeqCst);
     }
 
     /// A ticket the user stopped expecting must stop working immediately.
@@ -837,6 +828,24 @@ impl Inner {
         let _ = self.events.send(ev);
     }
 
+    /// Shells tell the user up front when only small files can be sent
+    /// (PROTOCOL.md §9.6), and again if punching succeeds late.
+    fn report_route(self: &Arc<Self>, conn: &Conn, peer_id: &str) {
+        let relayed = !conn.is_direct();
+        self.emit(CoreEvent::PeerRoute { peer_id: peer_id.to_string(), relayed });
+        if !relayed {
+            return;
+        }
+        let inner = self.clone();
+        let conn = conn.clone();
+        let peer_id = peer_id.to_string();
+        tokio::spawn(async move {
+            if conn.wait_for_direct(DIRECT_PATH_TIMEOUT).await && conn.close_reason().is_none() {
+                inner.emit(CoreEvent::PeerRoute { peer_id, relayed: false });
+            }
+        });
+    }
+
     /// Without a terminal event the shell's pairing sheet spins forever.
     fn emit_pairing_failure(&self, pubkey: Option<[u8; 32]>, message: String) {
         let (peer_id, peer_pubkey, fingerprint) = match pubkey {
@@ -881,18 +890,6 @@ impl Inner {
             stun: self.stun_server.clone(),
             wait_for_peer,
             force_relay: self.force_relay.load(Ordering::SeqCst),
-            metered: self.metered.load(Ordering::SeqCst),
-        }
-    }
-
-    /// The relayed per-file cap for this peer (PROTOCOL.md §9.6). Our own
-    /// state is read live; the peer's is what it reported when the session
-    /// was set up.
-    fn relay_cap(&self, peer: &Peer) -> (u64, WoooshError) {
-        if self.metered.load(Ordering::SeqCst) || peer.conn.peer_metered() {
-            (RELAY_METERED_MAX_FILE_BYTES, WoooshError::RelayMeteredFileTooLarge)
-        } else {
-            (RELAY_MAX_FILE_BYTES, WoooshError::RelayFileTooLarge)
         }
     }
 
@@ -1169,6 +1166,9 @@ impl Inner {
             fingerprint: identity::fingerprint_phrase_for(&pubkey),
             trusted,
         });
+        if conn.is_internet() {
+            self.report_route(&conn, &device_id);
+        }
 
         tokio::spawn(write_loop(send, out_rx));
         {
@@ -1549,9 +1549,12 @@ impl Inner {
     ) -> Result<(), WoooshError> {
         // The cap is enforced on both ends (PROTOCOL.md §9.6): the relay spent
         // is usually the *receiver's*. Declined outright, never partially.
-        let (cap, _) = self.relay_cap(peer);
-        if !peer.conn.is_direct() && files.iter().any(|f| f.size > cap) {
-            log::warn!("declining relayed offer from {}: a file exceeds {cap} bytes", peer.device_id);
+        if !peer.conn.is_direct() && files.iter().any(|f| f.size > RELAY_MAX_FILE_BYTES) {
+            log::warn!(
+                "declining relayed offer from {}: a file exceeds {} bytes",
+                peer.device_id,
+                RELAY_MAX_FILE_BYTES
+            );
             peer.send_msg(Msg::Decision { tid, accept: Vec::new() });
             return Ok(());
         }
@@ -2191,15 +2194,16 @@ impl Inner {
         if !peer.conn.wait_for_direct(wait).await {
             // Still relayed, so the cap applies (PROTOCOL.md §9.6). Metadata
             // only, and before the OFFER, so nothing is hashed or accepted.
-            let (cap, too_large) = self.relay_cap(&peer);
             let to_check = paths.clone();
             let oversized = tokio::task::spawn_blocking(move || {
-                to_check.iter().any(|p| std::fs::metadata(p).map(|m| m.len()).unwrap_or(0) > cap)
+                to_check.iter().any(|p| {
+                    std::fs::metadata(p).map(|m| m.len()).unwrap_or(0) > RELAY_MAX_FILE_BYTES
+                })
             })
             .await
             .map_err(|e| WoooshError::Io(e.to_string()))?;
             if oversized {
-                return Err(too_large);
+                return Err(WoooshError::RelayFileTooLarge);
             }
         }
         let mut files = BTreeMap::new();

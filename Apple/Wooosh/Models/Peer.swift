@@ -38,6 +38,8 @@ struct Peer: Identifiable {
     /// Cleared on `PeerConnected`, not on disconnect: a checkmark re-appearing as
     /// the session drops is the same wrong claim, just quieter.
     var isTicketOnly: Bool = false
+    /// Internet session with no direct path: only small files can be sent (PROTOCOL.md §9.6).
+    var isRelayed: Bool = false
 
     var id: String { rid }
     var isConnected: Bool { corePeerID != nil }

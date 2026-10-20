@@ -1,5 +1,4 @@
 import Foundation
-import Network
 import os
 import WoooshCoreFFI
 
@@ -17,7 +16,6 @@ final class RealCore: WoooshCore {
 
     private var started = false
     private var translateTask: Task<Void, Never>?
-    private var pathMonitor: NWPathMonitor?
     private var peerInfo: [String: PeerRef] = [:]
     private var manifests: [String: [FileMeta]] = [:]
 
@@ -75,22 +73,11 @@ final class RealCore: WoooshCore {
                 self.translate(raw)
             }
         }
-
-        // Cellular, or a Mac on a phone's hotspot: the relayed file cap drops
-        // for both devices (PROTOCOL.md §9.6).
-        let monitor = NWPathMonitor()
-        monitor.pathUpdateHandler = { path in
-            try? ffi.setMetered(metered: path.isExpensive)
-        }
-        monitor.start(queue: DispatchQueue(label: "com.tsubuzaki.Wooosh.path"))
-        pathMonitor = monitor
     }
 
     func stop() {
         guard started else { return }
         started = false
-        pathMonitor?.cancel()
-        pathMonitor = nil
         translateTask?.cancel()
         translateTask = nil
         // Synchronous: the core joins its callback thread here.
@@ -297,6 +284,9 @@ final class RealCore: WoooshCore {
         case .peerDisconnected(let peerId):
             emit(.peerDisconnected(peerID: peerId))
 
+        case .peerRoute(let peerId, let relayed):
+            emit(.peerRoute(peerID: peerId, relayed: relayed))
+
         case .pairingSas(let peerId, let code):
             emit(.pairingSAS(peer: peerRef(for: peerId), sixDigits: code))
 
@@ -494,14 +484,10 @@ extension Visibility {
 
 /// Reporting a close code such as `PAIRING_REQUIRED` as a generic transport
 /// failure is a conformance bug. The raw text stays in the log.
-private enum RelayLimit {
-    /// Formatted once: the values are compile-time constants in the core.
+enum RelayLimit {
+    /// Formatted once: the value is a compile-time constant in the core.
     static let text = ByteCountFormatter.string(
         fromByteCount: Int64(clamping: WoooshCoreFFI.relayMaxFileBytes()),
-        countStyle: .file
-    )
-    static let meteredText = ByteCountFormatter.string(
-        fromByteCount: Int64(clamping: WoooshCoreFFI.relayMeteredMaxFileBytes()),
         countStyle: .file
     )
 }
@@ -520,8 +506,6 @@ func coreErrorMessage(_ error: Error) -> String {
         return message.contains("expired") ? L.t("error_pairing_expired") : L.t("error_pairing_failed")
     case .RelayFileTooLarge:
         return L.f("error_relay_file_too_large", RelayLimit.text)
-    case .RelayMeteredFileTooLarge:
-        return L.f("error_relay_metered_file_too_large", RelayLimit.meteredText)
     case .RelayUnavailable: return L.t("error_relay_unavailable")
     case .RendezvousQuota: return L.t("error_internet_quota")
     case .RendezvousUnavailable, .RendezvousRetry: return L.t("error_internet_unavailable")
@@ -540,9 +524,6 @@ func coreErrorMessage(_ error: Error) -> String {
 /// Rendezvous outcomes reach events as the core's error text (PROTOCOL.md §9).
 private func internetErrorMessage(_ text: String) -> String? {
     if text.contains("relay_file_too_large") { return L.f("error_relay_file_too_large", RelayLimit.text) }
-    if text.contains("relay_metered_file_too_large") {
-        return L.f("error_relay_metered_file_too_large", RelayLimit.meteredText)
-    }
     if text.contains("relay_unavailable") { return L.t("error_relay_unavailable") }
     if text.contains("rendezvous_quota") { return L.t("error_internet_quota") }
     if text.contains("rendezvous_unavailable") { return L.t("error_internet_unavailable") }

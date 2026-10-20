@@ -40,10 +40,6 @@ pub enum WoooshError {
     /// the relayed size limit rather than report a generic transfer failure.
     #[error("RELAY_FILE_TOO_LARGE: no direct path to the peer and a file exceeds the relayed size limit")]
     RelayFileTooLarge,
-    /// As `RelayFileTooLarge`, with the smaller cap that applies when either
-    /// device is on mobile data. Shells should say so.
-    #[error("RELAY_METERED_FILE_TOO_LARGE: no direct path, a device is on mobile data, and a file exceeds the relayed size limit")]
-    RelayMeteredFileTooLarge,
     /// No direct path, and this device is not verified for relaying (PROTOCOL.md §9.6).
     #[error("RELAY_UNAVAILABLE: the networks cannot connect directly and relaying is not available")]
     RelayUnavailable,

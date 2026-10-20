@@ -108,6 +108,9 @@ enum CoreEvent: Sendable {
     /// How a peer never seen over mDNS enters the device list.
     case peerConnected(peer: PeerRef, trusted: Bool)
     case peerDisconnected(peerID: String)
+    /// Internet connections only. `relayed` limits every file to
+    /// `RelayLimit.text` until a later `relayed: false` (PROTOCOL.md §9.6).
+    case peerRoute(peerID: String, relayed: Bool)
     case pairingSAS(peer: PeerRef, sixDigits: String)
     /// `trusted` is the core's verdict (pinned key present), not a guess.
     case incomingOffer(transferID: TransferID, from: PeerRef, trusted: Bool, manifest: [FileMeta])

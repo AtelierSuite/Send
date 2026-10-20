@@ -36,6 +36,7 @@
     <string name="peer_state_ready">Listo</string>
     <string name="peer_state_ready_paired">Listo · Vinculado</string>
     <string name="peer_state_ready_internet">Listo · Por internet</string>
+    <string name="peer_state_ready_internet_limited">Listo · Hasta %1$s por archivo</string>
     <string name="peer_state_away">No disponible</string>
     <string name="peer_state_tap_to_send">Toca para enviar</string>
     <string name="peer_badge_paired">Vinculado</string>
@@ -258,7 +259,6 @@
     <string name="other_device_connecting_body">Conectarse por internet tarda más que en una red local.</string>
     <string name="other_device_scan_prompt">Escanea el código del otro dispositivo</string>
     <string name="error_relay_file_too_large">Wooosh no pudo conectar los dos dispositivos directamente. Con una conexión indirecta, los archivos deben ser menores de %1$s. Inténtalo de nuevo o usa una red que permita una conexión directa.</string>
-    <string name="error_relay_metered_file_too_large">Wooosh no pudo conectar los dos dispositivos directamente y uno de ellos usa datos móviles. En ese caso, los archivos deben ser menores de %1$s. Inténtalo de nuevo con Wi-Fi.</string>
     <string name="other_device_send">Enviar</string>
     <string name="other_device_receive">Recibir</string>
     <string name="internet_send_title">Enviar por internet</string>
@@ -267,6 +267,7 @@
     <string name="internet_send_waiting">Esperando al otro dispositivo.</string>
     <string name="internet_send_started_title">Enviando</string>
     <string name="internet_send_started_body">La transferencia está en curso. Puedes seguirla en la lista de dispositivos.</string>
+    <string name="internet_relayed_limit">Wooosh no pudo conectar los dos dispositivos directamente. Esta conexión solo puede enviar archivos de hasta %1$s.</string>
     <string name="internet_connecting_title">Conectando</string>
     <string name="internet_progress_body">Mantén el otro dispositivo en la pantalla del código. Conectar por internet puede tardar hasta un minuto.</string>
     <string name="internet_failed_title_named">Wooosh no pudo conectarse a %1$s</string>

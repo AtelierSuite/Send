@@ -8,6 +8,10 @@ public abstract record CoreEvent
 
     public sealed record PeerDisconnected(string PeerId) : CoreEvent;
 
+    /// <summary>Internet connections only, right after PeerConnected. Relayed limits every
+    /// file to <see cref="RelayLimit.Text"/> until a later Relayed = false (PROTOCOL.md §9.6).</summary>
+    public sealed record PeerRoute(string PeerId, bool Relayed) : CoreEvent;
+
     /// <summary>PROTOCOL.md §4.3. Both sides must show it, or the comparison is unperformable.</summary>
     public sealed record PairingSas(PeerRef Peer, string SixDigits) : CoreEvent;
 

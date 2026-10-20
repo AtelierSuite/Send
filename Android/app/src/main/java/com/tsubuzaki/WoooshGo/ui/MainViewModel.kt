@@ -7,7 +7,9 @@ import androidx.lifecycle.viewModelScope
 import com.tsubuzaki.WoooshGo.WoooshApplication
 import com.tsubuzaki.WoooshGo.core.CoreEvent
 import com.tsubuzaki.WoooshGo.core.TransferId
+import com.tsubuzaki.WoooshGo.R
 import com.tsubuzaki.WoooshGo.core.TrustedPeerInfo
+import com.tsubuzaki.WoooshGo.core.relayLimitText
 import com.tsubuzaki.WoooshGo.pairing.PairingManager
 import com.tsubuzaki.WoooshGo.peers.Peer
 import com.tsubuzaki.WoooshGo.settings.InternetMode
@@ -18,6 +20,7 @@ import com.tsubuzaki.WoooshGo.transfer.OutgoingOffer
 import com.tsubuzaki.WoooshGo.transfer.TransferUi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -75,9 +78,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     /** Fires for a ticket *this* device redeemed, not one it published (PROTOCOL.md §9.4). */
     val ticketRedeemed: SharedFlow<Unit> = app.pairingManager.ticketRedeemed
 
+    private val notices = MutableSharedFlow<String>(extraBufferCapacity = 1)
+
     val statusMessages: SharedFlow<String> = merge(
         app.pairingManager.messages,
         app.transferManager.errors,
+        notices,
     ).shareIn(viewModelScope, SharingStarted.Eagerly)
 
     // The core's own pinned set, never a shell-side mirror.
@@ -177,6 +183,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         // A ticket is single-use: the id must not survive to trigger a second send.
         app.transferManager.clearTicketRedeemedPeer()
         app.transferManager.sendToPeerId(peerId, uris)
+        // Told before the files go, since this screen closes on redemption.
+        if (peers.value.any { it.peerId == peerId && it.isRelayed }) {
+            notices.tryEmit(app.getString(R.string.internet_relayed_limit, relayLimitText(app)))
+        }
     }
 
     fun cancelPairingAttempt() = app.pairingManager.cancelAttempt()

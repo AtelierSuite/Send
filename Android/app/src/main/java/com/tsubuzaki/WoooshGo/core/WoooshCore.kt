@@ -142,6 +142,9 @@ sealed interface CoreEvent {
     data class PeerConnected(val peer: PeerRef) : CoreEvent
     data class PeerDisconnected(val peerId: String) : CoreEvent
 
+    /** Internet only. [relayed] limits every file to [relayLimitText] (PROTOCOL.md §9.6). */
+    data class PeerRoute(val peerId: String, val relayed: Boolean) : CoreEvent
+
     data class PairingSas(val peer: PeerRef, val sixDigits: String) : CoreEvent
 
     /** QR or SAS, success or failure/timeout. [message] is the device name, or the reason. */

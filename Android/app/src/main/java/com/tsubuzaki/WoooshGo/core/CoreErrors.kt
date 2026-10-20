@@ -3,27 +3,17 @@ package com.tsubuzaki.WoooshGo.core
 import android.content.Context
 import com.tsubuzaki.WoooshGo.R
 import uniffi.wooosh_core.relayMaxFileBytes
-import uniffi.wooosh_core.relayMeteredMaxFileBytes
 
-/** The limits come from the core so the copy cannot drift from the rule. */
-fun relayLimitMessage(context: Context, metered: Boolean): String =
-    if (metered) {
-        context.getString(
-            R.string.error_relay_metered_file_too_large,
-            android.text.format.Formatter.formatShortFileSize(context, relayMeteredMaxFileBytes().toLong()),
-        )
-    } else {
-        context.getString(
-            R.string.error_relay_file_too_large,
-            android.text.format.Formatter.formatShortFileSize(context, relayMaxFileBytes().toLong()),
-        )
-    }
+/** From the core so the copy cannot drift from the rule. */
+fun relayLimitText(context: Context): String =
+    android.text.format.Formatter.formatShortFileSize(context, relayMaxFileBytes().toLong())
 
 /** The core's outcome tokens are untranslatable and log-shaped; never shown verbatim. */
 fun transferErrorMessage(context: Context, raw: String?): String {
     val text = raw?.lowercase().orEmpty()
-    if (text.contains("relay_file_too_large")) return relayLimitMessage(context, metered = false)
-    if (text.contains("relay_metered_file_too_large")) return relayLimitMessage(context, metered = true)
+    if (text.contains("relay_file_too_large")) {
+        return context.getString(R.string.error_relay_file_too_large, relayLimitText(context))
+    }
     internetErrorRes(text)?.let { return context.getString(it) }
     return context.getString(
         when {

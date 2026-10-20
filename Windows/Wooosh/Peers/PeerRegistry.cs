@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Net;
 using Microsoft.UI.Dispatching;
 
@@ -87,6 +88,18 @@ public sealed class PeerRegistry : IDisposable
     }
 
     /// <summary>HELLO's authenticated name beats the TXT hint; Unknown never overwrites a known type.</summary>
+    /// <summary>PeerRoute follows PeerConnected, so the row already exists.</summary>
+    public void NoteRoute(string peerId, bool relayed)
+    {
+        _dispatcher.TryEnqueue(() =>
+        {
+            foreach (var peer in Peers.Where(peer => peer.PeerId == peerId))
+            {
+                peer.IsRelayed = relayed;
+            }
+        });
+    }
+
     public void NoteConnected(string peerId, string displayName, DeviceType deviceType, bool trusted)
     {
         _dispatcher.TryEnqueue(() =>
@@ -97,6 +110,9 @@ public sealed class PeerRegistry : IDisposable
                 {
                     continue;
                 }
+
+                // Only internet connections send PeerRoute, so a reconnect starts unlimited.
+                peer.IsRelayed = false;
 
                 if (!string.IsNullOrWhiteSpace(displayName))
                 {

@@ -241,6 +241,11 @@ final class AppModel {
         }
     }
 
+    func isRelayed(peerID: String?) -> Bool {
+        guard let peerID else { return false }
+        return registry.peer(forCorePeerID: peerID)?.isRelayed ?? false
+    }
+
     private func handle(event: CoreEvent) {
         switch event {
         case .peerConnected(let peer, let trusted):
@@ -248,6 +253,8 @@ final class AppModel {
                                deviceType: peer.deviceType, trusted: trusted)
         case .peerDisconnected(let peerID):
             registry.disconnected(peerID: peerID)
+        case .peerRoute(let peerID, let relayed):
+            registry.setRelayed(relayed, peerID: peerID)
         case .pairingSAS(let peer, let sixDigits):
             sasConfirming = false
             pairingTimeoutTask?.cancel()
