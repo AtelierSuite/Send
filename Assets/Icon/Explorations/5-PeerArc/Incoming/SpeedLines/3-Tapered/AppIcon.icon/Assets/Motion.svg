@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Incoming, Speed Lines, Tapered: Streaks that narrow to a point at the top, like the trail behind a falling file.
+    Layer: Motion.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M443.0 278.0A3.0 3.0 0 0 1 449.0 278.0L464.0 388.0A18.0 18.0 0 0 1 428.0 388.0Z" opacity="0.55"/>
+    <path d="M509.0 227.0A3.0 3.0 0 0 1 515.0 227.0L532.0 386.0A20.0 20.0 0 0 1 492.0 386.0Z" opacity="0.9"/>
+    <path d="M575.0 278.0A3.0 3.0 0 0 1 581.0 278.0L596.0 388.0A18.0 18.0 0 0 1 560.0 388.0Z" opacity="0.55"/>
+  </g>
+</svg>

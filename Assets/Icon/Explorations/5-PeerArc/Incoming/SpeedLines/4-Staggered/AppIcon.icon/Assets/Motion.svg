@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Incoming, Speed Lines, Staggered: Three streaks at uneven heights: less symmetric, more like real motion.
+    Layer: Motion.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M446.0 300.4H446.0A16.0 16.0 0 0 1 462.0 316.4V390.0A16.0 16.0 0 0 1 446.0 406.0H446.0A16.0 16.0 0 0 1 430.0 390.0V316.4A16.0 16.0 0 0 1 446.0 300.4Z" opacity="0.5"/>
+    <path d="M512.0 224.0H512.0A16.0 16.0 0 0 1 528.0 240.0V390.0A16.0 16.0 0 0 1 512.0 406.0H512.0A16.0 16.0 0 0 1 496.0 390.0V240.0A16.0 16.0 0 0 1 512.0 224.0Z" opacity="0.9"/>
+    <path d="M578.0 260.4H578.0A16.0 16.0 0 0 1 594.0 276.4V390.0A16.0 16.0 0 0 1 578.0 406.0H578.0A16.0 16.0 0 0 1 562.0 390.0V276.4A16.0 16.0 0 0 1 578.0 260.4Z" opacity="0.65"/>
+  </g>
+</svg>
