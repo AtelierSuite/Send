@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Incoming, Dashes: Drop's rhythm in dashes: lengthening capsules with equal gaps.
+    Layer: Motion.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M512.0 224.0H512.0A16.0 16.0 0 0 1 528.0 240.0V242.0A16.0 16.0 0 0 1 512.0 258.0H512.0A16.0 16.0 0 0 1 496.0 242.0V240.0A16.0 16.0 0 0 1 512.0 224.0Z" opacity="0.45"/>
+    <path d="M512.0 280.0H512.0A16.0 16.0 0 0 1 528.0 296.0V314.0A16.0 16.0 0 0 1 512.0 330.0H512.0A16.0 16.0 0 0 1 496.0 314.0V296.0A16.0 16.0 0 0 1 512.0 280.0Z" opacity="0.65"/>
+    <path d="M512.0 352.0H512.0A16.0 16.0 0 0 1 528.0 368.0V390.0A16.0 16.0 0 0 1 512.0 406.0H512.0A16.0 16.0 0 0 1 496.0 390.0V368.0A16.0 16.0 0 0 1 512.0 352.0Z" opacity="0.85"/>
+  </g>
+</svg>

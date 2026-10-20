@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Incoming, Comet: A bright head with a tail tapering up behind it: one file, falling.
+    Layer: Motion.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M512 224.0C520 284.0 544 326.0 544 374.0A32 32 0 0 1 480 374.0C480 326.0 504 284.0 512 224.0Z" opacity="0.4"/>
+    <circle cx="512" cy="374.0" r="32" opacity="0.85"/>
+  </g>
+</svg>

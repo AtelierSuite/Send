@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Incoming, SpeedLines: Three streaks above the file, the middle one longest: falling fast.
+    Layer: Motion.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M448.0 278.6H448.0A15.0 15.0 0 0 1 463.0 293.6V391.0A15.0 15.0 0 0 1 448.0 406.0H448.0A15.0 15.0 0 0 1 433.0 391.0V293.6A15.0 15.0 0 0 1 448.0 278.6Z" opacity="0.5"/>
+    <path d="M512.0 224.0H512.0A15.0 15.0 0 0 1 527.0 239.0V391.0A15.0 15.0 0 0 1 512.0 406.0H512.0A15.0 15.0 0 0 1 497.0 391.0V239.0A15.0 15.0 0 0 1 512.0 224.0Z" opacity="0.85"/>
+    <path d="M576.0 278.6H576.0A15.0 15.0 0 0 1 591.0 293.6V391.0A15.0 15.0 0 0 1 576.0 406.0H576.0A15.0 15.0 0 0 1 561.0 391.0V293.6A15.0 15.0 0 0 1 576.0 278.6Z" opacity="0.5"/>
+  </g>
+</svg>
