@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    File to Folder, Photo: A photo going into a folder: the everyday file people send.
+    Layer: FolderBack.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M570.0 490.0H646.0A22 22 0 0 1 668.0 512.0V538.0A22 22 0 0 1 646.0 560.0H570.0A22 22 0 0 1 548.0 538.0V512.0A22 22 0 0 1 570.0 490.0ZM578.0 520.0H786.0A30 30 0 0 1 816.0 550.0V712.0A30 30 0 0 1 786.0 742.0H578.0A30 30 0 0 1 548.0 712.0V550.0A30 30 0 0 1 578.0 520.0Z" opacity="0.55"/>
+  </g>
+</svg>

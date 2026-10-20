@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    File to Folder, ManyFiles: A stack of files going into a folder: any number of files.
+    Layer: File.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M268.0 518.0H334.0L396.0 580.0V702.0A28 28 0 0 1 368.0 730.0H268.0A28 28 0 0 1 240.0 702.0V546.0A28 28 0 0 1 268.0 518.0Z" opacity="0.55"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    File to Folder, Document: A document, lines of text on the page, going into a folder.
+    Layer: Lines.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M266.0 602.0H370.0A10.0 10.0 0 0 1 380.0 612.0V612.0A10.0 10.0 0 0 1 370.0 622.0H266.0A10.0 10.0 0 0 1 256.0 612.0V612.0A10.0 10.0 0 0 1 266.0 602.0ZM266.0 642.0H370.0A10.0 10.0 0 0 1 380.0 652.0V652.0A10.0 10.0 0 0 1 370.0 662.0H266.0A10.0 10.0 0 0 1 256.0 652.0V652.0A10.0 10.0 0 0 1 266.0 642.0ZM266.0 682.0H320.4A10.0 10.0 0 0 1 330.4 692.0V692.0A10.0 10.0 0 0 1 320.4 702.0H266.0A10.0 10.0 0 0 1 256.0 692.0V692.0A10.0 10.0 0 0 1 266.0 682.0Z" opacity="0.85"/>
+  </g>
+</svg>

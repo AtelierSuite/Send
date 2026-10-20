@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    File to Folder, ManyFiles: A stack of files going into a folder: any number of files.
+    Layer: Path.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="333.7" cy="396.0" r="18.0" opacity="0.40"/>
+    <circle cx="400.9" cy="317.4" r="21.0" opacity="0.51"/>
+    <circle cx="500.0" cy="288.0" r="24.0" opacity="0.62"/>
+    <circle cx="599.1" cy="317.4" r="27.0" opacity="0.74"/>
+    <circle cx="666.3" cy="396.0" r="30.0" opacity="0.85"/>
+  </g>
+</svg>
