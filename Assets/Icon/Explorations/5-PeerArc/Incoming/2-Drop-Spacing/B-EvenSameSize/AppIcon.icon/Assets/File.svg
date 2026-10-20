@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Incoming, Drop, EvenSameSize: Equal dots, equal gaps: the calmest rhythm.
+    Layer: File.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M437.2 428.0H552.7L611.4 486.7V611.6A24.610687022900763 24.610687022900763 0 0 1 586.8 636.2H437.2A24.610687022900763 24.610687022900763 0 0 1 412.6 611.6V452.6A24.610687022900763 24.610687022900763 0 0 1 437.2 428.0Z" opacity="0.85"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Incoming, Drop, Lifted: The dots grouped close, with a wider gap above the file, so the file reads as dropping in.
+    Layer: Front.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M366.2 572.8H657.8A34.0763358778626 34.0763358778626 0 0 1 691.8 606.9V765.9A34.0763358778626 34.0763358778626 0 0 1 657.8 800.0H366.2A34.0763358778626 34.0763358778626 0 0 1 332.2 765.9V606.9A34.0763358778626 34.0763358778626 0 0 1 366.2 572.8Z" opacity="0.95"/>
+  </g>
+</svg>

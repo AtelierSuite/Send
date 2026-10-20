@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Incoming, Drop, EvenSameSize: Equal dots, equal gaps: the calmest rhythm.
+    Layer: Path.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="512.0" cy="243.0" r="19" opacity="0.45"/>
+    <circle cx="512.0" cy="311.0" r="19" opacity="0.65"/>
+    <circle cx="512.0" cy="379.0" r="19" opacity="0.85"/>
+  </g>
+</svg>
