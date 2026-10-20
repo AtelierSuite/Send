@@ -58,7 +58,7 @@ After changing `Core/src`:
 - macOS is first-class, not a port: system toolbar, `Settings { }` scene, Mac-sized controls.
 - iOS sheet buttons are full-width, ≥44pt (aim ~50pt).
 - iOS bare Done/Cancel use `Button(role: .confirm)` / `Button(role: .cancel)` with no label.
-- The app icon follows the Atelier suite: one flat hue (Send is violet, `0.42, 0.30, 0.92`) under white Liquid Glass layers drawn on a 1024 canvas, opacity steps for depth, no gradients in the artwork.
+- The app icon follows the Atelier suite: one flat hue (Send is violet, `0.42, 0.30, 0.92`) under white Liquid Glass layers drawn on a 1024 canvas, opacity steps for depth, no gradients in the artwork. Windows is the exception: a Fluent-style redraw of the same geometry (unplated, coloured, softly graded) in `Assets/Icon/Windows/`.
 - Device icons come from the `dt` enum (PROTOCOL.md §3.1). Non-Apple phones use `smartphone`. Unknown values get a neutral glyph.
 
 **Behaviour**

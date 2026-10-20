@@ -52,7 +52,7 @@ Windows/
     ├── Package.appxmanifest            identity, capabilities, Share Target
     ├── App.xaml / App.xaml.cs          app lifetime, share-target activation
     ├── MainWindow.xaml / .cs           title bar, frame, minimize-to-tray
-    ├── Assets/                         MSIX logos, rendered from Apple/Wooosh/AppIcon.icon
+    ├── Assets/                         MSIX logos, Fluent style, from Assets/Icon/Windows
     ├── Core/
     │   ├── IWoooshCore.cs              the DESIGN.md §4 contract
     │   ├── CoreModels.cs               Config, PeerRef, TrustedPeerInfo, FileMeta, …
@@ -271,9 +271,10 @@ Everything below is marked with a `TODO(...)` comment at the place it belongs.
    `KeyChanged` in particular must be prominent and must never offer a silent re-pin.
 9. **`TODO(DESIGN.md §6)`: the `Send/<date>` subfolder** for receives of more than 20
    files.
-10. **Logo scale variants.** `Assets/*.png` are the Send icon at 100% scale only, rendered
-   from `Apple/Wooosh/AppIcon.icon`. Add the scaled variants (`.scale-125/150/200/400`)
-   and the `targetsize-*` taskbar icons Windows expects.
+10. **Logo scale variants.** `Assets/*.png` are the Fluent-style Send icon from
+   `Assets/Icon/Windows/` (unplated; the compact art without streaks below 48 px), with
+   `targetsize-16/24/32/48/256` taskbar icons. Tiles and the splash are 100% scale only:
+   add `.scale-125/150/200/400` variants.
 11. **Package identity.** `Publisher="CN=Tsubuzaki"` is a placeholder for a local
     self-signed test certificate. Replace it before doing anything but F5 on a dev machine.
 12. **UDP discovery fallback** (PROTOCOL.md §3.2, broadcast on 44777). Not implemented here.
