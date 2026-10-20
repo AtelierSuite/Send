@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Incoming, Rain: Three staggered columns: many files coming in at once.
+    Layer: Back.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M348.0 464.0H456.0A26 26 0 0 1 482.0 490.0V524.0A26 26 0 0 1 456.0 550.0H348.0A26 26 0 0 1 322.0 524.0V490.0A26 26 0 0 1 348.0 464.0ZM358.0 500.0H666.0A36 36 0 0 1 702.0 536.0V764.0A36 36 0 0 1 666.0 800.0H358.0A36 36 0 0 1 322.0 764.0V536.0A36 36 0 0 1 358.0 500.0Z" opacity="0.55"/>
+  </g>
+</svg>

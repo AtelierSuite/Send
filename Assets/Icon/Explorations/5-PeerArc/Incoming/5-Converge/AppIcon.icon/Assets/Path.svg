@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Incoming, Converge: Dotted lines from three directions meeting at the folder: files from anywhere.
+    Layer: Path.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="286.0" cy="214.0" r="14.0" opacity="0.35"/>
+    <circle cx="369.0" cy="282.0" r="18.0" opacity="0.57"/>
+    <circle cx="452.0" cy="350.0" r="22.0" opacity="0.80"/>
+    <circle cx="512.0" cy="176.0" r="14.0" opacity="0.35"/>
+    <circle cx="512.0" cy="260.0" r="18.0" opacity="0.57"/>
+    <circle cx="512.0" cy="344.0" r="22.0" opacity="0.80"/>
+    <circle cx="738.0" cy="214.0" r="14.0" opacity="0.35"/>
+    <circle cx="655.0" cy="282.0" r="18.0" opacity="0.57"/>
+    <circle cx="572.0" cy="350.0" r="22.0" opacity="0.80"/>
+  </g>
+</svg>

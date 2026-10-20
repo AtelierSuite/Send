@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Incoming, Rain: Three staggered columns: many files coming in at once.
+    Layer: Path.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="420.0" cy="214.0" r="14.0" opacity="0.35"/>
+    <circle cx="420.0" cy="283.0" r="19.0" opacity="0.57"/>
+    <circle cx="420.0" cy="352.0" r="24.0" opacity="0.80"/>
+    <circle cx="512.0" cy="184.0" r="14.0" opacity="0.35"/>
+    <circle cx="512.0" cy="264.0" r="19.0" opacity="0.57"/>
+    <circle cx="512.0" cy="344.0" r="24.0" opacity="0.80"/>
+    <circle cx="604.0" cy="214.0" r="14.0" opacity="0.35"/>
+    <circle cx="604.0" cy="283.0" r="19.0" opacity="0.57"/>
+    <circle cx="604.0" cy="352.0" r="24.0" opacity="0.80"/>
+  </g>
+</svg>

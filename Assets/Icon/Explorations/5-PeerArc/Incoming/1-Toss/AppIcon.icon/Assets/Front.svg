@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Incoming, Toss: A file lobbed in from the upper left, landing in the folder.
+    Layer: Front.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M358.0 560.0H666.0A36 36 0 0 1 702.0 596.0V764.0A36 36 0 0 1 666.0 800.0H358.0A36 36 0 0 1 322.0 764.0V596.0A36 36 0 0 1 358.0 560.0Z" opacity="0.95"/>
+  </g>
+</svg>

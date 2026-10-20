@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Incoming, Drop: A file dropping straight into the folder.
+    Layer: Path.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <circle cx="512.0" cy="176.0" r="18.0" opacity="0.35"/>
+    <circle cx="512.0" cy="266.0" r="24.0" opacity="0.60"/>
+    <circle cx="512.0" cy="356.0" r="30.0" opacity="0.85"/>
+  </g>
+</svg>
