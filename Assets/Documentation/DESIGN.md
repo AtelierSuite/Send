@@ -397,11 +397,11 @@ Windows PCs without a TPM 2.0 that exposes an EK certificate (some older or VM i
 
 ### 9.3 Where the Worker lives
 
-`Worker/` at the repo root, TypeScript, configured in `cloudflare.config.ts` and run and deployed with the `cf` CLI (`cf dev`, `cf deploy`), never Wrangler directly. One Worker script and one Durable Object class (`Room`), which also runs admission, plus an in-memory `Quota` Durable Object per quota key. Secrets (`SERVER_SECRET`, which keys every token and quota key, and the Play Integrity service account) are Worker secrets, uploaded with `cf deploy --secrets-file` from a gitignored file and never in the repo; locally they come from `Worker/.dev.vars`, also gitignored. The Apple App Attestation root and the TPM manufacturer roots are bundled as generated constants (`Worker/scripts/update-roots.sh`).
+`Worker/` at the repo root, TypeScript, configured in `wrangler.jsonc` and run and deployed with Wrangler (`npm run dev`, `npm run deploy`, `npm run deploy:dev`). One Worker script and one Durable Object class (`Room`), which also runs admission, plus an in-memory `Quota` Durable Object per quota key. Secrets (`SERVER_SECRET`, which keys every token and quota key, and the Play Integrity service account) are Worker secrets, set with `npx wrangler secret put` and never in the repo; locally they come from `Worker/.dev.vars`, also gitignored. The Apple App Attestation root and the TPM manufacturer roots are bundled as generated constants (`Worker/scripts/update-roots.sh`).
 
 The core learns the production URL at build time from `WOOOSH_RENDEZVOUS_URL` (see `Core/build-bindings.sh`); a build without it reports that no service is configured until Settings names one.
 
-`cloudflare.config.ts` declares no KV, D1, or R2 bindings, `observability.enabled = false`, and `logpush = false`. `--mode dev` builds a second Worker carrying the debug-build allowlist; the production Worker has no bypass. The test suite derives its Miniflare setup from the same file, so the two cannot drift.
+`wrangler.jsonc` declares no KV, D1, or R2 bindings, `observability.enabled = false`, and `logpush = false`. Its `dev` environment (`--env dev`) is a second Worker, `wooosh-rendezvous-dev`, carrying the debug-build allowlist; the production Worker has no bypass. The test suite reads the same file, so the two cannot drift.
 
 ### 9.4 Cost on the Cloudflare free plan
 

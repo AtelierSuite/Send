@@ -3,13 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "cf dev --mode dev",
-    "deploy": "cf deploy",
+    "dev": "wrangler dev --env dev",
+    "deploy": "wrangler deploy --env=\"\"",
+    "deploy:dev": "wrangler deploy --env dev",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
   },
   "devDependencies": {
-    "@cloudflare/config": "^0.23.0",
     "@cloudflare/vitest-pool-workers": "^0.22.0",
     "@cloudflare/workers-types": "^5.20261005.1",
     "@vitest/runner": "^4.1.11",

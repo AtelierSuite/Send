@@ -1,0 +1,59 @@
+// Send Rendezvous. PROTOCOL.md §9.1: no storage bindings, no logs.
+//
+//   npm run dev           wrangler dev --env dev   (local, development settings)
+//   npm run deploy        wrangler deploy          (production)
+//   npm run deploy:dev    wrangler deploy --env dev
+//
+// Secrets, set per Worker with `npx wrangler secret put <NAME> [--env dev]`
+// (locally: `.dev.vars`): SERVER_SECRET, PLAY_SA_EMAIL, PLAY_SA_PRIVATE_KEY.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "wooosh-rendezvous",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-15",
+  "workers_dev": true,
+  "logpush": false,
+  "observability": { "enabled": false },
+  "durable_objects": {
+    "bindings": [
+      { "name": "ROOM", "class_name": "Room" },
+      { "name": "QUOTA", "class_name": "Quota" }
+    ]
+  },
+  // The free plan only offers SQLite-backed Durable Objects. Neither class writes
+  // to storage; the backend is required, not used.
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Room", "Quota"] }],
+  "vars": {
+    "APPLE_APP_IDS": "YYM4Z6MU8F.com.tsubuzaki.Wooosh",
+    "PLAY_PACKAGE_NAME": "com.tsubuzaki.WoooshGo",
+    // Release signing-certificate SHA-256, base64url. Fill in from Play Console
+    // (App integrity → App signing key certificate) before deploying.
+    "PLAY_CERT_SHA256": ""
+  },
+  "env": {
+    // Accepts development App Attest keys and non-Play builds, and relays
+    // unverified clients. Never point a release build at it. Wrangler does not
+    // inherit bindings or vars into environments, so they are repeated here.
+    "dev": {
+      "name": "wooosh-rendezvous-dev",
+      "workers_dev": true,
+      "logpush": false,
+      "observability": { "enabled": false },
+      "durable_objects": {
+        "bindings": [
+          { "name": "ROOM", "class_name": "Room" },
+          { "name": "QUOTA", "class_name": "Quota" }
+        ]
+      },
+      "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Room", "Quota"] }],
+      "vars": {
+        "APPLE_APP_IDS": "YYM4Z6MU8F.com.tsubuzaki.Wooosh",
+        "PLAY_PACKAGE_NAME": "com.tsubuzaki.WoooshGo",
+        "PLAY_CERT_SHA256": "",
+        "APPLE_ALLOW_DEVELOPMENT": "true",
+        "PLAY_ALLOW_UNRECOGNIZED": "true",
+        "ANON_RELAY": "true"
+      }
+    }
+  }
+}

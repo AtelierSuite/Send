@@ -26,7 +26,7 @@ Rust is not on `PATH`: `export PATH="/opt/homebrew/opt/rustup/bin:$PATH"`.
 cargo test --lib --release && cargo test --release --test integration -- --test-threads=1
 xcodebuild build -project Wooosh.xcodeproj -scheme Wooosh -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO
 JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home" ./gradlew assembleDebug
-cd Worker && npm test        # npm run dev (cf dev) serves the Worker on :8787; deploy with cf, never Wrangler
+cd Worker && npm test        # npm run dev serves the Worker on :8787; npm run deploy (production) or deploy:dev, both Wrangler
 ```
 Internet path end to end (with `npm run dev` running): `WOOOSH_TEST_RENDEZVOUS=http://127.0.0.1:8787 cargo test --release --test integration -- --ignored --test-threads=1 internet_ticket_via_local_worker`.
 
