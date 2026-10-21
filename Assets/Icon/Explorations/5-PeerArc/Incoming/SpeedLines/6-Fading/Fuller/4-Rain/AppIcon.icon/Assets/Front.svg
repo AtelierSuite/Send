@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Fading, Rain: Full-size folder; five streaks fall across the whole folder and end on its front.
+    Layer: Front.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M282.6 514.4H741.4A53.60 53.60 0 0 1 795.0 568.0V818.4A53.60 53.60 0 0 1 741.4 872.0H282.6A53.60 53.60 0 0 1 229.0 818.4V568.0A53.60 53.60 0 0 1 282.6 514.4Z" opacity="0.95"/>
+  </g>
+</svg>

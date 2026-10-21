@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Fading, Rain: Full-size folder; five streaks fall across the whole folder and end on its front.
+    Layer: MotionMiddle.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M344.0 408.4H344.0A18.00 18.00 0 0 1 362.0 426.4V430.4A18.00 18.00 0 0 1 344.0 448.4H344.0A18.00 18.00 0 0 1 326.0 430.4V426.4A18.00 18.00 0 0 1 344.0 408.4Z" opacity="0.32"/>
+    <path d="M428.0 412.4H428.0A18.00 18.00 0 0 1 446.0 430.4V446.4A18.00 18.00 0 0 1 428.0 464.4H428.0A18.00 18.00 0 0 1 410.0 446.4V430.4A18.00 18.00 0 0 1 428.0 412.4Z" opacity="0.4"/>
+    <path d="M512.0 404.4H512.0A18.00 18.00 0 0 1 530.0 422.4V450.4A18.00 18.00 0 0 1 512.0 468.4H512.0A18.00 18.00 0 0 1 494.0 450.4V422.4A18.00 18.00 0 0 1 512.0 404.4Z" opacity="0.5"/>
+    <path d="M596.0 412.4H596.0A18.00 18.00 0 0 1 614.0 430.4V446.4A18.00 18.00 0 0 1 596.0 464.4H596.0A18.00 18.00 0 0 1 578.0 446.4V430.4A18.00 18.00 0 0 1 596.0 412.4Z" opacity="0.4"/>
+    <path d="M680.0 408.4H680.0A18.00 18.00 0 0 1 698.0 426.4V430.4A18.00 18.00 0 0 1 680.0 448.4H680.0A18.00 18.00 0 0 1 662.0 430.4V426.4A18.00 18.00 0 0 1 680.0 408.4Z" opacity="0.32"/>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Fading, Overlap: Full-size folder; three streaks overlap the top of the file, drawn in front of it.
+    Layer: MotionMiddle.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M426.2 300.7H426.2A20.00 20.00 0 0 1 446.2 320.7V325.6A20.00 20.00 0 0 1 426.2 345.6H426.2A20.00 20.00 0 0 1 406.2 325.6V320.7A20.00 20.00 0 0 1 426.2 300.7Z" opacity="0.32"/>
+    <path d="M512.0 253.4H512.0A20.00 20.00 0 0 1 532.0 273.4V301.9A20.00 20.00 0 0 1 512.0 321.9H512.0A20.00 20.00 0 0 1 492.0 301.9V273.4A20.00 20.00 0 0 1 512.0 253.4Z" opacity="0.5"/>
+    <path d="M597.8 300.7H597.8A20.00 20.00 0 0 1 617.8 320.7V325.6A20.00 20.00 0 0 1 597.8 345.6H597.8A20.00 20.00 0 0 1 577.8 325.6V320.7A20.00 20.00 0 0 1 597.8 300.7Z" opacity="0.32"/>
+  </g>
+</svg>

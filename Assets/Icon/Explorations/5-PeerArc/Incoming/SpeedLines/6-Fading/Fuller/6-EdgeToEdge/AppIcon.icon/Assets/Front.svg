@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Fading, Edge to Edge: The folder fills the icon; streaks run down the file into the folder front.
+    Layer: Front.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M246.7 486.5H777.3A61.98 61.98 0 0 1 839.3 548.5V838.0A61.98 61.98 0 0 1 777.3 900.0H246.7A61.98 61.98 0 0 1 184.7 838.0V548.5A61.98 61.98 0 0 1 246.7 486.5Z" opacity="0.95"/>
+  </g>
+</svg>

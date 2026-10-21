@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Fading, Overlap: Full-size folder; three streaks overlap the top of the file, drawn in front of it.
+    Layer: Back.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M267.7 371.4H428.6A38.72 38.72 0 0 1 467.4 410.1V460.8A38.72 38.72 0 0 1 428.6 499.5H267.7A38.72 38.72 0 0 1 229.0 460.8V410.1A38.72 38.72 0 0 1 267.7 371.4ZM282.6 425.0H741.4A53.60 53.60 0 0 1 795.0 478.6V818.4A53.60 53.60 0 0 1 741.4 872.0H282.6A53.60 53.60 0 0 1 229.0 818.4V478.6A53.60 53.60 0 0 1 282.6 425.0Z" opacity="0.55"/>
+  </g>
+</svg>
