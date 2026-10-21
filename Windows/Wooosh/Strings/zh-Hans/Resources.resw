@@ -669,10 +669,6 @@
     <value>Send 会保留在通知区域，可以继续接收文件。</value>
     <comment>Helper text under the keep-running toggle.</comment>
   </data>
-  <data name="ShareTargetTitle" xml:space="preserve">
-    <value>Send</value>
-    <comment>Label Send shows in the Windows share sheet.</comment>
-  </data>
   <data name="OtherDeviceTitle" xml:space="preserve">
     <value>其他设备</value>
     <comment>Entry point for a transfer with a device that is not on this network.</comment>

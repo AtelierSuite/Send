@@ -689,10 +689,6 @@
     <value>Send ligger kvar i meddelandefältet och kan fortsätta ta emot filer.</value>
     <comment>Helper text under the keep-running toggle.</comment>
   </data>
-  <data name="ShareTargetTitle" xml:space="preserve">
-    <value>Send</value>
-    <comment>Label Send shows in the Windows share sheet.</comment>
-  </data>
   <data name="OtherDeviceTitle" xml:space="preserve">
     <value>Annan enhet</value>
     <comment>Entry point for a transfer with a device that is not on this network.</comment>

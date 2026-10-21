@@ -42,7 +42,8 @@ public sealed partial class MainWindow : Window
         AppWindow.Hide();
     }
 
-    private void ShowWindow()
+    /// <summary>Also used when a second launch hands over, so Send comes back from the tray.</summary>
+    public void ShowWindow()
     {
         AppWindow.Show();
         Activate();

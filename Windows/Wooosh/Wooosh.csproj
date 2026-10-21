@@ -28,6 +28,8 @@
     <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
     <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
     <DebugType>embedded</DebugType>
+    <!-- Program.cs owns Main so a second launch can hand over before creating a window. -->
+    <DefineConstants>$(DefineConstants);DISABLE_XAML_GENERATED_MAIN</DefineConstants>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <!-- [LibraryImport] in Core/Interop and Platform emits unsafe P/Invoke stubs. -->
