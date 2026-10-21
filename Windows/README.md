@@ -54,6 +54,12 @@ Native DLLs and `Send.pri` cannot be loaded from inside the bundle, so the .NET 
 extracts them to a per-user cache on first launch. State lives in `%LOCALAPPDATA%\Wooosh\`
 (settings, DPAPI-wrapped identity, trust store, staging).
 
+Publishing trims unused code from the trimmable assemblies (`TrimMode=partial`: the .NET
+libraries and the Windows SDK projection; Send's own code is kept whole) and drops WinUI's
+control text for cultures outside Send's 14 languages. Trimming rules out reflection-based
+`System.Text.Json` and `[ComImport]` COM interop: use a `JsonSerializerContext` and
+`[GeneratedComInterface]` instead. Treat any `IL2xxx` warning in the publish log as a bug.
+
 The executable is unsigned, so SmartScreen shows "Unknown publisher" and testers choose
 **More info → Run anyway**. A self-signed signature would not change that; a publicly
 trusted code-signing certificate would.
@@ -316,11 +322,15 @@ failure rather than a bug:
   `<EnableDefaultPRIResourceItems>false</EnableDefaultPRIResourceItems>` and list them
   explicitly. Adding `<PRIResource>` items *without* disabling the default first produces
   duplicate-item errors.
+- **Trimming.** Partial trimming of the Windows App SDK projections is supported from
+  1.6, and the publish is warning-free, but a trimmed WinUI app can still fail at runtime
+  where the analyzer cannot see. A page or control that fails to load only in the
+  published `Send.exe` points here.
 - **Single-file resources.** `IncludeAllContentForSelfExtract` should put `Send.pri` beside
   the extracted code, where `ResourceLoader` and the XAML loader look. If strings come up
   empty or a page fails to load, this is why.
-- **Send To and redirection.** `SendToShortcut` drives `IShellLinkW` through classic COM
-  interop with a hand-declared vtable, and `Program.Redirect` is Microsoft's documented
+- **Send To and redirection.** `SendToShortcut` drives `IShellLinkW` through
+  source-generated COM interfaces with a hand-declared vtable, and `Program.Redirect` is Microsoft's documented
   `CoWaitForMultipleObjects` pattern. Both compile; neither has run.
 - **`ResourceLoader` default subtree.** `Strings.cs` uses `new ResourceLoader()`, which
   resolves against the `Resources` subtree. Correct for `Resources.resw`, unverified.

@@ -27,6 +27,12 @@
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
     <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
     <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <!-- Partial trims only assemblies marked trimmable (the BCL and the Windows SDK
+         projection, most of the size); Send's own code and its XAML stay whole. Trimming
+         turns off reflection JSON and built-in COM interop, so neither may be used. -->
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>partial</TrimMode>
+    <SatelliteResourceLanguages>en;ja;ko;zh-Hans;zh-Hant;de;es;fr;it;nl;pt-BR;pl;ru;sv</SatelliteResourceLanguages>
     <DebugType>embedded</DebugType>
     <!-- Program.cs owns Main so a second launch can hand over before creating a window. -->
     <DefineConstants>$(DefineConstants);DISABLE_XAML_GENERATED_MAIN</DefineConstants>
@@ -55,6 +61,25 @@
     duplicate-item errors, so do not add <PRIResource> entries unless the default
     globbing is first disabled with <EnableDefaultPRIResourceItems>false.
   -->
+
+  <!--
+    The self-contained Windows App SDK copies WinUI's own control text (*.mui) for 86
+    cultures, outside SatelliteResourceLanguages. Keep the cultures that match Send's 14
+    languages; any other system language falls back to English, as Send's own text does.
+  -->
+  <PropertyGroup>
+    <_SendMuiCultures>;en-us;en-gb;de-de;es-es;es-mx;fr-fr;fr-ca;it-it;ja-jp;ko-kr;nl-nl;pl-pl;pt-br;ru-ru;sv-se;zh-cn;zh-tw;</_SendMuiCultures>
+  </PropertyGroup>
+  <Target Name="RemoveUnusedWindowsAppSDKCultures" AfterTargets="AddMicrosoftWindowsAppSDKPayloadFiles">
+    <ItemGroup>
+      <_SendMui Include="@(None)" Condition="'%(Extension)' == '.mui'">
+        <Culture>$([System.IO.Path]::GetDirectoryName('%(Link)').ToLowerInvariant())</Culture>
+      </_SendMui>
+      <_SendUnusedMui Include="@(_SendMui)" Condition="!$(_SendMuiCultures.Contains(';%(Culture);'))" />
+      <None Remove="@(_SendUnusedMui)" />
+    </ItemGroup>
+    <Message Importance="high" Text="Removed @(_SendUnusedMui->Count()) of @(_SendMui->Count()) Windows App SDK .mui files." />
+  </Target>
 
   <!--
     wooosh_core.dll (the Rust core, built for the same architecture) is loaded by

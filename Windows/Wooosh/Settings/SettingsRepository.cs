@@ -19,7 +19,7 @@ public sealed record WoooshSettings
 /// Three values, read once and written through. Anything that must survive a reinstall
 /// (the identity key, the trust store) belongs to the core, not here.
 /// </summary>
-public sealed class SettingsRepository
+public sealed partial class SettingsRepository
 {
     private static readonly string FilePath = Path.Combine(AppDataDirectory.Root, "settings.json");
 
@@ -96,7 +96,7 @@ public sealed class SettingsRepository
     {
         try
         {
-            return JsonSerializer.Deserialize<Stored>(File.ReadAllText(FilePath)) ?? new Stored();
+            return JsonSerializer.Deserialize(File.ReadAllText(FilePath), StoredContext.Default.Stored) ?? new Stored();
         }
         catch (Exception e) when (e is IOException or JsonException or UnauthorizedAccessException)
         {
@@ -109,7 +109,7 @@ public sealed class SettingsRepository
     {
         // Temp-and-swap: a crash mid-write must not leave a truncated file that resets visibility.
         var temporary = FilePath + ".tmp";
-        File.WriteAllText(temporary, JsonSerializer.Serialize(_store));
+        File.WriteAllText(temporary, JsonSerializer.Serialize(_store, StoredContext.Default.Stored));
         File.Move(temporary, FilePath, overwrite: true);
     }
 
@@ -123,5 +123,11 @@ public sealed class SettingsRepository
 
         [JsonPropertyName("keepRunningInBackground")]
         public bool? KeepRunningInBackground { get; set; }
+    }
+
+    // Trimming disables reflection-based serialization, so the converter is generated.
+    [JsonSerializable(typeof(Stored))]
+    private sealed partial class StoredContext : JsonSerializerContext
+    {
     }
 }
