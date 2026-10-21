@@ -55,6 +55,7 @@ Identity is unified: one Ed25519 keypair per install, held by the core, stored t
 - Discovery is **native per platform**, not in the core (DESIGN.md §2). The shells own the peer registry and the append-only, grey-out-in-place list rules.
 - Shells never reimplement core crypto: use the exported `fingerprint_phrase_for` / `device_id_for`.
 - No mock or fake-data implementations remain. `RealCore` is the only implementation on both platforms; the debug harnesses were removed once the real core was verified on device.
+- The one exception is `ScreenshotStage.swift` (Apple, `#if DEBUG` only): launched with `-ScreenshotStage`, the app skips discovery and stages sample devices for the App Store screenshots (`Assets/App Store/capture.sh`). Release builds do not contain it.
 - 225 strings across 14 locales, one glossary shared by both shells.
 - The Android QR scanner is composed in-app (`QrScanner.kt`), not ZXing's `CaptureActivity`. Detection must happen with the app's own UI on screen, or no alert can be shown during the handover.
 

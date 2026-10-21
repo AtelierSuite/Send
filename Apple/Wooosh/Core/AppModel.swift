@@ -181,6 +181,12 @@ final class AppModel {
     func start() async {
         guard discovery == nil else { return }
         await startCore()
+        #if DEBUG
+        if let stage = ScreenshotStage.current {
+            stage.apply(to: self)
+            return
+        }
+        #endif
         let discovery = Discovery(registry: registry)
         self.discovery = discovery
         discovery.startBrowsing()

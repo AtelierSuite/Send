@@ -168,6 +168,12 @@ final class TransferCenter {
         updateKeepAwake()
     }
 
+    #if DEBUG
+    func stage(_ transfer: Transfer) {
+        transfers.append(transfer)
+    }
+    #endif
+
     // MARK: - Core events
 
     func handle(event: CoreEvent) {

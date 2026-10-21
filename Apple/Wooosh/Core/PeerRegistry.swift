@@ -141,6 +141,12 @@ final class PeerRegistry {
         peers.removeAll()
     }
 
+    #if DEBUG
+    func stageStale(rid: String) {
+        markStale(rid: rid)
+    }
+    #endif
+
     private func markStale(rid: String) {
         guard let index = peers.firstIndex(where: { $0.rid == rid }) else { return }
         peers[index].isStale = true

@@ -103,6 +103,14 @@ struct DeviceListView: View {
                 incomingOffer = offer
             }
         }
+        #if DEBUG
+        .task {
+            showingPairSheet = ScreenshotStage.current == .pair
+            #if os(iOS)
+            showingSettings = ScreenshotStage.current == .settings
+            #endif
+        }
+        #endif
         .onChange(of: model.keyChangeWarning) { _, warning in
             showingKeyChangedAlert = warning != nil
         }
