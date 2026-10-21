@@ -15,7 +15,7 @@ struct DeviceListView: View {
         @Bindable var model = model
         NavigationStack {
             deviceList
-                .navigationTitle(L.t("Wooosh"))
+                .navigationTitle(L.t("app_name"))
                 .toolbar {
                     ToolbarItem {
                         Button(L.t("action_refresh"), systemImage: "arrow.clockwise") {
