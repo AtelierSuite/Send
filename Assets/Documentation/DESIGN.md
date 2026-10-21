@@ -16,7 +16,7 @@ Companion document: [PROTOCOL.md](PROTOCOL.md) — wire protocol, discovery form
   - **iOS**: photos/videos → Photos library; documents → Files (app's Documents folder, visible in the Files app).
   - **Android**: everything → `Downloads/` (via MediaStore).
   - **macOS / Windows**: everything → `~/Downloads`.
-- Share extension on every platform (system share sheet / Share Target / ACTION_SEND).
+- Share extension on every platform (system share sheet / ACTION_SEND / Send To).
 - Device list sorted by **discovery timestamp**, never reordered; devices that vanish from discovery are **grayed out in place**, not removed (prevents mis-taps from list shifting).
 - Screen stays awake during active transfers on mobile; long transfers must not lock the user out of their device.
 - Off-LAN sharing (different networks, mobile data) peer to peer, introduced by a rendezvous service that never stores data and relays only as a capped fallback (§9).
@@ -284,7 +284,7 @@ macOS and Windows have no equivalent constraint; Android's foreground service is
 | iOS | Share Extension target. Extension memory is tight (~120 MB), so it never transfers by itself: it copies/bookmarks the shared items into the **App Group** container, then opens the main app via deep link (`wooosh://send?batch=…`) with the device list pre-filtered to alive peers. |
 | macOS | Share Extension, same App Group handoff, but macOS extensions may also complete small sends inline (no memory pressure). |
 | Android | `ACTION_SEND` / `ACTION_SEND_MULTIPLE` intent filters (all MIME types) + **Direct Share**: paired devices published as sharing shortcuts (`ShortcutManagerCompat.pushDynamicShortcut`) so they appear as one-tap targets in the system share sheet. |
-| Windows | **Share Target** contract in the package manifest (activation kind `ShareTarget`), plus an optional File Explorer context-menu verb ("Send") for classic right-click flows. |
+| Windows | **Send To** entry (`Send.lnk` in the user's SendTo folder, rewritten on each launch), so right-click → Send to → Send passes the files on the command line. Send is unpackaged, so it has no package identity and therefore no Share Target. A second launch hands its files to the running instance (`AppInstance` redirection) rather than opening another window. |
 
 All four funnel into the same core `send()` call; the share UI is a trimmed device-list screen (same ordering/staleness rules).
 
@@ -389,7 +389,7 @@ Admission is abuse control for a shared free quota, not transfer security (PROTO
 | `wooosh-cli` Linux / Windows | TPM 2.0, implemented in the core (`tss-esapi` on Linux, TBS on Windows) | Verified hardware | n/a |
 | `wooosh-cli` macOS | App Attest, only when run from inside the signed `Wooosh.app` bundle; unverified whether Apple allows it for a bundled helper (PROTOCOL.md §9.2.1). Otherwise Unverified | Verified app, else Unverified | Bundle the CLI as `Contents/MacOS/wooosh-cli` |
 
-**Distribution decides what is available.** iOS ships on the App Store and Android on Google Play, so App Attest and Play Integrity (which requires `PLAY_RECOGNIZED`, i.e. a Play-installed build) work as specified. The desktop apps ship **outside** their stores: macOS as a notarized Developer ID app, Windows as a sideloaded MSIX. TPM attestation does not care how Windows was installed. For the Mac, Apple documents App Attest only for TestFlight, App Store, and Enterprise distribution, and does not say whether a Developer ID provisioning profile can include the capability. That is the first spike of phase 1 (STATUS.md); if it cannot, Macs and the macOS CLI are Unverified.
+**Distribution decides what is available.** iOS ships on the App Store and Android on Google Play, so App Attest and Play Integrity (which requires `PLAY_RECOGNIZED`, i.e. a Play-installed build) work as specified. The desktop apps ship **outside** their stores: macOS as a notarized Developer ID app, Windows as a standalone unpackaged `Send.exe`. TPM attestation does not care how Windows was installed. For the Mac, Apple documents App Attest only for TestFlight, App Store, and Enterprise distribution, and does not say whether a Developer ID provisioning profile can include the capability. That is the first spike of phase 1 (STATUS.md); if it cannot, Macs and the macOS CLI are Unverified.
 
 **No hardware ID strings.** SMBIOS UUIDs, `MachineGuid`, and MAC addresses were considered for Windows and the CLI and rejected: they are self-reported, so anyone can send any value, and they are stable tracking identifiers. A TPM proves the key is in real hardware; a string proves nothing. TPM attestation proves real hardware, not a genuine Send binary, which is why Windows and the CLI sit in their own tier with the same quota.
 

@@ -11,7 +11,7 @@ Last updated: 2026-10-05. Specs: [DESIGN.md](DESIGN.md), [PROTOCOL.md](PROTOCOL.
 | `Apple/` iOS | ✅ | ✅ on device: transfers, Photos routing, camera QR scanning; launches clean in the iOS 26.5 Simulator and discovers a real peer | share extension with a real App Group unverified; internet transfer never run across networks |
 | `Android/` | ✅ | ✅ physical Pixel 7a: discovery, send and receive, pairing, revoke, KEY_CHANGED, QR scanning | internet transfer never run at all, on any network |
 | `Worker/` (Cloudflare) | ✅ (40 KiB gzipped) | ✅ 22/22 in the Workers runtime; end to end with the core under `cf dev` | Never deployed. Production secrets and `PLAY_CERT_SHA256` not set |
-| `Windows/` (WinUI 3) | ❌ never compiled | — | scaffold only, written on a Mac; needs a Windows machine |
+| `Windows/` (WinUI 3) | ✅ CI only (x64, ARM64; one self-contained `Send.exe`) | — | never run; the core bindings are unfinished, so it cannot transfer |
 
 Build commands: `cargo test --release` (PATH needs `/opt/homebrew/opt/rustup/bin`), `xcodebuild -scheme Wooosh -destination 'platform=macOS'`, `JAVA_HOME=<Android Studio jbr> ./gradlew assembleDebug`. FFI artifacts rebuild via `Core/build-bindings.sh`.
 
@@ -90,7 +90,7 @@ Remaining phases:
 
 Known gaps that are accepted, not bugs: a standalone macOS CLI cannot attest (PROTOCOL.md §9.2.1), so it uses direct paths only; the Android Play Integrity quota (10 000 calls/day by default) needs a raise request before it binds; hole punching will fail between some networks, and those users get the relay or a clear error.
 
-Distribution prerequisites not yet in place: notarization requires the hardened runtime, and the macOS targets currently build with `ENABLE_HARDENED_RUNTIME = NO`; a sideloaded MSIX must be signed with a certificate users' machines trust (a purchased code-signing certificate or Azure Trusted Signing), or it will not install.
+Distribution prerequisites not yet in place: notarization requires the hardened runtime, and the macOS targets currently build with `ENABLE_HARDENED_RUNTIME = NO`; the Windows `Send.exe` is unsigned, so SmartScreen warns "Unknown publisher" until it is signed with a publicly trusted certificate (a purchased code-signing certificate or Azure Trusted Signing).
 
 **The internet path is one-shot and never pairs (rewritten 2026-07-26)**
 
@@ -118,7 +118,7 @@ iOS receives in the background through `BGContinuedProcessingTask` (iOS 26), whi
 - macOS Settings via ⌘, was never confirmed to actually open; the scene compiles.
 
 **Windows**
-- Nothing has been compiled. First step is opening the solution in Visual Studio and getting a build.
+- Builds in GitHub Actions on every push touching `Windows/` or `Core/`, producing a single self-contained `Send.exe` per architecture. It has never been launched: the first check on a real machine is that it starts, finds its localized strings (the PRI is extracted from the single file), and writes `Send.lnk` into Send To.
 - Unfinished by design: the UniFFI record/enum codecs and the `KeyStore` / `CoreEventListener` callback VTables. Field order must match Rust exactly, so this needs the real header in front of you.
 - Most likely to be wrong: the `StreamSocketListener`-as-registration-anchor trick in `DnssdAdvertiser`, and the DNS-SD property shapes.
 

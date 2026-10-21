@@ -3,10 +3,10 @@
 WinUI 3 shell for [Send](../README.md). Same shared Rust core as the Apple and Android
 shells, same protocol, native UI.
 
-> **This has never been compiled or run.** It was written on a Mac, which has no Visual
-> Studio, no Windows SDK and no .NET Windows targets, so nothing here has been through a
-> compiler, a XAML compiler, MakePri, or MSIX packaging. Treat it as a starting point that
-> is meant to be correct by inspection, not as a working build. The
+> **This compiles but has never been run.** It was written on a Mac. GitHub Actions
+> (`.github/workflows/windows.yml`) builds it for x64 and ARM64 and publishes one
+> self-contained `Send.exe` each, so the C# and XAML compilers, MakePri and single-file
+> bundling are all exercised. Nothing has been launched. The
 > [What still needs doing](#what-still-needs-doing) section is honest about the gaps, and
 > [Unverified assumptions](#unverified-assumptions) lists the specific things a Windows
 > machine has to confirm first.
@@ -21,8 +21,7 @@ shells, same protocol, native UI.
 | Windows App SDK | 1.7 (`Microsoft.WindowsAppSDK` 1.7.250606001), pulled by NuGet |
 | Rust | only if you are building the core: see [`Core/`](../Core) |
 
-Also enable **Developer Mode** in Windows Settings. A packaged app cannot be deployed
-locally without it.
+Send is unpackaged (`WindowsPackageType=None`), so Developer Mode is not needed.
 
 ## Open and build
 
@@ -37,8 +36,27 @@ target an explicit architecture.
 The first build restores three packages: `Microsoft.WindowsAppSDK`,
 `Microsoft.Windows.SDK.BuildTools` and `System.Security.Cryptography.ProtectedData`.
 
-The app will launch, discover other Send devices on the LAN, and show a red banner saying
-it could not start. That is expected and correct: the transfer engine is not linked yet.
+The app should launch, discover other Send devices on the LAN, and show a red banner saying
+it could not start. That is expected: the core bindings are unfinished (item 1 below).
+
+## Distribution
+
+One file, `Send.exe`, per architecture, with .NET 8, the Windows App SDK, WinUI and
+`wooosh_core.dll` inside. Nothing to install first, and no MSIX: package identity would
+buy a share target at the cost of a certificate every tester has to trust. To build it
+the way CI does:
+
+```
+msbuild Wooosh\Wooosh.csproj -restore -t:Publish -p:Configuration=Release -p:Platform=x64 -p:RuntimeIdentifier=win-x64 -p:PublishDir=publish/
+```
+
+Native DLLs and `Send.pri` cannot be loaded from inside the bundle, so the .NET host
+extracts them to a per-user cache on first launch. State lives in `%LOCALAPPDATA%\Wooosh\`
+(settings, DPAPI-wrapped identity, trust store, staging).
+
+The executable is unsigned, so SmartScreen shows "Unknown publisher" and testers choose
+**More info → Run anyway**. A self-signed signature would not change that; a publicly
+trusted code-signing certificate would.
 
 ## Layout
 
@@ -49,10 +67,10 @@ Windows/
 └── Wooosh/
     ├── Wooosh.csproj
     ├── app.manifest                    PerMonitorV2 DPI
-    ├── Package.appxmanifest            identity, capabilities, Share Target
-    ├── App.xaml / App.xaml.cs          app lifetime, share-target activation
+    ├── Program.cs                      Main: single instance, hands later launches over
+    ├── App.xaml / App.xaml.cs          app lifetime, files from Send To
     ├── MainWindow.xaml / .cs           title bar, frame, minimize-to-tray
-    ├── Assets/                         MSIX logos, Fluent style, from Assets/Icon/Windows
+    ├── Assets/Send.ico                 Fluent style, from Assets/Icon/Windows
     ├── Core/
     │   ├── IWoooshCore.cs              the DESIGN.md §4 contract
     │   ├── CoreModels.cs               Config, PeerRef, TrustedPeerInfo, FileMeta, …
@@ -75,7 +93,10 @@ Windows/
     │   ├── StorageRouter.cs            Downloads, no-overwrite naming, Mark of the Web
     │   ├── PowerManagement.cs          SetThreadExecutionState during transfers
     │   ├── TrayIcon.cs                 Shell_NotifyIcon, open / quit
-    │   └── DpapiKeyStore.cs            DPAPI-wrapped identity key
+    │   ├── DpapiKeyStore.cs            DPAPI-wrapped identity key
+    │   ├── AppDataDirectory.cs         %LOCALAPPDATA%\Wooosh, in place of ApplicationData
+    │   ├── SendToShortcut.cs           Send.lnk in the Send To menu
+    │   └── CommandLine.cs              file paths from the command line
     ├── Settings/SettingsRepository.cs
     ├── Localization/
     │   ├── Strings.cs                  the only way text enters the UI
@@ -172,9 +193,9 @@ term per concept, and Android positional specifiers (`%1$s`) were rewritten to .
 composite format (`{0}`). **Nothing fell back to English**: every string that has an
 Android counterpart carries its real translation in all 14 locales.
 
-Six strings have no Android counterpart because they are Windows-only, and were translated
+Five strings have no Android counterpart because they are Windows-only, and were translated
 for this shell rather than reused: `TrayOpen`, `TrayQuit`, `SettingsSectionBackground`,
-`SettingsKeepRunning`, `SettingsKeepRunningDesc` and `ShareTargetTitle`. They are short and
+`SettingsKeepRunning` and `SettingsKeepRunningDesc`. They are short and
 mechanical, but they have not been reviewed by anyone else, so they are the first thing to
 check if a translator ever looks at this.
 
@@ -255,14 +276,13 @@ Everything below is marked with a `TODO(...)` comment at the place it belongs.
    is no relay setting on Windows yet. Apple and Android both let the user choose a public
    relay, their own, or off, and hide the internet path entirely when it is off. Windows
    shows it unconditionally. The strings for the setting have not been ported either.
-5. **`TODO(share)`: Share Target activation.** The manifest declaration is in place; the
-   handler in `App.xaml.cs` only logs. It has to stage the `StorageItems` into the local
-   folder and report the share operation complete *before* the transfer finishes, or
-   Windows keeps the source app blocked for the whole send.
-6. **File Explorer context-menu verb.** DESIGN.md §8 asks for a "Send" verb on
-   right-click. On Windows 11 that is a sparse-package `IExplorerCommand` COM server, which
-   is a project of its own. `Package.appxmanifest` documents what it needs. An XML-only stub
-   would register a verb that does nothing, which is worse than no verb.
+5. **`TODO(share)`: files from Send To.** `Send.lnk` is written on every launch and the
+   paths reach `App.Receive`, first launch or handed over from a second one, but it only
+   logs them until the send flow (item 3) exists. There is no uninstaller, so deleting
+   `Send.exe` leaves a dead Send To entry until the user deletes `Send.lnk`.
+6. **A top-level right-click verb.** Send To covers right-click. A first-level Windows 11
+   context-menu entry needs an `IExplorerCommand` COM server with package identity (a
+   sparse package), which an unpackaged EXE does not have. Not planned.
 7. **`TODO(pairing)`: QR rendering.** There is no QR encoder in the box on Windows. The
    pairing page shows the payload as copyable text and leaves a placeholder where the code
    goes. Filling it means picking a dependency, which is a real decision rather than a stub.
@@ -271,13 +291,10 @@ Everything below is marked with a `TODO(...)` comment at the place it belongs.
    `KeyChanged` in particular must be prominent and must never offer a silent re-pin.
 9. **`TODO(DESIGN.md §6)`: the `Send/<date>` subfolder** for receives of more than 20
    files.
-10. **Logo scale variants.** `Assets/*.png` are the Fluent-style Send icon from
-   `Assets/Icon/Windows/` (unplated, one drawing at every size), with
-   `targetsize-16/24/32/48/256` taskbar icons. Tiles and the splash are 100% scale only:
-   add `.scale-125/150/200/400` variants.
-11. **Package identity.** `Publisher="CN=Atelier"` matches the self-signed certificate CI
-    signs with, so testers must trust its `.cer` (Trusted People) before installing. A
-    publicly trusted certificate would remove that step; `Publisher` must change to match it.
+10. **Window icon.** `Assets/Send.ico` (16 to 256 px, from `Assets/Icon/Windows/`) is the
+   executable's icon, which Explorer and the taskbar use. The window and tray icon do not
+   set one explicitly yet.
+11. **Code signing.** `Send.exe` is unsigned (see [Distribution](#distribution)).
 12. **UDP discovery fallback** (PROTOCOL.md §3.2, broadcast on 44777). Not implemented here.
     Neither is it implemented on Android, so the shells are consistent.
 13. **No tests.** There is no test project. `PeerRegistry`, `TxtRecord`, `PluralRules` and
@@ -299,9 +316,12 @@ failure rather than a bug:
   `<EnableDefaultPRIResourceItems>false</EnableDefaultPRIResourceItems>` and list them
   explicitly. Adding `<PRIResource>` items *without* disabling the default first produces
   duplicate-item errors.
-- **`ms-resource:///Resources/ShareTargetTitle`** in `Package.appxmanifest`. The resource map
-  path is the part most likely to be wrong; a bad `ms-resource` reference fails packaging,
-  not runtime.
+- **Single-file resources.** `IncludeAllContentForSelfExtract` should put `Send.pri` beside
+  the extracted code, where `ResourceLoader` and the XAML loader look. If strings come up
+  empty or a page fails to load, this is why.
+- **Send To and redirection.** `SendToShortcut` drives `IShellLinkW` through classic COM
+  interop with a hand-declared vtable, and `Program.Redirect` is Microsoft's documented
+  `CoWaitForMultipleObjects` pattern. Both compile; neither has run.
 - **`ResourceLoader` default subtree.** `Strings.cs` uses `new ResourceLoader()`, which
   resolves against the `Resources` subtree. Correct for `Resources.resw`, unverified.
 - **The `StreamSocketListener` port trick** in `DnssdAdvertiser`. Binding TCP on the same

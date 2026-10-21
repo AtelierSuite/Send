@@ -45,7 +45,7 @@ After changing `Core/src`:
 - Always commit after a major change.
 
 **Platform**
-- iOS on the App Store, Android on Google Play, macOS notarized Developer ID, Windows sideloaded MSIX.
+- iOS on the App Store, Android on Google Play (internal testing via `.github/workflows/android-internal.yml`), macOS notarized Developer ID, Windows a standalone unpackaged `Send.exe` (`.github/workflows/windows.yml`).
 - Minimum OS 27 on iOS and macOS. Liquid Glass unconditionally, no `#available` fallbacks.
 - Native UI only: SwiftUI, Compose, WinUI 3. Accent follows the system (no `AccentColor` asset; Material You).
 
@@ -65,7 +65,7 @@ After changing `Core/src`:
 - Received files route automatically: iOS media to Photos, documents to Files; elsewhere to Downloads. Hash-verified before leaving staging.
 - Preserve original filenames. Never rename or transcode.
 - Keep the screen awake during transfers on mobile.
-- Share extension or share target on every platform.
+- Share extension or share target on every platform; on Windows, the Send To menu.
 - Fast for 500 kB and 4 GB files, and any file count.
 
 **Security**
