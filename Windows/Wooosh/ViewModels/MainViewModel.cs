@@ -75,7 +75,7 @@ public sealed partial class MainViewModel : ObservableObject, IAsyncDisposable
     public async Task StartAsync()
     {
         var settings = Settings.Current;
-        var localFolder = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
+        var localFolder = Wooosh.Platform.AppDataDirectory.Root;
 
         var config = new CoreConfig
         {

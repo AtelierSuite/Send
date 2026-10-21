@@ -1,5 +1,7 @@
-using Windows.Storage;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Wooosh.Core;
+using Wooosh.Platform;
 
 namespace Wooosh.Settings;
 
@@ -19,11 +21,9 @@ public sealed record WoooshSettings
 /// </summary>
 public sealed class SettingsRepository
 {
-    private const string DisplayNameKey = "displayName";
-    private const string VisibilityKey = "visibility";
-    private const string KeepRunningKey = "keepRunningInBackground";
+    private static readonly string FilePath = Path.Combine(AppDataDirectory.Root, "settings.json");
 
-    private readonly ApplicationDataContainer _store = ApplicationData.Current.LocalSettings;
+    private readonly Stored _store = Load();
 
     public event Action? Changed;
 
@@ -31,17 +31,17 @@ public sealed class SettingsRepository
     {
         Current = new WoooshSettings
         {
-            DisplayName = _store.Values[DisplayNameKey] as string is { Length: > 0 } name
+            DisplayName = _store.DisplayName is { Length: > 0 } name
                 ? name
                 : Environment.MachineName,
             // Paired only by default: a fresh install must not accept strangers unopted-in.
-            Visibility = (_store.Values[VisibilityKey] as string) switch
+            Visibility = _store.Visibility switch
             {
                 "everyone" => CoreVisibility.Everyone,
                 "off" => CoreVisibility.Off,
                 _ => CoreVisibility.PairedOnly,
             },
-            KeepRunningInBackground = _store.Values[KeepRunningKey] as bool? ?? true,
+            KeepRunningInBackground = _store.KeepRunningInBackground ?? true,
         };
     }
 
@@ -55,7 +55,8 @@ public sealed class SettingsRepository
             return;
         }
 
-        _store.Values[DisplayNameKey] = trimmed;
+        _store.DisplayName = trimmed;
+        Save();
         Current = Current with { DisplayName = trimmed };
         Changed?.Invoke();
     }
@@ -67,12 +68,13 @@ public sealed class SettingsRepository
             return;
         }
 
-        _store.Values[VisibilityKey] = value switch
+        _store.Visibility = value switch
         {
             CoreVisibility.PairedOnly => "pairedOnly",
             CoreVisibility.Off => "off",
             _ => "everyone",
         };
+        Save();
         Current = Current with { Visibility = value };
         Changed?.Invoke();
     }
@@ -84,8 +86,42 @@ public sealed class SettingsRepository
             return;
         }
 
-        _store.Values[KeepRunningKey] = value;
+        _store.KeepRunningInBackground = value;
+        Save();
         Current = Current with { KeepRunningInBackground = value };
         Changed?.Invoke();
+    }
+
+    private static Stored Load()
+    {
+        try
+        {
+            return JsonSerializer.Deserialize<Stored>(File.ReadAllText(FilePath)) ?? new Stored();
+        }
+        catch (Exception e) when (e is IOException or JsonException or UnauthorizedAccessException)
+        {
+            // Missing or unreadable: defaults, which are the safe values (paired only).
+            return new Stored();
+        }
+    }
+
+    private void Save()
+    {
+        // Temp-and-swap: a crash mid-write must not leave a truncated file that resets visibility.
+        var temporary = FilePath + ".tmp";
+        File.WriteAllText(temporary, JsonSerializer.Serialize(_store));
+        File.Move(temporary, FilePath, overwrite: true);
+    }
+
+    private sealed class Stored
+    {
+        [JsonPropertyName("displayName")]
+        public string? DisplayName { get; set; }
+
+        [JsonPropertyName("visibility")]
+        public string? Visibility { get; set; }
+
+        [JsonPropertyName("keepRunningInBackground")]
+        public bool? KeepRunningInBackground { get; set; }
     }
 }

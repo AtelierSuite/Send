@@ -1,5 +1,4 @@
 using System.Security.Cryptography;
-using Windows.Storage;
 
 namespace Wooosh.Platform;
 
@@ -21,7 +20,7 @@ public sealed class DpapiKeyStore
 
     public DpapiKeyStore()
     {
-        _path = Path.Combine(ApplicationData.Current.LocalFolder.Path, FileName);
+        _path = Path.Combine(AppDataDirectory.Root, FileName);
     }
 
     public byte[]? LoadIdentity()
