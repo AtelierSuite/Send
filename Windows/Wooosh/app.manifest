@@ -6,7 +6,9 @@
     <windowsSettings>
       <!-- WinUI 3 requires PerMonitorV2; anything less blurs the device list on mixed-DPI setups. -->
       <dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">PerMonitorV2</dpiAwareness>
-      <dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true/PM</dpiAwareness>
+      <!-- The 2005 namespace only knows dpiAware; any other element there fails the
+           whole manifest with a side-by-side configuration error before Send starts. -->
+      <dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true/PM</dpiAware>
     </windowsSettings>
   </application>
 

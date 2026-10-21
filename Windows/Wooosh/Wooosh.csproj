@@ -7,6 +7,10 @@
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>Wooosh</RootNamespace>
     <AssemblyName>Send</AssemblyName>
+    <!-- Send.exe's version resource: AssemblyTitle becomes the File description. -->
+    <AssemblyTitle>Atelier Send</AssemblyTitle>
+    <Product>Atelier Send</Product>
+    <Copyright>(c) Justin Xin 2026</Copyright>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\Send.ico</ApplicationIcon>
     <!-- WinUI 3 has no AnyCPU: the Windows App SDK ships per-architecture native bits. -->
