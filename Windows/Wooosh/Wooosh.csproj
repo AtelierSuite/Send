@@ -10,6 +10,7 @@
     <!-- Send.exe's version resource: AssemblyTitle becomes the File description. -->
     <AssemblyTitle>Atelier Send</AssemblyTitle>
     <Product>Atelier Send</Product>
+    <Company>Atelier</Company>
     <Copyright>(c) Justin Xin 2026</Copyright>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\Send.ico</ApplicationIcon>
