@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
   <!--
     The back of the folder: its tab and the panel behind the file. The folder
-    and file run 212 to 812, taller than the Tables grid, because the narrow
-    top of the file leaves its top margin looking larger. Centred on the canvas. Drawn in white: Icon Composer tints and
+    and file together are as tall as the Tables grid, but sit 24 higher
+    (220 to 756): the folder body carries the weight, so centring the
+    bounds reads as sitting low. Drawn in white: Icon Composer tints and
     lights the layer, so the artwork carries only shape.
   -->
   <g fill="#FFFFFF">
-    <path d="M288 302H436A36 36 0 0 1 472 338V356H724A48 48 0 0 1 772 404V764A48 48 0 0 1 724 812H300A48 48 0 0 1 252 764V338A36 36 0 0 1 288 302Z"/>
+    <path d="M288 300H436A36 36 0 0 1 472 336V348H724A48 48 0 0 1 772 396V708A48 48 0 0 1 724 756H300A48 48 0 0 1 252 708V336A36 36 0 0 1 288 300Z"/>
   </g>
 </svg>

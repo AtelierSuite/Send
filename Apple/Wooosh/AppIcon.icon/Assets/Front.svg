@@ -4,6 +4,6 @@
     Icon Composer tints and lights the layer, so the artwork carries only shape.
   -->
   <g fill="#FFFFFF">
-    <path d="M300 446H724A48 48 0 0 1 772 494V764A48 48 0 0 1 724 812H300A48 48 0 0 1 252 764V494A48 48 0 0 1 300 446Z"/>
+    <path d="M300 428H724A48 48 0 0 1 772 476V708A48 48 0 0 1 724 756H300A48 48 0 0 1 252 708V476A48 48 0 0 1 300 428Z"/>
   </g>
 </svg>
