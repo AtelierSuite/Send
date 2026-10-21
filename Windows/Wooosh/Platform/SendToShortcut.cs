@@ -32,7 +32,7 @@ public static partial class SendToShortcut
 
         Marshal.ThrowExceptionForHR(
             CoCreateInstance(ShellLinkClass, IntPtr.Zero, InProcessServer, UnknownInterface, out var unknown));
-        var link = (ComObject)new StrategyBasedComWrappers()
+        var link = new StrategyBasedComWrappers()
             .GetOrCreateObjectForComInstance(unknown, CreateObjectFlags.UniqueInstance);
         Marshal.Release(unknown);
         try
@@ -45,7 +45,7 @@ public static partial class SendToShortcut
         }
         finally
         {
-            link.FinalRelease();
+            ((ComObject)link).FinalRelease();
         }
     }
 
