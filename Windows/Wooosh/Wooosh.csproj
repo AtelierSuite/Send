@@ -47,8 +47,8 @@
   <!--
     wooosh_core.dll (the Rust core, built for the same architecture) is loaded by
     Core/Interop/NativeMethods.cs. It is not committed: CI builds it into
-    Native\<Platform>\ (.github/workflows/windows.yml), and by hand it is
-    `cargo build --release -p wooosh-core --target <arch>-pc-windows-msvc`.
+    Native\<Platform>\ (.github/workflows/windows.yml); see Windows/README.md
+    for building it by hand.
     Content rather than None so the MSIX payload carries it.
   -->
   <ItemGroup Condition="Exists('Native\$(Platform)\wooosh_core.dll')">

@@ -45,14 +45,14 @@ jobs:
         with:
           tool: cargo-ndk
 
-      # The committed jniLibs are a developer convenience and carry no rendezvous
-      # URL, so a release always rebuilds the core. Mirrors the Android lane of
-      # Core/build-bindings.sh, which also needs xcodebuild and cannot run here.
+      # The committed jniLibs can lag the Rust source, so a release always rebuilds
+      # the core. Mirrors the Android lane of Core/build-bindings.sh, which also
+      # needs xcodebuild and cannot run here.
       - name: Build core and Kotlin bindings
         working-directory: Core
-        env:
-          ANDROID_NDK_HOME: ${{ env.ANDROID_NDK_LATEST_HOME }}
         run: |
+          # Set by the runner image, so invisible to the env context in YAML.
+          export ANDROID_NDK_HOME="$ANDROID_NDK_LATEST_HOME"
           cargo build --release -p wooosh-core
           rm -rf bindings/kotlin
           cargo run --release -p uniffi-bindgen -- generate \
@@ -63,11 +63,12 @@ jobs:
           find dist/jniLibs -name '*.so' ! -name 'libwooosh_core.so' -delete
 
           APP=../Android/app/src/main
-          cp bindings/kotlin/uniffi/wooosh_core/wooosh_core.kt "$APP/java/uniffi/wooosh_core/wooosh_core.kt"
-          rm -rf "$APP/jniLibs" && cp -R dist/jniLibs "$APP/jniLibs"
-          if ! git diff --quiet -- "$APP/java/uniffi"; then
+          KT=java/uniffi/wooosh_core/wooosh_core.kt
+          if ! cmp -s "bindings/kotlin/uniffi/wooosh_core/wooosh_core.kt" "$APP/$KT"; then
             echo "::warning::Committed Kotlin bindings are stale. Run Core/build-bindings.sh and re-copy them into Android/app/src/main/."
           fi
+          cp bindings/kotlin/uniffi/wooosh_core/wooosh_core.kt "$APP/$KT"
+          rm -rf "$APP/jniLibs" && cp -R dist/jniLibs "$APP/jniLibs"
 
       - name: Decode upload key
         env:
@@ -100,7 +101,9 @@ jobs:
           packageName: com.tsubuzaki.WoooshGo
           releaseFiles: Android/app/build/outputs/bundle/release/app-release.aab
           track: internal
-          status: ${{ inputs.status || 'completed' }}
+          # PLAY_RELEASE_STATUS=draft while the app has never been rolled out,
+          # because Play then rejects every other status.
+          status: ${{ inputs.status || vars.PLAY_RELEASE_STATUS || 'completed' }}
 
       - if: always()
         run: rm -f "$RUNNER_TEMP/upload.jks"
