@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    The back of the folder: its tab and the panel behind the file. The folder
+    and file together fill the same margins as the Tables icon, 244 to 780
+    tall and centred on the canvas. Drawn in white: Icon Composer tints and
+    lights the layer, so the artwork carries only shape.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M288 324H436A36 36 0 0 1 472 360V372H724A48 48 0 0 1 772 420V732A48 48 0 0 1 724 780H300A48 48 0 0 1 252 732V360A36 36 0 0 1 288 324Z"/>
+  </g>
+</svg>
