@@ -104,16 +104,10 @@ def text_center(d, cx, y, s, f, fill=WHITE):
 def feature_graphic():
     w, h = 1024, 500
     im = gradient(w, h).convert("RGBA")
-    # A large, faint copy of the glyph bleeds off the right edge for depth.
-    big = glyph(760)
-    faint = big.copy()
-    faint.putalpha(big.getchannel("A").point(lambda v: round(v * 0.22)))
-    im.alpha_composite(faint, (560, -150))
-    im.alpha_composite(glyph(300), (40, 100))
-    d = ImageDraw.Draw(im)
-    d.text((330, 150), "Send", font=font(112, 700), fill=WHITE)
-    d.text((336, 290), "Encrypted file sharing between", font=font(34, 500), fill=WHITE)
-    d.text((336, 334), "your devices. No accounts.", font=font(34, 500), fill=WHITE)
+    # The glyph's 1024 canvas already carries the icon's padding and its
+    # deliberate lift, so centring the canvas centres the artwork as the icon does.
+    size = h
+    im.alpha_composite(glyph(size), ((w - size) // 2, 0))
     im.convert("RGB").save(os.path.join(HERE, "Feature-Graphic-1024x500.png"))
 
 
