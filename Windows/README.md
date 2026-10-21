@@ -235,8 +235,8 @@ Everything below is marked with a `TODO(...)` comment at the place it belongs.
    indistinguishable, which PROTOCOL.md §4.1.2 calls a conformance bug).
 2. **`wooosh_core.dll` itself.** Build it per architecture
    (`cargo build --release --target x86_64-pc-windows-msvc` and `aarch64-pc-windows-msvc`)
-   and restore the commented-out item group in `Wooosh.csproj` so it travels with the
-   package. Do not commit the DLL.
+   into `Wooosh/Native/<Platform>/`, where `Wooosh.csproj` packages it if present.
+   `.github/workflows/windows.yml` does this for x64 and ARM64. Do not commit the DLL.
 3. **`TODO(send)`: the send flow.** File picker, then `connect_peer` with the pinned key
    from `trusted_peers()`, then `send`. Both calls block and must run off the UI thread.
    `OtherDevicePage` has the picker half of this written already.

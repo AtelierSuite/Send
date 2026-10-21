@@ -60,3 +60,4 @@ BundleArtifacts/
 *.appxupload
 *.msixupload
 *.pfx
+Windows/Wooosh/Native/

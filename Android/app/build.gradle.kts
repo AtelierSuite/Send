@@ -12,15 +12,31 @@ android {
         applicationId = "com.tsubuzaki.WoooshGo"
         minSdk = 26
         targetSdk = 37
-        versionCode = 1
-        versionName = "0.1"
+        // CI passes both (.github/workflows/android-internal.yml); Play rejects a
+        // versionCode it has already seen.
+        versionCode = (project.findProperty("wooosh.versionCode") ?: "1").toString().toInt()
+        versionName = (project.findProperty("wooosh.versionName") ?: "0.1").toString()
         // Play Console → App integrity → Google Cloud project. 0 leaves Play
         // Integrity off, so the device is admitted as Unverified (PROTOCOL.md §9.2).
         buildConfigField(
             "long",
             "PLAY_CLOUD_PROJECT_NUMBER",
-            (project.findProperty("wooosh.playCloudProjectNumber") ?: "0").toString() + "L",
+            (project.findProperty("wooosh.playCloudProjectNumber")?.toString()?.takeIf { it.isNotBlank() } ?: "0") + "L",
         )
+    }
+
+    // The upload key, not the app signing key: Play App Signing re-signs for
+    // distribution. Absent locally, so release builds there stay unsigned.
+    val uploadKeystore = providers.environmentVariable("WOOOSH_UPLOAD_KEYSTORE").orNull
+    signingConfigs {
+        if (uploadKeystore != null) {
+            create("upload") {
+                storeFile = file(uploadKeystore)
+                storePassword = providers.environmentVariable("WOOOSH_UPLOAD_KEYSTORE_PASSWORD").get()
+                keyAlias = providers.environmentVariable("WOOOSH_UPLOAD_KEY_ALIAS").get()
+                keyPassword = providers.environmentVariable("WOOOSH_UPLOAD_KEY_PASSWORD").get()
+            }
+        }
     }
 
     buildTypes {
@@ -28,6 +44,9 @@ android {
             isDebuggable = true
         }
         release {
+            if (uploadKeystore != null) {
+                signingConfig = signingConfigs.getByName("upload")
+            }
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
