@@ -6,19 +6,18 @@
   IgnorableNamespaces="uap rescap">
 
   <!--
-    Publisher must match the certificate the package is signed with. "CN=Tsubuzaki" is a
-    placeholder for a local self-signed test certificate; replace it (and the certificate)
-    before doing anything but F5 on a dev machine.
+    Publisher must equal the subject of the certificate the package is signed with: the
+    self-signed CN=Atelier certificate in CI's WINDOWS_CERTIFICATE_BASE64. Change both together.
   -->
   <Identity
     Name="com.tsubuzaki.Wooosh"
-    Publisher="CN=Tsubuzaki"
+    Publisher="CN=Atelier"
     Version="1.0.0.0" />
 
   <Properties>
     <!-- The product name is never translated (COPY_STYLE.md §2), so it is literal here. -->
     <DisplayName>Send</DisplayName>
-    <PublisherDisplayName>Tsubuzaki</PublisherDisplayName>
+    <PublisherDisplayName>Atelier</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

@@ -275,8 +275,9 @@ Everything below is marked with a `TODO(...)` comment at the place it belongs.
    `Assets/Icon/Windows/` (unplated, one drawing at every size), with
    `targetsize-16/24/32/48/256` taskbar icons. Tiles and the splash are 100% scale only:
    add `.scale-125/150/200/400` variants.
-11. **Package identity.** `Publisher="CN=Tsubuzaki"` is a placeholder for a local
-    self-signed test certificate. Replace it before doing anything but F5 on a dev machine.
+11. **Package identity.** `Publisher="CN=Atelier"` matches the self-signed certificate CI
+    signs with, so testers must trust its `.cer` (Trusted People) before installing. A
+    publicly trusted certificate would remove that step; `Publisher` must change to match it.
 12. **UDP discovery fallback** (PROTOCOL.md §3.2, broadcast on 44777). Not implemented here.
     Neither is it implemented on Android, so the shells are consistent.
 13. **No tests.** There is no test project. `PeerRegistry`, `TxtRecord`, `PluralRules` and
