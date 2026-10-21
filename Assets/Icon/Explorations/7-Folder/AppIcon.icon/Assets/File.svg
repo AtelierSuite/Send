@@ -1,10 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
   <!--
-    The file standing in the folder, its top right corner cut away. Its lower
-    half is hidden behind the front panel. Drawn in white: Icon Composer tints
-    and lights the layer, so the artwork carries only shape.
+    The file standing in the folder, its top right corner cut away. It stops
+    just inside the front panel's top edge: the panel is translucent, so any
+    more of the file would show through it.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape.
   -->
   <g fill="#FFFFFF">
-    <path d="M404 244H572L656 328V508A36 36 0 0 1 620 544H404A36 36 0 0 1 368 508V280A36 36 0 0 1 404 244Z"/>
+    <path d="M404 244H572L656 328V456H368V280A36 36 0 0 1 404 244Z"/>
   </g>
 </svg>

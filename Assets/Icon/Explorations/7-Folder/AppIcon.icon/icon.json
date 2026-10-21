@@ -28,7 +28,6 @@
           "hidden" : false,
           "image-name" : "Front.svg",
           "name" : "Front",
-          "opacity" : 0.95,
           "position-specializations" : [
             {
               "value" : {
@@ -48,6 +47,15 @@
                   0
                 ]
               }
+            }
+          ],
+          "opacity-specializations" : [
+            {
+              "value" : 0.5
+            },
+            {
+              "appearance" : "dark",
+              "value" : 0.85
             }
           ]
         },
@@ -101,7 +109,7 @@
           "name" : "Back",
           "opacity-specializations" : [
             {
-              "value" : 0.35
+              "value" : 0.25
             },
             {
               "appearance" : "dark",
