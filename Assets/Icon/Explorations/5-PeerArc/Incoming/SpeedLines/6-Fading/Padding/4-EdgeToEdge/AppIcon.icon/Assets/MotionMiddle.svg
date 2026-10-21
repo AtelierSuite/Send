@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Fading, Edge to Edge: The folder fills the plate; compact streaks fit the strip above the file.
+    Layer: MotionMiddle.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M450.6 213.7H451.7A13.45 13.45 0 0 1 465.2 227.1V227.1A13.45 13.45 0 0 1 451.7 240.6H450.6A13.45 13.45 0 0 1 437.2 227.1V227.1A13.45 13.45 0 0 1 450.6 213.7Z" opacity="0.32"/>
+    <path d="M512.0 185.3H512.0A14.00 14.00 0 0 1 526.0 199.3V212.4A14.00 14.00 0 0 1 512.0 226.4H512.0A14.00 14.00 0 0 1 498.0 212.4V199.3A14.00 14.00 0 0 1 512.0 185.3Z" opacity="0.5"/>
+    <path d="M572.3 213.7H573.4A13.45 13.45 0 0 1 586.8 227.1V227.1A13.45 13.45 0 0 1 573.4 240.6H572.3A13.45 13.45 0 0 1 558.8 227.1V227.1A13.45 13.45 0 0 1 572.3 213.7Z" opacity="0.32"/>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Fading, Three: Full-size folder; the shipped three streaks sit in the padding above the file.
+    Layer: MotionMiddle.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M442.0 242.0H442.0A16.00 16.00 0 0 1 458.0 258.0V260.5A16.00 16.00 0 0 1 442.0 276.5H442.0A16.00 16.00 0 0 1 426.0 260.5V258.0A16.00 16.00 0 0 1 442.0 242.0Z" opacity="0.32"/>
+    <path d="M512.0 205.6H512.0A16.00 16.00 0 0 1 528.0 221.6V242.3A16.00 16.00 0 0 1 512.0 258.3H512.0A16.00 16.00 0 0 1 496.0 242.3V221.6A16.00 16.00 0 0 1 512.0 205.6Z" opacity="0.5"/>
+    <path d="M582.0 242.0H582.0A16.00 16.00 0 0 1 598.0 258.0V260.5A16.00 16.00 0 0 1 582.0 276.5H582.0A16.00 16.00 0 0 1 566.0 260.5V258.0A16.00 16.00 0 0 1 582.0 242.0Z" opacity="0.32"/>
+  </g>
+</svg>

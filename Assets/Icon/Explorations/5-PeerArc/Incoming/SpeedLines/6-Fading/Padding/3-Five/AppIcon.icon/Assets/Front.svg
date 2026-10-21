@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Fading, Five: Full-size folder; five short streaks spread across the padding above the folder.
+    Layer: Front.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M296.9 564.8H727.1A50.25 50.25 0 0 1 777.3 615.0V849.8A50.25 50.25 0 0 1 727.1 900.0H296.9A50.25 50.25 0 0 1 246.7 849.8V615.0A50.25 50.25 0 0 1 296.9 564.8Z" opacity="0.95"/>
+  </g>
+</svg>
