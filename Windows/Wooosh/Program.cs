@@ -28,7 +28,7 @@ public static partial class Program
 
         primary.Activated += OnRedirected;
 
-        Application.Start(_ =>
+        Application.Start(callback =>
         {
             SynchronizationContext.SetSynchronizationContext(
                 new DispatcherQueueSynchronizationContext(DispatcherQueue.GetForCurrentThread()));
