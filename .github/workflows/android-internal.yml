@@ -9,7 +9,8 @@ on:
         options: [completed, draft]
         default: completed
   push:
-    tags: ["v*"]
+    branches: [main]
+    paths: ["Android/**", "Core/**", ".github/workflows/android-internal.yml"]
 
 concurrency:
   group: android-internal
@@ -85,11 +86,8 @@ jobs:
           WOOOSH_UPLOAD_KEY_PASSWORD: ${{ secrets.ANDROID_UPLOAD_KEY_PASSWORD }}
         run: |
           VERSION_CODE=$(( ${{ github.run_number }} + ${{ vars.ANDROID_VERSION_CODE_OFFSET || 0 }} ))
-          ARGS=(-Pwooosh.versionCode="$VERSION_CODE" -Pwooosh.playCloudProjectNumber="${{ vars.PLAY_CLOUD_PROJECT_NUMBER }}")
-          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
-            ARGS+=(-Pwooosh.versionName="${GITHUB_REF_NAME#v}")
-          fi
-          ./gradlew bundleRelease "${ARGS[@]}"
+          ./gradlew bundleRelease -Pwooosh.versionCode="$VERSION_CODE" \
+            -Pwooosh.playCloudProjectNumber="${{ vars.PLAY_CLOUD_PROJECT_NUMBER }}"
 
       - uses: actions/upload-artifact@v4
         with:

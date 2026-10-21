@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    tags: ["v*"]
     paths: ["Windows/**", "Core/**", ".github/workflows/windows.yml"]
   pull_request:
     paths: ["Windows/**", "Core/**", ".github/workflows/windows.yml"]
