@@ -6,22 +6,34 @@
     <!-- WinAppSDK 1.7 supports back to 1809; nothing here needs a newer floor. -->
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>Wooosh</RootNamespace>
-    <AssemblyName>Wooosh</AssemblyName>
+    <AssemblyName>Send</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\Send.ico</ApplicationIcon>
     <!-- WinUI 3 has no AnyCPU: the Windows App SDK ships per-architecture native bits. -->
     <Platforms>x86;x64;ARM64</Platforms>
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == '' and '$(Platform)' != '' and '$(Platform)' != 'AnyCPU'">win-$(Platform.ToLowerInvariant())</RuntimeIdentifier>
     <UseWinUI>true</UseWinUI>
+    <!-- Unpackaged: one Send.exe with .NET, the Windows App SDK and the core inside,
+         nothing to install first. MSIX tooling stays on because it generates the PRI
+         the localized strings and compiled XAML load from. -->
     <EnableMsixTooling>true</EnableMsixTooling>
-    <WindowsPackageType>MSIX</WindowsPackageType>
+    <WindowsPackageType>None</WindowsPackageType>
+    <SelfContained>true</SelfContained>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <!-- Native DLLs and the PRI cannot run from inside the bundle; they extract to a
+         per-user cache on first launch, beside the managed code that looks for them. -->
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <DebugType>embedded</DebugType>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <!-- [LibraryImport] in Core/Interop and Platform emits unsafe P/Invoke stubs. -->
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ImplicitUsings>enable</ImplicitUsings>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <AppxBundlePlatforms>x64|ARM64</AppxBundlePlatforms>
-    <GenerateTestArtifacts>False</GenerateTestArtifacts>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,8 +45,6 @@
 
   <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
-    <!-- Package.appxmanifest is picked up by the MSIX tooling and needs no entry here. -->
-    <Content Include="Assets\**\*.png" />
   </ItemGroup>
 
   <!--
@@ -49,7 +59,6 @@
     Core/Interop/NativeMethods.cs. It is not committed: CI builds it into
     Native\<Platform>\ (.github/workflows/windows.yml); see Windows/README.md
     for building it by hand.
-    Content rather than None so the MSIX payload carries it.
   -->
   <ItemGroup Condition="Exists('Native\$(Platform)\wooosh_core.dll')">
     <Content Include="Native\$(Platform)\wooosh_core.dll">

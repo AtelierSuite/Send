@@ -1,7 +1,7 @@
 {
   "profiles": {
-    "Wooosh": {
-      "commandName": "MsixPackage"
+    "Send": {
+      "commandName": "Project"
     }
   }
 }

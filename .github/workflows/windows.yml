@@ -49,38 +49,18 @@ jobs:
 
       - uses: microsoft/setup-msbuild@v2
 
-      # Signed only when a certificate is configured, so fork PRs (no secrets)
-      # still prove the build. The certificate subject must equal the
-      # Publisher in Package.appxmanifest.
-      - name: Build MSIX
-        env:
-          CERT_BASE64: ${{ secrets.WINDOWS_CERTIFICATE_BASE64 }}
-          CERT_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
+      - name: Publish Send.exe
         run: |
-          $msbuildArgs = @(
-            'Windows\Wooosh\Wooosh.csproj', '-restore',
-            '-p:Configuration=Release',
-            '-p:Platform=${{ matrix.platform }}',
-            '-p:RuntimeIdentifier=${{ matrix.rid }}',
-            '-p:GenerateAppxPackageOnBuild=true',
-            '-p:UapAppxPackageBuildMode=SideloadOnly',
-            '-p:AppxBundle=Never',
-            "-p:AppxPackageDir=$env:GITHUB_WORKSPACE\AppPackages\"
-          )
-          if ($env:CERT_BASE64) {
-            $pfx = Join-Path $env:RUNNER_TEMP 'send.pfx'
-            [IO.File]::WriteAllBytes($pfx, [Convert]::FromBase64String($env:CERT_BASE64))
-            $msbuildArgs += '-p:AppxPackageSigningEnabled=true', "-p:PackageCertificateKeyFile=$pfx", "-p:PackageCertificatePassword=$env:CERT_PASSWORD"
-          } else {
-            $msbuildArgs += '-p:AppxPackageSigningEnabled=false'
-          }
-          msbuild @msbuildArgs
+          msbuild Windows\Wooosh\Wooosh.csproj -restore -t:Publish `
+            -p:Configuration=Release `
+            -p:Platform=${{ matrix.platform }} `
+            -p:RuntimeIdentifier=${{ matrix.rid }} `
+            "-p:PublishDir=$env:GITHUB_WORKSPACE/publish/"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Get-ChildItem publish -Recurse -File | Format-Table Length, FullName -AutoSize | Out-String -Width 300
 
       - uses: actions/upload-artifact@v4
         with:
-          name: send-windows-${{ matrix.platform }}
-          path: AppPackages/**
-
-      - if: always()
-        run: Remove-Item -Force -ErrorAction SilentlyContinue (Join-Path $env:RUNNER_TEMP 'send.pfx')
+          name: Send-windows-${{ matrix.platform }}
+          path: publish/Send.exe
+          if-no-files-found: error
