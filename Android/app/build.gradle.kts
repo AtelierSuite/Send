@@ -15,7 +15,7 @@ android {
         // CI passes both (.github/workflows/android-internal.yml); Play rejects a
         // versionCode it has already seen.
         versionCode = (project.findProperty("wooosh.versionCode") ?: "1").toString().toInt()
-        versionName = (project.findProperty("wooosh.versionName") ?: "0.1").toString()
+        versionName = (project.findProperty("wooosh.versionName") ?: "1.0").toString()
         // Play Console → App integrity → Google Cloud project. 0 leaves Play
         // Integrity off, so the device is admitted as Unverified (PROTOCOL.md §9.2).
         buildConfigField(
