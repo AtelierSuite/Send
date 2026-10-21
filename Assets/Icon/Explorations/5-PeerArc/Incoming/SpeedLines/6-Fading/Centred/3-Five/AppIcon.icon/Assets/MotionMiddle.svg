@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Fading, Five: Folder and file centred; five short streaks arched across the padding.
+    Layer: MotionMiddle.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M379.0 232.1H381.0A11.00 11.00 0 0 1 392.0 243.1V243.1A11.00 11.00 0 0 1 381.0 254.1H379.0A11.00 11.00 0 0 1 368.0 243.1V243.1A11.00 11.00 0 0 1 379.0 232.1Z" opacity="0.32"/>
+    <path d="M446.0 198.1H446.0A12.00 12.00 0 0 1 458.0 210.1V214.1A12.00 12.00 0 0 1 446.0 226.1H446.0A12.00 12.00 0 0 1 434.0 214.1V210.1A12.00 12.00 0 0 1 446.0 198.1Z" opacity="0.4"/>
+    <path d="M512.0 174.1H512.0A12.00 12.00 0 0 1 524.0 186.1V198.1A12.00 12.00 0 0 1 512.0 210.1H512.0A12.00 12.00 0 0 1 500.0 198.1V186.1A12.00 12.00 0 0 1 512.0 174.1Z" opacity="0.5"/>
+    <path d="M578.0 198.1H578.0A12.00 12.00 0 0 1 590.0 210.1V214.1A12.00 12.00 0 0 1 578.0 226.1H578.0A12.00 12.00 0 0 1 566.0 214.1V210.1A12.00 12.00 0 0 1 578.0 198.1Z" opacity="0.4"/>
+    <path d="M643.0 232.1H645.0A11.00 11.00 0 0 1 656.0 243.1V243.1A11.00 11.00 0 0 1 645.0 254.1H643.0A11.00 11.00 0 0 1 632.0 243.1V243.1A11.00 11.00 0 0 1 643.0 232.1Z" opacity="0.32"/>
+  </g>
+</svg>

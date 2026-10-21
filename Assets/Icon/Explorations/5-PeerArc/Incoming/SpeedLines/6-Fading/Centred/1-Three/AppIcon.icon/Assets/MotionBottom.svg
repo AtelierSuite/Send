@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    Fading, Three: Folder and file centred; three streaks in the padding above the file.
+    Layer: MotionBottom.
+    Drawn in white: Icon Composer tints and lights the layer, so the artwork
+    carries only shape and opacity.
+  -->
+  <g fill="#FFFFFF">
+    <path d="M444.4 230.2H444.6A12.94 12.94 0 0 1 457.5 243.2V243.2A12.94 12.94 0 0 1 444.6 256.1H444.4A12.94 12.94 0 0 1 431.5 243.2V243.2A12.94 12.94 0 0 1 444.4 230.2Z" opacity="0.55"/>
+    <path d="M512.0 216.6H512.0A13.00 13.00 0 0 1 525.0 229.6V243.1A13.00 13.00 0 0 1 512.0 256.1H512.0A13.00 13.00 0 0 1 499.0 243.1V229.6A13.00 13.00 0 0 1 512.0 216.6Z" opacity="0.85"/>
+    <path d="M579.4 230.2H579.6A12.94 12.94 0 0 1 592.5 243.2V243.2A12.94 12.94 0 0 1 579.6 256.1H579.4A12.94 12.94 0 0 1 566.5 243.2V243.2A12.94 12.94 0 0 1 579.4 230.2Z" opacity="0.55"/>
+  </g>
+</svg>
