@@ -72,10 +72,11 @@
   </PropertyGroup>
   <Target Name="RemoveUnusedWindowsAppSDKCultures" AfterTargets="AddMicrosoftWindowsAppSDKPayloadFiles">
     <ItemGroup>
-      <_SendMui Include="@(None)" Condition="'%(Extension)' == '.mui'">
-        <Culture>$([System.IO.Path]::GetDirectoryName('%(Link)').ToLowerInvariant())</Culture>
-      </_SendMui>
-      <_SendUnusedMui Include="@(_SendMui)" Condition="!$(_SendMuiCultures.Contains(';%(Culture);'))" />
+      <_SendMui Include="@(None)" Condition="'%(None.Extension)' == '.mui'" />
+      <_SendMuiByCulture Include="@(_SendMui)">
+        <Culture>$([System.IO.Path]::GetDirectoryName('%(_SendMui.Link)').ToLowerInvariant())</Culture>
+      </_SendMuiByCulture>
+      <_SendUnusedMui Include="@(_SendMuiByCulture)" Condition="!$(_SendMuiCultures.Contains(';%(_SendMuiByCulture.Culture);'))" />
       <None Remove="@(_SendUnusedMui)" />
     </ItemGroup>
     <Message Importance="high" Text="Removed @(_SendUnusedMui->Count()) of @(_SendMui->Count()) Windows App SDK .mui files." />
