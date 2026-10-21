@@ -272,7 +272,7 @@ Everything below is marked with a `TODO(...)` comment at the place it belongs.
 9. **`TODO(DESIGN.md §6)`: the `Send/<date>` subfolder** for receives of more than 20
    files.
 10. **Logo scale variants.** `Assets/*.png` are the Fluent-style Send icon from
-   `Assets/Icon/Windows/` (unplated; the compact art without streaks below 48 px), with
+   `Assets/Icon/Windows/` (unplated, one drawing at every size), with
    `targetsize-16/24/32/48/256` taskbar icons. Tiles and the splash are 100% scale only:
    add `.scale-125/150/200/400` variants.
 11. **Package identity.** `Publisher="CN=Tsubuzaki"` is a placeholder for a local

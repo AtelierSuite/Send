@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
   <!--
-    Incoming, Speed Lines, Fading: Each streak in segments that brighten toward the file: a gradient made of opacity steps.
-    Layer: File.
+    The file standing in the folder: a complete file with its top right
+    corner cut away. Its lower half sits behind the front panel, which blurs
+    it, so the whole shape is drawn.
     Drawn in white: Icon Composer tints and lights the layer, so the artwork
-    carries only shape and opacity.
+    carries only shape.
   -->
   <g fill="#FFFFFF">
-    <path d="M438.4 434.0H552.0L609.8 491.7V614.7A24.213740458015266 24.213740458015266 0 0 1 585.6 638.9H438.4A24.213740458015266 24.213740458015266 0 0 1 414.2 614.7V458.2A24.213740458015266 24.213740458015266 0 0 1 438.4 434.0Z" opacity="0.85"/>
+    <path d="M404 244H572L656 328V508A36 36 0 0 1 620 544H404A36 36 0 0 1 368 508V280A36 36 0 0 1 404 244Z"/>
   </g>
 </svg>
