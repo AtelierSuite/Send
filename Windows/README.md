@@ -323,7 +323,7 @@ failure rather than a bug:
   explicitly. Adding `<PRIResource>` items *without* disabling the default first produces
   duplicate-item errors.
 - **Trimming.** Partial trimming of the Windows App SDK projections is supported from
-  1.6, and the publish is warning-free, but a trimmed WinUI app can still fail at runtime
+  1.6, and the publish has no trim warnings, but a trimmed WinUI app can still fail at runtime
   where the analyzer cannot see. A page or control that fails to load only in the
   published `Send.exe` points here.
 - **Single-file resources.** `IncludeAllContentForSelfExtract` should put `Send.pri` beside
