@@ -12,8 +12,9 @@
   "name": "wooosh-rendezvous",
   "main": "src/index.ts",
   "compatibility_date": "2026-08-15",
-  "workers_dev": true,
-  // One public address per Worker: no per-version preview URLs.
+  // No *.workers.dev address and no per-version preview URLs: the Worker is
+  // reachable only through a custom domain or route.
+  "workers_dev": false,
   "preview_urls": false,
   "logpush": false,
   "observability": { "enabled": true },
@@ -41,7 +42,7 @@
     // inherit bindings or vars into environments, so they are repeated here.
     "dev": {
       "name": "wooosh-rendezvous-dev",
-      "workers_dev": true,
+      "workers_dev": false,
       "preview_urls": false,
       "logpush": false,
       "observability": { "enabled": true },

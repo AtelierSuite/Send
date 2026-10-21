@@ -401,7 +401,7 @@ Windows PCs without a TPM 2.0 that exposes an EK certificate (some older or VM i
 
 The core learns the production URL at build time from `WOOOSH_RENDEZVOUS_URL` (see `Core/build-bindings.sh`); a build without it reports that no service is configured until Settings names one.
 
-`wrangler.jsonc` declares no KV, D1, or R2 bindings, `observability.enabled = true` (Workers Logs, for operating the service), and `logpush = false`. Its `dev` environment (`--env dev`) is a second Worker, `wooosh-rendezvous-dev`, carrying the debug-build allowlist; the production Worker has no bypass. The test suite reads the same file, so the two cannot drift.
+`wrangler.jsonc` declares no KV, D1, or R2 bindings, `workers_dev = false` and `preview_urls = false` (no `*.workers.dev` address; each Worker is reached only through a custom domain or route), `observability.enabled = true` (Workers Logs, for operating the service), and `logpush = false`. Its `dev` environment (`--env dev`) is a second Worker, `wooosh-rendezvous-dev`, carrying the debug-build allowlist; the production Worker has no bypass. The test suite reads the same file, so the two cannot drift.
 
 ### 9.4 Cost on the Cloudflare free plan
 
