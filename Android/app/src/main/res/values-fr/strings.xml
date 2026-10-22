@@ -31,6 +31,7 @@
     <string name="action_codes_match">Les codes correspondent</string>
     <string name="action_show_my_code">Afficher mon code d\'association…</string>
     <string name="action_pair_this_device">Associer l\'appareil…</string>
+    <string name="action_device_options">Options de l\'appareil</string>
     <string name="action_back">Retour</string>
     <string name="action_discard_shared">Abandonner les fichiers partagés</string>
     <string name="peer_state_ready">Prêt</string>

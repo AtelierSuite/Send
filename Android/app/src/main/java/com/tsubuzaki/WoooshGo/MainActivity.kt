@@ -215,6 +215,7 @@ private fun AppRoot(viewModel: MainViewModel) {
                 onRefresh = viewModel::refresh,
                 onOpenSettings = { screen = Screen.SETTINGS },
                 onOpenPairing = { screen = Screen.PAIRING },
+                onPairPeer = viewModel::requestSasPairing,
             )
         }
     }

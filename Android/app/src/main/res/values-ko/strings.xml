@@ -31,6 +31,7 @@
     <string name="action_codes_match">코드 일치</string>
     <string name="action_show_my_code">내 페어링 코드 보기…</string>
     <string name="action_pair_this_device">이 기기와 페어링…</string>
+    <string name="action_device_options">기기 옵션</string>
     <string name="action_back">뒤로</string>
     <string name="action_discard_shared">공유한 파일 취소</string>
     <string name="peer_state_ready">준비됨</string>

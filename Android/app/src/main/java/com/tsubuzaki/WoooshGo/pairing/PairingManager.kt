@@ -6,6 +6,8 @@ import com.tsubuzaki.WoooshGo.R
 import com.tsubuzaki.WoooshGo.core.CoreEvent
 import com.tsubuzaki.WoooshGo.core.PeerRef
 import com.tsubuzaki.WoooshGo.core.WoooshCore
+import com.tsubuzaki.WoooshGo.core.pairingErrorMessage
+import com.tsubuzaki.WoooshGo.peers.Peer
 import com.tsubuzaki.WoooshGo.trust.TrustStore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -24,6 +26,8 @@ class PairingManager(
     private val scope: CoroutineScope,
     private val core: WoooshCore,
     private val trustStore: TrustStore,
+    /** Dials a row the way a send does, so the SAS channel is pinned like any other. */
+    private val connectPeer: suspend (Peer) -> String,
     /** A lambda, not a stored value: the setting changes while this manager lives. */
     private val internetEnabled: () -> Boolean = { true },
 ) {
@@ -76,8 +80,12 @@ class PairingManager(
         scope.launch {
             core.events.collect { event ->
                 when (event) {
-                    is CoreEvent.PairingSas ->
+                    is CoreEvent.PairingSas -> {
+                        // The comparison has its own 60 s clock; the dial is over.
+                        watchdog?.cancel()
+                        if (_attempt.value?.state == AttemptState.CONNECTING) _attempt.value = null
                         _pendingSas.value = SasRequest(event.peer, event.sixDigits)
+                    }
 
                     is CoreEvent.PairingResult -> {
                         _pendingSas.value = null
@@ -217,10 +225,34 @@ class PairingManager(
         if (accepted) beginAttempt(request.peer.displayName)
     }
 
-    /** Camera-less pairing, requires an existing connection (PROTOCOL.md §4.3). */
-    fun requestSasPairing(peerId: String) {
-        beginAttempt(peerId)
-        core.requestSasPairing(peerId)
+    /** Camera-less pairing (PROTOCOL.md §4.3); the row is dialled first, as a send would. */
+    fun requestSasPairing(peer: Peer) {
+        if (peer.address == null && peer.peerId == null) {
+            failNow(
+                peer.displayName,
+                context.getString(R.string.error_still_resolving, peer.displayName),
+            )
+            return
+        }
+        beginAttempt(peer.displayName)
+        val attempt = _attempt.value
+        scope.launch {
+            try {
+                val peerId = connectPeer(peer)
+                // Cancelled or superseded while dialling.
+                if (_attempt.value !== attempt) return@launch
+                core.requestSasPairing(peerId)
+            } catch (t: Throwable) {
+                Log.w(TAG, "requestSasPairing: connecting to ${peer.displayName} failed", t)
+                if (_attempt.value !== attempt) return@launch
+                // RealCore wraps the core's error; its text is what the mapper reads.
+                settle(
+                    AttemptState.FAILED,
+                    peer.displayName,
+                    pairingErrorMessage(context, (t.cause ?: t).message),
+                )
+            }
+        }
     }
 
     /** The blocking core call cannot be interrupted; this only stops the UI waiting. */

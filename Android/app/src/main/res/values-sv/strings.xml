@@ -31,6 +31,7 @@
     <string name="action_codes_match">Koderna matchar</string>
     <string name="action_show_my_code">Visa min parkopplingskod…</string>
     <string name="action_pair_this_device">Parkoppla enhet…</string>
+    <string name="action_device_options">Enhetsalternativ</string>
     <string name="action_back">Tillbaka</string>
     <string name="action_discard_shared">Släng de delade filerna</string>
     <string name="peer_state_ready">Redo</string>

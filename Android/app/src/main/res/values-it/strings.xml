@@ -31,6 +31,7 @@
     <string name="action_codes_match">I codici coincidono</string>
     <string name="action_show_my_code">Mostra il mio codice di abbinamento…</string>
     <string name="action_pair_this_device">Abbina dispositivo…</string>
+    <string name="action_device_options">Opzioni dispositivo</string>
     <string name="action_back">Indietro</string>
     <string name="action_discard_shared">Annulla i file condivisi</string>
     <string name="peer_state_ready">Pronto</string>

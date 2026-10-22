@@ -31,6 +31,7 @@
     <string name="action_codes_match">コードが一致</string>
     <string name="action_show_my_code">自分のペアリングコードを表示…</string>
     <string name="action_pair_this_device">このデバイスとペアリング…</string>
+    <string name="action_device_options">デバイスのオプション</string>
     <string name="action_back">戻る</string>
     <string name="action_discard_shared">共有したファイルを破棄</string>
     <string name="peer_state_ready">準備完了</string>

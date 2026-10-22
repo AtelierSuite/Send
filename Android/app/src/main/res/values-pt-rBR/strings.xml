@@ -31,6 +31,7 @@
     <string name="action_codes_match">Os códigos são iguais</string>
     <string name="action_show_my_code">Mostrar meu código de pareamento…</string>
     <string name="action_pair_this_device">Parear dispositivo…</string>
+    <string name="action_device_options">Opções do dispositivo</string>
     <string name="action_back">Voltar</string>
     <string name="action_discard_shared">Descartar os arquivos compartilhados</string>
     <string name="peer_state_ready">Pronto</string>

@@ -140,6 +140,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun dismissTransfer(id: TransferId) = app.transferManager.dismiss(id)
 
+    fun requestSasPairing(peer: Peer) = app.pairingManager.requestSasPairing(peer)
+
     fun confirmSas(accepted: Boolean) = app.pairingManager.confirmSas(accepted)
 
     fun dismissKeyChanged() = app.pairingManager.dismissKeyChanged()

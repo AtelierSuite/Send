@@ -31,6 +31,7 @@
     <string name="action_codes_match">两端代码一致</string>
     <string name="action_show_my_code">显示我的配对码…</string>
     <string name="action_pair_this_device">配对此设备…</string>
+    <string name="action_device_options">设备选项</string>
     <string name="action_back">返回</string>
     <string name="action_discard_shared">放弃已共享的文件</string>
     <string name="peer_state_ready">就绪</string>

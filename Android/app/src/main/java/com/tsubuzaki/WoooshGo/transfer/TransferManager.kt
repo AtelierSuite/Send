@@ -37,6 +37,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 enum class TransferStatus { RUNNING, DONE, FAILED }
 
@@ -146,11 +147,25 @@ class TransferManager(
         }
     }
 
-    fun sendToPeer(peer: Peer, uris: List<Uri>) {
+    /** Dials a discovered row and attaches the DeviceID it proves to that row. */
+    suspend fun connect(peer: Peer): String = withContext(Dispatchers.IO) {
         val addr = peer.address
         // An internet row (PROTOCOL.md §9) never has an mDNS address, only a DeviceID.
-        val established = peer.peerId?.takeIf { addr == null }
-        if (addr == null && established == null) {
+        peer.peerId?.takeIf { addr == null }?.let { return@withContext it }
+        // Always pin: the core's address fallback misses a peer that moved.
+        val pinnedKey = trustStore.pinnedKeyFor(peer.peerId)
+        Log.i(
+            TAG,
+            "connect ${peer.displayName} at $addr " +
+                "deviceId=${peer.peerId ?: "unknown"} pinned=${pinnedKey != null}",
+        )
+        val peerId = core.connectPeer(checkNotNull(addr), pinnedKey)
+        registry.attachPeerId(peer.rid, peerId)
+        peerId
+    }
+
+    fun sendToPeer(peer: Peer, uris: List<Uri>) {
+        if (peer.address == null && peer.peerId == null) {
             scope.launch {
                 _errors.emit(context.getString(R.string.error_still_resolving, peer.displayName))
             }
@@ -160,15 +175,7 @@ class TransferManager(
         beginPending(pendingKey)
         scope.launch(Dispatchers.IO) {
             try {
-                // Always pin: the core's address fallback misses a peer that moved.
-                val pinnedKey = trustStore.pinnedKeyFor(peer.peerId)
-                Log.i(
-                    TAG,
-                    "connect ${peer.displayName} at ${addr ?: "established connection"} " +
-                        "deviceId=${peer.peerId ?: "unknown"} pinned=${pinnedKey != null}",
-                )
-                val peerId = established ?: core.connectPeer(addr!!, pinnedKey)
-                registry.attachPeerId(peer.rid, peerId)
+                val peerId = connect(peer)
                 persistReadGrants(uris)
                 val transferId = core.send(peerId, uris)
                 requestedPeerNames[transferId] = peer.displayName
@@ -185,7 +192,7 @@ class TransferManager(
                     )
                 }
             } catch (t: Throwable) {
-                Log.w(TAG, "send to ${peer.displayName} ($addr) failed", t)
+                Log.w(TAG, "send to ${peer.displayName} (${peer.address}) failed", t)
                 _errors.emit(sendErrorMessage(t))
             } finally {
                 endPending(pendingKey)

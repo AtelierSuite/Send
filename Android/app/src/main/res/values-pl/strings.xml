@@ -31,6 +31,7 @@
     <string name="action_codes_match">Kody są zgodne</string>
     <string name="action_show_my_code">Pokaż mój kod parowania…</string>
     <string name="action_pair_this_device">Sparuj urządzenie…</string>
+    <string name="action_device_options">Opcje urządzenia</string>
     <string name="action_back">Wstecz</string>
     <string name="action_discard_shared">Odrzuć udostępnione pliki</string>
     <string name="peer_state_ready">Gotowe</string>

@@ -67,6 +67,8 @@
     <string name="action_show_my_code">Show My Pairing Code…</string>
     <!-- Context-menu item that starts pairing with the selected device. -->
     <string name="action_pair_this_device">Pair Device…</string>
+    <!-- Spoken label for long-pressing a device row, which opens its actions. -->
+    <string name="action_device_options">Device Options</string>
     <!-- Accessibility label for the back button in the toolbar. -->
     <string name="action_back">Back</string>
     <!-- Accessibility label for the button that drops files waiting to be sent. -->

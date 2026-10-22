@@ -4,7 +4,9 @@ import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,6 +25,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.InsertDriveFile
 import androidx.compose.material.icons.automirrored.outlined.Send
 import androidx.compose.material.icons.outlined.CheckCircle
+import androidx.compose.material.icons.outlined.Link
 import androidx.compose.material.icons.outlined.Close
 import androidx.compose.material.icons.outlined.PhotoLibrary
 import androidx.compose.material.icons.outlined.Public
@@ -33,6 +36,8 @@ import androidx.compose.material.icons.outlined.WifiTethering
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -93,6 +98,7 @@ fun MainScreen(
     onRefresh: () -> Unit,
     onOpenSettings: () -> Unit,
     onOpenPairing: () -> Unit,
+    onPairPeer: (Peer) -> Unit,
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
     LaunchedEffect(Unit) {
@@ -217,6 +223,9 @@ fun MainScreen(
                                 pickerPeer = peer
                             }
                         },
+                        onSendFiles = { pickerPeer = peer },
+                        onPair = { onPairPeer(peer) },
+                        onShowMyCode = onOpenPairing,
                     )
                 }
             }
@@ -359,58 +368,99 @@ private fun OtherDeviceRow(onClick: () -> Unit) {
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun PeerRow(
     peer: Peer,
     isPaired: Boolean,
     armedToSend: Boolean,
     onClick: () -> Unit,
+    onSendFiles: () -> Unit,
+    onPair: () -> Unit,
+    onShowMyCode: () -> Unit,
 ) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier
-            .fillMaxWidth()
-            // Stale rows stay in place: grayed out and not clickable, never removed.
-            .alpha(if (peer.isStale) 0.38f else 1f)
-            .clickable(enabled = !peer.isStale, onClick = onClick)
-            .padding(horizontal = 16.dp, vertical = 12.dp),
-    ) {
-        Icon(
-            imageVector = peer.deviceType.icon(),
-            contentDescription = peer.deviceType.label(),
-            modifier = Modifier.size(28.dp),
-            tint = MaterialTheme.colorScheme.primary,
-        )
-        Spacer(Modifier.width(16.dp))
-        Column(Modifier.weight(1f)) {
-            Text(
-                text = peer.displayName,
-                style = MaterialTheme.typography.bodyLarge,
-            )
-            Text(
-                    text = when {
-                    peer.isStale -> stringResource(R.string.peer_state_away)
-                    armedToSend -> stringResource(R.string.peer_state_tap_to_send)
-                    peer.isRelayed -> stringResource(
-                        R.string.peer_state_ready_internet_limited,
-                        relayLimitText(LocalContext.current),
-                    )
-                    // Said plainly: the row is otherwise indistinguishable from a LAN device.
-                    peer.viaTicket -> stringResource(R.string.peer_state_ready_internet)
-                    isPaired -> stringResource(R.string.peer_state_ready_paired)
-                    else -> stringResource(R.string.peer_state_ready)
-                },
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
-        if (isPaired) {
-            // Checkmark on the row, never a separate section (DESIGN.md §5).
+    var menuOpen by remember { mutableStateOf(false) }
+    // The same actions as the Apple context menu; long press is Android's equivalent.
+    Box {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .fillMaxWidth()
+                // Stale rows stay in place: grayed out and not clickable, never removed.
+                .alpha(if (peer.isStale) 0.38f else 1f)
+                .combinedClickable(
+                    enabled = !peer.isStale,
+                    onLongClickLabel = stringResource(R.string.action_device_options),
+                    onLongClick = { menuOpen = true },
+                    onClick = onClick,
+                )
+                .padding(horizontal = 16.dp, vertical = 12.dp),
+        ) {
             Icon(
-                Icons.Outlined.CheckCircle,
-                contentDescription = stringResource(R.string.peer_badge_paired),
-                modifier = Modifier.size(20.dp),
+                imageVector = peer.deviceType.icon(),
+                contentDescription = peer.deviceType.label(),
+                modifier = Modifier.size(28.dp),
                 tint = MaterialTheme.colorScheme.primary,
+            )
+            Spacer(Modifier.width(16.dp))
+            Column(Modifier.weight(1f)) {
+                Text(
+                    text = peer.displayName,
+                    style = MaterialTheme.typography.bodyLarge,
+                )
+                Text(
+                        text = when {
+                        peer.isStale -> stringResource(R.string.peer_state_away)
+                        armedToSend -> stringResource(R.string.peer_state_tap_to_send)
+                        peer.isRelayed -> stringResource(
+                            R.string.peer_state_ready_internet_limited,
+                            relayLimitText(LocalContext.current),
+                        )
+                        // Said plainly: the row is otherwise indistinguishable from a LAN device.
+                        peer.viaTicket -> stringResource(R.string.peer_state_ready_internet)
+                        isPaired -> stringResource(R.string.peer_state_ready_paired)
+                        else -> stringResource(R.string.peer_state_ready)
+                    },
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            if (isPaired) {
+                // Checkmark on the row, never a separate section (DESIGN.md §5).
+                Icon(
+                    Icons.Outlined.CheckCircle,
+                    contentDescription = stringResource(R.string.peer_badge_paired),
+                    modifier = Modifier.size(20.dp),
+                    tint = MaterialTheme.colorScheme.primary,
+                )
+            }
+        }
+        DropdownMenu(expanded = menuOpen, onDismissRequest = { menuOpen = false }) {
+            DropdownMenuItem(
+                text = { Text(stringResource(R.string.action_send_files)) },
+                leadingIcon = { Icon(Icons.AutoMirrored.Outlined.Send, contentDescription = null) },
+                onClick = {
+                    menuOpen = false
+                    onSendFiles()
+                },
+            )
+            if (!isPaired) {
+                DropdownMenuItem(
+                    text = { Text(stringResource(R.string.action_pair_this_device)) },
+                    leadingIcon = { Icon(Icons.Outlined.Link, contentDescription = null) },
+                    onClick = {
+                        menuOpen = false
+                        onPair()
+                    },
+                )
+            }
+            DropdownMenuItem(
+                text = { Text(stringResource(R.string.action_show_my_code)) },
+                leadingIcon = { Icon(Icons.Outlined.QrCode2, contentDescription = null) },
+                onClick = {
+                    menuOpen = false
+                    onShowMyCode()
+                },
             )
         }
     }

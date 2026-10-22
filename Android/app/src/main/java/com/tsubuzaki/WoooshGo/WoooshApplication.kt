@@ -49,7 +49,13 @@ class WoooshApplication : Application() {
         TransferManager(this, appScope, core, trustStore, discovery.registry)
     }
     val pairingManager by lazy {
-        PairingManager(this, appScope, core, trustStore) { internetEnabled }
+        PairingManager(
+            this,
+            appScope,
+            core,
+            trustStore,
+            connectPeer = { transferManager.connect(it) },
+        ) { internetEnabled }
     }
 
     /** Mirrors the stored internet setting so the pairing manager can read it synchronously. */
