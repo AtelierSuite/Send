@@ -162,6 +162,7 @@
     <string name="error_qr_key_mismatch">响应的设备与配对码中的设备不符。Send 已停止配对。</string>
     <string name="error_invalid_qr">这不是 Send 配对码。</string>
     <string name="error_pairing_not_a_code">这不是 Send 配对码。请扫描另一台设备上“配对设备”里显示的配对码。</string>
+    <string name="error_pairing_needs_code">该设备只在显示配对码时接受配对。请扫描另一台设备上“配对设备”里显示的配对码。</string>
     <string name="error_pairing_expired">该配对码已失效。请索取一个新的配对码。</string>
     <string name="error_pairing_code_expired_detail">该配对码已失效。配对码有效期为两分钟。请在另一台设备上显示新的配对码并重新扫描。</string>
     <string name="error_pairing_failed">配对未完成。请重试。</string>

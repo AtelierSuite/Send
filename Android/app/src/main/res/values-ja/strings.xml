@@ -162,6 +162,7 @@
     <string name="error_qr_key_mismatch">応答したデバイスは、ペアリングコードのデバイスではありません。Send はペアリングを中止しました。</string>
     <string name="error_invalid_qr">これは Send のペアリングコードではありません。</string>
     <string name="error_pairing_not_a_code">これは Send のペアリングコードではありません。相手のデバイスの「デバイスをペアリング」に表示されているコードをスキャンしてください。</string>
+    <string name="error_pairing_needs_code">そのデバイスは、ペアリングコードを表示している間だけペアリングできます。相手のデバイスの「デバイスをペアリング」に表示されているコードをスキャンしてください。</string>
     <string name="error_pairing_expired">そのペアリングコードは期限切れです。新しいコードを表示してもらってください。</string>
     <string name="error_pairing_code_expired_detail">そのペアリングコードは期限切れです。ペアリングコードの有効期間は 2 分です。相手のデバイスで新しいコードを表示して、もう一度スキャンしてください。</string>
     <string name="error_pairing_failed">ペアリングが完了しませんでした。もう一度お試しください。</string>

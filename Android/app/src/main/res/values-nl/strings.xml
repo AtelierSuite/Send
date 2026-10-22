@@ -162,6 +162,7 @@
     <string name="error_qr_key_mismatch">Het apparaat dat antwoordde is niet dat uit de koppelcode. Send heeft het koppelen gestopt.</string>
     <string name="error_invalid_qr">Dat is geen Send-koppelcode.</string>
     <string name="error_pairing_not_a_code">Dat is geen Send-koppelcode. Scan de code die op het andere apparaat onder ‘Apparaat koppelen’ staat.</string>
+    <string name="error_pairing_needs_code">Dat apparaat kan alleen worden gekoppeld terwijl het zijn koppelcode toont. Scan de code die op het andere apparaat onder ‘Apparaat koppelen’ staat.</string>
     <string name="error_pairing_expired">Die koppelcode is verlopen. Vraag om een nieuwe.</string>
     <string name="error_pairing_code_expired_detail">Die koppelcode is verlopen. Koppelcodes zijn twee minuten geldig. Laat een nieuwe zien op het andere apparaat en scan die opnieuw.</string>
     <string name="error_pairing_failed">Het koppelen is niet voltooid. Probeer het opnieuw.</string>

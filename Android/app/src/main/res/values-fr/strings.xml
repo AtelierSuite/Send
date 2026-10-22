@@ -162,6 +162,7 @@
     <string name="error_qr_key_mismatch">L\'appareil qui a répondu n\'est pas celui du code d\'association. Send a interrompu l\'association.</string>
     <string name="error_invalid_qr">Il ne s\'agit pas d\'un code d\'association Send.</string>
     <string name="error_pairing_not_a_code">Il ne s\'agit pas d\'un code d\'association Send. Scannez le code affiché sous « Associer un appareil » sur l\'autre appareil.</string>
+    <string name="error_pairing_needs_code">Cet appareil n\'accepte l\'association que lorsqu\'il affiche son code d\'association. Scannez le code affiché sous « Associer un appareil » sur l\'autre appareil.</string>
     <string name="error_pairing_expired">Ce code d\'association a expiré. Demandez-en un nouveau.</string>
     <string name="error_pairing_code_expired_detail">Ce code d\'association a expiré. Les codes d\'association durent deux minutes. Affichez-en un nouveau sur l\'autre appareil et scannez-le à nouveau.</string>
     <string name="error_pairing_failed">L\'association ne s\'est pas terminée. Réessayez.</string>

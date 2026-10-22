@@ -210,7 +210,7 @@ class RealCore(
 
     override fun pairWithQr(payload: String) {
         scope.launch(Dispatchers.IO) {
-            // Parsed only for the failure path.
+            // Parsed only for the log line.
             val info = runCatching { parsePairingQr(payload.trim()) }.getOrNull()
             Log.i(TAG, "pairWithQr: parsed=${info != null} peer=${info?.deviceId} hints=${info?.hints}")
             val startedAt = SystemClock.elapsedRealtime()
@@ -218,24 +218,8 @@ class RealCore(
                 val peerId = ffi.pairWithQr(payload.trim())
                 Log.i(TAG, "pairWithQr: paired with $peerId after ${elapsed(startedAt)}")
             } catch (e: Throwable) {
-                // The core emits no PairingResult when the blocking call throws.
+                // The core has already emitted this failure as a PairingResult.
                 Log.w(TAG, "pairWithQr failed after ${elapsed(startedAt)}", e)
-                _events.emit(
-                    CoreEvent.PairingResult(
-                        peerId = info?.deviceId.orEmpty(),
-                        peer = info?.let {
-                            PeerRef(
-                                id = it.deviceId,
-                                displayName = it.deviceName ?: it.deviceId,
-                                fingerprint = fingerprintPhraseFor(it.pubkey) ?: it.deviceId,
-                                paired = false,
-                                publicKey = it.pubkey,
-                            )
-                        },
-                        success = false,
-                        message = pairingMessage(e),
-                    )
-                )
             }
         }
     }
@@ -305,7 +289,7 @@ class RealCore(
 
     override fun redeemTicket(ticket: String) {
         scope.launch(Dispatchers.IO) {
-            // Parsed only for the failure path.
+            // Parsed only for the log line.
             val info = parseTicket(ticket)
             Log.i(TAG, "redeemTicket: parsed=${info != null} peer=${info?.deviceId}")
             val startedAt = SystemClock.elapsedRealtime()
@@ -313,24 +297,8 @@ class RealCore(
                 val peerId = ffi.redeemTicket(ticket.trim())
                 Log.i(TAG, "redeemTicket: paired with $peerId after ${elapsed(startedAt)}")
             } catch (e: Throwable) {
-                // The core emits no PairingResult when the blocking call throws.
+                // The core has already emitted this failure as a PairingResult.
                 Log.w(TAG, "redeemTicket failed after ${elapsed(startedAt)}", e)
-                _events.emit(
-                    CoreEvent.PairingResult(
-                        peerId = info?.deviceId.orEmpty(),
-                        peer = info?.let {
-                            PeerRef(
-                                id = it.deviceId,
-                                displayName = it.deviceName ?: it.deviceId,
-                                fingerprint = fingerprintPhraseFor(it.publicKey) ?: it.deviceId,
-                                paired = false,
-                                publicKey = it.publicKey,
-                            )
-                        },
-                        success = false,
-                        message = pairingMessage(e),
-                    )
-                )
             }
         }
     }
@@ -350,7 +318,7 @@ class RealCore(
         withContext(Dispatchers.IO) {
             // The core cannot read a ContentResolver, so content:// URIs are copied first.
             val paths = materialise(uris)
-            if (paths.isEmpty()) throw CoreException("Nothing to send")
+            if (paths.isEmpty()) throw CoreException(appContext.getString(R.string.error_files_unreadable))
             try {
                 ffi.send(peerId, paths)
             } catch (e: Throwable) {
@@ -472,7 +440,8 @@ class RealCore(
                 peerId = event.peerId,
                 peer = peer,
                 success = event.success,
-                message = event.message,
+                // Translated here, once: the shell's own failures arrive already as copy.
+                message = if (event.success) event.message else pairingErrorMessage(appContext, event.message),
             )
         }
 
@@ -580,37 +549,8 @@ class RealCore(
 
     private fun elapsed(startedAt: Long) = "${SystemClock.elapsedRealtime() - startedAt} ms"
 
-    /** Every pairing sub-case is one `Pairing` variant, distinguished only by message text. */
-    private fun pairingMessage(error: Throwable): String = appContext.getString(
-        when {
-            error is WoooshException.Connect || error is WoooshException.Io ->
-                R.string.error_pairing_timeout
-
-            error is WoooshException.Pairing -> {
-                val detail = error.message.orEmpty()
-                when {
-                    detail.contains("expired", ignoreCase = true) ->
-                        R.string.error_pairing_code_expired_detail
-
-                    detail.contains("TOKEN_INVALID", ignoreCase = true) ->
-                        R.string.error_pairing_code_rejected
-
-                    detail.contains("timed out", ignoreCase = true) ->
-                        R.string.error_pairing_timeout
-
-                    detail.contains("rejected", ignoreCase = true) ->
-                        R.string.error_pairing_declined
-
-                    detail.contains("closed", ignoreCase = true) ->
-                        R.string.error_pairing_dropped
-
-                    else -> R.string.error_pairing_failed
-                }
-            }
-
-            else -> messageRes(error)
-        }
-    )
+    private fun pairingMessage(error: Throwable): String =
+        pairingErrorMessage(appContext, error.message)
 
     private fun userMessage(error: Throwable): String = when (error) {
         is WoooshException.RelayFileTooLarge ->

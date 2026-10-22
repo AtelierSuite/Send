@@ -327,6 +327,8 @@
     <string name="error_invalid_qr">That is not a Send pairing code.</string>
     <!-- Shown when a scan produced something that is not a Send pairing code. -->
     <string name="error_pairing_not_a_code">That is not a Send pairing code. Scan the code shown under Pair a Device on the other device.</string>
+    <!-- Shown when pairing reached a device that accepts pairing only while it shows its code. -->
+    <string name="error_pairing_needs_code">That device accepts pairing only while it shows its pairing code. Scan the code shown under Pair a Device on the other device.</string>
     <!-- Core error: the pairing code is no longer valid. -->
     <string name="error_pairing_expired">That pairing code has expired. Ask for a fresh one.</string>
     <!-- Shown when a pasted or scanned pairing code was already too old. -->

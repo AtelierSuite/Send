@@ -162,6 +162,7 @@
     <string name="error_qr_key_mismatch">Enheten som svarade är inte den i parkopplingskoden. Send avbröt parkopplingen.</string>
     <string name="error_invalid_qr">Det är inte en parkopplingskod för Send.</string>
     <string name="error_pairing_not_a_code">Det är inte en parkopplingskod för Send. Skanna koden som visas under ”Parkoppla en enhet” på den andra enheten.</string>
+    <string name="error_pairing_needs_code">Enheten kan bara parkopplas medan den visar sin parkopplingskod. Skanna koden som visas under ”Parkoppla en enhet” på den andra enheten.</string>
     <string name="error_pairing_expired">Parkopplingskoden har upphört att gälla. Be om en ny.</string>
     <string name="error_pairing_code_expired_detail">Parkopplingskoden har upphört att gälla. Koder gäller i två minuter. Visa en ny på den andra enheten och skanna den igen.</string>
     <string name="error_pairing_failed">Parkopplingen slutfördes inte. Försök igen.</string>

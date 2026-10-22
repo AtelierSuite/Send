@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.core.content.ContextCompat
 import com.tsubuzaki.WoooshGo.R
 import com.tsubuzaki.WoooshGo.core.CoreEvent
+import com.tsubuzaki.WoooshGo.core.CoreException
 import com.tsubuzaki.WoooshGo.core.FileId
 import com.tsubuzaki.WoooshGo.core.FileMeta
 import com.tsubuzaki.WoooshGo.core.TransferDirection
@@ -185,8 +186,7 @@ class TransferManager(
                 }
             } catch (t: Throwable) {
                 Log.w(TAG, "send to ${peer.displayName} ($addr) failed", t)
-                // Core failures are internal English; never surfaced raw.
-                _errors.emit(context.getString(R.string.error_send_failed_body))
+                _errors.emit(sendErrorMessage(t))
             } finally {
                 endPending(pendingKey)
             }
@@ -215,12 +215,16 @@ class TransferManager(
                 }
             } catch (t: Throwable) {
                 Log.w(TAG, "internet send to $peerId failed", t)
-                _errors.emit(transferErrorMessage(context, t.message))
+                _errors.emit(sendErrorMessage(t))
             } finally {
                 endPending(peerId)
             }
         }
     }
+
+    /** RealCore has already localized a CoreException; anything else is internal English. */
+    private fun sendErrorMessage(t: Throwable): String =
+        (t as? CoreException)?.message ?: context.getString(R.string.error_send_failed_body)
 
     fun acceptOffer(acceptedFileIds: List<FileId>) {
         val offer = _pendingOffer.value ?: return

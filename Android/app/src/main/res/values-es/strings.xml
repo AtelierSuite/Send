@@ -162,6 +162,7 @@
     <string name="error_qr_key_mismatch">El dispositivo que ha respondido no es el del código de vinculación. Send ha detenido la vinculación.</string>
     <string name="error_invalid_qr">Eso no es un código de vinculación de Send.</string>
     <string name="error_pairing_not_a_code">Eso no es un código de vinculación de Send. Escanea el código que aparece en «Vincular un dispositivo» en el otro dispositivo.</string>
+    <string name="error_pairing_needs_code">Ese dispositivo solo acepta vinculaciones mientras muestra su código de vinculación. Escanea el código que aparece en «Vincular un dispositivo» en el otro dispositivo.</string>
     <string name="error_pairing_expired">Ese código de vinculación ha caducado. Pide uno nuevo.</string>
     <string name="error_pairing_code_expired_detail">Ese código de vinculación ha caducado. Los códigos duran dos minutos. Muestra uno nuevo en el otro dispositivo y vuelve a escanearlo.</string>
     <string name="error_pairing_failed">La vinculación no se ha completado. Vuelve a intentarlo.</string>

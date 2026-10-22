@@ -162,6 +162,7 @@
     <string name="error_qr_key_mismatch">응답한 기기가 페어링 코드의 기기와 다릅니다. Send가 페어링을 중단했습니다.</string>
     <string name="error_invalid_qr">Send 페어링 코드가 아닙니다.</string>
     <string name="error_pairing_not_a_code">Send 페어링 코드가 아닙니다. 상대 기기의 ‘기기 페어링’에 표시된 코드를 스캔하세요.</string>
+    <string name="error_pairing_needs_code">해당 기기는 페어링 코드를 표시하는 동안에만 페어링할 수 있습니다. 상대 기기의 ‘기기 페어링’에 표시된 코드를 스캔하세요.</string>
     <string name="error_pairing_expired">해당 페어링 코드가 만료되었습니다. 새 코드를 요청하세요.</string>
     <string name="error_pairing_code_expired_detail">해당 페어링 코드가 만료되었습니다. 페어링 코드는 2분간 유효합니다. 상대 기기에 새 코드를 띄운 뒤 다시 스캔하세요.</string>
     <string name="error_pairing_failed">페어링이 완료되지 않았습니다. 다시 시도해 주세요.</string>

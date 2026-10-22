@@ -162,6 +162,7 @@
     <string name="error_qr_key_mismatch">Il dispositivo che ha risposto non è quello del codice di abbinamento. Send ha interrotto l\'abbinamento.</string>
     <string name="error_invalid_qr">Questo non è un codice di abbinamento Send.</string>
     <string name="error_pairing_not_a_code">Questo non è un codice di abbinamento Send. Scansiona il codice mostrato sotto «Abbina un dispositivo» sull\'altro dispositivo.</string>
+    <string name="error_pairing_needs_code">Quel dispositivo accetta l\'abbinamento solo mentre mostra il codice di abbinamento. Scansiona il codice mostrato sotto «Abbina un dispositivo» sull\'altro dispositivo.</string>
     <string name="error_pairing_expired">Quel codice di abbinamento è scaduto. Chiedine uno nuovo.</string>
     <string name="error_pairing_code_expired_detail">Quel codice di abbinamento è scaduto. I codici durano due minuti. Mostrane uno nuovo sull\'altro dispositivo e scansionalo di nuovo.</string>
     <string name="error_pairing_failed">L\'abbinamento non è stato completato. Riprova.</string>

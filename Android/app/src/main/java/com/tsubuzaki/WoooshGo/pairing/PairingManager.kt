@@ -6,7 +6,6 @@ import com.tsubuzaki.WoooshGo.R
 import com.tsubuzaki.WoooshGo.core.CoreEvent
 import com.tsubuzaki.WoooshGo.core.PeerRef
 import com.tsubuzaki.WoooshGo.core.WoooshCore
-import com.tsubuzaki.WoooshGo.core.pairingErrorMessage
 import com.tsubuzaki.WoooshGo.trust.TrustStore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -97,10 +96,12 @@ class PairingManager(
                                 context.getString(R.string.pairing_success_title, name)
                             )
                         } else {
-                            // The core's message is an internal token, not copy: map it.
-                            val message = pairingErrorMessage(context, event.message)
-                            val name = event.peer?.displayName
-                                ?: _attempt.value?.deviceName
+                            // RealCore has already turned the core's text into copy.
+                            val message = event.message
+                                ?: context.getString(R.string.error_pairing_failed)
+                            // The core only knows a failed peer by its key, not its name.
+                            val name = _attempt.value?.deviceName
+                                ?: event.peer?.displayName
                                 ?: event.peerId
                             // Only a ceremony this device started gets the modal.
                             if (_attempt.value != null) {

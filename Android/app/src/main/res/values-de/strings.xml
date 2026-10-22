@@ -162,6 +162,7 @@
     <string name="error_qr_key_mismatch">Das antwortende Gerät ist nicht das aus dem Kopplungscode. Send hat die Kopplung abgebrochen.</string>
     <string name="error_invalid_qr">Das ist kein Send-Kopplungscode.</string>
     <string name="error_pairing_not_a_code">Das ist kein Send-Kopplungscode. Scanne den Code, der auf dem anderen Gerät unter „Gerät koppeln“ angezeigt wird.</string>
+    <string name="error_pairing_needs_code">Dieses Gerät lässt sich nur koppeln, während es seinen Kopplungscode anzeigt. Scanne den Code, der auf dem anderen Gerät unter „Gerät koppeln“ angezeigt wird.</string>
     <string name="error_pairing_expired">Dieser Kopplungscode ist abgelaufen. Lass dir einen neuen geben.</string>
     <string name="error_pairing_code_expired_detail">Dieser Kopplungscode ist abgelaufen. Kopplungscodes gelten zwei Minuten. Lass auf dem anderen Gerät einen neuen anzeigen und scanne ihn erneut.</string>
     <string name="error_pairing_failed">Die Kopplung wurde nicht abgeschlossen. Versuche es erneut.</string>

@@ -162,6 +162,7 @@
     <string name="error_qr_key_mismatch">Urządzenie, które odpowiedziało, nie jest tym z kodu parowania. Send przerwał parowanie.</string>
     <string name="error_invalid_qr">To nie jest kod parowania Send.</string>
     <string name="error_pairing_not_a_code">To nie jest kod parowania Send. Zeskanuj kod widoczny w sekcji „Sparuj urządzenie” na drugim urządzeniu.</string>
+    <string name="error_pairing_needs_code">To urządzenie można sparować tylko wtedy, gdy wyświetla kod parowania. Zeskanuj kod widoczny w sekcji „Sparuj urządzenie” na drugim urządzeniu.</string>
     <string name="error_pairing_expired">Ten kod parowania wygasł. Poproś o nowy.</string>
     <string name="error_pairing_code_expired_detail">Ten kod parowania wygasł. Kody parowania działają przez dwie minuty. Wyświetl nowy na drugim urządzeniu i zeskanuj go ponownie.</string>
     <string name="error_pairing_failed">Parowanie nie zostało ukończone. Spróbuj ponownie.</string>

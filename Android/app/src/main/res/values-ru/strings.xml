@@ -162,6 +162,7 @@
     <string name="error_qr_key_mismatch">Ответившее устройство не совпадает с указанным в коде связи. Send прервал связывание.</string>
     <string name="error_invalid_qr">Это не код связи Send.</string>
     <string name="error_pairing_not_a_code">Это не код связи Send. Отсканируйте код из раздела «Связать устройство» на другом устройстве.</string>
+    <string name="error_pairing_needs_code">Это устройство можно связать, только пока оно показывает код связи. Отсканируйте код из раздела «Связать устройство» на другом устройстве.</string>
     <string name="error_pairing_expired">Срок действия этого кода связи истёк. Попросите новый.</string>
     <string name="error_pairing_code_expired_detail">Срок действия этого кода связи истёк. Коды действуют две минуты. Покажите новый код на другом устройстве и отсканируйте его снова.</string>
     <string name="error_pairing_failed">Связывание не завершилось. Повторите попытку.</string>
