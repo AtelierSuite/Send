@@ -102,7 +102,7 @@ private fun AppRoot(viewModel: MainViewModel) {
     // it NsdManager throws and the device list stays empty forever.
     val localNetworkLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission()
-    ) { granted -> if (granted) viewModel.refresh() }
+    ) { granted -> if (granted) viewModel.onLocalNetworkGranted() }
     LaunchedEffect(Unit) {
         if (Build.VERSION.SDK_INT >= 37 &&
             ContextCompat.checkSelfPermission(context, LOCAL_NETWORK_PERMISSION) !=

@@ -1125,9 +1125,13 @@ impl Inner {
 
         if !is_client && !trusted {
             let vis = self.cfg.lock().unwrap().visibility.clone();
-            // A live ticket is an invitation; the token needs a chance (§4.2).
-            let invited =
-                conn.is_internet() && self.ticket_pending.lock().unwrap().is_some();
+            // A live ticket or a displayed QR is an invitation; the token
+            // needs a chance (§4.2). Untrusted peers stay limited to pairing.
+            let invited = if conn.is_internet() {
+                self.ticket_pending.lock().unwrap().is_some()
+            } else {
+                self.qr_pending.lock().unwrap().as_ref().is_some_and(QrPending::is_live)
+            };
             if matches!(vis, Visibility::PairedOnly) && !invited {
                 conn.close(close_codes::PAIRING_REQUIRED, b"PAIRING_REQUIRED");
                 return Err(WoooshError::PairingRequired);

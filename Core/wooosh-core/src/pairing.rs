@@ -135,6 +135,10 @@ impl QrPending {
         (Self { token, issued_at: Instant::now(), used: false }, token)
     }
 
+    pub fn is_live(&self) -> bool {
+        !self.used && self.issued_at.elapsed() <= QR_TOKEN_TTL
+    }
+
     /// Single-use, TTL-bound, constant-time token check.
     pub fn redeem(&mut self, presented: &[u8]) -> bool {
         if self.used || self.issued_at.elapsed() > QR_TOKEN_TTL {

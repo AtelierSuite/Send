@@ -9,7 +9,9 @@ import java.security.SecureRandom
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 
 /** [listenPort] is published in the TXT `p` field; discovery waits until it is non-zero. */
@@ -50,6 +52,10 @@ class DiscoveryController(
 
     private var started = false
 
+    // The first registration runs before the launch prompt is answered and throws without
+    // ACCESS_LOCAL_NETWORK, so a grant must re-advertise even though no setting changed.
+    private val localNetworkGrants = MutableStateFlow(0)
+
     fun start() {
         if (started) return
         started = true
@@ -57,20 +63,26 @@ class DiscoveryController(
         scope.launch(Dispatchers.IO) { browser.start() }
 
         scope.launch(Dispatchers.IO) {
-            settingsRepository.settings.collectLatest { settings ->
-                // Display-name edits arrive per keystroke and must not flap the NSD
-                // registration. apply()/stop() have no suspension points, so a newer
-                // emission can only cancel during the delay.
-                delay(REREGISTER_DEBOUNCE_MS)
-                advertiser.apply(
-                    displayName = settings.displayName,
-                    deviceType = deviceType,
-                    visibility = settings.visibility,
-                    rid = rid,
-                    port = listenPort(),
-                )
-            }
+            combine(settingsRepository.settings, localNetworkGrants) { settings, _ -> settings }
+                .collectLatest { settings ->
+                    // Display-name edits arrive per keystroke and must not flap the NSD
+                    // registration. apply()/stop() have no suspension points, so a newer
+                    // emission can only cancel during the delay.
+                    delay(REREGISTER_DEBOUNCE_MS)
+                    advertiser.apply(
+                        displayName = settings.displayName,
+                        deviceType = deviceType,
+                        visibility = settings.visibility,
+                        rid = rid,
+                        port = listenPort(),
+                    )
+                }
         }
+    }
+
+    fun onLocalNetworkGranted() {
+        localNetworkGrants.value++
+        refresh()
     }
 
     /** The only in-process way the peer list is cleared. */

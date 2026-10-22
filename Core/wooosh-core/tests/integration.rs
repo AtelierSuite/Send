@@ -207,6 +207,29 @@ fn pair_via_qr() {
     assert!(trusted);
 }
 
+/// PairedOnly is the shipped default, so QR pairing has to get past the
+/// PAIRING_REQUIRED gate while the code is displayed (§4.2 carve-out).
+#[test]
+fn pair_via_qr_under_paired_only() {
+    let tmp = tempfile::tempdir().unwrap();
+    let r = Node::start(tmp.path(), "receiver", Visibility::PairedOnly);
+    let s = Node::start(tmp.path(), "sender", Visibility::PairedOnly);
+
+    let payload = r.core.begin_pairing_qr().unwrap();
+    let peer_id = s.core.pair_with_qr(payload).unwrap();
+    assert_eq!(peer_id, r.core.device_id().unwrap());
+    let ok = wait_for(&r.rx, Duration::from_secs(10), "receiver PairingResult", |e| match e {
+        CoreEvent::PairingResult { success, .. } => Some(*success),
+        _ => None,
+    });
+    assert!(ok);
+
+    // The redeemed token closes the carve-out again.
+    let stranger = Node::start(tmp.path(), "stranger", Visibility::Everyone);
+    let err = stranger.core.connect_peer(r.addr(), None).unwrap_err();
+    assert!(matches!(err, WoooshError::PairingRequired), "got {err:?}");
+}
+
 #[test]
 fn pair_via_qr_rejects_bad_token_and_wrong_key() {
     let tmp = tempfile::tempdir().unwrap();

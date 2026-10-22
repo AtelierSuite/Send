@@ -96,6 +96,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun refresh() = app.discovery.refresh()
 
+    fun onLocalNetworkGranted() = app.discovery.onLocalNetworkGranted()
+
     fun setDisplayName(name: String) {
         viewModelScope.launch { app.settingsRepository.setDisplayName(name) }
     }
