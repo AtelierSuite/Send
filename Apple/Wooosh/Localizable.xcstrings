@@ -6336,6 +6336,96 @@
         }
       }
     },
+    "error_pairing_needs_code": {
+      "comment": "Shown when pairing reached a device that accepts pairing only while it shows its code.",
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses Gerät lässt sich nur koppeln, während es seinen Kopplungscode anzeigt. Scanne den Code, der auf dem anderen Gerät unter „Gerät koppeln“ angezeigt wird."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That device accepts pairing only while it shows its pairing code. Scan the code shown under Pair a Device on the other device."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ese dispositivo solo acepta vinculaciones mientras muestra su código de vinculación. Escanea el código que aparece en «Vincular un dispositivo» en el otro dispositivo."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cet appareil n'accepte l'association que lorsqu'il affiche son code d'association. Scannez le code affiché sous « Associer un appareil » sur l'autre appareil."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quel dispositivo accetta l'abbinamento solo mentre mostra il codice di abbinamento. Scansiona il codice mostrato sotto «Abbina un dispositivo» sull'altro dispositivo."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "そのデバイスは、ペアリングコードを表示している間だけペアリングできます。相手のデバイスの「デバイスをペアリング」に表示されているコードをスキャンしてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "해당 기기는 페어링 코드를 표시하는 동안에만 페어링할 수 있습니다. 상대 기기의 ‘기기 페어링’에 표시된 코드를 스캔하세요."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dat apparaat kan alleen worden gekoppeld terwijl het zijn koppelcode toont. Scan de code die op het andere apparaat onder ‘Apparaat koppelen’ staat."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To urządzenie można sparować tylko wtedy, gdy wyświetla kod parowania. Zeskanuj kod widoczny w sekcji „Sparuj urządzenie” na drugim urządzeniu."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esse dispositivo só pode ser pareado enquanto mostra o código de pareamento. Escaneie o código exibido em “Parear um dispositivo” no outro dispositivo."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Это устройство можно связать, только пока оно показывает код связи. Отсканируйте код из раздела «Связать устройство» на другом устройстве."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enheten kan bara parkopplas medan den visar sin parkopplingskod. Skanna koden som visas under ”Parkoppla en enhet” på den andra enheten."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "该设备只在显示配对码时接受配对。请扫描另一台设备上“配对设备”里显示的配对码。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "該裝置只在顯示配對碼時接受配對。請掃描另一台裝置上「配對裝置」中顯示的配對碼。"
+          }
+        }
+      }
+    },
     "error_pairing_not_a_code": {
       "comment": "Shown when a scan produced something that is not a Send pairing code.",
       "extractionState": "manual",

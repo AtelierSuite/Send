@@ -413,7 +413,7 @@ final class AppModel {
                 core.requestSASPairing(peerID: peerID)
             } catch {
                 guard generation == pairingGeneration else { return }
-                failPairing(coreErrorMessage(error))
+                failPairing(pairingFailureMessage(for: error))
             }
         }
     }

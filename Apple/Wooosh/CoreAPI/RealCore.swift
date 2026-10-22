@@ -112,20 +112,11 @@ final class RealCore: WoooshCore {
     }
 
     func pairWithQR(payload: String) {
-        let hinted = peerHint(forPairingPayload: payload)
+        peerHint(forPairingPayload: payload)
         let ffi = self.ffi
         Task.detached(priority: .userInitiated) {
-            do {
-                _ = try ffi.pairWithQr(payload: payload)
-            } catch {
-                let message = coreErrorMessage(error)
-                await MainActor.run { [weak self] in
-                    guard let self else { return }
-                    let peer = hinted ?? PeerRef(id: "", displayName: "Scanned Device",
-                                                 deviceType: nil, fingerprint: "")
-                    self.emit(.pairingResult(peer: peer, success: false, message: message))
-                }
-            }
+            // A failure is already reported by the core as a PairingResult.
+            _ = try? ffi.pairWithQr(payload: payload)
         }
     }
 
@@ -138,7 +129,7 @@ final class RealCore: WoooshCore {
             try ffi.requestSasPairing(peerId: peerID)
         } catch {
             let peer = peerRef(for: peerID)
-            emit(.pairingResult(peer: peer, success: false, message: coreErrorMessage(error)))
+            emit(.pairingResult(peer: peer, success: false, message: pairingFailureMessage(for: error)))
         }
     }
 
@@ -188,21 +179,12 @@ final class RealCore: WoooshCore {
     }
 
     func redeemTicket(_ ticket: String) {
-        let hinted = peerHint(forTicket: ticket)
+        peerHint(forTicket: ticket)
         let ffi = self.ffi
         Task.detached(priority: .userInitiated) {
-            do {
-                // Success arrives as TicketRedeemed: this path never pairs (§9.4).
-                _ = try ffi.redeemTicket(ticket: ticket)
-            } catch {
-                let message = coreErrorMessage(error)
-                await MainActor.run { [weak self] in
-                    guard let self else { return }
-                    let peer = hinted ?? PeerRef(id: "", displayName: "Scanned Device",
-                                                 deviceType: nil, fingerprint: "")
-                    self.emit(.pairingResult(peer: peer, success: false, message: message))
-                }
-            }
+            // Success arrives as TicketRedeemed: this path never pairs (§9.4).
+            // A failure is already reported by the core as a PairingResult.
+            _ = try? ffi.redeemTicket(ticket: ticket)
         }
     }
 
@@ -530,11 +512,44 @@ private func internetErrorMessage(_ text: String) -> String? {
     return nil
 }
 
-/// Pairing failures in events carry the core's internal English, never copy.
+/// Every pairing failure, from an event or a thrown call, arrives as the core's English text.
+/// Close-code tokens come first: their prose also contains words the later cases match.
 func pairingFailureMessage(_ raw: String?) -> String {
     let text = (raw ?? "").lowercased()
     if let internet = internetErrorMessage(text) { return internet }
-    return text.contains("expired") ? L.t("error_pairing_expired") : L.t("error_pairing_failed")
+    let key: String
+    if text.contains("pairing_required") { key = "error_pairing_needs_code" }
+    else if text.contains("qr_key_mismatch") { key = "error_qr_key_mismatch" }
+    else if text.contains("key_changed") { key = "error_key_changed" }
+    else if text.contains("version_mismatch") { key = "error_version_mismatch" }
+    else if text.contains("token_invalid") { key = "error_pairing_code_rejected" }
+    else if text.contains("invalid qr payload") { key = "error_invalid_qr" }
+    else if text.contains("expired") { key = "error_pairing_code_expired_detail" }
+    else if text.contains("sas confirmation timed out") { key = "error_sas_timeout" }
+    else if text.contains("timed out") { key = "error_pairing_timeout" }
+    else if text.contains("rejected locally") { key = "error_pairing_failed" }
+    else if text.contains("rejected") { key = "error_pairing_declined" }
+    else if text.contains("closed") { key = "error_pairing_dropped" }
+    else if text.hasPrefix("connect failed") || text.hasPrefix("i/o error") { key = "error_pairing_timeout" }
+    else { key = "error_pairing_failed" }
+    return L.t(key)
+}
+
+/// A thrown pairing call: the same mapping, from the error's own core text.
+func pairingFailureMessage(for error: Error) -> String {
+    guard let error = error as? WoooshCoreFFI.WoooshError else { return coreErrorMessage(error) }
+    // `localizedDescription` is UniFFI's `String(reflecting:)`, which wraps the text in the case name.
+    switch error {
+    case .NotStarted(let message), .AlreadyStarted(let message), .Io(let message),
+         .Crypto(let message), .Connect(let message), .UnknownPeer(let message),
+         .KeyChanged(let message), .QrKeyMismatch(let message), .PairingRequired(let message),
+         .VersionMismatch(let message), .Pairing(let message), .InvalidQrPayload(let message),
+         .Transfer(let message), .UnknownTransfer(let message), .Protocol(let message),
+         .InvalidArgument(let message), .RelayFileTooLarge(let message),
+         .RelayUnavailable(let message), .RendezvousQuota(let message),
+         .RendezvousUnavailable(let message), .RendezvousRetry(let message):
+        return pairingFailureMessage(message)
+    }
 }
 
 /// The core's outcome tokens are internal English; answer them with real copy.
