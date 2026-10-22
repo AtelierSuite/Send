@@ -58,7 +58,7 @@ enum BonjourResolver {
             type: type.hasSuffix(".") ? type : type + ".",
             name: name
         )
-        let delegate = ResolveDelegate()
+        let delegate = ResolveDelegate { bestAddress(of: $0) != nil }
         service.delegate = delegate
         return await withCheckedContinuation { continuation in
             // `NetService.delegate` is weak and the service must outlive the resolve.
@@ -72,27 +72,16 @@ enum BonjourResolver {
         }
     }
 
-    /// IPv4 first: an IPv6 link-local needs a scope suffix `lookup_host` would
-    /// have to re-parse. Loopback last: mDNS returns `127.0.0.1` first for a local
-    /// service and dialling it was observed to hang the QUIC handshake, while
-    /// peers bind `0.0.0.0` so the LAN address reaches them anyway.
+    /// IPv4 only: every core binds `0.0.0.0`, so an IPv6 address can never reach
+    /// one. Loopback last: mDNS returns `127.0.0.1` first for a local service and
+    /// dialling it was observed to hang the QUIC handshake, while the LAN address
+    /// reaches the same core anyway.
     private static func bestAddress(of service: NetService?) -> (address: String, port: UInt16)? {
-        guard let service, let addresses = service.addresses, !addresses.isEmpty else { return nil }
-        let ranked = addresses.compactMap(parse(sockaddr:)).sorted { lhs, rhs in
-            rank(lhs) < rank(rhs)
-        }
-        guard let best = ranked.first else { return nil }
+        guard let service, let addresses = service.addresses else { return nil }
+        let ipv4 = addresses.compactMap(parse(sockaddr:)).filter(\.isIPv4)
+        guard let best = ipv4.first(where: { !$0.address.hasPrefix("127.") }) ?? ipv4.first
+        else { return nil }
         return (best.address, best.port)
-    }
-
-    private static func rank(_ parsed: (address: String, port: UInt16, isIPv4: Bool)) -> Int {
-        let loopback = parsed.address.hasPrefix("127.") || parsed.address == "::1"
-        switch (loopback, parsed.isIPv4) {
-        case (false, true): return 0
-        case (false, false): return 1
-        case (true, true): return 2
-        case (true, false): return 3
-        }
     }
 
     private static func parse(sockaddr data: Data) -> (address: String, port: UInt16, isIPv4: Bool)? {
@@ -118,6 +107,12 @@ enum BonjourResolver {
     private final class ResolveDelegate: NSObject, NetServiceDelegate {
         var finish: (() -> Void)?
         private var done = false
+        /// AAAA often lands before A, and each record calls back separately.
+        private let isUsable: (NetService) -> Bool
+
+        init(isUsable: @escaping (NetService) -> Bool) {
+            self.isUsable = isUsable
+        }
 
         private func complete() {
             guard !done else { return }
@@ -126,7 +121,9 @@ enum BonjourResolver {
             finish = nil
         }
 
-        func netServiceDidResolveAddress(_ sender: NetService) { complete() }
+        func netServiceDidResolveAddress(_ sender: NetService) {
+            if isUsable(sender) { complete() }
+        }
         func netService(_ sender: NetService, didNotResolve errorDict: [String: NSNumber]) {
             complete()
         }
@@ -138,8 +135,13 @@ enum BonjourResolver {
     nonisolated private static func resolveWithConnection(
         endpoint: NWEndpoint, timeout: TimeInterval
     ) async -> (address: String, port: UInt16)? {
-        // UDP: a TCP probe is refused before the path is populated.
-        let connection = NWConnection(to: endpoint, using: .udp)
+        // UDP: a TCP probe is refused before the path is populated. IPv4 for the
+        // same reason as `bestAddress`.
+        let parameters = NWParameters.udp
+        if let ip = parameters.defaultProtocolStack.internetProtocol as? NWProtocolIP.Options {
+            ip.version = .v4
+        }
+        let connection = NWConnection(to: endpoint, using: parameters)
         let box = ResumeBox()
         return await withCheckedContinuation { continuation in
             let finish: @Sendable ((address: String, port: UInt16)?) -> Void = { value in

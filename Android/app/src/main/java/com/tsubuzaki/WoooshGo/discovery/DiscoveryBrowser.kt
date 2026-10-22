@@ -8,7 +8,7 @@ import android.os.Build
 import android.util.Log
 import com.tsubuzaki.WoooshGo.peers.DeviceType
 import com.tsubuzaki.WoooshGo.peers.PeerRegistry
-import java.net.Inet6Address
+import java.net.Inet4Address
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.Executors
 import kotlinx.coroutines.CoroutineScope
@@ -221,8 +221,8 @@ class DiscoveryBrowser(
     }
 
     /**
-     * IPv4 first, link-local IPv6 dropped: their scope id renders as `fe80::1%wlan0`,
-     * which the core's `lookup_host` cannot parse on every platform.
+     * IPv4 only: every core binds `0.0.0.0`, so an IPv6 address can never reach one. With
+     * none yet, the row waits for the next resolve rather than dialling a dead address.
      */
     @Suppress("DEPRECATION")
     private fun hostsOf(serviceInfo: NsdServiceInfo): List<String> {
@@ -232,15 +232,10 @@ class DiscoveryBrowser(
             listOfNotNull(serviceInfo.host)
         }
         return addresses
-            .mapNotNull { address ->
-                when {
-                    address.isAnyLocalAddress || address.isLoopbackAddress -> null
-                    address is Inet6Address && address.isLinkLocalAddress -> null
-                    else -> address.hostAddress?.substringBefore('%')
-                }
-            }
+            .filterIsInstance<Inet4Address>()
+            .filterNot { it.isAnyLocalAddress || it.isLoopbackAddress }
+            .mapNotNull { it.hostAddress }
             .distinct()
-            .sortedBy { if (it.contains(':')) 1 else 0 }
     }
 
     private companion object {
