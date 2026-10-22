@@ -59,29 +59,23 @@ struct DeviceListView: View {
             #if os(iOS)
             .sheet(isPresented: $showingSettings) {
                 SettingsView()
+                    .modifier(IncomingPrompts(incomingOffer: $incomingOffer, isTop: true))
             }
             #endif
             .sheet(isPresented: $showingPairSheet) {
                 PairDeviceView()
+                    .modifier(IncomingPrompts(incomingOffer: $incomingOffer, isTop: true))
             }
             .sheet(item: $selectedPeer) { peer in
                 SendTransferSheet(peer: peer)
+                    .modifier(IncomingPrompts(incomingOffer: $incomingOffer, isTop: true))
             }
             // One row, one sheet: send/receive are segments inside it (PROTOCOL.md §9.4).
             .sheet(isPresented: $showingOtherDevice) {
                 OtherDeviceView()
+                    .modifier(IncomingPrompts(incomingOffer: $incomingOffer, isTop: true))
             }
-            .sheet(item: $incomingOffer, onDismiss: {
-                // An offer can arrive while the previous sheet is still showing progress.
-                if let next = model.transfers.pendingOffer {
-                    incomingOffer = next
-                }
-            }) { offer in
-                IncomingOfferSheet(offer: offer)
-            }
-            .sheet(item: $model.activeSAS) { request in
-                SASSheet(request: request)
-            }
+            .modifier(IncomingPrompts(incomingOffer: $incomingOffer, isTop: !isShowingSheet))
             .alert(
                 L.t("keychanged_title"),
                 isPresented: $showingKeyChangedAlert,
@@ -120,6 +114,13 @@ struct DeviceListView: View {
         #if os(macOS)
         .frame(minWidth: 380, minHeight: 460)
         #endif
+    }
+
+    private var isShowingSheet: Bool {
+        #if os(iOS)
+        if showingSettings { return true }
+        #endif
+        return showingPairSheet || selectedPeer != nil || showingOtherDevice
     }
 
     /// A failure only becomes an alert when no pairing sheet is up to show it in place.
@@ -361,5 +362,33 @@ struct PeerRowView: View {
         if peer.isRelayed { return L.f("peer_state_ready_internet_limited", RelayLimit.text) }
         if peer.isTicketOnly { return L.t("peer_state_ready_internet") }
         return L.t(isPaired ? "peer_state_ready_paired" : "peer_state_ready")
+    }
+}
+
+/// Remote-triggered prompts. A presenter shows one sheet at a time, so these attach to
+/// whichever is on top: the device list, or the sheet it is showing. Otherwise an offer
+/// or a SAS code arriving under Settings or Pair a Device never appears, and the other
+/// device waits out its timeout.
+private struct IncomingPrompts: ViewModifier {
+    @Environment(AppModel.self) private var model
+    @Binding var incomingOffer: Transfer?
+    let isTop: Bool
+
+    func body(content: Content) -> some View {
+        content
+            .sheet(item: Binding(get: { isTop ? incomingOffer : nil },
+                                 set: { incomingOffer = $0 }),
+                   onDismiss: {
+                // An offer can arrive while the previous sheet is still showing progress.
+                if let next = model.transfers.pendingOffer {
+                    incomingOffer = next
+                }
+            }) { offer in
+                IncomingOfferSheet(offer: offer)
+            }
+            .sheet(item: Binding(get: { isTop ? model.activeSAS : nil },
+                                 set: { model.activeSAS = $0 })) { request in
+                SASSheet(request: request)
+            }
     }
 }
