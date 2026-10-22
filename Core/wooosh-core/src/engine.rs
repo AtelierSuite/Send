@@ -285,10 +285,33 @@ fn local_ip() -> Option<std::net::IpAddr> {
     s.local_addr().ok().map(|a| a.ip())
 }
 
-/// Address hints for a pairing QR (PROTOCOL.md §4.2), best-first. Loopback is
-/// last: a QR is normally scanned by another device. Only advertise what the
-/// bind address makes truthful.
-fn pairing_hints(bind_ip: IpAddr, lan_ip: Option<IpAddr>, port: u16) -> Vec<String> {
+/// The default-route address first, then every other interface. The default
+/// route alone is wrong whenever Wi-Fi has no internet and cellular carries it.
+fn local_ips() -> Vec<IpAddr> {
+    let mut ips: Vec<IpAddr> = local_ip().into_iter().collect();
+    if let Ok(ifs) = if_addrs::get_if_addrs() {
+        ips.extend(ifs.into_iter().map(|i| i.ip()));
+    }
+    ips
+}
+
+/// Enough for Wi-Fi, Ethernet and a VPN or bridge or two; each hint makes the QR denser.
+const MAX_QR_LAN_HINTS: usize = 6;
+
+fn is_private(ip: &IpAddr) -> bool {
+    match ip {
+        IpAddr::V4(v4) => v4.is_private(),
+        // fc00::/7 unique local.
+        IpAddr::V6(v6) => (v6.segments()[0] & 0xfe00) == 0xfc00,
+    }
+}
+
+/// Address hints for a pairing QR (PROTOCOL.md §4.2), best-first. The scanner
+/// races them all, so listing every interface is cheap, but the order is still
+/// a preference: private (LAN) addresses lead, then `lan_ips` order. Loopback
+/// is last: a QR is normally scanned by another device. Only advertise what
+/// the bind address makes truthful.
+fn pairing_hints(bind_ip: IpAddr, lan_ips: &[IpAddr], port: u16) -> Vec<String> {
     let mut hints: Vec<String> = Vec::new();
     let mut push = |ip: IpAddr| {
         let h = SocketAddr::new(ip, port).to_string();
@@ -297,7 +320,29 @@ fn pairing_hints(bind_ip: IpAddr, lan_ip: Option<IpAddr>, port: u16) -> Vec<Stri
         }
     };
     if bind_ip.is_unspecified() {
-        if let Some(ip) = lan_ip.filter(|ip| !ip.is_loopback() && !ip.is_unspecified()) {
+        let mut lan: Vec<IpAddr> = lan_ips
+            .iter()
+            .copied()
+            // The socket is single-family: the other family cannot reach it.
+            .filter(|ip| ip.is_ipv4() == bind_ip.is_ipv4())
+            .filter(|ip| !ip.is_loopback() && !ip.is_unspecified())
+            .filter(|ip| match ip {
+                IpAddr::V4(v4) => !v4.is_link_local(),
+                // Link-local needs a scope ID a peer cannot know.
+                IpAddr::V6(v6) => (v6.segments()[0] & 0xffc0) != 0xfe80,
+            })
+            .collect();
+        // Stable: keeps the default route ahead within each group.
+        lan.sort_by_key(|ip| !is_private(ip));
+        let mut seen: Vec<IpAddr> = Vec::new();
+        lan.retain(|ip| {
+            let first = !seen.contains(ip);
+            if first {
+                seen.push(*ip);
+            }
+            first
+        });
+        for ip in lan.into_iter().take(MAX_QR_LAN_HINTS) {
             push(ip);
         }
         push(match bind_ip {
@@ -415,7 +460,7 @@ impl Engine {
         *self.inner.qr_pending.lock().unwrap() = Some(pending);
         let hints = pairing_hints(
             self.inner.local_addr.ip(),
-            local_ip(),
+            &local_ips(),
             self.inner.local_addr.port(),
         );
         QrPayload {
@@ -2602,29 +2647,53 @@ mod tests {
 
     #[test]
     fn qr_hints_put_lan_first_and_loopback_last() {
-        let h = pairing_hints(ip("0.0.0.0"), Some(ip("10.229.10.242")), 57364);
+        let h = pairing_hints(ip("0.0.0.0"), &[ip("10.229.10.242")], 57364);
         assert_eq!(h, vec!["10.229.10.242:57364", "127.0.0.1:57364"]);
     }
 
     #[test]
     fn qr_hints_omit_lan_guess_that_is_itself_loopback() {
-        let h = pairing_hints(ip("0.0.0.0"), Some(ip("127.0.0.1")), 5000);
+        let h = pairing_hints(ip("0.0.0.0"), &[ip("127.0.0.1")], 5000);
         assert_eq!(h, vec!["127.0.0.1:5000"]);
-        let h = pairing_hints(ip("0.0.0.0"), None, 5000);
+        let h = pairing_hints(ip("0.0.0.0"), &[], 5000);
         assert_eq!(h, vec!["127.0.0.1:5000"]);
+    }
+
+    /// Wi-Fi without internet: the default route is cellular, which the
+    /// scanner on the same Wi-Fi cannot reach.
+    #[test]
+    fn qr_hints_list_every_interface_with_lan_ahead_of_the_default_route() {
+        let ips = [
+            ip("100.71.4.9"), // default route (cellular CGNAT)
+            ip("100.71.4.9"),
+            ip("192.168.1.20"),
+            ip("169.254.3.3"),
+            ip("fd00::1"),
+            ip("127.0.0.1"),
+        ];
+        let h = pairing_hints(ip("0.0.0.0"), &ips, 5000);
+        assert_eq!(h, vec!["192.168.1.20:5000", "100.71.4.9:5000", "127.0.0.1:5000"]);
+    }
+
+    #[test]
+    fn qr_hints_are_capped() {
+        let ips: Vec<IpAddr> = (1..=10).map(|n| ip(&format!("10.0.0.{n}"))).collect();
+        let h = pairing_hints(ip("0.0.0.0"), &ips, 5000);
+        assert_eq!(h.len(), MAX_QR_LAN_HINTS + 1);
+        assert_eq!(h.last().unwrap(), "127.0.0.1:5000");
     }
 
     #[test]
     fn qr_hints_follow_a_specific_bind() {
-        let h = pairing_hints(ip("127.0.0.1"), Some(ip("10.229.10.242")), 5000);
+        let h = pairing_hints(ip("127.0.0.1"), &[ip("10.229.10.242")], 5000);
         assert_eq!(h, vec!["127.0.0.1:5000"]);
-        let h = pairing_hints(ip("192.168.1.5"), Some(ip("192.168.1.5")), 5000);
+        let h = pairing_hints(ip("192.168.1.5"), &[ip("192.168.1.5")], 5000);
         assert_eq!(h, vec!["192.168.1.5:5000"]);
     }
 
     #[test]
     fn qr_hints_bracket_ipv6() {
-        let h = pairing_hints(ip("::"), Some(ip("fd00::1")), 5000);
+        let h = pairing_hints(ip("::"), &[ip("fd00::1"), ip("fe80::1"), ip("10.0.0.1")], 5000);
         assert_eq!(h, vec!["[fd00::1]:5000", "[::1]:5000"]);
     }
 
